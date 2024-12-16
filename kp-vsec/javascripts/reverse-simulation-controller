@@ -1,0 +1,7 @@
+
+// This is the Target Based Computation/Simulation Controller -
+
+// An alternative way to compute next state of system by starting from the shuffled target
+// variables, finding path from them to their origin operation and then moving in standard
+// way of computation, but doing this for only those arguments of target dependence schema
+// that are needed for obtaining the value of the currently computed target variable.

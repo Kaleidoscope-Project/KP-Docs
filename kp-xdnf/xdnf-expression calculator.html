@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<head>
+
+    <meta http-equiv=" Content-Type" content="text/html; charset=iso-8859-1"/>
+    <title>- XDNF Expression Calculator</title>
+    <link rel="shortcut icon" type="image/png" href="../common/images/mcln-logo.png">
+
+    <meta name="author" content="Vlad Lakin"/>
+    <meta name="version" content="last updated 08/17/2018"/>
+    <meta name="keywords" content="dining philosophers, discrete, event, dynamical, system, simulation, simulating,
+            logic, behavior, based, robatics, control, software, asynchronous, concurrent, architecture, modeling, automaton,
+            Petri, Net"/>
+    <meta name="news_keywords" content="Discrete Symbolic Dynamical Systems & Models,
+            dining philosophers, dynamical system, behaviour based robatics"/>
+    <meta name="description" content="Discrete Symbolic Dynamical Systems & Models"/>
+
+    <link rel="stylesheet" href="../common/stylesheets/common.css">
+
+    <!--/*   S c r i p t s   */-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="javascripts/AoSExpressionCalculator.js"></script>
+    <script type="text/javascript" src="javascripts/AoSCalculatorController.js"></script>
+
+    <script type="text/javascript" src="javascripts/CalculatorContext.js"></script>
+    <script type="text/javascript" src="javascripts/AoSAlgebra.js"></script>
+    <script type="text/javascript" src="javascripts/AoSToken.js"></script>
+    <script type="text/javascript" src="javascripts/ErrorMessageStore.js"></script>
+    <script type="text/javascript" src="javascripts/AoSExpressionTokenizer.js"></script>
+    <script type="text/javascript" src="javascripts/AoSExpressionParser.js"></script>
+
+    <style type="text/css">
+
+        body {
+            background-image: url("../common/images/line-bg.png");
+        }
+
+        <!--/*   E x p r e s s i o n   S e l e c t o r   */-->
+
+        .dropdown{
+            margin-top: 3pt;
+            border-radius:22px;
+            border: 2px solid rgb(200,200,200);
+            background: #FFFFFF;
+            width: 460pt;
+            height: 33px;
+            outline: none;
+            box-sizing:border-box;
+        }
+
+        .dropdown-option{
+            background: #FFFFFF;
+        }
+
+        <!--/*   V a r i a b l e   I n i t i a l i z a t i o n  #DDEFFF; */-->
+
+        .variables {
+            border: 1px solid rgb(200,200,200);
+            border-radius: 14pt;
+            background: #f6f6f6;
+            text-color: #444444;
+            width: 460pt;
+            text-align: center;
+            outline: none;
+            padding-left: 12px;
+            padding-right: 12px;
+            box-sizing:border-box;
+        }
+
+        <!--/*   U s e r   I n p u t   */-->
+
+        .input-field{
+            background: #f6f6f6;
+            text-align: left;
+            border-radius:22px;
+            border: 2px solid rgb(200,200,200);
+            width: 460pt;
+            padding-left: 12px;
+            padding-right: 12px;
+            outline: none;
+            box-sizing:border-box;
+        }
+
+        .control-button {
+            margin-top: 5pt;
+            border-radius: 8px;
+            border: 1px solid rgb(185,185,185);
+            font-size: 10pt;
+            color: #000;
+            background: #EEEEEE;
+            text-align: center;
+            text-shadow: 1px 1px 1px #eee;
+            outline: none;
+            width: 126px;
+            height: 25px;
+            padding-top: 1px;
+            box-shadow: 0px 1px 2px #777;
+            background-image: linear-gradient(to top left,
+                                          rgba(0, 0, 0, .2),
+                                          rgba(0, 0, 0, .2) 0%,
+                                          rgba(0, 0, 0, 0));
+        }
+
+        .control-button:hover {
+            cursor: pointer;
+        }
+
+        .control-button:active {
+            box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+            inset 2px 2px 3px rgba(0, 0, 0, .6);
+        }
+
+        <!--/*   C a l c u l a t i o n   R e s u l t   */-->
+
+        .result{
+            spellcheck="false";
+            margin-top: 0pt;
+            background: #f6f6f6;
+            border-radius:22px;
+            border: 2px solid rgb(200,200,200);
+            width: 460pt;
+            outline: none;
+            box-sizing:border-box;
+        }
+
+        /*   F o o t e r   */
+
+<!--        .end-of-page-red-line-1{-->
+<!--            position: relative;-->
+<!--            background: #FF0000;-->
+<!--            margin-left: auto;-->
+<!--            margin-right: auto;-->
+<!--            text-align: center;-->
+<!--            width: 160px;-->
+<!--            height: 1px;-->
+<!--        }-->
+
+<!--        .end-of-page-red-line-2{-->
+<!--            position: relative;-->
+<!--            background: #FF0000;-->
+<!--            margin-left: auto;-->
+<!--            margin-right: auto;-->
+<!--            text-align: center;-->
+<!--            width: 80px;-->
+<!--            height: 1px;-->
+<!--        }-->
+
+<!--        .space-below-footer{-->
+<!--            margin-left: auto;-->
+<!--            margin-right: auto;-->
+<!--            padding: 20px 0px 20px 0px;-->
+<!--            width: %100;-->
+<!--        }-->
+
+    </style>
+
+</head>
+
+<body onload="init();">
+<div class="container">
+
+    <center>
+        <div class="line-stretch">
+            <div class="red-line"></div>
+        </div>
+        <div class="white-line"></div>
+
+        <div class="white-line"></div>
+        <div class="line-stretch">
+            <div class="red-line"></div>
+        </div>
+        <div class="white-line"></div>
+    </center>
+
+    <a href="../qds-vss-equation-calculator/equation-calculator.html">
+        <img src="../common/images/prev.png"
+             ALT="images/previous Page" BORDER="0" align="CENTER"></a>
+
+    <a href="../index.html#sec.4.0">
+        <img src="../common/images/up.png"
+             ALT="Main Page" BORDER="0" align="CENTER"></a>
+
+    <a href="../qds-dse-screenshots/qds-dse-screenshots.html">
+        <img src="../common/images/next.png"
+             ALT="images/next Page" BORDER="0" align="CENTER"></a>
+
+    <div class="text-container">
+
+        <center>
+
+            <div class="page-header">
+                Extended Disjunctive Normal Form Expression Calculator
+            </div>
+            <div class="sub-header">
+                (Kaleidoscope Project)
+            </div>
+
+            <div style="margin-top: 33px; margin-bottom: 0pt; text-align: justify;">
+
+                Algebra of Symbols (AoS), and AoS Expression Calculator are parts of open source
+                Kaleidoscope Project.
+                <p>
+                    The AoS is a mathematical means intended to describe existing among qualitative system
+                    characteristics causal dependencies in the form of variable state equations.
+                    The dependent variable is presented on the left side
+                    of the equation, while determining its value, AoS expression is placed
+                    on the equation's right side.
+                </p>
+                <p>
+                    Presented on this page AoS
+                    Expression Calculator provides several illustrative AoS Expression examples. The AoS Expressions
+                    can be selected from the dropdown list of the Expression Selector, and shown in the Expression View
+                    field below.
+                    Selected expression is evaluated by clicking on green "Calculate" button, located below the
+                    Expression View field.
+                    The result of evaluation is presented in the field: "Calculation result".
+                </p>
+            </div>
+            <!--<br>-->
+            <div>
+                Expression Selector. Select predefined AoS expression to be calculated<br>
+                <select class="dropdown" id="dropdown" onchange="dropDownSelectionHandler(this)"
+                        style=" font-weight: plain; font-size: 10pt; text-align-last:center;"
+                        onfocus="dropdownFocusHandler(event)"
+                        onfocusout="dropdownFocusOutHandler(event)">
+
+                    <option class="dropdown-option" value="exp00">
+                        <<< Expressions are selected by clicking on their variable initial value sets in dropdown list
+                        >>>
+                    </option>
+
+                    <optgroup style="font-weight:plain;" label="y = y < (K * (x ? A)) | (L * (x ? B))" value="c01"
+                              style="font-weight: plain;">
+                        <option class="dropdown-option" style="font-weight:bold;" value="exp02">Variable initial
+                            values: &nbsp;y = <b>H</b>,
+                            &nbsp;&nbsp;x = <b>A</b>
+                            &nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Expected calculated result is <b>K</b>
+                        </option>
+                        <option class="dropdown-option" style="font-weight:bold;" value="exp03">Variable initial
+                            values: &nbsp;y = <b>H</b>,
+                            &nbsp;&nbsp;x = <b>B</b>
+                            &nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Expected calculated result is <b>L</b>
+                        </option>
+                        <option class="dropdown-option" style="font-weight:bold;" value="exp01">Variable initial
+                            values: &nbsp;y = <b>H</b>,
+                            &nbsp;&nbsp;x = <b>J</b>
+                            &nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Expected calculated result is <b>H</b>
+                        </option>
+                    </optgroup>
+
+                    <optgroup style="font-weight:plain;"
+                              label="y = y < (M * (x1 ? P)) | (N * ((x2 ? Y) & (x3 ? Z)))" value="c02">
+                        <option class="dropdown-option" style="font-weight:bold;" value="exp01">Variable initial
+                            values: &nbsp;y = <b>G</b>,
+                            &nbsp;&nbsp;x1 = <b>P</b>, &nbsp;&nbsp;x2 = <b>Y</b>, &nbsp;&nbsp;x3 = <b>U</b>
+                            &nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Expected calculated result is <b>M</b>
+                        </option>
+
+                        <option class="dropdown-option" style="font-weight:bold;" value="exp02">Variable initial
+                            values: &nbsp;y = <b>G</b>,
+                            &nbsp;&nbsp;x1 = <b>E</b>, &nbsp;&nbsp;x2 = <b>Y</b>, &nbsp;&nbsp;x3 = <b>Z</b>
+                            &nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Expected calculated result is <b>N</b>
+                        </option>
+
+                        <option class="dropdown-option" style="font-weight:bold;" value="exp03">Variable initial
+                            values: &nbsp;y = <b>G</b>,
+                            &nbsp;&nbsp;x1 = <b>P</b>, &nbsp;&nbsp;x2 = <b>Y</b>, &nbsp;&nbsp;x3 = <b>Z</b>
+                            &nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Expected calculated result is <b>G</b>
+                        </option>
+                    </optgroup>
+
+                    <optgroup style="font-weight:plain;"
+                        label="y = y < B * (y ? A) | C * (y ? B) | L * (y ? C) | M * (y ? L) | A * (y ? M)" value="c03">
+                        <option class="dropdown-option" style="font-weight:bold;" value="exp01">Variable initial
+                            value: &nbsp;y = <b>A</b>,
+                            &nbsp;&nbsp;&nbsp;//&nbsp;Consecutive calculations produce states: <b>B,C,L,M</b> and again <b>A</b>
+                        </option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div style="margin-top: 20pt; margin-bottom: 8pt;">The expression variables are initialized as follows:
+                <div class="variables" id="variables" style=" font-weight: plain; font-size: 11pt;
+            height:27px; line-height:27px; table-cell; vertical-align: middle;">
+                    <!--abc = "L"; &nbsp;&nbsp;xyz = "D"; &nbsp;&nbsp;lmn = "T";-->
+                </div>
+            </div>
+
+
+            <div style="margin-top: 5pt; margin-bottom: 5pt;">
+                Expression View. Click "Calculate" button to obtain result.<br>
+                <!--Optionally modify selected or type in your own expression. Click Calculate button.<br>-->
+                <div class="input-field" id="input" type="text" contenteditable="false" spellcheck="false"
+                     name="expression"
+                     style="font-weight: plain; font-size: 12pt; height: 33px; min-height: 33pt;  max-height: 33pt; line-height:29px; display: table-cell; vertical-align: middle;"
+                     onkeypress="return keyPressedEventHandler(event)"
+                     oninput="return expressionChangedEventHandler()"
+                     onfocus="inputFieldFocusHandler(event)"
+                     onfocusout="inputFieldFocusOutHandler(event)"
+                     onmousedown="mouseDownEventHandler()">
+                </div>
+            </div>
+
+            <button class="control-button" id="clear-button" disabled
+                    onclick="clearButtonHandler()">Clear
+            </button>
+
+            <button class="control-button" id="remove-blanks-button" disabled
+                    onclick="removeBlanksButtonHandler()">Remove Blanks
+            </button>
+
+            <button class="control-button" id="insert-blanks-button" disabled
+                    onclick="insertBlanksButtonHandler()">Insert Blanks
+            </button>
+
+            <button class="control-button" id="calculate-button" disabled
+                    onclick="calculateButtonHandler()">Calculate
+            </button>
+
+            <!-- button class="control-button" id="fix-it-button" disabled style="width: 70pt"
+                    onclick="fixItButtonHandler()">Fix It</button -->
+
+            <br><br>
+
+
+            <div style="margin-top: 5pt; margin-bottom: 5pt; ">Calculated result:
+                <div class="result" id="result"
+                     style="font-weight: plain; font-size: 11pt; height: 33px; line-height:29px;"></div>
+            </div>
+
+            <p>
+            <div class="header">
+                <div style="font-size:18px; font-weight: bold;">
+                    AoS Expression and Calculator Explanation
+                </div>
+            </div>
+            </p>
+
+            <div style="margin-top: 30pt; text-align: justify;">
+
+                <p>
+                    <strong>Representation&nbsp;conventions:</strong>
+                    All variables are represented as one-to-three letters and digits long, lower case strings.&nbsp;
+                    All constants are represented as one upper case letter. It is assumed all variable
+                    values and constants are taken from AoS carrier set of all upper case letters:
+                    <b>A</b>&nbsp;=&nbsp;{A,&nbsp;B,&nbsp;C,&nbsp;...,&nbsp;Z}.
+
+                </p>
+
+                <p>
+                    <strong>Expression operators:</strong>
+                    There is regular Assignment operator and five AoS operators in the expression.<br>
+                </p>
+                <div style=" padding-left: 75pt;">
+                    Character &nbsp;"=" &nbsp;is the operator of regular Assignment operation.<br>
+                    Character &nbsp;"<" &nbsp;is the operator of AoS Application operation.<br>
+                    Character &nbsp;"|" &nbsp;is the operator of AoS Disjunction operation.<br>
+                    Character &nbsp;"*" &nbsp;is the operator of AoS Production operation.<br>
+                    Character &nbsp;"&" &nbsp;is the operator of AoS Conjunction operation.<br>
+                    Character &nbsp;"?" &nbsp;is the operator of AoS Equals operation.
+                </div>
+
+                <p>
+                    <strong>Operator&nbsp;precedence:</strong>
+                    The order of calculation is defined by the operator priorities, where the Equals (?) operator
+                    has highest priority, and therefore is executed first. Then operators: Conjunction (&),
+                    Production (*), Disjunction (|), Application (&lt;), and Assignment (=) are executed.
+                </p>
+
+                <p>
+                    <strong>Parentheses:</strong>
+                    All parentheses in the examples are optional and are merely used for grouping
+                    parts of the expression to improve visual perception. They may embrace:
+                    Equals operator group(s), conjunctive expression, production rule group(s), and the entire
+                    disjunctive form. Any expression may not have any parentheses at all.
+                </p>
+
+
+                <p>
+                    <strong>AoS expression structure and evaluation:</strong>
+                    Principle of AoS expression structure and evaluation reflects the nature of
+                    change of state of properties observed in qualitative systems.
+                    According to this nature a particular dependent property either changes
+                    its state as a result of arising situations causing it to change, or,
+                    alternatively, does not change its state, when there are no situations
+                    that cause it to change, or there exists two or more situations
+                    that create contradictory requirement implying dependent on them
+                    property to be simultaneously in different states.
+
+                    Following the awareness of this nature, calculated AoS expression
+                    is defined as a superposition of subexpressions where the top
+                    level view of the expression is:
+
+                <p style=" padding-left: 150pt;">
+                    y = y < <b>f</b>&nbsp;(x1, x2, ..., xn);
+                </p>
+
+                In the expression, the change of the dependant variable <b>y</b>  may only be caused with some,
+                but not all, possible combinations of arguments, that the function can potentially
+                be called with. The function, therefore in general case, is a partially defined function
+                and either is supposed to be always called with such combinations of  arguments on
+                which it is sertainly  defined, or to be capable to provide indication whether returned
+                from the function result is the dependant variable new vadid state, or new state could
+                not be prodused on the given combinations of arguments.  Implemented AoS expression
+                calculator utilizes latter  approah by accomplishing the evaluation in three steps
+                detailed below.<br/><br/>
+
+                <b>Step 1</b>.
+                On this step partially defined  function <b>f</b> is called, with all the argument variables initialized
+                and tries to calculate dependent variable suggested state. If it appears that on the current
+                combination of arguments the function is defined,  it produces a meaningful result -
+                new symbol from set <b>A</b>, provided as a constant specified in one of the function's subexpressions.
+                If, from the other hand,  it appears that on the current combination of arguments the function
+                is NOT defined, the function returns distinguished symbol indicating that no meaningful
+                results can be produced. Handling emerged in the case of undefined dependent variable suggested state
+                uncertainty is addressed by the Application operation, that is being invoked on the Step 2.
+                <br/><br/>
+
+                <b>Step 2</b>.
+                The AoS Application operation is invoked. Operation takes dependent variable current
+                value <b>y</b>, as its first argument, and obtained from the function <b>f</b> result, as its second argument.
+                Upon the execution, operation yield depends on the value of its second argument.
+                In fact the operation does:"<br/><br/>
+                &nbsp;&nbsp;a) returns obtained from the function <b>f</b> result if the result is
+                symbol representing dependent variable suggested state, or<br/>
+                &nbsp;&nbsp;b) returns, provided as the call first argument, dependent variable current value if obtained from the function <b>f</b>
+                result appeared to be not defined. This makes the dependent variable to be assigned
+                its current state - state it is  already in. The subsequent assignment to the dependent variable its
+                current state, in fact, means no change of the variable state.
+                <br/>
+                <br/>
+                The execution of the Application operation completes the expression calculation and
+                the return of Application operation is considered to be the value of the assignment expression's right side.
+                <br/>
+                <br/>
+                <b>Step 3</b>.
+                This last calculation step is the Assignment operation. The operation modifies dependent variable <b>y</b>
+                initial value by replacing it with just calculated AoS expression result and thus
+                completes the Calculator run.
+                <br/>
+                <br/>
+                <b>A note</b>.
+                The last (third) selectable from the Expression Selector example, represents a case where
+                the left-hand-side variable <b>y</b> is also the right-hand-side AoS expression's argument.
+                Thus ones calculated variable <b>y</b> becomes the Expression's updated argument, letting you to
+                click on the "Calculate" button again to run the expression again. The example can be calculated
+                repeatedly, allowing  to iterate the  variable through several  values, in loop.
+
+            </div>
+
+        </center>
+
+        </div> <!-- end of text-container-->
+
+    <!-- =================================================================================== -->
+
+    <br>
+
+    <a href="../qds-vss-equation-calculator/equation-calculator.html">
+        <img src="../common/images/prev.png"
+             ALT="images/previous Page" BORDER="0" align="CENTER"></a>
+
+    <a href="../index.html#sec.4.0">
+        <img src="../common/images/up.png"
+             ALT="Main Page" BORDER="0" align="CENTER"></a>
+
+    <a href="../qds-dse-screenshots/qds-dse-screenshots.html">
+        <img src="../common/images/next.png"
+             ALT="images/next Page" BORDER="0" align="CENTER"></a>
+
+    <center>
+        <p align="center">
+        <div class="end-of-page-red-line-1"></div>
+        <br/>
+        <div class="end-of-page-red-line-2"></div>
+        </a>
+    </center>
+
+    <div class="space-below-footer"></div>
+</div>
+</body>
+</html>

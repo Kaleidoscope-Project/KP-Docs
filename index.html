@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>- Kaleidoscope Project</title>
+    <link rel="shortcut icon" type="image/png" href="common/images/mcln-logo.png">
+
+    <!-- style sheets   background-color: #f4f4f0;-->
+    <link rel="stylesheet" href="common/stylesheets/common.css">
+    <!-- bg color CCFF99 D4FF90 D7FF90 CBFF90 CFFFCF E5FFDA E6FFDE E5FFD8 E4FFD8 E4FFCF E6FFBA - 07.01.2023
+                  EBFFAA - before 07.01.2023
+                  EEFEAD E4FEA3  DAFE99 D0FE8F C6FE85 BCFE71 good:A8FE5D
+                   0xBFFF00-->
+    <style>
+        body {
+            background-image: url("common/images/line-bg.png");
+            min-width: 700px;
+        }
+
+        .open-the-page {
+            border: 1px solid #888888;
+            border-radius: 12px;
+            width: 80px;
+            background-color: #CDFFA5;
+            color: #555555;
+            padding:  0px 6px 1px 5px;
+            box-shadow: 1px 1px 1px #777;
+            cursor: pointer;
+            text-decoration: none;
+            font: 14px Georgia, Helvetica;
+        }
+
+        .open-the-page:active {
+            box-shadow: 0px 0px 1px #666;
+            transform: translateY(1px);
+            transform: translateX(1px);
+        }
+
+        .open-the-site {
+            border: 1px solid #888888;
+            border-radius: 12px;
+            width: 80px;
+            background-color: #FFE8E8;
+            color: #555555;
+            padding:  0px 6px 1px 5px;
+            box-shadow: 1px 1px 1px #777;
+            cursor: pointer;
+            text-decoration: none;
+            font: 14px Georgia, Helvetica;
+        }
+
+        .open-the-site:active {
+            box-shadow: 0px 0px 1px #666;
+            transform: translateY(1px);
+            transform: translateX(1px);
+        }
+
+     span.column {
+      flex-direction: column;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+      vertical-align: text-top;
+    }
+
+    sup {
+        line-height: .8;
+        font-size: 0.8em;
+    }
+
+    vertical-align: super;
+            font-size: small;
+             text-align: left;
+
+
+    sub {
+        line-height: 1.7;
+        font-size: 0.0em;
+    }
+
+    </style>
+
+    <script>
+    </script>
+
+</head>
+<body>
+
+<div class="line-stretch">
+<!--    <div class="red-line"></div>-->
+</div>
+
+<div class="white-line"></div>
+<!--<div class="white-line"></div>-->
+
+<div class="line-stretch">
+<!--    <div class="red-line"></div>-->
+</div>
+
+<!--<div class="white-line"></div>-->
+
+<div class="container">
+
+    <div class="red-line"></div>
+    <div class="white-line"></div>
+    <div class="red-line"></div>
+    <div class="white-line"></div>
+
+    <!-- content holder -->
+    <div class="text-container" style="font-size:15pt; color: #333;  ">
+
+        <!--    H e a d e r  font: 14px Ariel, Helvetica; -->
+        <center>
+            <div class="project-header" style="font-weight: bold; margin-bottom: 3pt;">
+                Kaleidoscope Project
+            </div>
+            <div style="margin-top: 0px; font-size:18pt; font-weight: plain; color: #333;">
+                (Qualitative Systems, Modeling Technique and Formalisms)
+            </div>
+        </center>
+
+        <div style="margin-top: 26pt; margin-bottom: 0pt;"> <!-- Content holder -->
+
+            <p>
+                Imagine a discrete action device states of which are characterized by a certain collection of
+                discrete properties, changing over time. When talking about the states or behavior of such devices,
+                we often list their properties by giving them, as they say, qualitative assessments, or
+                in the other words, by describing them in terms of their <em>qualitative properties</em>.
+                For instance, we may say: “My car is red”, “The Earth is orbiting the Sun” or "The weather today
+                is pretty nice". So, the collections of qualitative properties chosen for description or
+                modeling behavior of the devices may be naturally classified, and referred to as, the
+                <em>Qualitative Dynamical Systems</em> (QDSs) or, shorter, the <em>Qualitative Systems</em>
+                (QSs).
+            </p>
+
+            <p>
+                The Kaleidoscope project is a pilot research and development initiative intended to explore the
+                nature of the behavior of the QDSs and confirm feasibility of studying behavior of
+                these systems by means of developing their mathematical models. The project introduces QDSs
+                Mathematical Modeling Technique and suggests software, developed for supporting proposed
+                Technique. The content of the project is described in the family of webpages and
+                on the project's "Discrete Symbolic Dynamical Systems & Models" website. All of them are
+                referred to further on, in the course of description of the project.
+            </p>
+
+            <span id="sec.1.0" name="sec.1.0"></span>
+            <p class="section-header">
+                <b>Page:</b> Qualitative Dynamical Systems, Their Behavior<br>and Mathematical Modeling
+            </p>
+
+            <p>
+                Creating behavioral models of qualitative systems whose behavior is formed
+                dynamically as the consequence of emergence of many external factors, suggests
+                that the model should be able not only to reproduce the behavior of the original
+                within the framework of scenarios of behavior observed in the original, at the
+                creation of the model, but also act ”just like the original” when
+                not foreseen when creating a model circumstances may arise. This involves
+                determining the behavior of the models not on the basis of many prerecorded
+                particular scenarios in which they would "knows exactly how to behave", but
+                by studying the nature of behavior of modeled systems in order to identify
+                mechanisms driving their behavior (i.e. the ways of determining the manner
+                of acting in accordance with prevailing circumstances) and subsequent incorporation
+                of these mechanisms into the models.
+            </p>
+
+            <p>
+                This page considers characteristics of the nature and the behavior of Qualitative Dynamical Systems.
+                It identifies base element of the behavior of the systems and
+                describes the ways of composition of those elements letting the model of a system to be able
+                to reproduce various forms of behavior observed in the Qualitative Dynamical Systems being modeled.
+<!--                <a style="text-align: center" href="qds-bam/qds-their-behavior-and-modeling.html"-->
+                <a style="text-align: center" href="kp-bam/kp-qds.html"
+                   class="open-the-page">Open the Page</a>
+            </p>
+
+            <span id="sec.2.0" name="sec.2.0"></span>
+            <p class="section-header">
+                <b>Page:</b> Qualitative Dynamical Systems Behavior<br>Mathematical Modeling Technique
+            </p>
+
+            <p>
+
+                The page introduces qualitative systems modeling solutions found by the Kaleidoscope Project
+                in the course of exploration
+                of feasibility of studying qualitative systems by means of developing models and
+                simulation of behavior of these systems.<br>
+
+                As the behavior of dynamical systems is generally perceived as a sequence of observed
+                transitions of states of properties of the systems over time, modeling solutions suggest:
+                <br>
+                a) defines a model as a collection of variables that represent qualitative
+                properties of modeled system and therefore are supposed to take qualitative
+                values; b) suggests mechanism of computation of changes of values of the variables in
+                the form of state function associated with every variable; and providing an
+                algebraic system elements of carrier set of which could be used
+                to represent qualitative values of the variables, while the operations defined
+                on the set should be used for carrying out steps of computation of the functions.
+                <a style="text-align: center" href="kp-mmt/kp-mmt.html"
+                   class="open-the-page">Open the Page</a>
+            </p>
+<!--                So, we define a model as a collection of variables and discrete mechanism of changes of-->
+<!--                values of every variable in the form of state function, associated with the variable, that-->
+<!--                computes the states of the variable based on the state of other, independent in the relation,-->
+<!--                variables of the model.-->
+            </p>
+
+<!--            <p>-->
+<!--                Utilizing the description of behavior of a modeled system given in the form of observed in it-->
+<!--                correspondences of next (<em>dependent</em> in the correspondence) state of a property to the-->
+<!--                current (<em>independent</em> in the correspondence) state of other properties, these functions-->
+<!--                are supposed to compute next qualitative values of variables, by producing the value representing-->
+<!--                state of dependant element of the correspondence, based on the current values of variables of-->
+<!--                the model, representing states of independent elements of the correspondence.-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                Creation of qualitative system models, as we know it, however, presupposes having a mathematical set,-->
+<!--                elements of which could be used to represent qualitative values of variables of a model, on the-->
+<!--                one hand, and a group of operations, defined on this set, that could be used to compute qualitative-->
+<!--                values of variables depending on the qualitative values of other variables of the model, on the-->
+<!--                other hand. Presented below technique for modeling behavior of qualitative dynamical systems, considered in the-->
+<!--                Kaleidoscope project, is based on the idea of using for representation of values of qualitative-->
+<!--                variables elements of a set of symbols.-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                But, in order to carry out the creation of qualitative system models, it is-->
+<!--                necessary to have a mathematical set, elements of which could be used to represent qualitative-->
+<!--                values of variables of a model, on the one hand, and a group of operations, defined on this set,-->
+<!--                that could be used to compute qualitative values of variables depending on the qualitative-->
+<!--                values of other variables of the model, on the other hand.-->
+<!--            </p>-->
+
+            <p>
+                This section: a) describes technique of computation of a variable state function that lays down
+                requirements to algebraic operations needed for computation of qualitative functions; b) introduces
+                the system of algebraic operations based on the established requirements carrier set of which is
+                the set of symbols given as the letters of the Latin alphabet, and finally c) illustrates
+                application of the algebra-based qualitative systems modeling technique by presenting several
+                examples of interactive computation of qualitative functions written in the form of XDNF expressions.
+            </p>
+
+<!--            <p>-->
+<!--                The simplest qualitative dynamical system model would be a such that has only one state-->
+<!--                variable depending on the states of some number of other variables. Behavior of that system-->
+<!--                may be described as the single equation:-->
+<!--                <p style="margin-top: -5pt; margin-bottom: 6pt; font-size: 16pt; text-align: center;">-->
+<!--                        <span>-->
+<!--                            y<span class="column"><sup>t+1</sup></span> = <b>f</b> (-->
+<!--                            x<span class="column"><sup>t</sup><sub>1</sub></span>,&nbsp;-->
+<!--                            x<span class="column"><sup>t</sup><sub>2</sub></span>,&nbsp;-->
+<!--                            x<span class="column"><sup>t</sup><sub>3</sub></span>,&nbsp;-->
+<!--                            &nbsp;. . . &nbsp;,-->
+<!--                            x<span class="column"><sup>t</sup><sub>n</sub></span> );-->
+<!--                        </span>-->
+<!--                </p>-->
+<!--                where the upper index "t" indicated the moment in the time with which the value of the variable-->
+<!--                is associated, and the lower index is merely the variable's identification number.-->
+<!--            </p>-->
+
+
+
+            <span id="sec.3.0" name="sec.3.0"></span>
+            <p class="section-header">
+                <b>Page:</b> The Algebra of Symbols
+            </p>
+
+            <p>
+                The page, titled: "The Algebra of Symbol", is a description of the Algebra of Symbols (AoS)
+                defined as part of QDSs mathematical modeling technique introdused in the Kaleidoscope project
+                and is used in the qualitative systems modeling formalisms described below.
+                <!--                This algebra is defined on the set, all elements of which are symbols. Presented definition of the-->
+                <!--                set of the algebra is based on the Latin alphabet.-->
+                <a style="text-align: center" href="kp-aos/kp-aos.html" class="open-the-page">Open the Page</a>
+            </p>
+
+
+            <p class="section-header">
+                Qualitative Dynamical Systems Modeling Technique's<br>Modeling Solutions
+            </p>
+
+            <p>
+                There are three major modeling solutions based on the Algebra of symbols developed
+                in the Kaleidoscope project:
+                1) "Extended Disjunctive Normal Form (XDNF)",
+                2) "Vector State Space Modeling Technique", and
+                3) "Multi-colored Logical Net Graphical Modeling Formalism".
+            </p>
+
+            <span id="sec.4.0" name="sec.4.0"></span>
+            <p class="sub-section-centered-header">
+                <b>Solution 1:</b> Extended Disjunctive Normal Form and<br>XDNF-Expression Calculator
+            </p>
+
+            <p>
+                The page, titled: "Extended Disjunctive Normal Form Expression Calculator", illustrates
+                a special case of describing the dependence of state of one qualitative variable on the state of
+                a group of qualitative variables. This dependence is described as a qualitative function,
+                expression of which is defined in the form of Extended Disjunctive Normal Form (XDNF). Unlike
+                simple DNF, XDNF includes not only familiar operations Conjunction and Disjunction which are
+                also present in the Algebra of Symbol, but also three other operations of the Algebra called:
+                Equivalence, Production, and Application. Meaning of these operations is described on the
+                proposed page. <a href="kp-xdnf/xdnf-expression calculator.html"
+                                  class="open-the-page">Open&nbsp;the&nbsp;Page</a>
+            </p>
+
+
+
+<!--            <p>-->
+<!--                The page, titled: "Qualitative Dynamical System Modeling Solutions", outlines the essence of the-->
+<!--                questions arising at the time of developing-->
+<!--                mathematical models of Qualitative Dynamical Systems. It also sets up requirements for the-->
+<!--                algebraic operations and justifies the necessity of having the algebraic system, operations-->
+<!--                of which could be utilized for defining mathematical models of behavior of qualitative systems.-->
+<!--                <a style="text-align: center" href="modeling-technique/modeling-solutions.html"-->
+<!--                   class="open-the-page">Open the Page</a>-->
+<!--            </p>-->
+
+
+            <span id="sec.5.0" name="sec.5.0"></span>
+            <p class="sub-section-centered-header">
+                <b>Solution 2:</b> Qualitative System Model State Space Matrix<br>Equation and the Equation Calculator
+            </p>
+<!--            <p>-->
+<!--                The page, titled: "Qualitative Dynamical Systems Vector State Space Modeling Technique",-->
+<!--                outlines the essence of the questions arising at the time of developing-->
+<!--                mathematical models of Qualitative Dynamical Systems. It also sets up requirements for the-->
+<!--                algebraic operations and justifies the necessity of having the algebraic system, operations-->
+<!--                of which could be utilized for defining mathematical models of behavior of qualitative systems.-->
+<!--            </p>-->
+
+            <p>
+                The page, titled: "Qualitative Dynamical Systems Vector State-Space Models
+                Simulation Calculator", illustrates mathematical modeling technique based on the representation
+                of qualitative dynamical systems in the form of vector state equation of the systems. In simple
+                models, the page demonstrates mechanism of transformation of state of the models in style:
+                step of the computation - visualization of the computation result.
+                <a href="kp-vsec/equation-calculator.html"
+                   class="open-the-page">Open the Page</a>
+            </p>
+
+            <span id="sec.6.0" name="sec.6.0"></span>
+            <p class="sub-section-centered-header">
+                <b>Solution 3:</b> Multi-colored Logical Net (McLN) Graphical<br>Modeling Formalism
+            </p>
+
+            <p>
+                The page, titled: "Qualitative Dynamical Systems Multi-Colored Logical Net Graphical Modeling
+                Formalism", outlines the essence of the questions arising at the time of developing
+                mathematical models of Qualitative Dynamical Systems. It also sets up requirements for the
+                algebraic operations and justifies the necessity of having the algebraic system, operations
+                of which could be utilized for defining mathematical models of behavior of qualitative systems.
+                <a style="text-align: center" href="modeling-technique/modeling-solutions.html"
+                   class="open-the-page">Open the Page</a>
+            </p>
+
+            <p class="sub-section-centered-header">
+                Multicolored Logical Net Examples and Simulation
+            </p>
+
+            <p>
+                The Kaleidoscope project website titled: “Discrete Symbolic Dynamical Systems
+                & Models” introduces Multi-colored Logical Net (McLN) graphical modeling
+                formalism and describes qualitative dynamical systems models development technique
+                based on McLN formalism.
+                <a style="text-align: center" href="https://www.dsdsam.com/" target="_blank"
+                   class="open-the-site">Go to Main Page of the Site.</a>
+            </p>
+
+            <p>
+                The site also illustrates behavior of QDSs models. Page "McLN Viewer" suggests to pick
+                up a pre-developed model from menu, start simulation of the model, control the process
+                of its simulation with buttons presented on the page and observe the simulated behavior
+                of the model in the model presentation space and the log on the screen.
+                <a style="text-align: center" href="https://www.dsdsam.com/mcln-viewer" target="_blank"
+                   class="open-the-site">Open&nbsp;"McLN Viewer"&nbsp;Page&nbsp;of&nbsp;the&nbsp;Site.</a>
+            </p>
+
+
+            <!--            <p>-->
+            <!--                <em>Description of the Technique.</em> This QDSs modeling technique is introduced in the-->
+            <!--                Kaleidoscope project and is presented on the project's website, titled:-->
+            <!--                “Discrete Symbolic Dynamical Systems and Models” which describes and illustrates-->
+            <!--                behavior of the models developed based on the Multi-colored Logical Net (McLN) - a Qualitative-->
+            <!--                Dynamical Systems Graphical Modeling Formalism (QDS GMF).-->
+            <!--                <a style="text-align: center" href="https://www.dsdsam.com/" target="_blank"-->
+            <!--                   class="open-the-site">Go to Main Page of the Site.</a>-->
+            <!--            </p>-->
+
+            <!--            <p>-->
+            <!--                <em>Example Implementations.</em> The site suggests to pick up a-->
+            <!--                pre-developed model from the menu located on the “McLN Viewer" page of the site, start-->
+            <!--                simulation of the model, control the process of simulation with buttons presented on the page-->
+            <!--                and observe the simulated behavior of the model.-->
+            <!--                <a style="text-align: center" href="https://www.dsdsam.com/mcln-viewer" target="_blank"-->
+            <!--                          class="open-the-site">Open&nbsp;"McLN Viewer"&nbsp;Page&nbsp;of&nbsp;the&nbsp;Site.</a>-->
+            <!--            </p>-->
+
+            <span id="sec.7.0" name="sec.7.0"></span>
+            <p class="section-header">
+                <b>Downloadables:</b> Desktop Applications Developed and<br>Used in the Kaleidoscope Project
+            </p>
+
+            <p>
+                In addition to the internet resources, mentioned above, which describe and represent the Qualitative
+                Dynamical Systems Modeling Techniques two following pages provide a number of screenshots
+                illustrating different views of the Qualitative Dynamical Systems Modeling and Simulation
+                software developed in the Kaleidoscope project for supporting creation and simulation
+                of the McLN models.
+            </p>
+
+            <p>
+                The page, titled: “Qualitative Dynamical Systems Modeling & Simulation Environment - [Brief
+                Description With Some Screenshots]”,
+                presents several snapshots of the UI of the application, named in the title of the page.
+                This application is
+                a development tool consisting of a) Graphical Creator/Editor where user can create the McLN model
+                and b) the McLN Model Simulator that lets user start, stop and execute the model step-by-step,
+                as well as to reset the model into its initial state.
+                <a style="text-align: center" href="kp-dse-views/dse-screenshots.html"
+                   class="open-the-page">Open the Page</a>
+            </p>
+
+            <p>
+                The page, titled" “The Space Exploration Mission // A Robot-Agent Behavior Simulator - [Brief
+                Description With Some Screenshots]”,
+                presents several snapshots of the UI of the application, named in the title of the page.
+                The application is developed to
+                be the object, behavior of which is controlled by the McLN Controller.
+                <a style="text-align: center" href="kp-sem-views/sem-screenshots.html"
+                   class="open-the-page">Open the Page</a>
+            </p>
+
+            <p>
+                <b>P.S.</b> Both referred above software, supporting presented on this page QDSs Mathematical
+                Modeling Technique, were developed as part of the Kaleidoscope project. They are the open source
+                desktop applications provided in the form of certified by Seqtigo installers built for Mac-OS and
+                Windows computers. So, they can be safely downloaded from the project website's "Download Apps" page.
+                <a style="text-align: center" href="https://www.dsdsam.com/applications" target="_blank"
+                   class="open-the-site">Open&nbsp;"Download&nbsp;Apps"&nbsp;Page&nbsp;of&nbsp;the&nbsp;Site</a>
+            </p>
+
+            <p>
+            </p>
+
+            <p>
+            </p>
+        </div> <!-- end of content holder -->
+
+    </div> <!-- end of text-container -->
+
+    <!-- =================================================================================== -->
+
+    <br/>
+    <div class="end-of-page-red-line-1"></div>
+    <br/>
+    <div class="end-of-page-red-line-2"></div>
+    <div class="space-below-footer"></div>
+    <br/>
+
+</div> <!-- end of container -->
+</body>
+</html>

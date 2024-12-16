@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<head>
+
+    <meta http-equiv=" Content-Type" content="text/html; charset=iso-8859-1"/>
+    <title>- Modeling Technique</title>
+    <link rel="shortcut icon" type="image/png" href="../common/images/mcln-logo.png">
+
+    <meta name="author" content="Vlad Lakin"/>
+    <meta name="version" content="last updated 08/17/2018"/>
+    <meta name="keywords" content="dining philosophers, discrete, event, dynamical, system, simulation, simulating,
+            logic, behavior, based, robatics, control, software, asynchronous, concurrent, architecture, modeling, automaton,
+            Petri, Net"/>
+    <meta name="news_keywords" content="Discrete Symbolic Dynamical Systems & Models,
+            dining philosophers, dynamical system, behaviour based robatics"/>
+    <meta name="description" content="Discrete Symbolic Dynamical Systems & Models"/>
+
+    <!-- style sheets   -->
+    <link rel="stylesheet" href="../common/stylesheets/common.css">
+
+    <style>
+        body {
+            background-image: url("../common/images/line-bg.png");
+        }
+
+        span.column {
+          flex-direction: column;
+          display: inline-flex;
+          flex-direction: column;
+          justify-content: center;
+          text-align: left;
+          vertical-align: text-top;
+        }
+
+        sup {
+
+            line-height: .8;
+            font-size: 0.8em;
+
+        }
+
+    <!--
+        vertical-align: super;
+                font-size: small;
+                 text-align: left;
+      -->
+
+        sub {
+            line-height: 1.7;
+            font-size: 0.0em;
+
+
+        }
+
+    <!--
+       vertical-align: sub;
+                font-size: small;
+
+              top: 0;
+            bottom: 0;
+            padding: 0,0,5,0;
+            line-height: 1.6;
+            font-size: .4em;
+            text-align: left;
+    -->
+
+    </style>
+    <!--    text-align: left;-->
+</head>
+
+<body>
+<div class="container">
+
+    <center>
+        <div class="line-stretch">
+            <div class="red-line"></div>
+        </div>
+        <div class="white-line"></div>
+
+        <div class="white-line"></div>
+        <div class="line-stretch">
+            <div class="red-line"></div>
+        </div>
+        <div class="white-line"></div>
+    </center>
+
+    <a href="../qualitative-systems/qds-and-their-behavior.html">
+        <img src="../common/images/prev.png"
+             ALT="images/previous Page" BORDER="0" align="CENTER"></a>
+
+    <a href="../index.html#sec1">
+        <img src="../common/images/up.png"
+             ALT="Main Page" BORDER="0" align="CENTER"></a>
+
+    <a href="../aos/aos.html">
+        <img src="../common/images/next.png"
+             ALT="images/next Page" BORDER="0" align="CENTER"></a>
+
+    <!--    H e a d e r  font: 14px Ariel, Helvetica; -->
+
+    <div class="text-container">
+
+        <center>
+            <div class="page-header">
+                Qualitative Dynamical Systems Behavior<br>Mathematical Modeling Technique
+            </div>
+            <div class="sub-header">
+                (Kaleidoscope Project)
+            </div>
+        </center>
+
+        <div style="margin-top: 33px; margin-bottom: 0px; ">
+
+            <p>
+                While studying behavior of the dynamical systems phenomenologically (that is not by
+                delving into their internal machinery, but instead considering only the abstract
+                collections of properties of the systems, changing over time) we, following the
+                fundamental principles of mathematical modeling technique, tend to explain causes of
+                changes of properties of the systems by existence (in the systems) of certain
+                dependence relations of state of the properties on the changes of the state of some
+                other properties of the systems.
+            </p>
+
+            <p>
+                Correspondingly, the content of qualitative dynamical systems mathematical modeling technique is
+                described further on as a complex of coordinated modeling solutions defining the way of creation of
+                models of qualitative dynamical systems by describing them as collections of qualitative variables,
+                representing qualitative properties of modeled systems, on the one hand, and describing dependence
+                relations of states of the properties on the situations arising in the systems by representing this
+                dependence, in the models, in the form of mathematical qualitative functions computing dependence of
+                their values (and, thus, the states of the variables) on the states of other variables (characterizing
+                situations) that are given as the arguments of the functions, on the other hand. Solutions to these
+                challenges are described below.
+            </p>
+
+            <!--            <p>-->
+            <!--                Correspondingly, the content of qualitative dynamical systems mathematical modeling technique is-->
+            <!--                described further on as a complex of coordinated modeling solutions defining the way of creation of models-->
+            <!--                of qualitative dynamical systems by defining them as collections of qualitative variables, representing-->
+            <!--                qualitative properties and qualitative states of the properties of the modeled systems, on the one hand,-->
+            <!--                and describing dependence relations of states of the properties on the situations occurring in the-->
+            <!--                systems by defining the dependence of the variables in the form of mathematical functions computing-->
+            <!--                qualitative states of variables of the models as algebraic expressions, which describe dependence of the-->
+            <!--                states of the functions (and thus the states of the variables) on the states of other variables-->
+            <!--                (characterizing situations) included in the equations, on the other hand.-->
+            <!--            </p>-->
+
+            <!--            <p>-->
+            <!--                Correspondingly, the content of qualitative dynamical systems mathematical modeling technique is-->
+            <!--                described further as a complex of modeling solutions defining a way of creation of models of qualitative-->
+            <!--                dynamical systems by defining them as the collections of qualitative variables, representing qualitative-->
+            <!--                properties and qualitative states of the qualitative properties of the modeled systems, on the one hand,-->
+            <!--                and describing implementation of dependence relation of states of properties on the occurrence in the-->
+            <!--                system situations by defining the mechanism of dependence of the variables in the form of mathematical-->
+            <!--                functions computing qualitative states of variables of the models as algebraic expression describing-->
+            <!--                dependence of the states of functions (and thus the state of variables) on the states of variables of-->
+            <!--                the equations which characterize situations, on the other hand.-->
+            <!--            </p>-->
+
+            <!--            <p>-->
+            <!--                Correspondingly, content of qualitative dynamical systems mathematical modeling technique is-->
+            <!--                described as a complex of modeling solutions defining way of creation of models of qualitative-->
+            <!--                dynamical systems and description of their behavior, suggesting representation of the modeled system in-->
+            <!--                the form of mathematical model, on the one hand; as well as the representation, in the model, properties-->
+            <!--                and states of the properties of modeled system and description of implementation of mechanism of-->
+            <!--                computation of dependence relation of states of properties on the occurrence in the system situations,-->
+            <!--                on the other.-->
+            <!--            </p>-->
+
+            <p>
+
+<!--                This page describes some of qualitative dynamical systems models development solutions-->
+<!--                found as the answers to the questions that arise at the attempt to start thinking on the-->
+<!--                principal feasibility of creation of mathematical models of qualitative systems.-->
+            </p>
+
+            <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 18pt; text-align: center;">
+                General Form of Models of Qualitative Dynamical Systems
+            </p>
+
+            <p>
+                Perhaps the first most question related to the model defining solutions should be
+                "How the model intended for simulation of the behavior of a qualitative dynamical system is
+                supposed to be defined" and the answer to this question should sound as one of the solutions:
+            </p>
+
+            <div class="definition-border">
+                <div class="definition-inner-border" style="padding: 0px 15px 0px 15px;">
+                    <p>
+                        The model should be created as a collection of variables representing properties
+                        characterizing behavior of the existing or designed modeled qualitative system. These
+                        variables should be capable of representing qualitative states of the modeled properties
+                        as symbols taken from some set of symbols, for instance, the set of letters of some alphabet.
+                    </p>
+                </div> <!-- End of definition inner border -->
+            </div> <!-- End of definition outer border -->
+
+            <p>
+                Then the behavior of the model being created for reproducing behavior of the qualitative dynamical
+                system that is observed as the sequence of changes of the state of properties of the system, caused by
+                occurrence in the system situations characterized by the particular states of particular groups of
+                properties,
+                could be described in the form of the system of equations; the same form that is generally used to
+                represents dependence relations of the quantitative systems:
+            </p>
+
+            <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 16pt; text-align: center;">
+                <span>
+                    x<span class="column"><sup>t+1</sup><sub>1</sub></span> = f (
+                    x<span class="column"><sup>t</sup><sub>1</sub></span>,&nbsp;
+                    x<span class="column"><sup>t</sup><sub>2</sub></span>,&nbsp;
+                    x<span class="column"><sup>t</sup><sub>3</sub></span>,&nbsp;
+                     ,&nbsp;&nbsp; . . . &nbsp;&nbsp;,
+                    x<span class="column"><sup>t</sup><sub>n</sub></span> );<br>
+                </span>
+                <span>
+                    x<span class="column"><sup>t+1</sup><sub>2</sub></span> = f (
+                    x<span class="column"><sup>t</sup><sub>1</sub></span>,&nbsp;
+                    x<span class="column"><sup>t</sup><sub>2</sub></span>,&nbsp;
+                    x<span class="column"><sup>t</sup><sub>3</sub></span>,&nbsp;
+                     ,&nbsp;&nbsp; . . . &nbsp;&nbsp;,
+                    x<span class="column"><sup>t</sup><sub>n</sub></span> );<br>
+                </span>
+                <span>
+                    x<span class="column"><sup>t+1</sup><sub>3</sub></span> = f (
+                    x<span class="column"><sup>t</sup><sub>1</sub></span>,&nbsp;
+                    x<span class="column"><sup>t</sup><sub>2</sub></span>,&nbsp;
+                    x<span class="column"><sup>t</sup><sub>3</sub></span>,&nbsp;
+                     ,&nbsp;&nbsp; . . . &nbsp;&nbsp;,
+                    x<span class="column"><sup>t</sup><sub>n</sub></span> );<br>
+                </span>
+                . . . . .<br>
+                <span>
+                    x<span class="column"><sup>t+1</sup><sub>n</sub></span> = f (
+                    x<span class="column"><sup>t</sup><sub>1</sub></span>,&nbsp;
+                    x<span class="column"><sup>t</sup><sub>2</sub></span>,&nbsp;
+                    x<span class="column"><sup>t</sup><sub>3</sub></span>,&nbsp;
+                    ,&nbsp;&nbsp; . . . &nbsp;&nbsp;,
+                    x<span class="column"><sup>t</sup><sub>n</sub></span> );<br>
+                </span>
+
+                <!--                x2<sup>t+1</sup> = f ( x1<sub>t</sub>, x2(t), x3(t), . . . , xn(t) )<br>-->
+                <!--                x2<sup>t+1</sup> = f ( x1<sub>t</sub>, x2(t), x3(t), . . . , xn(t) )<br>-->
+                <!--                .....<br>-->
+                <!--                xn<sup>t+1</sup> = f ( x1<sub>t</sub>, x2(t), x3(t), . . . , xn(t) )<br>-->
+            </p>
+
+            <p>
+                Despite the noticeable similarity in the general form of description of systems of quantitative and
+                qualitative
+                equations, obvious differences in the way of representation of quantitative and qualitative properties
+                of the modeled systems, however, exist and require the use of different techniques for their modeling.
+            </p>
+
+            <p style="margin-top: 20pt; margin-bottom: 10pt; font-size: 18pt; text-align: center;">
+                Representation of States of Qualitative Variables
+            </p>
+
+            <p>
+                Being, in general sense, mathematical functions, function describing dependence of a variable
+                of the model on the states of other variables of the model are the mathematical functions defined
+                on the domain set of the function mapping combination of their argument to single value that is
+                also belong to domain set. These values are the representation of facts that being represented by
+                the values states of any particular variable characterize some particular qualitative estimate of the
+                state of the represented in the form of the state of the property of the model system and therefore
+                is the indicator of the fact that the modeled property is in one of the possible and distinguished
+                states, that the variable may take. As it is going to be described later the only sense of the elements
+                of a
+                set used to represent states of the variables is to be unique
+                So, said out comment on the meaning of elements of the domain set of the functions of the model is
+
+                This obvious and simple, but yet conceptual representation solution suggests defining
+                qualitative system model domain set as a set of symbols.
+            </p>
+
+            <p>
+                Therefore, suggested by the qualitative dynamical systems modeling technique variable states
+                representation solution is:
+            </p>
+
+            <!--            <p>-->
+            <!--                Therefore, suggested by the qualitative dynamical systems modeling technique variable states-->
+            <!--                representation solution is to define a qualitative model so that all its state variables to take their states-->
+            <!--                from defined as part of the model domain state elements of which are the symbols, e.g. the set-->
+            <!--                elements of which are the letters of a certain alphabet. The note. All the documents of the project-->
+            <!--                described on all the pages are referred to domain set defined as the set of uppercase letters of-->
+            <!--                Latin alphabet, that is as: D = {A, B, C, ..., Z}.-->
+            <!--            </p>-->
+
+            <div class="definition-border">
+                <div class="definition-inner-border" style="padding: 0px 15px 0px 15px;">
+                    <p>
+                        A qualitative dynamical systems model is supposed to be defined so that all its state variables
+                        would take their states from, the defined as a part of the definition of a model, domain set,
+                        elements of which are symbols; e.g. the set elements of which are the letters of a certain
+                        alphabet.
+                    </p>
+                </div> <!-- End of definition inner border -->
+            </div> <!-- End of definition outer border -->
+
+            <p>
+                <b>A note.</b> <em>All mentions of a domain set encountered in the documents of the
+                project
+                described on all the pages are referred to the domain set defined as the set of uppercase letters of
+                Latin alphabet; i.e. as: D = {A, B, C, ..., Z}.</em>
+            </p>
+
+            <p style="margin-top: 20pt; margin-bottom: 10pt; font-size: 18pt; text-align: center;">
+                Properties of Symbols of the Homogeneous Set of<br> Symbols
+            </p>
+
+            <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 16pt; text-align: left;">
+                <em>Quantitative</em> Properties and Modeling Quantitative Systems
+            </p>
+
+            <p>
+                We all are well familiar with the systems all properties of which, chosen for modeling, are perceived as
+                numeric (i.e. may be referred to as quantitative) and the four algebraic systems defined on the sets of
+                integer, real or complex numbers. The numbers have a notion of quantities and as the quantities can be
+                added, subtracted, multiplied or divided, four defined on the sets operations, called: addition,
+                subtraction, multiplication and division, allow us to add, subtract, multiply, or divide the numbers.
+                Thus, we have powerful modeling means, making it possible to represent modeled systems’s quantitative
+                properties as a collection of quantitative variables, and to describe the dependence of the values of
+                the variables from the values of other variables in the form of well defined mathematical expressions.
+            </p>
+
+            <p>
+                Another way of perceiving the systems and their behavior is to describe them in terms of, as they say,
+                their qualitative estimates or, in the other words, by describing them in the form of statements that
+                serve as the properties’ qualitative assertions and thus lets us referee to the properties as
+                qualitative
+            </p>
+
+            <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 16pt; text-align: left;">
+                <em>Qualitative</em> Properties and Modeling Qualitative Systems
+            </p>
+
+            <p>
+                As with modeling of quantitative systems, mathematical modeling of systems all chosen for modeling of
+                which properties are qualitative, - i.e qualitative systems, implies defining a way of representation of
+                the modeled system’s qualitative properties as qualitative aka symbolic variables, specifying the
+                dependency relations of the variables, and describing a machinery providing reproduction, in the model,
+                behavior observed in the modeled system.
+            </p>
+
+            <p>
+                However, the properties of symbols that are elements of sets of homogeneous symbols turn out to be quite
+                different from the properties of numbers that are elements of homogeneous sets of numbers.
+            </p>
+
+            <p>
+                The main property of numbers used in calculations is the fact that for each pair of numbers belonging to
+                a certain numerical set, each operation defined on the set can always be associated with the third
+                element of the set, which is the result of the operation. This property of numbers and operations with
+                numbers makes it possible to create compositions of operations and thus perform calculations of
+                functions of a rather complex nature.
+            </p>
+
+            <p>
+                The properties of symbols and operations with symbols, in comparison with the properties of numbers and
+                operations with numbers, are more limited and the possibilities for creating compositions of operations
+                are less diverse. In contrast to the properties of numbers that allow one to associate a third number
+                with various pairs of numbers, based on the interpretation of the elements of numerical sets as
+                quantities that can be added, subtracted, multiplied and even divided, symbols that are elements of a
+                set of symbols do not have any interpretation and are used as markers to designate various unique state
+                of qualitative variables have only one property corresponding to their application. Each symbol of a
+                set, by definition of the notion of “set,” is a unique element of the set and therefore can only be
+                equivalent to itself and, as a consequence of this, is not equivalent to any other symbol of the set.
+            </p>
+
+            <p>
+                The consequence of this characteristic of symbols belonging to a homogeneous set of symbols is the
+                absence of any possibility of direct generation for any two symbolic arguments of a binary operation
+                with symbols of a corresponding resulting symbol of the operation.
+            </p>
+
+            <p>
+                So, for instance, binary operations defined on a set consisting of only two symbols solve the constraint
+                problem simply. They simply do not overcome these restrictions. As we know, the total number of binary
+                operations defined on a set of two elements is 16. And none of these operations generates during
+                operation its output element that does not exist in the set. All 16 operations are defined in such a way
+                that no matter what combination of values of the operands of the operation turn out to be, they all
+                always produce the value of one of the operands as their result, thus solving the impossibility of
+                producing any third value.
+            </p>
+
+            <p>
+                The resolution to this limitation, as we all well know, however, exists and consists in the inclusion in
+                the process of computation some auxiliary symbols that can be used for representing the intermediate
+                results of comparison of the arguments of the function, which can be used to indicate cases when the
+                compared symbols turn out to be the same, opposite or different.
+            </p>
+
+            <p>
+                The implementation of not direct, but, so to speak, indirect transformation of two characters into a
+                third one in the case of following the described approach, of course, implies the implementation of the
+                inverse transformation of the auxiliary symbol into the symbol corresponding to the symbol-values of the
+                arguments. As it was found by experiments on defining operations on an extended set of symbols, carried
+                out in order to confirm the existence of an operation on this set, one argument of which is a constant
+                representing the produced symbol, and the second contains a previously calculated auxiliary symbol and
+                yields the produced symbol in the case when the auxiliary symbol represents fact that the previously
+                transmitted in the comparison operation, two characters were compared or, alternatively, the value of
+                the second argument represented by a symbol indicating that the characters being compared turned out to
+                be different. When continuing to calculate the final value of the function, the auxiliary symbol
+                obtained during its calculation must indicate that the function is partially defined, the auxiliary
+                symbol must be ignored, and the current value of the state of the model variable calculated using the
+                described technique must remain unchanged.
+            </p>
+
+            <p>
+                The reasoning about the properties of symbols and the proposed solution given in this section are based
+                on the idea of expanding the domain set of the model by adding to it a set of auxiliary symbols that are
+                the basic solutions that determine the development of techniques for mathematical modeling of
+                qualitative dynamical systems. Development of this approach described here is described further in the
+                sections devoted to determining the requirements for the operations of an algebraic system of operations
+                which are used to determine the functions describing the correspondence of variables of the system model
+                to the situations arising in the system, and in the section describing the Algebraic system determined
+                taking into account the developed requirements for them.
+            </p>
+
+            <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 18pt; text-align: center;">
+                Procedure of Computation of Symbolic Functions with Symbolic Arguments
+            </p>
+
+
+            <p>
+                ========================================================
+                And in order for all of this to work well, the set of symbols should be a carrier set of
+                the algebraic structure operations of which could be used in the definition of the functions
+                computing the next state of the system based on its current state.
+            </p>
+
+            <p>
+                The key element in this description of the basis of the technique of modeling of qualitative
+                systems is the understanding of the need to have an algebraic system whose elements can be
+                used to mark the states of model variables representing qualitative states of the modeled
+                properties, and operations for computing the changes of the states of variables by
+                replacing one symbols with the others.
+            </p>
+
+            <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 16pt; text-align: left;">
+                Qualitative Properties and Modeling Qualitative Systems
+            </p>
+
+            <p>
+                Three located below and independent one on others, sections introduce three technical
+                solutions of modeling qualitative dynamical systems of different degrees of complexity.
+                The solutions are related, but each is based on its own approach to the representation
+                of the modeled systems. They all are, however, intended for developing models of
+                different qualitative systems and simulation of behavior of these systems with the
+                help provided by the software created in the Kaleidoscope project.
+            </p>
+
+            <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 16pt; text-align: center;">
+                Representation of the Qualitative Variable State Function in the Form of Algebraic Equation
+            </p>
+
+            <p>
+                This section first takes a look at the way of defining qualitative functions in the
+                form of an algebraic expression written as a composition of algebraic operations
+                defined on a set of symbols. Then it describes the process of computation of the
+                expression as a sequence of steps that transform the qualitative values of arguments
+                of a function into the qualitative value of the function and identifies the sense
+                of the actions on symbols, necessary at each step of the transformation, that the
+                operations of the algebra performing these actions have to implement. This section,
+                thus, is the source of specification of the algebraic system that is defined and
+                described on the page: The Algebra of Symbols. The page: The Algebra of Symbols
+                is also referred to from the main page.
+            </p>
+
+            <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 16pt; text-align: left;">
+                Representation of Variable State Function as Algebraic Equation
+            </p>
+
+            <p>
+                To specify a discrete function, in general sense, means to define a way of computing
+                the values of the function for all possible combinations of states of its arguments.
+                Accordingly, following the existing culture of mathematical thinking, it is possible
+                to suggest the way of defining the mechanism of computation a qualitative function
+                of qualitative arguments that is supposed to be based on the idea of description of
+                the schema of computation of values of the function in the way similar to description
+                of schema of computation of the expression that is defined as well known Disjunctive
+                Normal Form, but is enriched with ability to operate with the variables capable of
+                taking several different states and to return the value of function that is one of
+                those different values which the state of being computed variable may take
+            </p>
+
+            <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 16pt; text-align: center;">
+                Process of computation of Expression of Qualitative Function
+            </p>
+
+            <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 16pt; text-align: left;">
+                Recognition of Situations Present in Arguments of the Function
+            </p>
+
+            <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 16pt; text-align: left;">
+                Generation of Proposed State of the Function
+            </p>
+
+            <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 16pt; text-align: left;">
+                Computing Final State of the Function
+            </p>
+
+            <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 16pt; text-align: left;">
+                Application of Final State to Current State of the Function
+            </p>
+
+            <p>
+                So, if to assume that the operations with symbols., described in this section,
+                may be denoted as {?, &, *, |, <}, where:
+            <ul>
+                <li style="margin-top:7px;">
+                    symbol "?" denotes the Equivalence operation;
+                </li>
+                <li style="margin-top:5px;">
+                    symbol "&" denotes the Conjunction operation;
+                </li>
+                <li style="margin-top:5px;">
+                    symbol "*" denotes the Product operation;
+                </li>
+                <li style="margin-top:5px;">
+                    symbol "|" denotes the Disjunction operation; and
+                </li>
+                <li style="margin-top:5px;">
+                    symbol "<" denotes the Application operation;
+                </li>
+            </ul>
+
+            - then the content of the procedure that should calculate the qualitative
+            function of the qualitative arguments may, in general way, be defined as the
+            algebraic expression written as the Extended Disjunctive Normal form presented below:
+
+            </p>
+
+            <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 16pt; text-align: center;">
+                y(t+1) = y(t) < (T1(args(t) | T2(args(t) | T3(args(t) | ... | (Tn(args(t)),
+            </p>
+
+            <p>
+                where each term Ti is the implementation of the particular correspondence written as:
+            </p>
+
+            <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 16pt; text-align: center;">
+                Ti = (e1 ? x1) & (e2 ? x2) & (e3 ? x3) & ... & (ek ? xk)<br><br>
+                ----- !! -----
+            </p>
+
+            <p>
+                As it is described in the next section, the general form of representation of the
+                qualitative system model, the system of equations of which is defined in the form of
+                XDNF, can be written as a two-step matrix equation.
+            </p>
+
+            <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 16pt; text-align: center;">
+                ---------- !! ----------
+            </p>
+
+            <div style="color: #770000;">
+
+                <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 18pt; text-align: center;">
+                    Notion of Qualitative Dynamical System State Space
+                </p>
+
+                <p>
+                    Whatever types of properties of the modeled systems were considered - quantitative or qualitative,
+                    when creating mathematical models of these systems, we proceed from the understanding that
+                    all actions and changes in the state of a system itself, or in its external world, that are
+                    produced by the organized actions of the system, are always determined by the state in which
+                    the system is, at the time of performing the actions.
+                </p>
+
+                <p>
+                    Therefore, in order to reproduce the behavior of the qualitative systems in the mathematical models,
+                    we consider observed dependencies of the state of the properties of systems on the occurrence
+                    of certain combinations of the state of other properties, characterizing situations to which the
+                    systems react by changing their state. To achieve this, we define a model of a system as a
+                    collection of variables representing properties being modeled and the states the properties may
+                    take, and associate with each variable a variable state equation v(t+1) = f(v(t)), where the
+                    function f computes the value of the variable at time t+1 depending on the state of the system
+                    (a combination of the state of other variables of the model of the system) at time t. This makes
+                    it possible to reconstruct, with the help of the model, the chain of the changes in the state of the
+                    simulated system, observed in its behavior, by repeatedly computing the state equation of the
+                    system after each change in the state of the model.
+                </p>
+
+                <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 18pt; text-align: center;">
+                    General Computation Technique
+                </p>
+
+                <p>
+                    While performing various calculations with the quantitative variables, in order to control the
+                    course of the calculation process depending on the state of the data, we often have to calculate
+                    logical estimates of the truth of various assertions about the state of the data. And then, in
+                    the course of the further computation, we check the truth of those assertions in order to direct
+                    the process of the computation along the computational branch corresponding to the state of the
+                    data. There are, in this process, data on the state of the domain area of the function, from the
+                    one hand, and the metadata data state of which characterizes the computational process, on the
+                    other hand. These two types of data are not homogeneous. Therefore, when computing, we utilize
+                    for calculation only the operations defined on the set of numbers, but never mix them with
+                    operations defined on the set of symbols.
+                </p>
+
+                <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 18pt; text-align: center;">
+                    Computation of Qualitative Functions
+                </p>
+
+                <p>
+                    To compute a discrete function means to determine its value for each combination of the states
+                    of its arguments. The method of setting such a function for computing discrete dependencies of
+                    variables that can take only two values: 0 and 1 is well known. Mechanism of such computation
+                    is described in the form of the so-called Disjunctive Normal Form and is implemented as two
+                    major steps. First, all expected combinations of state of the system are computed. For that,
+                    the conjunction operation, defined on the set {0, 1}, is used. And then, at the second step
+                    of the computation, the disjunction operation is applied to combine all the results produced
+                    by the conjunction operation. The result of the computation can be value 1, in case when at
+                    least one of the results of application of all conjunction operations appeared 1, or the value
+                    0 when none of the situations is recognised. But the modeled properties of the qualitative
+                    systems can take not just two, but several states, and this assumes that the state functions
+                    of the variables of the qualitative system model must be multivalued. And hence, the operations
+                    used to compute the functions must be capable of taking as their arguments and yielding the values
+                    of multivalued variables. In other words, they must be defined on the set of symbols, the power
+                    of which would allow representing all possible states of the modeled properties.
+                </p>
+
+                <p>
+                    Along with this, when recognizing situations represented by a set of symbols, we also must
+                    compare the current state of variables with their expected state, note the facts of comparison
+                    (or non-comparison) of expected values; calculate the conjunctions of the obtained comparison
+                    results, check the facts of situation recognition and generate new values of variables
+                    corresponding to the recognized situations and change the state of the system in the case when
+                    the situation turned out to be present in the model and the fact of its existence made it
+                    possible to generate a new state of the variables corresponding to the recognized situation.
+                </p>
+
+                <p>
+                    As it follows from the described scheme, the calculation procedure does not directly transform
+                    the state of its arguments and the value of the function but uses auxiliary variables that
+                    provide the calculation of the function but are not the result. Allowing that symbols can
+                    be used to represent the results of a comparison creates a unique opportunity to define a set
+                    of the algebra as the union of these two sets, and to define the operations required to
+                    evaluate a function, which will make it possible to define a function as a composition of these
+                    operations. And thus combine the process of calculating the function of the state of the
+                    system and the process of conditional calculation of the result of the function into one
+                    process that calculates the function as an unconditional process of calculation and in which
+                    the calculation control logic is implemented by the operations that perform the transformation
+                    of the state of the system.
+                </p>
+
+                <p>
+                    An analysis of the properties of operations defined on sets of symbols, the number of elements
+                    of which is more than two, shows the futility of trying to determine special operations (their
+                    number should increase along with the increase in the power of the set), but revealed the
+                    possibility of calculating multivalued symbolic functions if a number of auxiliary symbols
+                    {} are included in the set, and adding to the function calculation scheme three additional
+                    operations named: Equivalence, Production and Application.
+                </p>
+
+                <p>
+                    To specify a discrete function, in general, means to define a way of computing the values of
+                    the function for all possible combinations of states of its arguments. Accordingly, following
+                    the existing culture of mathematical thinking, description of mechanism of computation a
+                    qualitative function of qualitative arguments should be written as а kind of Extended Disjunctive
+                    Normal form enriched with ability to operate with variables capable of taking several different
+                    states and return value of the function that may also take several different state.
+                </p>
+
+            </div>
+            <p style="margin-top: 20pt; margin-bottom: 10pt; font-size: 18pt; text-align: center;">
+                Representation of Qualitative Dynamical System Model as Matrix State Space Equation
+            </p>
+
+            <p>
+                This mathematical modeling technique utilizes an approach based on the notion of vector space
+                of the modeled system. The variety of the states of a modeled qualitative system is
+                characterized by the multitude of combinations of the state of its qualitative properties
+                and therefore can be naturally considered as a qualitative state space of the system.
+                Respectively; the state of the model of the system can be considered as the vector in
+                the state space of the system; the changes in the state of the model can be viewed as
+                the moves of the vector from one point in space to another; and the entire behavior of
+                the model may be seeing as a sequential discret motions of the vector along a dynamically
+                determined broken-line trajectory.
+            </p>
+
+            <p>
+                And correspondingly, the modeling technique intended for describing the behavior of the systems,
+                within the framework of this modeling paradigm, presents the models in the form of a vector state
+                equation of the system, which describes the process of changing the state of the system in the
+                form of the algebraic expression consisting of the sequential application of operations of
+                transformation of the current state of the model into its next state. Whereas, the procedure
+                for calculating the equation is supported by an algebraic system defined on the set of symbols,
+                called Algebra of Symbols. The operations of Algebra of Symbols are used in the implementations
+                of the vector operations of transformation of the state of the system.
+            </p>
+
+            <p>
+                The general form of such equation can be written as a two-step matrix equation, presented below.
+            </p>
+
+            <p style="margin-top: 20pt; margin-bottom: 10pt; font-size: 16pt; text-align: center;">
+                <b>S</b>(t+1) = <b>S</b>(t) < <b>G</b> * <b>R</b> * <b>S</b>(t)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)
+            </p>
+
+            <p>
+                Or in the form that includes external input, where equation (1) is extended with vector
+                representing external effects on the system at time t.
+            </p>
+
+            <p style="margin-top: 20pt; margin-bottom: 10pt; font-size: 16pt; text-align: center;">
+                <b>S</b>(t+1) = <b>S</b>(t) < <b>G</b> * <b>R</b> * (<b>S</b>(t) < <b>I</b>(t))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)
+            </p>
+
+            <p style="margin-top: 20pt; margin-bottom: 10pt; font-size: 18pt; text-align: center;">
+                ---------- !! ----------
+            </p>
+
+            <p style="margin-top: 20pt; margin-bottom: 10pt; font-size: 18pt; text-align: center;">
+                Qualitative Dynamical Systems Models Graph Based Representation
+            </p>
+
+            <p>
+                Idea of creating a model of dynamical systems was always welcomed. This idea began to
+                take shape even when most computer monitors were alphanumeric, and only a relatively
+                small part of vector monitors allowed to display on their screens some elements connected
+                with lines - mostly monochrome. Now, when huge raster screens of modern monitors make
+                it possible to depict whatever you want, the technique of creating a model of systems
+                in the form of the elements and the links connecting them opens up even more new
+                possibilities. And the Kaleidoscope project did not stay away from this movement either.
+            </p>
+
+            <p>
+                Being developed in the Kaleidoscope project, Multicolor Logical Net (McLN), is a
+                graphical modeling formalism intended to be utilized as the qualitative dynamical s
+                ystems modeling means.
+            </p>
+
+            <p style="margin-top: 20pt; margin-bottom: 10pt; font-size: 16pt; text-align: left;">
+                Structure of the McLN Model
+            </p>
+
+            <p>
+                The graph is constructed of two types of nodes - Property-nodes representing modeled
+                properties and their states, and Condition-nodes representing conditions at which
+                the Property-nodes change their states. Property-nodes are drawn as big circles and
+                their states are depicted as different solid colors that fill the circles.
+                Condition-nodes of the graph are, on the contrary, drawn as small circles. And as
+                the conditions represented by them may be either satisfied or not satisfied, the
+                state of the Condition-nodes is depicted as either white or gray color, where the
+                white color represents the case when condition is satisfied, while the gray color
+                represents the opposite case, i.e. the case when condition is not satisfied. Directed
+                Arcs connect Property-nodes to Condition-nodes.
+            </p>
+
+            <p>
+                Arcs directed from Property-nodes to Condition-nodes are Recognizers. Their task is
+                to recognize the expected state of the arc’s input Property-node and transfer the
+                result of recognition to its output Condition-node. In order to be able to accomplish
+                their roles, these arcs are marked with the color known as the expected state
+                of the input Property-nodes of the Arc.
+            </p>
+
+            <p>
+                Arcs directed from Condition-nodes to Property-nodes are Generators. Task of these
+                Arcs is to generate the proposed next state of their output Property-nodes.
+                Respectively, these arcs are marked with the color representing the state described
+                in the specification of the response of the modeled system to the situation fact
+                of the recognition of which the Condition-node of the arc is supposed to represent.
+                Color marking the Arc is generated as the proposed state of its output Property-node
+                in case when the state (white color) of the input Condition-node of the Arc indicates
+                that states of all input Property-nodes of this Condition-node are recognized as
+                expected states. Alternatively, that is in the case when the expected situation
+                represented by the input Property-nodes of the Condition-node is not recognized,
+                the Arcs directed from Condition-node to its output Property-nodes send them state
+                (gray color) indicating the fact that the situation expected by the Condition-node
+                is not recognized and thus the output state from this Condition-node should be
+                ignored.
+            </p>
+
+            <p style="margin-top: 20pt; margin-bottom: 10pt; font-size: 16pt; text-align: left;">
+                Behavior of the McLN Model
+            </p>
+
+            <p>
+                When describing McLN model behavior, we consider all parts of the model: Properties,
+                Conditions and arcs to be simple functional devices. Thus, each part has its input and output and
+                is capable of receiving a signal of a state as its input, processing the signal, and emitting a
+                derived signal as its output. A model is assembled by connecting the outputs of parts to the
+                inputs of other parts. For instance, the outputs of the nodes are connected to the inputs of their
+                output arcs, and the outputs of the arcs are connected to the inputs of their output nodes.
+                The Property nodes' basic function is to take and to hold the property's current state.
+                The arcs from Properties to a Condition are "State Recognizers". The marking state of an arcrecognizer
+                is one of the arc's input Property's possible states that is considered to be the Property
+                Expected State. The role of these arcs is to check if the arc's input Property's state is equal to the
+                arc's Expected State. When Property takes the state that is equal to the arc's expected state, the
+                signal of the fact that the Property is in the expected state is emitted to the arc's Condition.
+                The Condition nodes are their input arcs' output collectors. They take signals from their input
+                arcs and evaluate whether the condition is satisfied. The Condition is considered to be satisfied
+                Share
+                8/11/23, 1:01 AM McLN Modeling Formalism
+                https://www.dsdsam.com/mcln-mf 4/6
+                when all its input Properties take the states that are successfully recognized by the Condition's
+                input arcs as the arcs' expected states.
+                The structure composed of a Condition, all its input state recognizing arcs, and all
+                the arcs' input premise Properties forms a fragment that is a rule condition
+                evaluating expression. The combination of all Properties states is considered to be a
+                situation the rule is supposed to recognize. The output of the fragment is the
+                Condition's state that represents the fact that the expected situation is recognized or
+                not recognized. This fact is depicted on the screen as white or gray color
+                respectively.
+                The arcs from a Condition to Properties are "State Generators". They identify the group of
+                Properties the states of which are expected to change when the Condition gets satisfied. These
+                arcs generate the state they are marked with. The states generated by the arcs are offered to the
+                arcs' output Properties to take.
+                The structure composed of a Condition, all its output state generating arcs and all
+                the arc's output Properties form a property state dependency rule that checks the
+                condition and generates the conclusion. This model fragment thus stands for the
+                dependency rule's "If" and "Then" parts.
+                As each Property may have many state-generating input arcs that are connected to different
+                Conditions and hence can produce different offers of state for the Property to take, the "Rule of
+                Concordance" is applied. It sounds as follows:
+                (1) If none of the Property's input Conditions is satisfied, the Property state does not change.
+                (2) If all but one of the Property's input Conditions are not satisfied, the state generated by the
+                Property's input arc connected to the satisfied Condition is taken.
+                (3) If some of the Property's input Conditions are not satisfied while more than one of the other
+                Conditions appear to be satisfied and their output arcs produce the same offer (same state to
+                take), the offer is considered to be accepted and the Property takes the offered state.
+                (4) If some of the Property's input Conditions are not satisfied while more than one of the other
+                Conditions appear to be satisfied and their output arcs produce different offers (different states to
+                take), the offers are considered to be competitive and neutralized. So the Property state does not
+                change. The multiple offered states, thus, are exclusive in the McLN.
+            </p>
+
+            <p style="margin-top: 20pt; margin-bottom: 10pt; font-size: 18pt; text-align: center;">
+                ---------- !! ----------
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- =================================================================================== -->
+
+    <br>
+
+    <a href="../qualitative-systems/qds-and-their-behavior.html">
+        <img src="../common/images/prev.png"
+             ALT="images/previous Page" BORDER="0" align="CENTER"></a>
+
+    <a href="../index.html#sec1">
+        <img src="../common/images/up.png"
+             ALT="Main Page" BORDER="0" align="CENTER"></a>
+
+    <a href="../aos/aos.html">
+        <img src="../common/images/next.png"
+             ALT="images/next Page" BORDER="0" align="CENTER"></a>
+
+    <center>
+        <p align="center">
+        <div class="end-of-page-red-line-1"></div>
+        <br/>
+        <div class="end-of-page-red-line-2"></div>
+        </a>
+    </center>
+
+    <div class="space-below-footer"></div>
+
+</div>
+</body>
+</html>
