@@ -27,13 +27,9 @@
 
 <body>
 <div class="container">
+    <img  style="height: 6px; width: 100%;" src="../common/images/two-red-lines.png"/>
 
-    <div class="red-line"></div>
-    <div class="white-line"></div>
-    <div class="red-line"></div>
-    <div class="white-line"></div>
-
-    <a href="../sem-abs-screenshots/sem-abs-screenshots.html">
+    <a href="../kp-qds/kp-qds.html">
         <img src="../common/images/prev.png"
              ALT="images/previous Page" BORDER="0" align="CENTER"></a>
 
@@ -41,7 +37,7 @@
         <img src="../common/images/up.png"
              ALT="Main Page" BORDER="0" align="CENTER"></a>
 
-    <a href="../modeling-technique/modeling-technique.html">
+    <a href="../kp-aos/kp-aos.html">
         <img src="../common/images/next.png"
              ALT="images/next Page" BORDER="0" align="CENTER"></a>
 
@@ -49,43 +45,893 @@
 
     <!--    H e a d e r  font: 14px Ariel, Helvetica; -->
 
+    <!-- THIS TEXT IS COPIED on 2024.12.17 FROM FILE: "Z 24.12.10 MMT A-C-C TRANSLATED"  last touched on 2024.12.14 -->
+
     <div class="text-container">
 
         <center>
             <div class="page-header">
                 Qualitative Dynamical Systems Behavior<br>Mathematical Modeling Technique
             </div>
-            <div class="sub-header">
-                (Kaleidoscope Project)
-            </div>
         </center>
 
         <div style="margin-top: 33px; margin-bottom: 0px; "> <!-- content holder -->
 
             <p>
-                When reasoning about and discussing behavior of discrete action systems at the
-                everyday level regardless of be they living organisms, devices created by us,
-                or systems of computer programs that imitate behavior of the both, we basically
-                pay attention to the actions which these systems perform. And that is understandable.
-                We know which of the actions would  make no harm (and even are useful) to us,
-                or, on the contrary, be quite dangerous; and this is exactly what is important
-                to us in the context of our conversations about the acting systems. But while
-                studying the essence of mechanisms of behavior of the systems, we want to know
-                not only what kind of actions systems can perform; we want to understand why
-                they perform those or other actions. And for that, it is necessary to know what
-                actually happens in the system right before it activates the actions and right
-                after the actions that were performed and which we observed are completed.
+                When studying behavior of dynamical systems phenomenologically - that is not by delving into
+                their internal machinery, but instead considering only abstract collections of their properties
+                changing over time - we, following fundamental principles of mathematical modeling, tend to
+                explain causes of changes of states of properties of the systems by existence of certain
+                dependence relations of states of properties on the changes of states of the same or some other
+                properties; and, optionaly, on the effects of certain external systems or the environment.
             </p>
 
-        </div> <!-- end of content holder -->
+            <p>
+                Accordingly, in order to create a model of a qualitative system, we have  to define a collection
+                of variables representing qualitative properties of the modeled system, i.e., qualitative
+                variables, which take their values ​​from a set, elements of which can be used to
+                represent qualitative states of properties, and define the model in the form of the system
+                of n equations written as: x = f(args). In such equations, functions f are called state
+                function of the variable x and considered capable of computing transitions of the variables,
+                and the model as a whole, from the current to the next state.
+            </p>
 
+            <p>
+                Therefore, the objective of this page is to describe technique of mathematical modeling of
+                behavior of qualitative dynamical systems that is developed in the process of studying of
+                feasibility of creating dynamical models of qualitative systems capable of reproducing
+                observed changes in the state of qualitative properties of the systems as a process consisting
+                of responses of models to combinations of states of variables representing situations
+                arising in the modeled systems.
+            </p>
+
+            <p class="section-header">
+                Essence of the Qualitative Dynamical Systems<br>Behavior Mathematical Modeling Technique
+            </p>
+
+            <p>
+                In discussions about application of the technique of mathematical modeling of behavior of
+                systems for creating dynamical models of behavior of the systems, the notion "modeling
+                technique" is used to describe our knowledge, needed for creating models, on: 1) behavior
+                of the modeled systems, 2) how the models are supposed to be organized, and 3) what the
+                models should do in order for they be able to reproduce behavior of the modeled systems.
+                And also, the understanding by using what kind of  mathematical tools such models can be created.
+            </p>
+
+            <p>
+                So, for example, when creating models of behavior of quantitative systems, we create them based
+                on the known dependence relations of future state of properties of systems on the current
+                state of their  properties. And for computing values ​​of variables as the values of
+                functions, that are computed as dependent ones on the independent values given to the functions
+                as their arguments, we use mathematical sets of numbers whose elements are used to represent
+                measured states of modeled properties, and operations defined on the sets making it possible
+                to compute values ​​of variables of the models by transforming the values ​​of the
+                arguments of the function into values of the functions.
+            </p>
+
+            <p>
+                Accordingly, knowledge, when creating models of qualitative systems - is the knowledge about
+                the nature of qualitative systems and the nature of the behavior of these systems,
+                included in the specifications of the behavior of qualitative systems that were described
+                on the page "Qualitative Dynamical Systems, their Behavior and Mathematical Modeling".
+                The structure of these specifications reflects the dependence of the state of properties of
+                the systems on the occurrence situations in them, and thus is the basis for determining
+                the structure of mathematical expressions that can describe the processes of calculating
+                a function. And the discrete nature of the state of the qualitative properties of systems
+                described in the specifications suggests the representation of the states of properties in
+                models of the system using a mathematical set of symbols, the elements of which can be used
+                to represent the values ​​of the variables of models denoting the discrete states of
+                the qualitative properties of the modeled systems.
+            </p>
+
+            <p>
+                Accordingly, the content of the technique of modeling the behavior of qualitative systems,
+                described below, begins with a description of the method for designating the values ​​of
+                variables representing the states of the qualitative properties of the modeled system and
+                determining the set of values ​​of the model variables, as well as description of
+                transforming the specification of the behavior of a qualitative system, the elements of which
+                are the identifiers of the properties of the systems and their states, into a description of
+                the specifications of the behavior of model described in terms of variables of the models and
+                their symbolic values. At the same time, the following sections continue the description of
+                the modeling technique by considering the behavior of the model from the point of view of
+                the dynamics of the emergence of situations in the system (and in the model) that cause the
+                difficulties of describing the process of calculating the functions of the model in the form
+                of a mathematical expression. However, application of developments of the modeling technique
+                make it possible to eliminate the encountered difficulties by proposing a way of implementation
+                of functions of models based on modeling solutions found in the process of exploration of
+                possibility of mathematical modeling of the behavior of qualitative systems conducted in
+                the Kaleidoscope project.
+            </p>
+
+            <p class="section-header">
+                Definition of Domain Set of Mathematical Models of Qualitative Systems
+            </p>
+
+            <p>
+                When considering behavior of systems, we study their properties and changes of the properties.
+                And for that, in order to be able to talk and describe the properties, we give the properties
+                names, accept that they can be in different states, and describe the changes of the properties
+                over time as processes of changes of their states. Therefore, while creating mathematical models
+                of behavior of qualitative systems, capable of reproducing changes of properties of the systems
+                over time, we have to define the models as collections of variables, representing the modeled
+                properties, and designate different states of the variables, representing different states of
+                the properties, by assigning to the variables values taken from the mathematical set, elements of
+                which can represent qualitative states of properties of the modeled system; and which, thus, are
+                considered the domain of the models.
+            </p>
+
+            <p>
+                Thus, for instance, to denote the states of quantitative variables, sets of integers, real
+                or complex numbers are used, the elements of which can represent quantities, and for denoting
+                states of propositions, when describing logical reasoning, sets may be defined as containing
+                two elements, such as are words: “true” and “false”, or symbols “T” and “F”, which are a way
+                of representing logical assessments of the truth or falsity of statements. Therefore, to denote
+                qualitative assessments of the states of properties, the number of which can be large, yet
+                always finite, it is quite natural and convenient to define elements of the domain of  the
+                system (and model) as a set of symbols. For example, to represent the computational part of
+                the models, the set can be defined as a collection of uppercase letters of the Latin alphabet,
+                and for representing models created in the form of a network of properties, which is intended
+                to serve as the graphical representation of model, the set can be defined as a collection of
+                different colors that are used for colorizing the properties in order to indicate their
+                different states.
+            </p>
+
+            <p>
+                In order to describe the modeling technique and the modeling solutions the technique proposes,
+                further on, however, is used the base version of the set described as the collection of uppercase
+                letters of the Latin alphabet; formal definition of which is given below:
+            </p>
+
+            <div class="definition-border">
+                <div class="definition-inner-border" style="padding: 0px 15px 0px 15px;">
+                    <p>
+                        Domain set D of the models of qualitative systems is the collection of uninterpreted uppercase letters of
+                        Latin alphabet, that is described as: D = {A, B, C, ..., Z}. It serves as the domain and the range of the
+                        state functions of variables of the models.
+                    </p>
+                </div> <!-- End of definition inner border -->
+            </div> <!-- End of definition outer border -->
+
+            <p class="section-header">
+                Adaptation of the QSBSpec to Its Application for<br>Creating Models of Qualitative Systems
+            </p>
+
+            <p>
+                Structure of the QSBSpec, presented in Figure 5 on the previous page “Qualitative Systems,
+                Their Behavior and Mathematical Modeling” is general form of a qualitative system behavior
+                specification defined in terms of identifiers of properties and states of the properties
+                stored in the lists of pairs (unique identifier : text representing element of the specification).
+                Respectively, in order to use QSBSpec as a part of the modeling technique discussed on this page,
+                it has to be converted to the Qualitative Model Behavior Specification QMBSpec elements of which
+                would have the same structure as the elements of the QSBSpec have. However, being intended to
+                specify State Variable Dependence Specification, abbreviated to SVDSpec, elements of these
+                specifications should be not unique identifiers of properties and the states of properties,
+                but be rewritten as the UIDs of variables and states of variables described as the values of
+                the variables taken from domain set D of the model.  Result of that conversion is presented
+                in Figure 1.
+            </p>
+
+            <p>
+                <span>&nbsp;&nbsp;QMBSpec: {<br></span>
+                &nbsp;&nbsp;&nbsp;&nbsp;<b>L</b> i=0n SVDSpeci {  xi : <b>C</b> j=0cn(i) { cvi,jt+1 : <b>S</b> k=0sn(i) { xi,j,k : evi,j,k  } } }
+                <span><br>&nbsp;};</span>
+            </p>
+
+            <p style = "text-align: center;">
+                <b>Figure 1.</b> Structure of Qualitative Model Behavior Specification.
+            </p>
+
+            <p>
+                In the Figure:
+            </p>
+
+            <p>
+                (1) QMBSpec is defined as a list of n SVDSpeci.
+            </p>
+
+            <p>
+                (2) Each i-th SVDSpeci{  xi   :  C j=0cn(i) { } } is defined as a pair where the first element
+                of the pair xi  is the UID of dependent variable of the SVDSpeci whereas the second element is
+                the list of Correspondences, iterator through which is denoted as C j=0cn(i) of i,j-th Correspondences.
+            </p>
+
+            <p>
+                (3) Each i,j-th Correspondence { cvi,jt+1  :  S k=0sn(i,j) {  } is also defined as a pair. In
+                that pair first element cvi,jt+1  D Is a constant value which is supposed to be assigned to
+                variable xi as its proposed value, as the response of the model to emergence of the i,j-th
+                situation S k=0sn(i,j), described in the second part of the pair.
+            </p>
+
+            <p>
+                (4) Each i,j-th situation S k=0sn(i,j) is also the list, and each i,j,k-th element of the list
+                is the pair described as { xi,j,k  :  evi,j,k }. The first element of the pair is the variable
+                xi,j,k and the second is the constant evi,j,k  D. Thus both: the variable and the constant are
+                the k-th elements of the list of i,j-th situation of i,j-th Correspondence of i-the valuable
+                dependence specification.
+            </p>
+
+            <p>
+                To summarize, obtained after conversion of the QSBSpec to the QMBSpec by replacing unique
+                identifiers used in the QSBSpec, with the names of the variables suggested by the modeling
+                technique, and the identifiers of states of the properties with the elements of the set D,
+                chosen to represent states of properties,
+            </p>
+
+            <p class="third-level-section-header-bold">
+                An Example of the Particular Single QVDSpecs
+            </p>
+
+            <div class="definition-border">
+                <div class="definition-inner-border" style="padding: 0px 15px 0px 15px;">
+                    <p class = "formula">
+                        x0 : [K : {(x1 : A), (x2 : B)}];  [L : {(x3 : M)}];  [H : {(x4 : E), (x5 : D), (x6 : N)}]
+                    </p>
+                </div> <!-- End of definition inner border -->
+            </div> <!-- End of definition outer border -->
+
+            <p>
+                The example describes dependence of a single variable x0 whose values depend on three Correspondences.
+                The first Correspondence  [K : {(x1 : A), (x2 : B)}] states that variable x0 should take value K,
+                when the values of the variables x1 and x2 hold expected values A and B. The second Correspondence
+                [L : {(x3 : M)}] states that variable x0 should take value L, when the value of variable x3 holds
+                expected values M. And the third Correspondence  [H : {(x4 : E), (x5 : D), (x6 : N)}] states that
+                variable x0 should take value H, when the values of the variables x4, x5 and x6 take expected values
+                E, D and N.
+            </p>
+
+            <p>
+                This example will be used later to illustrate the process of computation of the state equation
+                of the variable x0 whose expression is defined on the basis of the specification presented
+                in this section.
+            </p>
+
+            <p class="section-header">
+                Feasibility of Development of Mathematical Models<br>of Qualitative Dynamical Systems
+            </p>
+
+            <p>
+                When describing character of dependence of values ​​of variables while creating different
+                models of quantitative systems, we always assume that computed values ​​of the functions
+                φ(args), used in the state equations of variables x = φ(args) of the models, depend on all arguments
+                of the functions, and that at each computation of the functions, all their arguments are always
+                have valid values. Or, in the other words, that the values ​​of functions can be always computed
+                for any combination of their arguments and that, as a consequence of this feature, such functions
+                are considered the “total functions”.
+            </p>
+
+            <p>
+                But the nature of the dependence of states ​of qualitative properties, described in
+                the specifications of dependence of states of properties ​​on various situations arising
+                in the systems at different times, proposes that the dependence of various values of functions
+                ​​on various combinations of values ​​of various groups of their arguments
+                characterizing various situations, is not always possible. And that makes such functions
+                defined only partially.
+            </p>
+
+            <p>
+                Therefore, one of the major tasks of the technique of modeling of qualitative systems is to
+                define state functions of the variables of the models in such a way which gives them
+                ability to compute next state of the variables in spite the fact that while computing
+                the next state of the model at different moments in time, some groups of arguments of
+                the functions may contain combinations of values recognizable as the expected
+                situations and thus let the functions to compute their values corresponding to
+                these situations, whereas the values of the functions for values of some other groups
+                of arguments cannot be computed.
+            </p>
+
+            <p class="section-header">
+                Content of Process of Computation of State Functions<br>of Variables of Models of Qualitative Systems
+            </p>
+
+            <p>
+                To define a function, in a general sense, means to suggest a way for computing values of a
+                function for all possible combinations of values of its arguments. And that means, in order to
+                define the content of the procedure for computing state function of a variable of a model of a
+                qualitative system, it is necessary to suggest a way for computing values of the function ​​for
+                all combinations of values of groups of arguments, ​​representing expected situations,
+                described in the QVDSpec. But this has to be done by taking into account that the suggested way
+                for computing procedure must ensure obtaining computation results despite the characteristics of
+                dependence of states of  variables of models on situations that create challenges to the process of
+                computation of the functions.
+            </p>
+
+            <p class="second-level-section-header">
+                Content of Procedure of Computation of State Functions of<br> Variables and Challenges
+                Encountered In the<br> Process of Computation the Procedure
+            </p>
+
+            <p>
+                Perhaps, one of the fundamental differences between the way of computing quantitative functions
+                written in the form of an algebraic expression and functions that should compute values of
+                variables of models of qualitative systems is the difference in the nature of the dependence
+                relation of states of dependent variables of models of these systems on the state of the same
+                or other variables of the models.
+            </p>
+
+            <p>
+                The dependence of the state of quantitative variables on the state of the function arguments
+                in models of the behavior of quantitative systems is characterized by the existence of
+                correlations between the values ​​of the dependent variable of the relationship of
+                dependence and all changes in the values ​​of the group of arguments that are independent
+                elements of the relationship. Therefore, the mathematical expression of such functions is
+                defined as an approximation of the observed correlation, which makes it possible to present
+                the dependence in the form of a polynomial, the structure of which is described as the sum of
+                the weighted, with the help of the coefficients, arguments of the function, the list of which
+                never changes.
+            </p>
+
+            <p>
+                Unlike the dependencies of quantitative variables, the dependence of the state of qualitative
+                variables described in the specification of the dependence of variables on the occurrence of a
+                combination of the state of groups of variables characterizing situations is determined as a
+                list of pairs of correspondence between specific values ​​of variables and specific situations
+                and therefore cannot be determined by transforming a group of arguments since such a single group
+                of arguments does not exist. Calculations of the dependence of variables in models of qualitative
+                systems should be ensured by passing two arguments to each function of the model: 1) the state of
+                the calculated variable at the time of applying the function and listing of groups of properties
+                characterizing the situations described in the Correspondences of the specification as causes of
+                changes in the states of the variable.
+            </p>
+
+            <p>
+                The first of these arguments is used either when none of the situations presented as a group
+                of arguments determining the value of the function at the time of calculating the function exists,
+                and therefore it is impossible to calculate the value of the function or when, due to the fact
+                that various existing situations suggest changing the variable to different values. While the
+                second argument - a list of groups of variables characterizes all situations described as causes
+                of changes in the states of the variable and is therefore used to determine the proposed values
+                of the variable, regardless of whether these groups contain the situations expected in the
+                specification or not.
+            </p>
+
+            <p>
+                Therefore, the mathematical expression of such functions must contain pairs of expected values
+                characterizing expected situations and proposed values of the variable corresponding to the
+                expected situations, taken from the description of the correspondence to the specification.
+                And the process of computing the function must
+            </p>
+
+            <p>
+                (1) identify which of the groups of arguments of the function contain the states described in
+                the Correspondences as expected situations,
+            </p>
+
+            <p>
+                (2) generate proposed values corresponding to the recognized situations (or mark the proposed
+                values with some symbol different from the symbols of the set D to indicate that the proposed
+                value is undefined,
+            </p>
+
+            <p>
+                (3) analyze (after all proposed values have been generated) and determine on the basis of this
+                analysis the final proposed value which, if it turns out to be defined, should become the next
+                value of the function, and
+            </p>
+
+            <p>
+                (4) find out whether the final proposed value is defined and if it is defined use it as the
+                value of the function; or otherwise use the value of the auxiliary argument of the function
+                containing the current value of the variable being calculated as the calculated value of the
+                function the use of which as the calculated value should leave the state of the variable
+                unchanged.
+            </p>
+
+            <p>
+                Described in this section, the schema of computation of a state function may seem more like
+                an algorithm of a computer program than an algebraic expression. And this is indeed so. It has
+                too many checks of the state of the data, the purpose of which is to change the course
+                computation depending on which situations are present in the model and which are not, on the
+                one hand, and on which proposed values ​​were produced in the response to those existing
+                or nonexistent situations, on the other hand. But, the feelings of frustration and hopelessness
+                caused by the alleged infeasibility of computing state functions of models of qualitative
+                systems in the form of algebraic expressions (arising while reading presented description) is
+                not so completely hopeless as it may seem, since, as it has turned out, needed modeling solution
+                exists, was found, and is going to be described right below.
+            </p>
+
+            <p class="second-level-section-header">
+                From a Computer Program to the Algebraic Expression
+            </p>
+
+            <p>
+                Considered here modeling solution, is suggested by the qualitative dynamical systems behavior
+                mathematical modeling technique, and is based on the results of research into the feasibility
+                of mathematical modeling behavior of qualitative systems, conducted as a part of the Kaleydoskop
+                project. This solution is based on the following ideas:
+            </p>
+
+            <p>
+                (1) Usage for the representation of results of analysis of states of arguments of a function and
+                the proposed values, computed by the function, elements of an auxiliary set X = {"-", "!", "~", "#"};
+            </p>
+
+            <p>
+                (2) Usage of the carrier set of the model set S = D U X, defined as the union of the previously
+                defined domain set of values of variables of the model D and the set of auxiliary symbols X
+                defined just above; and
+            </p>
+
+            <p>
+                (3) Definition of the set S a family of closed binary operations, enabling description of
+                procedure of computation of the functions of a model in the form of an algebraic expressions,
+                structure of which is an extension of the well-known Disjunctive Normal Form and is therefore
+                named - XDNF.
+            </p>
+
+            <p class="second-level-section-header">
+                Algorithm of Computation of Procedure of Function
+            </p>
+
+            <p>
+                The considered content of the function calculation procedure, difficulties caused by the nature
+                of the behavior of qualitative systems and the mechanism for resolving difficulties create an
+                understanding of the saturation of the calculation target with a multitude of prophecies of
+                the state of arguments and intermediate data of the algorithm, without the implementation of
+                which the calculation of the function would be impossible. But this same adaptation of the
+                algorithm to the changing state of the model, implemented by means of checking the state of
+                arguments and the produced proposed values, the results of which are used to change the
+                content of the steps of the algorithm, create uncertainty that the entire adaptation mechanism
+                can be incorporated into the procedure for calculating the function, the implementation of
+                which was originally conceived in the form of an algebraic expression.
+            </p>
+
+            <p>
+                The structure of an algebraic expression may be defined as monomial, binomial, trinomial or
+                polynomial, and should consist of constants and variables, but it may not include operations
+                for analyzing data or controlling the order of execution of other operations in the expression.
+                Therefore, the described content of the procedure of computation of the functions is perceived
+                rather as the description of a computer program than as a diagram describing an algebraic
+                expression.
+            </p>
+
+            <p class="second-level-section-header">
+                Proposal of redefinition of algorithm for computation of state<br>
+                functions of variables by removing from them operations<br>
+                controlling order of execution of operations computing<br>
+                values of the functions
+            </p>
+
+            <p>
+                Imagine Implementation of the block-schema of algorithm of computation of function as the computer
+                program written in such a way where all those, “if-s” and “then-s”, clattering the algorithm,
+                which are usually depicted on the flowcharts of the algorithms in the form of operations computing
+                estimates of state of being processed data, and in the form of diamonds, located outside of
+                rectangles, would be suddenly relocated inside the rectangles representing operations that
+                computes the data
+            </p>
+
+            <p>
+                Characteristics of behavior and the way of organization of process of computing the qualitative
+                states of variables, performed by calculating the functions of the state of variables described
+                in the equations of state of variables, in the models of qualitative systems, are fundamentally
+                different from characteristics of behavior and the way of computing quantitative states of
+                variables in the models of quantitative systems. States of qualitative variables of models of
+                qualitative systems are represented not by means of elements of numerical sets but by means of
+                symbols taken from the domain set of the values of variables of models D.
+            </p>
+
+            <p>
+                At the same time, estimates of the state of variables that can be obtained by simple comparison
+                of the values ​​of variables, the results of which can be designated using elements taken
+                from another set of symbols, for example, a set of auxiliary symbols defined as X = {"!", "~" and "#"}.
+                And this homogeneity of the symbols of the set D and the set X creates a unique opportunity to
+                combine both sets of symbols into one carrier set of the model S and then define on the created
+                set a family of binary operations closed on it.
+            </p>
+
+            <p>
+                So, the five operations needed for computation of the functions were found and are
+                presented in Table 1. Detailed description of the operations presented in the table are
+                listed below.
+            </p>
+
+            <p>
+                The table lists all five operations in the order they are used in the expression. Names of the
+                operations are presented in the first column of the table. The second column contains symbols
+                used to denote the operations in an expression where the operations are written in their infix
+                form. And the third column provides a brief description of the operations.
+            </p>
+
+<!--   O P E R A T I O N S         -->
+
+            <p>
+                First Equivalence (?) operation is the first that begins computation of the procedure of a function.
+                It is used to recognize situations, description of which is passed to a function as the groups of
+                its arguments. When recognizing a particular situation, this operation compares all the values
+                of a group of the arguments, which may or may not contain the description of the expected situation
+                present in the model at the time of computation of the function, with their expected values. To
+                perform this comparison, the operation takes two operands whose values are symbols of the set D
+                and yields either symbol "!", which belongs to the set X, if both operands are represented by
+                the same symbol of set D, or the value "~", which also belongs to the set X, if the operands are
+                represented by different symbols of the set D.
+            </p>
+
+            <p>
+                Second Conjunction (&) operation is also used to recognize situations, or more precisely to
+                compute the indicators representing the fact that all the results of comparing the states of
+                properties with their expected values ​​obtained as a result of applying the Equivalence
+                operation have been compared and thus the expected situation is recognized. It is called
+                Conjunction because it inherits its role from the Conjunction operation defined on a set
+                consisting of only two elements and solves the same problem. This operation takes two operands
+                computed by the Equivalence operation by comparing its operands, each of which can be either
+                the "!" symbol or the "~" symbol, and returns the "!" symbol only in case - when  both of its
+                operands contain the "!" symbol, or the "~" symbol for all other combinations of operands.
+                Properties of the commutativity and associativity of the Conjunction operation allow it to be
+                used for computing n-ary conjunction of all results of the Equivalence operation, where the
+                output of n-ary conjunction is the value "!" if and only if all results of the Equivalence
+                operation are represented by the symbol "!", or the symbol "~" otherwise.
+            </p>
+
+            <p>
+                Third operation is called Production (*). It has gotten its name because it acts in the same
+                way as the production rule. One of the operands of this operation is the result of recognition
+                of the situation, i.e. it may contain either symbol "!" or "~" obtained after  computation
+                of the n-ary conjunction accomplished by the Conjunction operation. While the second argument
+                is the element of the set D, that is described in the Correspondence of the specification as
+                the proposed value of the variable. The operation produces a proposed value of the variable
+                that is a dependent element of the relation computed by the function in case when the operand,
+                representing the result of recognition of situation "!" indicates that the situation is recognized,
+                or the symbol "~" when the result of recognition is the symbol "~" meaning that the situation is
+                not recognized.
+            </p>
+
+            <p>
+                Fourth operation (|) is Disjunction. It is called Disjunction because in the process of
+                computation of the function it plays a role similar to the role of the Disjunction operation
+                of an algebra defined on a set of two elements. Its task is to look through all the proposed
+                values and do the best to find a single "final proposed value" which should become the value
+                of the function, and thus the next value of the state variable of the model. So, to accomplish
+                the task this operation takes two operands that can be represented by any symbols of the set S.
+                And it is commutative and associative, similar to the Conjunction operation, it is used to
+                compute the n-ary disjunction of all the results of the Production operation.  In the process
+                of this computation, it selects from all the proposed values ​​produced by the Production
+                operation a single final proposed value that should become the value  of the function (and the
+                next value of the state variable of a model) if such a value can be found among all the
+                proposed values ​​produced as corresponding to all situations, regardless of whether
+                the situation is recognized or not. There are three possible outcomes of the application of
+                this operation produced as a final proposed value. Based on the following three rules.
+            </p>
+
+            <p>
+                1) It yields symbol "~" when it turns out that none of the expected situations that are
+                independent elements in relation to the dependence of the variable on the situation were
+                recognized since none of them are present in the state of the function arguments;
+            </p>
+
+            <p>
+                2) It yields a symbol “d” that is an element of the set D, produced by the Production operation,
+                as corresponding to the recognized situations in the case when one or more expected situations
+                turned out to be present in the state of the arguments of a function and all recognized
+                situations (when there are several of them) have produced the same proposed value of the variable.
+            </p>
+
+            <p>
+                3) Or, it yields the symbol "#" denoting the case when at least two of the expected situations
+                are present in the model (and the arguments of a function) and are recognized, but corresponding
+                to the situations proposed values ​​require the computed variable to simultaneously take
+                different values. And since the function, by definition, can compute only one value, it is
+                interpreted by the next operation as the fact that the final proposed value that this operation
+                should produce could not be found among the previously calculated proposed values. And.
+            </p>
+
+            <p>
+                Fifth operation (<) Application is the last one in the procedure of computation of a function.
+                Yet, its role has nothing to do with the continuation of computation of the function. It is used
+                to redefine the function by transforming it from partially defined to defined on all possible
+                combinations of its arguments (whether they represent or not represent situations) and, thus,
+                for eliminating cases when, due to a conflict of values ​​detected by the Disjunction
+                operation, the final value turned out to be undefined; that is, to transform a partially defined
+                function into a complete one. In solving this problem, the Application operation, like all previous
+                operations, also takes two operands. But unlike all previous operations, it is not commutative.
+                Its first operand is the final proposed value (calculated or not by the Disjunction operation),
+                and the second is an additional argument of the function containing the current value of the
+                variable, in case the calculation of the next value of the variable may not work. Thus, all this
+                operation does is check the type of the final proposed value of the function passed to it as
+                its first operand and determine the computed value of the function using the final proposed value
+                if that value is represented by an element of the D sets, i.e., is a real symbol representing
+                the next state of the variable. Or, alternatively, use the value of the additional argument of
+                the function which is the current value of the function which should replace the unevaluated
+                final proposed value.
+            </p>
+
+            <p class="second-level-section-header">
+                State Equation Functions Expression as the Expanded<br>Disjunctive Normal Form (XDNF)
+            </p>
+
+            <p>
+                The general form of a state equation of a variable whose right-hand side is defined as an
+                algebraic expression defined as a composition of hybrid operations defined on the model set
+                S can be written as the formula
+            </p>
+
+            <p class = "formula">
+                xit+1 =xit<{c = 0cn(i)[ pv[i,c]*l = 0ln(i,c)( arguments[i,c,l]  ? ev[i,c,l] ) ] }
+            </p>
+
+            <p>
+                Being a general form of the expression, this formula states that:
+                (a) The value of the variable xi at time t+1 is computed as an expression of the Algebra of
+                Symbols defined as a composition of five operations defined on the set S.
+            </p>
+
+            <p>
+                (b) Following the requirement to keep values of variable x to be denoted by only elements of
+                domain set D and the QVDSpec the structure of the expression. written from left to right,
+                (which is opposite to the order of execution of operations) begins with the sign “<”  that
+                indicates Application operation task of which is to protect value of the variable in case when
+                its next value is not defined,
+            </p>
+
+            <p>
+                (c) The structure of the formula placed in curly braces is determined by the specification.
+                The part of expression in it, written as Disjunction from c = 0 to cn(i) of elements written
+                in the square brackets is the cn(i)-ary disjunction, where cn(i) is the number of Correspondence
+                computing proposed values of the variable x(i) and part in the square brackets is the general
+                form of the sub-expression computing proposed values pv(i, c), where pv(i, c) stands for element
+                of set S that should be used as the proposed value generated by the c-th Correspondence of the
+                i-th variable, that should be used as one of the operands of operation Production, denoted
+                by symbol “*”.
+            </p>
+
+            <p>
+                (d) The part located on the right side of the Production operation, written as Conjunction
+                from s = 0 to sn(i) is the sn(i)-ary conjunction of the results of Equivalence (?) operation.
+                Here sn(i) is the number of pairs: argument[i,c,k]/ev[i,c,k]  which characterize i,c-th situation.
+            </p>
+
+            <p>
+                (e) The parts of the pair: argument[i,c,k] is the i,c,k-th argument of the expression and the
+                ev[i,c,k] is the i,c,k-th element of set S used to represent expected value of the i,c,k-th
+                argument of the expression. These pairs: argument[i,c,k]/ev[i,c,k] serve as the operands of
+                the Equivalence operation.
+            </p>
+
+            <p class="second-level-section-header">
+                Example of the XDNF expression
+            </p>
+
+            <p>
+                The example of an equation defined in accordance with above formula describing dependence of
+                values of a variable “x0” on the combinations of values of variables x1, x2 and x3 which
+                characterize two situations (x1), and (x2, x3) that may arise in a particular system, is
+                presented as equation.
+            </p>
+
+            <p>
+                x0 = x0 < [ ( P * (x1 ? E) )  |  ( H * ( (x2 ? M) & (x3 ? Q) ) ) ];       (1)
+            </p>
+
+            <p>
+                This simple equation states that the two values which variable x0 can take are determined by
+                two situations and hence two correspondences. The first (left to right) Correspondences
+                describes that variable x0 should take value P when value of variable x1 is E, whereas the
+                second Correspondence  describes that variable x0 should take value H when value of variable
+                x2 is M, while the value  of variable x3 is simultaneously marked by symbol Q. In spite of
+                such simple dependence, different combinations of values of independent variables (arguments)
+                of the expression: x1, x2 and x3 may cause the expression can be computed with different
+                results and thus would create at least three different values of the variable x0. All these
+                cases are considered and illustrated in the next section, which describes every single step of
+                the computation of the expression in all the details.
+            </p>
+
+            <p class="section-header">
+                Illustrative Example of Process of Computation of<br>Values of Variable of Qualitative State Equation
+            </p>
+
+            <p>
+                Proposed in previous sections, solutions for modeling qualitative dependencies, based on the
+                hybrid set S, make it possible to describe dependence of changes of values of a qualitative
+                variable on various emerging and disappearing situations. An example, presented in (1),
+                represents such dependence in the form of algebraic equation, utilizes elements of the set
+                S for denoting values of variables, and computes the algebraic expression, located in the
+                right part of the equation, as the composition of operations defined on the set S. Now,
+                the content of this section is intended to illustrate application of the elements and the
+                operations of the set S in the process of computation of the expression of the equation (1).
+                The content of the proposed example is presented in Figure 1 which has four sections: a, b,
+                c and d.
+            </p>
+
+            <p>
+                All four sections of the example illustrate the process of computation of a certain value
+                of the dependent variable x0, of the same equation (1), depending on a particular combination
+                of values of the variables: x1, x2 and x3, which are the arguments of the expression
+                being computed. Therefore, in order to show how the expression obtains different results,
+                each of the four sections begins with the initialization of the computed value x0 with
+                always the same value G, but with each time different values ​​of the variables:
+                x1, x2 and x3.
+            </p>
+
+            <p>
+                Six lines, in each section, following the line of initialization, depict the results of
+                successive application of five operations: ?, &, *, | and <, causing the change in the
+                state of the process of computation of the expression. These changes are expressed in
+                the diagram as a replacement in each following line, presenting the result of the operation,
+                of that part of the line which holds the construct: "operand-operation-operand" representing
+                executed operation by the value produced by this operation. The arrows located between the
+                lines in section "a", directed vertically downwards from the sign of the operation to the
+                symbol depicting the result of the application of the operation, serve for drawing attention
+                to the operation performed. They are used at each of the computation steps in section "a" only,
+                but not placed in the remaining three sections since all these sections depict the same
+                execution process while the difference in the content of computation is determined by different
+                values assigned to the arguments of the expression at time of their initialization. Here
+                below is Figure 1a followed by the detailed description of steps of execution of the operations.
+            </p>
+
+
+            <p class = "second-level-section-header" >
+                Description of steps of computation of Section “a”<br>and roles of the operations in the steps
+            </p>
+
+            <img class="center" src="images/example-0.png" />
+
+            <p>
+                Figure 1a provides a detailed description of the steps of computation of the expression.
+                It illustrates the case when the arguments of the expression are initialized as x0 = G;
+                x1 = L; x2 = M; x3 = Q; and thus the situation (x1) is not present and is not recognized,
+                but the situation (x2, x3) is present and recognized. Therefore the produced proposed
+                value “H” of the variable x0 is computed as the correspondence to the situation (x2, x3).
+                So, the operations Disjunction and Application choose and accept it as the valid value of
+                the variable x0. Further description of the process of computation of values of the variable
+                x0 of this case proceeds as the detailed description of five steps of execution of five
+                operations ?, &, *, |, < constituting the expression.
+            </p>
+
+            <p>
+                Step 1 is performed as the execution of the Equivalence (?) operation which is applied to
+                the situation (x1), presented as a group of variables consisting of only one variable x1,
+                and to the situation (x2, x3), presented as a group consisting of two variables x2 and x3.
+                So, as it follows from the structure of the expression, the task of this operation is to
+                test if the current value of each variable is the same as its expected one.  In Figure 1a,
+                the application of this operation is depicted as three arrows directed vertically from the
+                sign of the Equivalence operation “?” to the symbol yielded as the result depending on the
+                operands of the operation. Thus, as the value of the variable x1 is “L” and its expected
+                value is “E” the application of the Equivalence operation to these operands yields the
+                symbol of “$” - indicating that the value “L” of operand x1 and constant “E” are not the same.
+                Yet, at the same time, the value “M” of variable x2 is the same as the constant “M'' and
+                the value “Q” of the variable x3 is the same as the constant “N”. Hence, application of
+                the Equivalence operation to both pairs of the second situation yields the auxiliary symbol “!”.
+            </p>
+
+            <p>
+                Step 2 is performed by the Conjunction (&) operation. The task of this operation is to compute
+                the conjunction of all results of the Equivalence operation and thus show that all the
+                current values of the independent variables characterizing the situation have been compared with
+                the expected ones and therefore the expected situation is present in the state of the model
+                and thus is considered as recognized. So, this operation is used to conduct the test for the
+                results of the Equivalence operations yielded for each situation. So, to confirm the recognition,
+                the operands of the Conjunction operation may be different combinations of symbols “!” and “$”
+                therefore the role of the operation is, in respect to the values of operands, is absolutely the
+                same as the behavior of the well known boolean Conjunction operating with the values named “true”
+                and “false”. The application of this operation, in the considered case, is depicted as one arrow
+                directed from the sign “&” of this operation to the symbol yielded as its result; in this case it
+                is symbol “!”.
+            </p>
+
+            <p>
+                Step 3 is performed by the Product (*) operation. The output of this operation is a proposed
+                value that is produced as the correspondence to recognized or not recognized situation. Depending
+                on the result of the recognition of situation performed by the Equivalence and Conjunction
+                operations, the proposed value produced by the Production operation may be presented as either
+                the constant corresponding to the recognized situation described in the Correspondence sub-expression
+                and located as the operand of the Production operand placed on the left side of the operation,
+                or as the symbol "$" already used to indicate the fact that the situation was not recognized.
+                On the Figure 1a, application of the Production operation is depicted as one arrow directed from
+                the sign “*” to the domain symbol “H” yielded as result of the application of the operation to
+                its operands, given as symbols of “H” and “!”.
+            </p>
+
+            <p>
+                Step 4 is performed by the Disjunction (|) operation. The execution of this step begins when
+                all proposed values ​​of a variable are already determined by the three previous steps,
+                and consists in choosing the final proposed value out of all produced proposed values. So, to
+                accomplish that choice the Disjunction operation analyzes all the proposed values one by one
+                and selects from them the only final value of the computation process that serves as a candidate
+                to become the next value of the variable. Therefore, as it is defined by the mechanism of this
+                operation, its result can be yielded as either a) an auxiliary symbol “$”, indicating the fact
+                that none of the expected situations is recognized, b) an element of the set D, when one or more
+                situations are recognized and all produced as the correspondence to recognized situations proposed
+                values are represented by the same element of the set D, or c) an auxiliary symbol “#”, indicating
+                the fact that two or more of the recognized situations produced proposed values represented by the
+                different elements of the set D, and thus created the conflict in choosing the single final value
+                of computation. In Figure 1a the Disjunction operation takes operands given as symbols “$” and “H”
+                and therefore chooses of them as the final proposed values symbol “H”;
+            </p>
+
+            <p>
+                Step 5 is performed by the Application (<) operation. This operation is the guard of the computed
+                value of the variable of the equation. It takes two operands: the current value of the variable
+                and the final proposed value - produced by the Disjunction operation, which can be either the
+                element of the set D or the one of the symbols of the set X. Following its role of guarding, this
+                operation is to prevent any symbol, other than those that represent the valid next value of the
+                variable, from becoming the result of the computation of the expression. So, the operation checks
+                if the final proposed value, given to it as the operand is a symbol of set D and if it is then
+                yields the  final proposed value, or otherwise (when the final proposed value is a symbol belonging
+                to set X indicating that the next value of the variable is not computed) yields the first operand
+                representing the variable’s current value, that leads to the value of the variable in fact will be
+                left unmodified. In the Figure 1a the yielded by the Disjunction operation result is represented
+                by symbols “H”, therefore next computed value of the variable is computed as the symbol “H”
+            </p>
+
+            <p>
+                Execution of step 5 completes the description of computation of the expression, presented in Figure 1a.
+            </p>
+
+            <p class = "second-level-section-header" >
+                Description of computation of Sections “b”, “c”, and “d”
+            </p>
+
+            <p>
+                The computation of the rest of the sections of b), c), and d) of Figure 1 follows the same
+                schema as the computation of presented in Figure 1a, and is different only in the way of
+                initialization of the variables: x1, x2, x3, that make the expression, in spite of the same
+                order of the application of the operations, to compute the expression differently. That is, in
+                fact, based on the internal analysis, conducted by the operations that make them to produce
+                different values of the variables corresponding to different situations presented by arguments of
+                the expression, initialized differently. These differences in the computation of the rest of the
+                section is described as follows.
+            </p>
+
+            <img class="center" src="images/example-1.png" />
+
+            <p>
+                Figure 1b illustrates case when arguments of the expression are set as  x0 = G; x1 = E; x2 = M;
+                x3 = Q; This makes both: the situation (x1) and the situation (x2, x3) are recognized, and,
+                as the consequence of that, the produced proposed values “P” and “H” create uncertainty in
+                choosing the final value of the variable x0 accomplished by the Disjunction operation that in
+                that case marks the final proposed values by symbol “#” to indicate that the final value is not
+                determined. Hence, the Application operation should leave the current value “G” of the variable
+                x0 unchanged.
+            </p>
+
+            <img class="center" src="images/example-2.png" />
+
+            <p>
+                Figure 1c illustrates case opposite to the case 1a. Here the arguments of the expression
+                are set as  x0 = G; x1 = E; x2 = U; x3 = Q; and this leads to the situation (x1) is recognized,
+                but the situation (x2, x3) is not recognized. Hence the only produced proposed values “P” of
+                the variable x0 which belongs to the domain set D is computed as the correspondence to the
+                only existing situation (x1).
+            </p>
+
+            <img class="center" src="images/example-3.png" />
+
+            <p>
+                Figure 1d illustrates case opposite to the case 1b. In this case the arguments of the expression
+                are set as  x0 = G; x1 = R; x2 = M; x3 = Z; This makes that none of the expected situations is
+                present and, hence, none of the expected situations is recognized. And so, as a consequence of
+                that, both proposed values of the variable are marked with the symbol “$”. And therefore, similar
+                to the case 1b, the Application operation leaves the value of the variable x0 in its current
+                value “G”.
+            </p>
+
+            <p class = "section-header" >
+                Conclusion
+            </p>
+
+            <p>
+                And as it often happens, obtaining an answer to one question may immediately pave the road
+                to the emergence of the next one, a more general question. So, obtaining the answers to two
+                questions, asked at the beginning of this page, immediately sparks interest in getting the
+                answer to the new question: “How should the models of the qualitative systems be organized?”.
+                All the remaining pages of the description of the project are devoted to answering this question.
+                And the description of this starts right on the next page providing the more formal definition
+                to described on this page set S and its five operations as the algebra, named “The Algebra of
+                Symbols” and continues as presentations of other modeling solution proposing representation of
+                the system of qualitative equations of the model based on the Vector State Space approach and
+                the Graph Based Multi Colored Logical Net (McLN) modeling formalism, creation of which is
+                supported by the application named Qualitative Systems Modeling and Simulating Environment.
+            </p>
+
+            <!-- =================================================================================================== -->
+            <!-- =================================================================================================== -->
+        </div> <!-- end of content holder ​​ -->
     </div> <!-- end of text-container -->
 
     <!-- =================================================================================== -->
 
     <br>
 
-    <a href="../sem-abs-screenshots/sem-abs-screenshots.html">
+    <a href="../kp-qds/kp-qds.html">
         <img src="../common/images/prev.png"
              ALT="images/previous Page" BORDER="0" align="CENTER"></a>
 
@@ -93,7 +939,7 @@
         <img src="../common/images/up.png"
              ALT="Main Page" BORDER="0" align="CENTER"></a>
 
-    <a href="../modeling-technique/modeling-technique.html">
+    <a href="../kp-aos/kp-aos.html">
         <img src="../common/images/next.png"
              ALT="images/next Page" BORDER="0" align="CENTER"></a>
 
