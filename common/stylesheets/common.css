@@ -121,7 +121,6 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 50%;
     }
 
     <!--/*   D e f i n i t i o n  of  b o r d e r   */-->
@@ -176,6 +175,14 @@
     }
 
     /*   F o o t e r   */
+
+    .space-above-footer{
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px 0px 10px 0px;
+            width: %100;
+    }
+
     .end-of-page-red-line-1{
         position: relative;
         background: #FF0000;
@@ -199,6 +206,6 @@
     .space-below-footer{
         margin-left: auto;
         margin-right: auto;
-        padding: 10px 0px 10px 0px;
+        padding: 10px 0px 30px 0px;
         width: %100;
     }
