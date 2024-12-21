@@ -17,23 +17,47 @@
     <!-- style sheets   -->
     <link rel="stylesheet" href="../common/stylesheets/common.css">
 
+    <!-- Span for Formulas -->
+    <!-- End of Span for Formulas -->
+
+    <!-- Table for Operations -->
+    <!-- End of Table for Operations -->
     <style>
         body {
             background-image: url("../common/images/line-bg.png");
         }
-        table,
-        th,
-        td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        table {
-            margin: auto;
-        }
-        th,
-        td {
-            text-align: center;
-        }
+
+       span.column {
+        flex-direction: column;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        vertical-align: text-top;
+    }
+
+    sup {
+        line-height: .5;
+        font-size: 0.8em;
+    }
+
+    sub {
+        line-height:  .99;
+        font-size: 0.8em;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    table {
+        margin: auto;
+    }
+    th, td {
+        font-size:12pt;
+        text-align: center;
+    }
+
     </style>
 
 </head>
@@ -43,16 +67,13 @@
     <img  style="height: 6px; width: 100%;" src="../common/images/two-red-lines.png"/>
 
     <a href="../kp-qds/kp-qds.html">
-        <img src="../common/images/prev.png"
-             ALT="images/previous Page" BORDER="0" align="CENTER"></a>
+        <img src="../common/images/prev.png" alt="Previous Page"></a>
 
     <a href="../index.html#sec.2.0">
-        <img src="../common/images/up.png"
-             ALT="Main Page" BORDER="0" align="CENTER"></a>
+        <img src="../common/images/up.png" alt="Main Page"></a>
 
     <a href="../kp-aos/kp-aos.html">
-        <img src="../common/images/next.png"
-             ALT="images/next Page" BORDER="0" align="CENTER"></a>
+        <img src="../common/images/next.png" alt="Next Page"></a>
 
     <!-- =================================================================================== -->
 
@@ -219,16 +240,30 @@
                 would have the same structure as the elements of the QSBSpec have. However, being intended to
                 specify State Variable Dependence Specification, abbreviated to SVDSpec, elements of these
                 specifications should be not unique identifiers of properties and the states of properties,
-                but be rewritten as the UIDs of variables and states of variables described as the values of
-                the variables taken from domain set D of the model.  Result of that conversion is presented
-                in Figure 1.
+                but be rewritten as the names of the state variables and states of variables described as
+                the values of the variables taken from domain set D of the model.  Result of that conversion
+                is presented in Figure 1.
             </p>
 
             <p>
-                <span>&nbsp;&nbsp;QMBSpec: {<br></span>
-                &nbsp;&nbsp;&nbsp;&nbsp;<b>L</b> i=0n SVDSpeci {  xi : <b>C</b> j=0cn(i) { cvi,jt+1 : <b>S</b> k=0sn(i) { xi,j,k : evi,j,k  } } }
-                <span><br>&nbsp;};</span>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QMBSpec: {<br></div>
+            <div style="text-align: center;">
+                <b>L</b> <span class="column"><sup>n</sup><sub>i=0</sub></span>
+                SVDSpecs
+                { x<sub>i</sub> : <b>C</b> <span class="column"><sup>cn(i)</sup><sub>j=0</sub></span>
+                { cv<span class="column"><sup>t+1</sup><sub>i,j</sub></span> :
+                <b>S</b> <span class="column"><sup>sn(i,j)</sup><sub>k=0</sub></span>
+                { x<sub>i,j,k</sub>
+                : ev<span class="column"><sup>t</sup><sub>i,j,k</sub></span>  } } }
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
             </p>
+
+<!--            <p>-->
+<!--                <span>&nbsp;&nbsp;QMBSpec: {<br></span>-->
+<!--                &nbsp;&nbsp;&nbsp;&nbsp;<b>L</b> i=0n SVDSpeci {  xi : <b>C</b> j=0cn(i) { cvi,jt+1 : <b>S</b> k=0sn(i) { xi,j,k : evi,j,k  } } }-->
+<!--                <span><br>&nbsp;};</span>-->
+<!--            </p>-->
 
             <p style = "text-align: center;">
                 <b>Figure 1.</b> Structure of Qualitative Model Behavior Specification.
@@ -239,26 +274,38 @@
             </p>
 
             <p>
-                (1) QMBSpec is defined as a list of n SVDSpeci.
+                (1) QMBSpec is defined as a <b>L</b> <span class="column"><sup>n</sup><sub>i=0</sub></span>
+                list of n SVDSpec<sub>i</sub>.
             </p>
 
             <p>
-                (2) Each i-th SVDSpeci{  xi   :  C j=0cn(i) { } } is defined as a pair where the first element
-                of the pair xi  is the UID of dependent variable of the SVDSpeci whereas the second element is
-                the list of Correspondences, iterator through which is denoted as C j=0cn(i) of i,j-th Correspondences.
+                (2) Each i-th SVDSpec<sub>i</sub>{  x<sub>i</sub>   :
+                <b>C</b> <span class="column"><sup>cn(i)</sup><sub>j=0</sub></span>
+                { } } is defined as a pair where the first element
+                of the pair x<sub>i</sub>  is the dependent state variable of the SVDSpeci whereas the second
+                element is the list of Correspondences, iterator through which is denoted as <b>C</b>
+                <span class="column"><sup>cn(i)</sup><sub>j=0</sub></span> of i,j-th Correspondences.
             </p>
 
             <p>
-                (3) Each i,j-th Correspondence { cvi,jt+1  :  S k=0sn(i,j) {  } is also defined as a pair. In
-                that pair first element cvi,jt+1  D Is a constant value which is supposed to be assigned to
-                variable xi as its proposed value, as the response of the model to emergence of the i,j-th
-                situation S k=0sn(i,j), described in the second part of the pair.
+                (3) Each i,j-th Correspondence { cv<span class="column"><sup>t+1</sup><sub>i,j</sub></span> :
+                <b>S</b> <span class="column"><sup>sn(i,j)</sup><sub>k=0</sub></span> {  } is also defined as a pair.
+                In that pair first element cv<span class="column"><sup>t+1</sup><sub>i,j</sub></span> belongs to
+                domain set <b>D</b>. It is a constant value which is supposed to be assigned to
+                variable x<sub>i</sub> as its proposed value, as the response of the model to emergence of the i,j-th
+                situation <b>S</b> <span class="column"><sup>sn(i,j)</sup><sub>k=0</sub></span>,
+                described in the second part of the pair.
             </p>
 
             <p>
-                (4) Each i,j-th situation S k=0sn(i,j) is also the list, and each i,j,k-th element of the list
-                is the pair described as { xi,j,k  :  evi,j,k }. The first element of the pair is the variable
-                xi,j,k and the second is the constant evi,j,k  D. Thus both: the variable and the constant are
+                (4) Each i,j-th situation <b>S</b> <span class="column"><sup>sn(i,j)</sup><sub>k=0</sub></span>
+                is also the list, and each i,j,k-th element of the list
+                is the pair described as { x<sub>i,j,k</sub>  :
+                ev<span class="column"><sup>t</sup><sub>i,j,k</sub></span> }.
+                The first element of the pair is the variable
+                x<sub>i,j,k</sub> and the second is the constant
+                ev<span class="column"><sup>t</sup><sub>i,j,k</sub></span>
+                belongs to domain set <b>D</b>. Thus both: the variable and the constant are
                 the k-th elements of the list of i,j-th situation of i,j-th Correspondence of i-the valuable
                 dependence specification.
             </p>
@@ -266,8 +313,8 @@
             <p>
                 To summarize, obtained after conversion of the QSBSpec to the QMBSpec by replacing unique
                 identifiers used in the QSBSpec, with the names of the variables suggested by the modeling
-                technique, and the identifiers of states of the properties with the elements of the set D,
-                chosen to represent states of properties,
+                technique, and the identifiers of states of the properties with the elements of the domain set
+                <b>D</b>, chosen to represent states of properties,
             </p>
 
             <p class="third-level-section-header-bold">
@@ -548,27 +595,32 @@
                 <tr >
                     <td>Equivalence</td>
                     <td>?</td>
-                    <td>ABC</td>
+                    <td style="text-align: center; font-size:10pt;">
+                        Compares operands; yields “!” when operands are equal, or “~” when they are not.</td>
                 </tr>
                 <tr >
                     <td>Conjunction</td>
                     <td>&</td>
-                    <td>ABC</td>
+                    <td style="text-align: center; font-size:10pt;">
+                        Works as a boolean AND operation for symbols “!” and “~”. It is used to compute n-ary Conjunction.</td>
                 </tr>
                 <tr >
                     <td>Production</td>
                     <td>*</td>
-                    <td>ABC</td>
+                    <td style="text-align: center; font-size:10pt;">
+                        Produces proposed values for all identified or not identified expected situations.</td>
                 </tr>
                 <tr >
                     <td>Disjunction</td>
                     <td>|</td>
-                    <td>ABC</td>
+                    <td style="text-align: center; font-size:10pt;">
+                        Analyses all proposed values, chooses final value. It is used to compute n-ary Disjunction.</td>
                 </tr>
                 <tr >
                     <td>Application</td>
                     <td><</td>
-                    <td>ABC</td>
+                    <td style="text-align: center; font-size:10pt;">
+                        Checks if final value is element of set <b>D</b>, and returns it; otherwise returns current value of the variable.</td>
                 </tr>
             </table></DIV>
 
@@ -682,28 +734,26 @@
             </p>
 
             <p class="second-level-section-header">
-                State Equation Functions Expression as the Expanded<br>Disjunctive Normal Form (XDNF)
+                State Equation Functions Expression as the Expanded<br>Disjunctive Normal Form (X-DNF)
             </p>
 
             <p>
                 The general form of a state equation of a variable whose right-hand side is defined as an
                 algebraic expression defined as a composition of hybrid operations defined on the model set
-                S can be written as the formula
+                <b>S</b> can be written as the formula.
             </p>
 
-            <p class = "formula">
-                xit+1 =xit<{c = 0cn(i)[ pv[i,c]*l = 0ln(i,c)( arguments[i,c,l]  ? ev[i,c,l] ) ] }
-            </p>
+            <img  class="center" src="images/xdnf-formula-1.png" width="450" height="50">
 
             <p>
                 Being a general form of the expression, this formula states that:
-                (a) The value of the variable xi at time t+1 is computed as an expression of the Algebra of
-                Symbols defined as a composition of five operations defined on the set S.
+                (a) The value of the variable x<sub>i</sub> at time t+1 is computed as an expression of the Algebra of
+                Symbols defined as a composition of five operations defined on the set <b>S</b>.
             </p>
 
             <p>
                 (b) Following the requirement to keep values of variable x to be denoted by only elements of
-                domain set D and the QVDSpec the structure of the expression. written from left to right,
+                domain set <b>D</b> and the QVDSpec the structure of the expression. written from left to right,
                 (which is opposite to the order of execution of operations) begins with the sign “<”  that
                 indicates Application operation task of which is to protect value of the variable in case when
                 its next value is not defined,
@@ -713,7 +763,7 @@
                 (c) The structure of the formula placed in curly braces is determined by the specification.
                 The part of expression in it, written as Disjunction from c = 0 to cn(i) of elements written
                 in the square brackets is the cn(i)-ary disjunction, where cn(i) is the number of Correspondence
-                computing proposed values of the variable x(i) and part in the square brackets is the general
+                computing proposed values of the variable x<sub>i</sub> and part in the square brackets is the general
                 form of the sub-expression computing proposed values pv(i, c), where pv(i, c) stands for element
                 of set S that should be used as the proposed value generated by the c-th Correspondence of the
                 i-th variable, that should be used as one of the operands of operation Production, denoted
@@ -734,7 +784,7 @@
             </p>
 
             <p class="second-level-section-header">
-                Example of the XDNF expression
+                Example of the X-DNF expression
             </p>
 
             <p>
@@ -744,7 +794,7 @@
                 presented as equation.
             </p>
 
-            <p>
+            <p style = "text-align: center;">
                 x0 = x0 < [ ( P * (x1 ? E) )  |  ( H * ( (x2 ? M) & (x3 ? Q) ) ) ];       (1)
             </p>
 
@@ -979,16 +1029,13 @@
     <br>
 
     <a href="../kp-qds/kp-qds.html">
-        <img src="../common/images/prev.png"
-             ALT="images/previous Page" BORDER="0" align="CENTER"></a>
+        <img src="../common/images/prev.png" alt="Previous Page"></a>
 
     <a href="../index.html#sec.2.0">
-        <img src="../common/images/up.png"
-             ALT="Main Page" BORDER="0" align="CENTER"></a>
+        <img src="../common/images/up.png" alt="Main Page"></a>
 
     <a href="../kp-aos/kp-aos.html">
-        <img src="../common/images/next.png"
-             ALT="images/next Page" BORDER="0" align="CENTER"></a>
+        <img src="../common/images/next.png" alt="Next Page"></a>
 
     <div class="space-above-footer"></div>
     <div class="end-of-page-red-line-1"></div>

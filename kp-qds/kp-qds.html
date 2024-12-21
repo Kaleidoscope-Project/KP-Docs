@@ -21,6 +21,40 @@
         body {
             background-image: url("../common/images/line-bg.png");
         }
+
+        span.column {
+          flex-direction: column;
+          display: inline-flex;
+          flex-direction: column;
+          justify-content: center;
+          text-align: left;
+          vertical-align: text-top;
+        }
+
+<!--        sup {-->
+<!--            line-height: .8;-->
+<!--            font-size: 0.8em;-->
+<!--        }-->
+
+        sup {
+            line-height: .5;
+            font-size: 0.8em;
+        }
+
+<!--        vertical-align: super;-->
+<!--        font-size: small;-->
+<!--        text-align: left;-->
+
+<!--        sub {-->
+<!--            line-height: 1.7;-->
+<!--            font-size: 0.0em;-->
+<!--        }-->
+
+        sub {
+            line-height:  .99;
+            font-size: 0.8em;
+        }
+
     </style>
 
 </head>
@@ -30,16 +64,13 @@
     <img  style="height: 6px; width: 100%;" src="../common/images/two-red-lines.png"/>
 
     <a href="../kp-sem-views/sem-screenshots.html">
-        <img src="../common/images/prev.png"
-             ALT="images/previous Page" BORDER="0" align="CENTER"></a>
+        <img src="../common/images/prev.png" alt="Previous Page"></a>
 
     <a href="../index.html#sec.1.0">
-        <img src="../common/images/up.png"
-             ALT="Main Page" BORDER="0" align="CENTER"></a>
+        <img src="../common/images/up.png" alt="Main Page"></a>
 
     <a href="../kp-mmt/kp-mmt.html">
-        <img src="../common/images/next.png"
-             ALT="images/next Page" BORDER="0" align="CENTER"></a>
+        <img src="../common/images/next.png" alt="Next Page"></a>
 
     <!-- =================================================================================== -->
 
@@ -823,10 +854,17 @@
             </p>
 
             <p>
-                <span>&nbsp;&nbsp;QSBSpec: {<br></span>
-                &nbsp;&nbsp;&nbsp;&nbsp;<b>L</b> i=0n QPDSpecs{ pi : <b>C</b> j=0,cn(i) { psi,jt+1 : <b>S</b> k=0sn(i,j)
-                { pi,j,k : esi,j,kt } } }
-                <span><br>&nbsp;};</span>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QSBSpec: {<br></div>
+                <div style="text-align: center;">
+                    <b>L</b> <span class="column"><sup>n</sup><sub>i=0</sub></span>
+                    QPDSpecs
+                    { p<sub>i</sub> : <b>C</b> <span class="column"><sup>cn(i)</sup><sub>j=0</sub></span>
+                { ps<span class="column"><sup>t+1</sup><sub>i,j</sub></span> :
+                <b>S</b> <span class="column"><sup>sn(i,j)</sup><sub>k=0</sub></span>
+                { p<sub>i,j,k</sub>
+                : es<span class="column"><sup>t</sup><sub>i,j,k</sub></span>  } } }
+                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
             </p>
 
             <p style = "text-align: center;">
@@ -840,32 +878,42 @@
                 description of such construction in the form of an expression would be rather cumbersome.
                 Therefore, in order to make the form compact, this description utilizes notation, used  in the
                 Kaleidoscope project. In the accordance with this notation, presentation of the lists in the form is
-                given  with the help of constructs: <b>L</b> i=0->n, <b>C</b> j=0->cn(i), and <b>S</b>
-                k=0->sn(i,j) that are the project’s proprietary way to denote list iterators of elements of
-                the specification as bold uppercase characters <b>L</b>, <b>C</b>, and <b>S</b>, whose indices
-                change from 0 to n, cn(i) and sn(i,j), respectively. Thus.
+                given  with the help of constructs:
+                <b>L</b> <span class="column"><sup>n</sup><sub>i=0</sub></span>,
+                <b>C</b> <span class="column"><sup>cn(i)</sup><sub>j=0</sub></span>,
+                and <b>S</b> <span class="column"><sup>sn(i,j)</sup><sub>k=0</sub></span>
+                that are the project’s proprietary way to denote list iterators of elements of
+                the specification as bold uppercase characters <b>L</b>, <b>C</b>, and <b>S</b>, whose indices i, j
+                and k, change from 0 to n, 0 to cn(i) and 0 to sn(i,j), respectively. Thus.
             </p>
 
             <p>
-                Construct <b>L</b> i=0->n represents a list iterator through all QPDSpecs, indexes of which change from 0 to n, where n is the total number of QPDSpec in the QSBSpec.
+                Construct <b>L</b><span class="column"><sup>n</sup><sub>i=0</sub></span>
+                represents a list iterator through all QPDSpecs, index i of which change from 0 to n, where n
+                is the total number of QPDSpec in the QSBSpec.
             </p>
 
             <p>
-                Construct <b>C</b> j=0->cn(i) is a list iterator through all Correspondences indexes of which change from
+                Construct <b>C</b><span class="column"><sup>cn(i)</sup><sub>j=0</sub></span>,
+                is a list iterator through all Correspondences, index j of which change from
                 0 to cn(i), where cn(i) is the number of Correspondences in i-th QPDSpec. And finally.
             </p>
 
             <p>
-                Construct <b>S</b> k=0->sn(i,j) stands for the list iterator through the variable/value pairs, which
-                are the elements of the description of expected situation, where sn(i,j) is the number of pairs
-                characterizing situation defined in n j-th Correspondence of i-th PSDSpec.
+                Construct <b>S</b><span class="column"><sup>sn(i,j)</sup><sub>k=0</sub></span>
+                stands for the list iterator through all the pairs: [variable/value] describing expected situation,
+                index k of which changes from 0 to sn(i,j), where sn(i,j) is the number of pairs
+                characterizing situation defined in j-th Correspondence of i-th PSDSpec.
             </p>
 
             <p>
-                Elements pi and pi,j,k, in the presented QSBSpec are the unique identifiers of the properties
-                of the system, and elements esi,j,kt and psi,jt+1, are the unique identifiers of the states of
-                the properties, where the esi,j,kt stands for expected state of the property pi,j,k  at discrete
-                time t, while the psi,jt+1 stands for proposed state that the property pi should take at discrete time t+1.
+                Elements p<sub>i</sub> and p<sub>i,j,k</sub>, in the presented QSBSpec are the unique identifiers of the properties
+                of the system, and elements es<span class="column"><sup>t</sup><sub>i,j,k</sub></span>
+                and ps<span class="column"><sup>t+1</sup><sub>i,j</sub></span>, are the unique identifiers of the states of
+                the properties, where the es<span class="column"><sup>t</sup><sub>i,j,k</sub></span>
+                stands for expected state of the property p<sub>i,j,k</sub>  at discrete
+                time t, while the ps<span class="column"><sup>t+1</sup><sub>i,j</sub></span>
+                stands for proposed state that the property pi should take at discrete time t+1.
             </p>
 
             <p>
@@ -883,16 +931,13 @@
 <!--    <br>-->
 
     <a href="../kp-sem-views/sem-screenshots.html">
-        <img src="../common/images/prev.png"
-             ALT="images/previous Page" BORDER="0" align="CENTER"></a>
+        <img src="../common/images/prev.png" alt="Previous Page"></a>
 
     <a href="../index.html#sec.1.0">
-        <img src="../common/images/up.png"
-             ALT="Main Page" BORDER="0" align="CENTER"></a>
+        <img src="../common/images/up.png" alt="Main Page"></a>
 
     <a href="../kp-mmt/kp-mmt.html">
-        <img src="../common/images/next.png"
-             ALT="images/next Page" BORDER="0" align="CENTER"></a>
+        <img src="../common/images/next.png" alt="Next Page"></a>
 
     <div class="space-above-footer"></div>
     <div class="end-of-page-red-line-1"></div>
