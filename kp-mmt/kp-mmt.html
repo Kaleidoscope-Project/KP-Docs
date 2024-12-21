@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<head>
+<head xmlns:border="http://www.w3.org/1999/xhtml">
 
     <meta http-equiv=" Content-Type" content="text/html; charset=iso-8859-1"/>
     <title>- Modeling Technique</title>
@@ -20,6 +20,19 @@
     <style>
         body {
             background-image: url("../common/images/line-bg.png");
+        }
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        table {
+            margin: auto;
+        }
+        th,
+        td {
+            text-align: center;
         }
     </style>
 
@@ -525,6 +538,40 @@
                 listed below.
             </p>
 
+            <DIV style="align: center; width: 400pt; text-align: right;">Table 1</DIV>
+            <DIV><table style="width:400pt">
+                <tr>
+                    <th style="width:25%">Name</th>
+                    <th tyle="width:10%">Sign</th>
+                    <th style="width:65%">Meaning</th>
+                </tr>
+                <tr >
+                    <td>Equivalence</td>
+                    <td>?</td>
+                    <td>ABC</td>
+                </tr>
+                <tr >
+                    <td>Conjunction</td>
+                    <td>&</td>
+                    <td>ABC</td>
+                </tr>
+                <tr >
+                    <td>Production</td>
+                    <td>*</td>
+                    <td>ABC</td>
+                </tr>
+                <tr >
+                    <td>Disjunction</td>
+                    <td>|</td>
+                    <td>ABC</td>
+                </tr>
+                <tr >
+                    <td>Application</td>
+                    <td><</td>
+                    <td>ABC</td>
+                </tr>
+            </table></DIV>
+
             <p>
                 The table lists all five operations in the order they are used in the expression. Names of the
                 operations are presented in the first column of the table. The second column contains symbols
@@ -535,7 +582,7 @@
 <!--   O P E R A T I O N S         -->
 
             <p>
-                First Equivalence (?) operation is the first that begins computation of the procedure of a function.
+                First, Equivalence (?) operation is the first that begins computation of the procedure of a function.
                 It is used to recognize situations, description of which is passed to a function as the groups of
                 its arguments. When recognizing a particular situation, this operation compares all the values
                 of a group of the arguments, which may or may not contain the description of the expected situation
@@ -547,7 +594,7 @@
             </p>
 
             <p>
-                Second Conjunction (&) operation is also used to recognize situations, or more precisely to
+                Second, Conjunction (&) operation is also used to recognize situations, or more precisely to
                 compute the indicators representing the fact that all the results of comparing the states of
                 properties with their expected values ​​obtained as a result of applying the Equivalence
                 operation have been compared and thus the expected situation is recognized. It is called
@@ -563,7 +610,7 @@
             </p>
 
             <p>
-                Third operation is called Production (*). It has gotten its name because it acts in the same
+                Third, Production (*) operation is the generator of the  proposed state of the variable. It has gotten its name because it acts in the same
                 way as the production rule. One of the operands of this operation is the result of recognition
                 of the situation, i.e. it may contain either symbol "!" or "~" obtained after  computation
                 of the n-ary conjunction accomplished by the Conjunction operation. While the second argument

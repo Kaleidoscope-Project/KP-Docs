@@ -1,6 +1,7 @@
 
 /* common css width:800px; https://www.youtube.com/watch?v=tQpT8Uw2n44&t=1794s*/
 
+
     .container {
         position: absolute;
         background: #FFFFFF;
@@ -209,3 +210,4 @@
         padding: 10px 0px 30px 0px;
         width: %100;
     }
+

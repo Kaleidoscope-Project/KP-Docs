@@ -21,7 +21,26 @@
         body {
             background-image: url("../common/images/line-bg.png");
         }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        table {
+            margin: auto;
+        }
+        th,
+        td {
+            text-align: center;
+        }
+
+.noBborder td {
+        border:none;
+    }
     </style>
+
 
 </head>
 
@@ -76,6 +95,47 @@
                 actually happens in the system right before it activates the actions and right
                 after the actions that were performed and which we observed are completed.
             </p>
+
+            <DIV style="align: center; width: 400pt; text-align: right;">Table 1</DIV>
+            <DIV><table style="width:400pt">
+                <tr>
+                    <th style="width:25%">Name</th>
+                    <th tyle="width:10%">Sign</th>
+                    <th style="width:65%">Meaning</th>
+                </tr>
+                <tr >
+                    <td>Equivalence</td>
+                    <td>?</td>
+                    <td>ABC</td>
+                </tr>
+
+                <tr >
+                    <td>Conjunction</td>
+                    <td>&</td>
+                    <td>ABC</td>
+
+                </tr>
+                <tr >
+                    <td>Production</td>
+                    <td>*</td>
+                    <td>ABC</td>
+                </tr>
+                <tr >
+                    <td>Disjunction</td>
+                    <td>|</td>
+                    <td>ABC</td>
+                </tr>
+                <tr >
+
+                    <td>Application</td>
+                    <td><</td>
+                    <td>ABC</td>
+                </tr>
+            </table></DIV>
+
+
+
+
 
         </div> <!-- end of content holder -->
 
