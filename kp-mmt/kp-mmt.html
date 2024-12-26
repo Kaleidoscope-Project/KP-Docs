@@ -69,7 +69,7 @@
     <a href="../kp-qds/kp-qds.html">
         <img src="../common/images/prev.png" alt="Previous Page"></a>
 
-    <a href="../index.html#sec.2.0">
+    <a style="margin-left: 7pt;margin-right: 7pt;"  href="../index.html#sec.2.0">
         <img src="../common/images/up.png" alt="Main Page"></a>
 
     <a href="../kp-aos/kp-aos.html">
@@ -379,24 +379,28 @@
             </p>
 
             <p class="section-header">
-                Content of Process of Computation of State Functions<br>of Variables of Models of Qualitative Systems
+                Defining State Functions of Variables of Models of<br>Qualitative Systems in the Form of
+                Algebraic<br>Expression
             </p>
 
+<!--            <p class="section-header">-->
+<!--                Content of Process of Computation of State Functions<br>of Variables of Models of Qualitative Systems-->
+<!--            </p>-->
+
             <p>
-                To define a function, in a general sense, means to suggest a way for computing values of a
-                function for all possible combinations of values of its arguments. And that means, in order to
-                define the content of the procedure for computing state function of a variable of a model of a
-                qualitative system, it is necessary to suggest a way for computing values of the function ​​for
-                all combinations of values of groups of arguments, ​​representing expected situations,
-                described in the QVDSpec. But this has to be done by taking into account that the suggested way
-                for computing procedure must ensure obtaining computation results despite the characteristics of
-                dependence of states of  variables of models on situations that create challenges to the process of
-                computation of the functions.
+                To define a function, in a general sense, means to suggest a way of computation of values of
+                a function for all possible combinations of values of its arguments. Hence, in order to define
+                the content of the procedure of computing the partial state function of a variable of a model
+                of a qualitative system means to develop such a way of computation of  the function that
+                would generate its values for all combinations of values of groups of arguments, representing
+                expected situations, present in the model at the time of computation of the function,
+                on the one hand, and could ensure that value of dependent variable will stay unchanged in the
+                case when it turns out that value of the partial function for current combination of values
+                of arguments can not be  defined, on the other hand.
             </p>
 
             <p class="second-level-section-header">
-                Content of Procedure of Computation of State Functions of<br> Variables and Challenges
-                Encountered In the<br> Process of Computation the Procedure
+                Content of the Procedure of Computation of State Functions of Qualitative Variables
             </p>
 
             <p>
@@ -423,7 +427,7 @@
                 Unlike the dependencies of quantitative variables, the dependence of the state of qualitative
                 variables described in the specification of the dependence of variables on the occurrence of a
                 combination of the state of groups of variables characterizing situations is determined as a
-                list of pairs of correspondence between specific values ​​of variables and specific situations
+                list of pairs of correspondence between specific values of variables and specific situations
                 and therefore cannot be determined by transforming a group of arguments since such a single group
                 of arguments does not exist. Calculations of the dependence of variables in models of qualitative
                 systems should be ensured by passing two arguments to each function of the model: 1) the state of
@@ -480,7 +484,7 @@
                 an algorithm of a computer program than an algebraic expression. And this is indeed so. It has
                 too many checks of the state of the data, the purpose of which is to change the course
                 computation depending on which situations are present in the model and which are not, on the
-                one hand, and on which proposed values ​​were produced in the response to those existing
+                one hand, and on which proposed values were produced in the response to those existing
                 or nonexistent situations, on the other hand. But, the feelings of frustration and hopelessness
                 caused by the alleged infeasibility of computing state functions of models of qualitative
                 systems in the form of algebraic expressions (arising while reading presented description) is
@@ -488,37 +492,37 @@
                 exists, was found, and is going to be described right below.
             </p>
 
+<!--            <p class="second-level-section-header">--​​>
+<!--                From a Computer Program to the Algebraic Expression-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                Considered here modeling solution, is suggested by the qualitative dynamical systems behavior-->
+<!--                mathematical modeling technique, and is based on the results of research into the feasibility-->
+<!--                of mathematical modeling behavior of qualitative systems, conducted as a part of the Kaleydoskop-->
+<!--                project. This solution is based on the following ideas:-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                (1) Usage for the representation of results of analysis of states of arguments of a function and-->
+<!--                the proposed values, computed by the function, elements of an auxiliary set X = {"-", "!", "~", "#"};-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                (2) Usage of the carrier set of the model set S = D U X, defined as the union of the previously-->
+<!--                defined domain set of values of variables of the model D and the set of auxiliary symbols X-->
+<!--                defined just above; and-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                (3) Definition of the set S a family of closed binary operations, enabling description of-->
+<!--                procedure of computation of the functions of a model in the form of an algebraic expressions,-->
+<!--                structure of which is an extension of the well-known Disjunctive Normal Form and is therefore-->
+<!--                named - XDNF.-->
+<!--            </p>-->
+
             <p class="second-level-section-header">
-                From a Computer Program to the Algebraic Expression
-            </p>
-
-            <p>
-                Considered here modeling solution, is suggested by the qualitative dynamical systems behavior
-                mathematical modeling technique, and is based on the results of research into the feasibility
-                of mathematical modeling behavior of qualitative systems, conducted as a part of the Kaleydoskop
-                project. This solution is based on the following ideas:
-            </p>
-
-            <p>
-                (1) Usage for the representation of results of analysis of states of arguments of a function and
-                the proposed values, computed by the function, elements of an auxiliary set X = {"-", "!", "~", "#"};
-            </p>
-
-            <p>
-                (2) Usage of the carrier set of the model set S = D U X, defined as the union of the previously
-                defined domain set of values of variables of the model D and the set of auxiliary symbols X
-                defined just above; and
-            </p>
-
-            <p>
-                (3) Definition of the set S a family of closed binary operations, enabling description of
-                procedure of computation of the functions of a model in the form of an algebraic expressions,
-                structure of which is an extension of the well-known Disjunctive Normal Form and is therefore
-                named - XDNF.
-            </p>
-
-            <p class="second-level-section-header">
-                Algorithm of Computation of Procedure of Function
+                Algorithm of Computation of the Procedure of<br>State Functions
             </p>
 
             <p>
@@ -539,39 +543,103 @@
                 polynomial, and should consist of constants and variables, but it may not include operations
                 for analyzing data or controlling the order of execution of other operations in the expression.
                 Therefore, the described content of the procedure of computation of the functions is perceived
-                rather as the description of a computer program than as a diagram describing an algebraic
-                expression.
+                rather as the description of a computer program than as a sequence of operations constituting the
+                algebraic expression.
             </p>
 
             <p class="second-level-section-header">
-                Proposal of redefinition of algorithm for computation of state<br>
-                functions of variables by removing from them operations<br>
-                controlling order of execution of operations computing<br>
-                values of the functions
+                Proposal of rearrangement of algorithm of computation of state<br>
+                functions by moving operations, controlling order of execution<br>
+                 of computational operations, to the algebraic operations
+
+<!--                Proposal of rearrangement of algorithm of computation of state<br>-->
+<!--                functions of variables by moving operations<br>-->
+<!--                controlling order of execution of computing operations <br>-->
+<!--                down to the algebraic operations-->
             </p>
 
             <p>
-                Imagine Implementation of the block-schema of algorithm of computation of function as the computer
-                program written in such a way where all those, “if-s” and “then-s”, clattering the algorithm,
-                which are usually depicted on the flowcharts of the algorithms in the form of operations computing
-                estimates of state of being processed data, and in the form of diamonds, located outside of
-                rectangles, would be suddenly relocated inside the rectangles representing operations that
-                computes the data
+                Perhaps, the most natural solution, ensuring that the algorithm of computation a procedure
+                is represented in the form of a linear sequence of operations of processing data would be
+                merely to move all the operations, computing the assessments of states of data and the
+                operations controlling the process of processing the data, in accordance with the obtained
+                estimates, inside the blocks processing these data.
+            </p>
+
+            <p style="color:#662200; ">
+                Imagine implementation of the flowchart of an algorithm of computation of a function, arranged in
+                such a way where all those “if-s” and “then-s”, clattering the algorithm, which are usually depicted
+                on the flowcharts in the form of operations computing assessments of state of data being processed,
+                and the operations controlling the flow of the computation, be presented in the form of diamonds,
+                located outside of rectangles, representing operations computing the data, would be suddenly
+                relocated inside these rectangles.
             </p>
 
             <p>
-                Characteristics of behavior and the way of organization of process of computing the qualitative
-                states of variables, performed by calculating the functions of the state of variables described
-                in the equations of state of variables, in the models of qualitative systems, are fundamentally
-                different from characteristics of behavior and the way of computing quantitative states of
-                variables in the models of quantitative systems. States of qualitative variables of models of
-                qualitative systems are represented not by means of elements of numerical sets but by means of
-                symbols taken from the domain set of the values of variables of models D.
+                The process of computation of the function, in this case, might look like a linear sequence
+                of operations of activating blocks (or possibly subroutines) that actually perform the steps
+                of the procedure of computation of the function.
+            </p>
+
+            <p style="text-align: center;">
+                <em>But the case of computation of values of qualitative functions is special</em>.
+            </p>
+
+            <p class="second-level-section-header">
+                Modeling Solution Determining Feasibility of Definition of
+                State Functions in the Form of the Algebraic Equation
+            </p>
+
+            <p>
+                The process of computing a function defined in the form of an algebraic expression is a single-level
+                process. And thus, the only place where the logic of controlling the flow of computation can
+                be placed is the level of operations of the algebra defined on the set of symbols elements of which
+                are used to represent states of variables of a model.
+            </p>
+
+            <p>
+                Therefore, study of feasibility of defining the state function of the models of a qualitative
+                system in the form of an algebraic expression, conducted in the Kaleidoscope Project, revealed that
+                an increase in the number of elements of a set used to represent the states of variables of a model
+                is accompanied by the appearance, among the whole variety of binary operations
+                (which can be defined on a set, and the total number of which grows exponentially), of
+                those that operate with elements of a set in such a way as if they belong to two different subsets.
+            </p>
+
+            <p>
+                And, as experiments have shown, these subsets are really such. Therefore, they can
+                be considered as a union of two homogeneous but different in terms of the roles of
+                their elements in the mechanism of transformation of the operands of the operation
+                into their output.
+            </p>
+
+            <p>
+                This feature of sets whose elements are symbols fundamentally agrees with the previously
+                considered necessity to have implementation of the process of computation of partially
+                defined functions of models of qualitative systems, providing the ability to combine in
+                the process of computation of algebraic expression both: the analysis of the state of
+                groups of arguments of the function, potentially representing different situations, in order
+                to identify the situation present in the groups, at the time of computing the functions, and
+                the computation of the values of the function by choosing from all the proposed values defined
+                for the existing situation.
+            </p>
+
+            <p>
+                And this makes such sets and hybrid operations defined on them the fundamental solution that
+                enables definition of the algebraic expressions implementing the process of computing
+                functions of the state of variables as a composition of operations that can work with both:
+                symbols representing states of variables, on the one hand, and the auxiliary symbols
+                utilized to represent indicators of state of data and to control the course of computation of
+                the values of the function, on the other hand.
+            </p>
+
+            <p>
+                =======================================================
             </p>
 
             <p>
                 At the same time, estimates of the state of variables that can be obtained by simple comparison
-                of the values ​​of variables, the results of which can be designated using elements taken
+                of the values of variables, the results of which can be designated using elements taken
                 from another set of symbols, for example, a set of auxiliary symbols defined as X = {"!", "~" and "#"}.
                 And this homogeneity of the symbols of the set D and the set X creates a unique opportunity to
                 combine both sets of symbols into one carrier set of the model S and then define on the created
@@ -1030,7 +1098,7 @@
     <a href="../kp-qds/kp-qds.html">
         <img src="../common/images/prev.png" alt="Previous Page"></a>
 
-    <a href="../index.html#sec.2.0">
+    <a style="margin-left: 7pt;margin-right: 7pt;"  href="../index.html#sec.2.0">
         <img src="../common/images/up.png" alt="Main Page"></a>
 
     <a href="../kp-aos/kp-aos.html">
