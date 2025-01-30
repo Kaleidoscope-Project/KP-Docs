@@ -548,47 +548,59 @@
             </p>
 
             <p>
-                ?????????????? ? ?????? ??? ?????????? ????????? ?????? ???? ????????, ????????? ???????
-                ??????????????  ???????? ????????? ?????????? ??????? ????????? ?????????? ??????, ?????????
-                ? ????? ??????????? ??????? ???????? ????????? ?????????? ??????? ????????? ?????????? ??????
-                ???????????? ??????? ? ?????????? ??? ?? ????? ?????????, ??????????? ? ??????????? ???????
-                ??? ????????? ?????????? ????????? ? ?????????? ????? ???????? ?????????, ??????? ?? ??????
-                ???????? ????????????? ??? ??? ???????? ??????? ??? ???????? ????????????? ??????? ?????????????
-                ? ????????? ??????? ???? ????????.
+                There are two observations concerning the structure and the content of the algorithm described,
+                that are important for the modeling solution proposed in the following sections of
+                this page and therefore should not go unexpressed.
             </p>
 
             <p>
-                The first of these observations is obvious and its meaning is that both the structure and
+                The first of them is obvious and its meaning is that both the structure and
                 the operations used in the algorithm are not very similar to the structure and operations of
                 an algorithm that could be said to be easily implemented in the form of an algebraic expression.
             </p>
 
             <p>
-                The second remark is that the decision to use auxiliary symbols "!" and "$" to represent
-                the results of comparison of the current and expected values of variables, and the symbol "#"
-                to represent the fact that a conflict of proposed values was detected when choosing the final
-                value of the function, the markers "!" and "$", and "#", the type of which coincides with
-                the type of the elements of the set D. The presentation of the comparison results using
-                auxiliary symbols allows their use as values of the variables called "pv" and "fpv" in
-                the description of the algorithm. This coincidence of the types of processed and logical
-                data is a unique opportunity to look at calculations in which the data usually have
-                different types as homogeneous. This decision is an implicit hint and an opportunity to
-                develop a modeling solution of the technique of modeling qualitative systems, providing the
-                implementation of the procedure for calculating a function in the form of an algebraic expression.
+                The second is related to decision to use auxiliary symbols "!" and "$" for representation of
+                the results of comparison of the current and expected values of variables, and
+                symbol "#" as a marker denoting the fact of a conflict detected among proposed values, possible when
+                choosing the final proposed value of the function. Choice of markers "!", "$" and "#"
+                of the same type as the ones of the elements of the set D makes it possible
+                to use them as values of the variables called the "pv" and the "fpv" in the description of
+                the algorithm. However, the fact that both the being processed and the auxiliary data
+                are of the same type creates a unique opportunity to treat computations
+                (which generally deal with numeric and logical data types) as homogeneous. This observation,
+                thus, turns out to be an implicit prompt and the opportunity to develop a modeling solution
+                of the technique of modeling qualitative systems, providing a way of implementation of
+                procedure of computation of a state function of the variables of the models in the form of
+                an algebraic expression.
+<!--                The second is related to decision to use auxiliary symbols "!" and "$" to represent-->
+<!--                results of comparison of the current and expected values of variables, and the symbol "#"-->
+<!--                to mark up the fact that a conflict of proposed values was detected when choosing the final-->
+<!--                value of the function, the markers "!" and "$", and "#", the type of which coincides with-->
+<!--                the type of the elements of the set D. The presentation of the comparison results using-->
+<!--                auxiliary symbols allows their use as values of the variables called "pv" and "fpv" in-->
+<!--                the description of the algorithm. This coincidence of the types of processed and logical-->
+<!--                data is a unique opportunity to look at calculations in which the data usually have-->
+<!--                different types as homogeneous. This decision is an implicit hint and an opportunity to-->
+<!--                develop a modeling solution of the technique of modeling qualitative systems, providing the-->
+<!--                implementation of the procedure for calculating a function in the form of an algebraic expression.-->
             </p>
 
             <p>
-                As the study of the possibility of creating mathematical (algebraic) models of behavior
-                of qualitative systems conducted in the Kaleidoscope project showed, the described difference
-                in the technique of calculating the functions of the state of variables in models of
-                quantitative and qualitative systems is not insurmountable. But it requires defining
-                the method of calculating the qualitative dependence. And this presupposes a description
-                of the procedure for calculating the function of the state of the model variables,
-                reproducing the behavior of qualitative systems, in terms of operations necessary for
-                the implementation of the dependence of variables, described as a list of Correspondences,
-                proposed values of the variable to the facts of occurrence and then presence in the
-                model of the situation described in the Correspondences as expected. But it requires
-                defining the method of calculating the qualitative dependence.
+                The study of the feasibility of creation of mathematical (algebraic) models of behavior
+                of qualitative systems conducted in the Kaleidoscope project showed that difference
+                between the techniques of computation of state functions of variables of models of
+                quantitative and qualitative systems is not insurmountable, and suggested approach
+                to implementing state functions of models of qualitative systems based on
+                the noticed homogeneity of the being processed and the auxiliary data.
+
+<!--                And this presupposes a description-->
+<!--                of the procedure of computation of the function capable of reproducing the behavior of-->
+<!--                qualitative systems, in terms of operations necessary for implementation of the dependence-->
+<!--                of variables, described as a list of Correspondences,-->
+<!--                proposed values of the variable to the facts of occurrence and then presence in the-->
+<!--                model of the situation described in the Correspondences as expected. But it requires-->
+<!--                defining the method of computation of the qualitative dependence.-->
             </p>
 
             <p class="section-header">
