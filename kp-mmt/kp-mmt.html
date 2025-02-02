@@ -535,6 +535,10 @@
                 value of the function cannot be determined.
             </p>
 
+            <p class="second-level-section-header">
+                An Example Algorithm of Computation of State Function of a Variable
+            </p>
+
             <p>
                 An example of one of many possible variants of the algorithm of just described procedure of
                 computation of the state function of a variable of a model of a qualitative system for n
@@ -548,9 +552,87 @@
             </p>
 
             <p>
-                There are two observations concerning the structure and the content of the algorithm described,
+                As it is shown in the flowchart above, the algorithm takes four arguments. Its first argument
+                is a list of groups of variables of the model, passed into the function at the moment of its
+                computation. The second and third arguments are the expected values and proposed values. They are
+                passed to the function as a list of groups of constant, characterizing situations that can be
+                formed as combinations of values of groups of variables passed to the function as its first argument;
+                and as a list of constants denoting proposed values corresponding to situations.
+                The groups of variables of the first argument are referred
+                from the specification of dependence of the variable which the function computes, and the constants
+                used in the second and the third arguments are taken directly from the Correspondences of the
+                specification. The fourth argument is the current value of the computed variable. It is used as the
+                spare value which the function returns in the case when its computed value turns out to be undefined.
+            </p>
+
+            <p>
+                Assuming that any group in the list of groups of variables, passed into the function as its
+                first argument, may characterize a situation and that the only one way to find out which of
+                the groups describes the really existing one and which does not, algorithm organizes
+                computation of the value of the function in the form of loop through all groups of variables.
+                And each iteration of the loop computes the first three steps listed in the scheme of steps
+                of a function.
+            </p>
+
+            <p>
+                So, for solving the task of the first step - determining whether the situation is present in
+                the state of the group of variables of the first argument, considered at the current iteration,
+                the algorithm systematically compares the value of each elements of the group with  each value
+                of the list of constants, describing expected situation and computes conjunction of the results
+                of comparing all elements of the group of variables. The result of computation of the conjunction,
+                represented by symbol "!", in the case when the situation turned out to be present, or by
+                symbol "$", when it turned out that the situation is absent, is used on the next step.
+            </p>
+
+            <p>
+                Task of the second step of computation - generation of the proposed value, as follows from
+                the description of the algorithm, is also solved using two operations; checking the value of
+                the result of recognition of a situation, obtained in the first step of the iteration and
+                assigning to the variable PV (proposed value) a constant taken from the list of constants
+                (the third argument of the function) in the case when the situation turned out to be present
+                in the group of variables or the state of the result R (symbol "$") in the case when the
+                situation turned out to be unrecognized.
+            </p>
+
+            <p>
+                Third step is the last in the iteration. It analyzes the state of the variable PV produced
+                in the second step from the point of view of its suitability as the value to become the
+                final value of the function. And for that, the proposed value, represented by the symbol $,
+                marking that the expected situation is not present in the model, is merely ignored; while
+                in case when the proposed value is equal to the previously computed value of the OPV, the
+                PV is just assigned to OPV again. However, in case when the OPV and the PV are not compared,
+                the OPV is marked with the symbol # indicating that a conflict of values was detected and that
+                further computation of the OPV for other groups of variables does not make sense. This step
+                is completed by incrementing the variable of the loop by one and then checking if the loop
+                has not been ended. And based on that check, computation either proceeds to the next
+                iteration and computes the value of the OPV for the next group of variables, when the
+                loop is not ended, or exits the loop, when all groups of variables are processed, and,
+                thus, the computation of OPV is complete.
+            </p>
+
+            <p>
+                Fourth step is not a part of the schema of computation of the OPC. Its task is not to compute,
+                but to check whether the final proposed value, obtained after processing all proposed values
+                computed for all recognized and unrecognized situations, is defined and to use it as the
+                computed value of the variable when it is recognized. Or, alternatively, when the final
+                proposed value is undefined (i.e. represented by one of the auxiliary symbols $ or #), the
+                step, instead of returning the undefined value, returns the  current value of the variable
+                passed to the algorithm as its fourth argument. Using, in that case as the computed value of
+                the state function of the variable, the current value of the variable changes the state of
+                the being computed variable to the one it is already in, and thus following the mechanism of
+                computing the next state of the variable, in fact, leaves its state unchanged.
+            </p>
+
+            <p>
+                The purpose of the suggested, rather detailed, description of the algorithm for computing the
+                state function of variables is to show its content from the point of view of the operations
+                necessary for transformation of arguments of the function into its values.
+            </p>
+
+            <p>
+                <b>There are two observations concerning the structure and the content of the algorithm described,
                 that are important for the modeling solution proposed in the following sections of
-                this page and therefore should not go unexpressed.
+                    this page and therefore should not go unexpressed.</b>
             </p>
 
             <p>
@@ -1111,7 +1193,7 @@
             </p>
 
             <p class="second-level-section-header">
-                State Equation Functions Expression as the Expanded<br>Disjunctive Normal Form (X-DNF)
+                General Form of Expression of State Equation of a Model<br> as the Expanded Disjunctive Normal Form (X-DNF)
             </p>
 
             <p>
