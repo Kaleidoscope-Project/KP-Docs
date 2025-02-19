@@ -86,7 +86,7 @@
 
         <center>
             <div class="page-header">
-                Qualitative Dynamical Systems Behavior<br>Mathematical Modeling Technique
+                Qualitative Dynamical Systems Mathematical Modeling Technique
             </div>
         </center>
 
@@ -96,29 +96,57 @@
                 When studying behavior of dynamical systems phenomenologically - that is not by delving into
                 their internal machinery, but instead considering only abstract collections of their properties
                 changing over time - we, following fundamental principles of mathematical modeling, tend to
-                explain causes of changes of states of properties of the systems by existence of certain
-                dependence relations of states of the properties on changes of states of the same or some other
+                explain causes of changes of states of properties by existence of certain
+                dependence relations of the states of the properties on changes of states of the same or some other
                 properties; and, optionally, on the effects of external systems or the environment.
             </p>
 
             <p>
-                Respectively, when creating models of qualitative systems, we have to: first, define a
-                collection of variables - x, representing qualitative properties of the modeled system, and,
-                second, to describe the model in the form of a system of equations, written as: x(t+1) = f(args(t)).
-                In such equations, the functions f are generally referred to as the state functions of the variables,
-                and their task is to compute transitions of the variables from current to the next state.
-<!--                And for that it carries out computation of the dependent element of the dependence relations,-->
-<!--                i.e., the value of the variable, corresponding to the independent element of this relation, i.e.,-->
-<!--                to the arguments of the function given to it at the time of its computation.-->
+                Accordingly, everything that happens around to one or another degree are the processes in
+                which changes of state of some properties of systems depend on changes of the state of
+                others and are, therefore, determined by dependence relations which may be found between them.
+                And, thus, many, if not all, efforts of mathematics consist in developing methods for
+                computation of the states of dependent elements of dependence relations on the states of
+                elements that are considered as independent elements of these relations.
             </p>
 
+<!--            <p>-->
+<!--                Respectively, when creating models of qualitative systems, we have to: first, define a-->
+<!--                collection of variables - x, representing qualitative properties of the modeled system, and,-->
+<!--                second, to describe the model in the form of a system of equations, written as: x(t+1) = f(args(t)).-->
+<!--                In such equations, the functions f are generally referred to as the state functions of the variables,-->
+<!--                and their task is to compute transitions of the variables from current to the next state.-->
+<!--            </p>-->
+
             <p>
-                This page describes mathematical modeling technique, developed in the Kaleidoscope project, which
-                is based on the results of studying of the character of dependence relations of states of properties,
-                described in the specifications of behavior of qualitative systems, nature of which, as it was
-                found, enables feasibility of defining state functions of models of qualitative
-                systems in the form of algebraic expressions.
+                Objective of this page is to introduce Qualitative Dynamical Systems Mathematical
+                Modeling Technique, developed within the Kaleidoscope Project, and to describe modeling
+                solutions proposed by the Modeling Technique that enables creation of models of the qualitative
+                systems intended to reproduce behavior of existing or being designed systems for the
+                purpose of studying or creating mechanisms, controlling their behavior.
             </p>
+
+<!--            <p>-->
+<!--                The page describes: Qualitative Dynamical Systems Behavior Mathematical Modeling Technique,-->
+<!--                developed in the Kaleidoscope project. This Technique, and its solutions, enable: 1) description-->
+<!--                of dependence relation of states of a single variable on a group of variables as a state function-->
+<!--                of the variable, procedure of computation of which can be implemented in the form of algebraic-->
+<!--                expression, written as composition of operations, defined on the carrier set of the algebraic-->
+<!--                system proposed by the technique; and also, 2) considering representation of the variables of-->
+<!--                the model of a qualitative system as a state vector in the vector space of the model, and-->
+<!--                reproducing behavior of the system as the evolution of the state of the vector with the help-->
+<!--                of the model implemented in the form of the matrix equation defined in the qualitative vector-->
+<!--                state space of the model.-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                This page describes qualitative dynamical systems behavior mathematical modeling technique,-->
+<!--                developed in the Kaleidoscope project, which-->
+<!--                is based on the results of studying of the character of dependence relations of states of properties,-->
+<!--                described in the specifications of behavior of qualitative systems, nature of which, as it was-->
+<!--                found, enables feasibility of defining state functions of models of qualitative-->
+<!--                systems in the form of algebraic expressions.-->
+<!--            </p>-->
 
 <!--            <p class="section-header">-->
 <!--                Essence of the Qualitative Dynamical Systems<br>Behavior Mathematical Modeling Technique-->
@@ -177,6 +205,129 @@
 <!--                of functions of models based on modeling solutions found in the process of exploration of-->
 <!--                possibility of mathematical modeling of the behavior of qualitative systems conducted in-->
 <!--                the Kaleidoscope project.-->
+<!--            </p>-->
+
+            <p class="section-header">
+                Reproducing Behavior of Qualitative Dynamical Systems With the Help of Their Models
+<!--                Technique of Reproducing Behavior of Qualitative Systems in Their Models-->
+            </p>
+            <!-- text moved form Z-2025.01.29-ABOUT FUNCTION-ONLY on 2025.02.19 -->
+
+            <p>
+                Reproducing behavior of a particular qualitative dynamical system, or, in the other words,
+                simulation of the process of changes of state of properties observed in the modeled system over
+                time, in general case, presumes: a) creation of a mathematical model of behavior of the
+                system as a collection of variables representing properties, and b) providing a mechanism
+                making the model to be able generating sequences of values of variables representing
+                sequences of states of the properties, observed in the modeled system.
+            </p>
+
+            <p>
+                Such process generally begins with transformation of initial state of the model, at the initial
+                moment of simulation t=0, into its state obtained at the next moment in time, that can be denoted
+                as t=1; then the state obtained at the time t=1 is transformed into the next state
+                observed at the next moment t=2; and then the process continues as a systematic repetition
+                of transformations at moments t=2, 3, 4, 5, etc., as long as this makes practical sense.
+
+                Hence, in order to ensure all the transformations of state of the model, performed at
+                each step of the process, all the dependence relations of future state of properties
+                on the state of the properties at the current moment of time, observed in the modeled
+                system, must be incorporated in the model and described in such a way that would enable
+                the model to be used for computing next (dependent) state of the model as a function
+                of its current state, considered as an independent element of the relation.
+            </p>
+
+            <p>
+                So, following the nature of the changes of the states of properties of qualitative systems
+                described on the page "Qualitative Dynamical Systems, Their Behavior, and Mathematical Modeling"
+                that are explained by the reactions of the systems to occurrence of different situations,
+                and the specification "Qualitative System Behavior Specification" (presented on the same page)
+                which defines behavior of the systems as the existence, in them, of the dependence
+                relations, determining dependence of each concrete state of each property of the system
+                on the occurrence of concrete combinations of the states of groups of properties that
+                characterize situations, one should presume that the model of a qualitative system should be:
+            </p>
+
+            <p>
+                (1) created as a collection of n variables, referred to as xi, where i runs from 0 to n-1,
+                that represent qualitative properties of the modeled system, values of which should be taken
+                from a mathematical set, character of elements of which makes it possible to use them for
+                representing qualitative states of properties; and
+            </p>
+
+            <p>
+                (2) and be equipped with the system of n equations, written as: x<sub>i</sub><sup>t+1</sup>
+                = f(args<sup>t</sup>), where: x<sub>i</sub><sup>t+1</sup> is the state of the variable
+                x<sub>i</sub> at time t+1; args<sup>t</sup> stands for the list of arguments of the
+                function <b>f</b>, holding values of variables of the model at time t; and <b>f</b> is
+                the function computing value of variable x<sub>i</sub><sup>t+1</sup>, (i.e., the
+                dependent element of the dependence relation described in the specification of dependence of
+                states of the variable, see the first page), as the state, corresponding to the values of
+                independent variables of the dependence relation, passed to the function as its arguments.
+            </p>
+
+            <p>
+                Main modeling solutions constituting the basis of the qualitative systems modeling technique,
+                and an example of the model of a concrete qualitative system defined on the basis of the
+                specification of the qualitative system, proposed on the first page, are described in the following
+                sections of this page.
+            </p>
+
+<!--            <p>-->
+<!--                Idea of reproducing behavior of dynamical systems, or, in other words, simulating process-->
+<!--                of changes of states of properties of that systems over time, by creation and application-->
+<!--                of their mathematical models, in general case, assumes computing the sequence of states of-->
+<!--                a model of a system. This process has to begin with transforming initial state of the model-->
+<!--                at the moment of time t=0 into its state observed at the next moment, which can be denoted-->
+<!--                as t=1; then the state obtained at the time t=1 is transformed into the next state observed-->
+<!--                at the next moment t=2; and then the process continues as a systematic repetition of-->
+<!--                transformations at moments t=2, 3, 4, 5, etc., as long as this makes practical sense.-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                Described transformations of the states of a model, produced at each iteration of this process,-->
+<!--                as is known, are performed for each variable of the model. They are carried out by the state-->
+<!--                functions of the variables of the model that determine the next state of the variables by-->
+<!--                computing states of the variables as a dependent element of the dependence relation of the-->
+<!--                states of variable on the current state of the model considered as an independent element-->
+<!--                of the relation. But the contents of the dependencies and, consequently, the contents of the-->
+<!--                procedures of computation of the functions of models of systems of different types, can turn-->
+<!--                out quite different, as they may depend on the different type of nature and character of the-->
+<!--                behavior inherent in  different systems being modeled.-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                Thus, for example, changes in the state of properties in quantitative systems of continuous-->
+<!--                operation are explained by the existence of various, but always constantly acting factors-->
+<!--                causing continuous changes in the state of the properties of these systems. And the dependence-->
+<!--                relations of some properties on others are observed as correlations between changes in the-->
+<!--                states of properties, which are considered dependent elements of the relation on changes-->
+<!--                in the state of a group of properties, which in the context of the relation under consideration-->
+<!--                are the independent elements. The study of the nature of correlations and subsequent-->
+<!--                approximation of the results of the observed dependencies maid in the form of linear, or-->
+<!--                more complex types of mathematical equations makes it possible to compute the states of-->
+<!--                dependent variables of the models of these systems as a function of the state of independent-->
+<!--                variables, which are passed to the function as various combinations of values of always the-->
+<!--                only group of its arguments.-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                Meanwhile, the discrete nature of changes in the state of properties of qualitative systems-->
+<!--                is determined not by constantly acting factors, but by the correspondences of concrete-->
+<!--                (and in no way related to each other) discrete states of properties to concrete situations.-->
+<!--                This dependence is defined in the specification of the dependence of the state of each-->
+<!--                variable of the model as a list of Correspondences, the elements of which are specified-->
+<!--                as pairs: [proposed value of the variable / value of variables of the group of variables-->
+<!--                characterizing expected situation]. Such a dependence on the state of the variables of-->
+<!--                the model determines the task of the state functions of the variables as computation of-->
+<!--                the proposed value of the variable described in the first element of the pair, corresponding-->
+<!--                to the second element of the pair, i.e., the expected situation, when it occurs. So,-->
+<!--                the argument of the state function computing the dependence of a qualitative variable-->
+<!--                should not be just a list of a single group of variables. It should be a list of groups-->
+<!--                of variables, the combination of the state of variables in each group of which-->
+<!--                (depending on the current state of the model) can either contain a description or-->
+<!--                descriptions of the expected  situation presented in the Correspondences of the-->
+<!--                specification of the model, or not.-->
 <!--            </p>-->
 
             <p class="section-header">
@@ -372,63 +523,8 @@
             </p>
 
             <p class="section-header">
-                Technique of Reproducing Behavior of Qualitative Systems With Their Models
-            </p>
-
-            <p>
-                The idea of reproducing behavior of dynamical systems, or, in other words, simulating
-                a process of changes of states of properties of such systems over time, by means of creation
-                and application of their mathematical models, generally assumes computing the sequence of
-                states of a model of a system. This process begins from transforming initial state of the
-                model at the moment of time t=0 into its state observed at the next moment, which can be
-                denoted as t=1; then the state obtained at the time t=1 is transformed into the next state
-                observed at the next moment t=2; and then the process continues as a systematic repetition
-                of transformations at moments t=2, 3, 4, 5, etc., as long as this makes practical sense.
-            </p>
-
-            <p>
-                Described transformations of state of a model, produced at each iteration of this process,
-                as it is known, are performed for each variable of the model. They are carried out by the
-                state functions of the variables of the model that determine the next state of the variables
-                by computing states of the variables as a dependent element of the dependence relation of
-                the states of variable on the current state of the model considered as an independent element
-                of the relation. But the content of the dependence and, consequently, the content of the
-                procedure computing the functions turns out to be quite different as it is dependent on the
-                nature and the character of the behavior of the systems being modeled.
-            </p>
-
-            <p>
-                Thus, for example, changes in the state of properties in quantitative systems of continuous
-                operation are explained by the existence of various, but always constantly acting factors
-                causing continuous changes in the state of the properties of these systems. And the dependence
-                relations of some properties on others are observed as correlations between changes in the
-                states of properties, which are considered dependent elements of the relation on changes
-                in the state of a group of properties, which in the context of the relation under consideration
-                are the independent elements. The study of the nature of correlations and subsequent
-                approximation of the results of the observed dependencies maid in the form of linear, or
-                more complex types of mathematical equations makes it possible to compute the states of
-                dependent variables of the models of these systems as a function of the state of independent
-                variables, which are passed to the function as various combinations of values of always the
-                only group of its arguments.
-            </p>
-
-            <p>
-                Meanwhile, the discrete nature of changes in the state of properties of qualitative systems
-                is determined not by constantly acting factors, but by the correspondences of concrete
-                (and in no way related to each other) discrete states of properties to concrete situations.
-                This dependence is defined in the specification of the dependence of the state of each
-                variable of the model as a list of Correspondences, the elements of which are specified
-                as pairs: [proposed value of the variable / value of variables of the group of variables
-                characterizing expected situation]. Such a dependence on the state of the variables of
-                the model determines the task of the state functions of the variables as computation of
-                the proposed value of the variable described in the first element of the pair, corresponding
-                to the second element of the pair, i.e., the expected situation, when it occurs. So,
-                the argument of the state function computing the dependence of a qualitative variable
-                should not be just a list of a single group of variables. It should be a list of groups
-                of variables, the combination of the state of variables in each group of which
-                (depending on the current state of the model) can either contain a description or
-                descriptions of the expected  situation presented in the Correspondences of the
-                specification of the model, or not.
+                Uncertainty of Presence of Expected Situations in the Model and Challenges
+                of Computation of the State Functions od Variables
             </p>
 
             <p>
