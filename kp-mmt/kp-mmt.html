@@ -60,7 +60,13 @@
     }
 
     </style>
-
+<!--
+checkifsame
+Conjunction
+Production
+Disjunction
+Application
+-->
 </head>
 
 <body>
@@ -242,16 +248,16 @@
                 sequence of coarse-grained steps. This perception of the process creates understanding
                 of the role of the model in the process of simulation of its behavior, but says
                 nothing about how such models should be defined and how they should perform the
-                transformations of the current state of the model into its next state. Meanwhile,
-                qualitative dynamical systems are instances of the class of dynamical systems whose
-                changes of state are described as the dependence of certain properties of the
-                system on the certain state of groups of properties.
+                transformations of the current state of the model into its next state.
             </p>
 
             <p>
+                Meanwhile, qualitative dynamical systems are instances of the class of dynamical systems whose
+                changes of state are described as the dependence of certain properties of the
+                system on the certain state of groups of properties.
                 Therefore, the main approach to defining the  models of qualitative systems is to
                 describe them as: a collection of variables accompanied by the mechanism for
-                computation of the states of the variables of the models as:
+                computation of the states of the variables of the models. That is as:
             </p>
 
             <p>
@@ -310,8 +316,8 @@
             <p>
                 (c) content of the procedure of computation of the states functions of variables of the
                 qualitative models in the form of the algebraic equations written as the composition of
-                the operations making it possible to define and compute values of state variables of t
-                he equations;
+                the operations making it possible to define and compute values of state variables of the
+                equations;
             </p>
 
             <p>
@@ -393,14 +399,27 @@
 <!--            </p>-->
 
             <p class="section-header">
-                Domain Set of State Functions of Variables of Mathematical Models of Qualitative Systems
+                Definition of the Domain Set of Mathematical Models of Qualitative Systems
             </p>
 
             <p>
-                When modeling behavior of qualitative systems, we consider their properties and study
-                changes of the properties. For that, we accept the fact that the properties can be in
-                several different states, and that the behavior of the systems can be perceived as the
-                processes of changes of the states of the properties over time.
+                Describing  states and changes of the states of properties observed in the modeled
+                qualitative systems, and giving them qualitative assessments expressed as the
+                propositions made in natural language, we solve two tasks. Assigning unique discrete
+                qualitative states to the properties, and associating with the states unique semantics
+                inherent in the words and combinations of the words used in the predicate part of
+                the propositions. These propositions and provided by them semantics of the states of
+                properties may be included in the models of the systems and be then used as the
+                interpretations of the values of the variables of the models,  facilitating,
+                thus, perception of changes of values of variables during the processes of simulation
+                of the behavior of systems. However, although semantics of the current and the next
+                states of variables are important for our understanding of what is happening in the
+                models, they are not used when computing the functions of the models.
+
+                <!--                When modeling behavior of qualitative systems, we consider their properties and study-->
+<!--                changes of the properties. For that, we accept the fact that the properties can be in-->
+<!--                several different states, and that the behavior of the systems can be perceived as the-->
+<!--                processes of changes of the states of the properties over time.-->
 
 <!--                Thus, for instance, to denote the states of variables of-->
 <!--                quantitative models, we use elements of sets of integer, real or complex numbers, which can-->
@@ -422,23 +441,44 @@
             </p>
 
             <p>
-                Accordingly, while creating models of behavior of qualitative systems, capable of reproducing
-                changes of properties of the systems; and defining the models as the collections of variables
-                that have to take values representing states of properties, we should have a mathematical set,
-                elements of which could be used as the different <em>qualitative</em> values, representing different
-                <em>qualitative</em> states of properties; and which, thus, could be considered as the domain of the
-                functions of the models.
+                Computation of functions transforms not the semantics, but the denotations of states
+                that have been assigned to the current states of the variables into the denotations
+                that are assigned to their next states. Therefore, just like in the case of defining
+                quantitative models, defining models of qualitative systems should be based on the
+                idea of creating and utilizing a mathematical set. Elements of this set should be used
+                for representing values of the variables of the models of qualitative systems,
+                and therefore their nature should enable representing qualitative states of the properties,
+                on the one hand, and defining, on the set, a family of operations, mechanism of execution
+                of which should be based on relations existing among the elements of the set; and the
+                application of the operations would provide computation of next state of the variables
+                as the functions of the states of their arguments, on the other hand.
+                <!--                Accordingly, while creating models of behavior of qualitative systems, capable of reproducing-->
+<!--                changes of properties of the systems; and defining the models as the collections of variables-->
+<!--                that have to take values representing states of properties, we should have a mathematical set,-->
+<!--                elements of which could be used as the different <em>qualitative</em> values, representing different-->
+<!--                <em>qualitative</em> states of properties; and which, thus, could be considered as the domain of the-->
+<!--                functions of the models.-->
             </p>
 
             <p>
-                Hence, the quite natural and convenient way to denote the qualitative assessments of the states of
-                the qualitative properties, the number of which can be larger than two, yet always finite, may
-                be defining the elements of the domain of the functions of the model as a set of symbols.
-                And since it works well in many similar cases, such set can be defined as a collection of
-                uppercase letters of the Latin alphabet, and for representing models created in the form of
-                a network of properties, which is intended to serve as the graphical representation of model,
-                the set can be defined as a collection of different colors that are used for colorizing the
-                properties in order to indicate their different states.
+                All that was said, assumes that the elements of this set should be used as unique
+                qualitative values of variables serving as unique denotations of unique states of
+                qualitative properties. Therefore, they should be considered merely as meaningless
+                markers of the unique states of the variables. And hence, the only binary relation
+                that may exist on such a set should be the equivalence relation of each element of
+                the set to itself, and, accordingly, non-equivalence to any other element of the
+                set. The role of the elements determines the solution (proposed by the technique),
+                which states that the elements of the set should not be the numbers, but just
+                uninterpreted signs. This  solution  is written as:
+                <!--                Hence, the quite natural and convenient way to denote the qualitative assessments of the states of-->
+<!--                the qualitative properties, the number of which can be larger than two, yet always finite, may-->
+<!--                be defining the elements of the domain of the functions of the model as a set of symbols.-->
+<!--                And since it works well in many similar cases, such set can be defined as a collection of-->
+<!--                uppercase letters of the Latin alphabet, and for representing models created in the form of-->
+<!--                a network of properties, which is intended to serve as the graphical representation of model,-->
+<!--                the set can be defined as a collection of different colors that are used for colorizing the-->
+<!--                properties in order to indicate their different states.-->
+
 <!--                Hence, the quite natural and convenient way to denote the qualitative assessments of the states-->
 <!--                of the qualitative properties, the number of which can be larger than two, yet always finite,-->
 <!--                is to define elements of the domain of the functions of the model as a set of symbols. And how it-->
@@ -449,24 +489,37 @@
 <!--                different states.-->
             </p>
 
-            <p>
-                However, in order for describing the modeling technique and the modeling solutions proposes by
-                the technique, further on,  is used the base version of the set described as the collection of
-                uppercase letters of the Latin alphabet; formal definition of which is given below:
-<!--                In order to describe the modeling technique and the modeling solutions the technique proposes,-->
-<!--                further on, however, is used the base version of the set described as the collection of uppercase-->
-<!--                letters of the Latin alphabet; formal definition of which is given below:-->
-            </p>
+<!--            <p>-->
+<!--                However, in order for describing the modeling technique and the modeling solutions proposes by-->
+<!--                the technique, further on,  is used the base version of the set described as the collection of-->
+<!--                uppercase letters of the Latin alphabet; formal definition of which is given below:-->
+<!--&lt;!&ndash;                In order to describe the modeling technique and the modeling solutions the technique proposes,&ndash;&gt;-->
+<!--&lt;!&ndash;                further on, however, is used the base version of the set described as the collection of uppercase&ndash;&gt;-->
+<!--&lt;!&ndash;                letters of the Latin alphabet; formal definition of which is given below:&ndash;&gt;-->
+<!--            </p>-->
 
             <div class="definition-border">
                 <div class="definition-inner-border" style="padding: 0px 15px 0px 15px;">
                     <p>
-                        Domain set <b>D</b> of the models of qualitative systems is the collection of uninterpreted
-                        uppercase letters of Latin alphabet, that is described as: <b>D</b> = {A, B, C, ..., Z}.
-                        It serves as the domain and the range of the state functions of variables of the models.
+                        The set <b>D</b> of the models of qualitative systems is the domain and
+                        the range of the state functions of variables of the models. It is the collection
+                        of uninterpreted uppercase letters of Latin alphabet, that is described as:
+                        <b>D</b> = {A, B, C, ..., Z}.
+<!--                        Domain set <b>D</b> of the models of qualitative systems is the collection of uninterpreted-->
+<!--                        uppercase letters of Latin alphabet, that is described as: <b>D</b> = {A, B, C, ..., Z}.-->
+<!--                        It serves as the domain and the range of the state functions of variables of the models.-->
                     </p>
                 </div> <!-- End of definition inner border -->
             </div> <!-- End of definition outer border -->
+
+            <p>
+                <em>A note</em>. Technique of describing the process of computation of the next state
+                of variables of a model in the form of mathematical expressions written as a composition
+                of algebraic operations, that involves defining the carrier set of the models (including
+                the set <b>D</b>) and defining on this set operations necessary for computation of the expressions,
+                is described later in the sections devoted defining state functions of variables of
+                the models in the form of the algebraic expressions.
+            </p>
 
             <p class="section-header">
                 Adaptation of the QSBSpec to Its Application for<br>Creating Models of Qualitative Systems
@@ -586,48 +639,55 @@
                 in this section.
             </p>
 
-            <p class="section-header">
-                Uncertainty of Presence of Expected Situations in the Model and Challenges
-                of Computation of the State Functions od Variables
-            </p>
+            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+            <!-- Commented out on 2025.03.05-->
+            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
-            <p>
-                Thus, due to the uncertainty of presence of situations in the arguments of the function,
-                it may always turn out that at each iteration of the process of reproducing the behavior
-                of the system:
-            </p>
+<!--            <p class="section-header">-->
+<!--                Uncertainty of Presence of Expected Situations in the Model and Challenges-->
+<!--                of Computation of the State Functions od Variables-->
+<!--            </p>-->
 
-            <p>
-                (1) none of all the situations described in the dependence relation of the variable as
-                expected is present in the model and therefore is not represented in any of the groups
-                of arguments of the function;
-            </p>
+<!--            <p>-->
+<!--                Thus, due to the uncertainty of presence of situations in the arguments of the function,-->
+<!--                it may always turn out that at each iteration of the process of reproducing the behavior-->
+<!--                of the system:-->
+<!--            </p>-->
 
-            <p>
-                (2) only one, or possibly several, of all the groups of arguments contain description of
-                the situation the occurrence, as well as subsequent existence, of which presupposes change
-                in the state of the dependent property to the same proposed value; or
-            </p>
+<!--            <p>-->
+<!--                (1) none of all the situations described in the dependence relation of the variable as-->
+<!--                expected is present in the model and therefore is not represented in any of the groups-->
+<!--                of arguments of the function;-->
+<!--            </p>-->
 
-            <p>
-                (3) at least two, or more, groups of arguments contain description of situations presupposing
-                change of value of the variable dependent on them to different states.
-            </p>
+<!--            <p>-->
+<!--                (2) only one, or possibly several, of all the groups of arguments contain description of-->
+<!--                the situation the occurrence, as well as subsequent existence, of which presupposes change-->
+<!--                in the state of the dependent property to the same proposed value; or-->
+<!--            </p>-->
 
-            <p>
-                Impossibility of determining the next state of a variable because there is no situations
-                in the system that could cause a reaction of the system and a change of state of the dependent
-                property to a state corresponding to the situation, as it is described in case 1, and the
-                occurrence of uncertainty preventing determining its single next value, described in case 3,
-                are a natural manifestation of the fragmentation and concurrency of processes in the
-                qualitative systems. And it means that the function encountering these cases cannot
-                determine its value when they arise and therefore should be considered as defined not
-                on all combinations of its arguments, or more simply is the partial. This partiality,
-                however, creates a number of difficulties and imposes special requirements on the content
-                of the process of computation of the state functions of variables of the models of
-                qualitative systems.
-            </p>
+<!--            <p>-->
+<!--                (3) at least two, or more, groups of arguments contain description of situations presupposing-->
+<!--                change of value of the variable dependent on them to different states.-->
+<!--            </p>-->
 
+<!--            <p>-->
+<!--                Impossibility of determining the next state of a variable because there is no situations-->
+<!--                in the system that could cause a reaction of the system and a change of state of the dependent-->
+<!--                property to a state corresponding to the situation, as it is described in case 1, and the-->
+<!--                occurrence of uncertainty preventing determining its single next value, described in case 3,-->
+<!--                are a natural manifestation of the fragmentation and concurrency of processes in the-->
+<!--                qualitative systems. And it means that the function encountering these cases cannot-->
+<!--                determine its value when they arise and therefore should be considered as defined not-->
+<!--                on all combinations of its arguments, or more simply is the partial. This partiality,-->
+<!--                however, creates a number of difficulties and imposes special requirements on the content-->
+<!--                of the process of computation of the state functions of variables of the models of-->
+<!--                qualitative systems.-->
+<!--            </p>-->
+
+            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+            <!-- End of Commented out on 2025.03.05-->
+            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
 <!--            <p>-->
 <!--                When describing character of dependence of values of variables while creating different-->
@@ -660,50 +720,165 @@
 <!--            </p>-->
 
             <p class="section-header">
-                Content and Algorithm of Procedure of Computation of<br>State Functions of Variables of a Model
+                Computation of State Functions of Variables<br>of the Models
             </p>
 
             <p>
-                Existence of the described impossibility or possible uncertainty in determining the next
-                state of the dependent variable creates the need to adapt the procedure for computation of
-                value of the variable to the current state of the model at each computation of the function.
+                To define a function, in a general sense, means to suggest a way for computing values
+                of a function for all possible combinations of values of its arguments.
             </p>
 
             <p>
-                Therefore, in order to perform all the computation steps required to determine the
-                values of the variable and ensure that the result is obtained for all possible variants
-                of the presence of the expected situation in the state of the model, it is necessary to
-                provide the procedure for computation of the fiction with the following capabilities to:
+                Respectively, in order to define the content of the procedure of computation of the
+                state function of a variable intended for for reproducing changes of the state of a
+                variable of a qualitative system depending on the occurrence of a situation in the
+                system, or more precisely, on the occurrence of certain combinations of states in
+                certain groups of variables of a model, characterizing situations, should be able
+                to compute values of the  variable  based on the content of Correspondences described
+                in the specification of the dependence of the state of the particular variable.
             </p>
 
             <p>
-                (1) identify combinations of argument groups as situations present in the model;
+                But this has to be done by taking into account that the suggested way for computation
+                of procedure must ensure obtaining results despite the characteristics of dependence
+                of states of variables of models on situations that may create challenges to the
+                process of computation of the functions. Being the complexes of interactive components,
+                qualitative systems can demonstrate behavior in which the functions calculating the
+                values of the variables can encounter cases at various steps of the simulation of the
+                system's behavior
             </p>
 
             <p>
-                (2) produce proposed values for situations present in the model, or designate
-                the values as undetermined;
+                Thus, due to the uncertainty of presence of situations in the arguments of the function,
+                it may always turn out that at each iteration of the process of reproducing the behavior
+                of the system:
             </p>
 
             <p>
-                (3) form a final proposed value of the function by analyzing proposed values produced for
-                all existing and non-existent situations; and
+                (a) when the situations expected in the model state have not yet formed,<br>
+                (1) none of all the situations described in the dependence relation of the variable as
+                expected is present in the model and therefore is not represented in any of the groups
+                of arguments of the function;
             </p>
 
             <p>
-                (4) guarantee valid result of computation of the function even in cases where the final
-                value of the function cannot be determined.
+                (b) when only one situation can always arise in the system, or<br>
+                (2) only one, or possibly several, of all the groups of arguments contain description
+                of the situation the occurrence, as well as subsequent existence, of which presupposes
+                change in the state of the dependent property to the same proposed value; or
             </p>
+
+            <p>
+                (c) when parallel and asynchronously acting components produce fragmentary changes in
+                the system state and can thus simultaneously create several different situations.<br>
+                (3) at least two, or more, groups of arguments contain description of situations
+                presupposing change of value of the variable dependent on them to different states.
+            </p>
+
+            <p>
+                And since it can always turn out that situations, in the general case, may not exist,
+                appear only one at a time, or arise simultaneously, the state  function of a concrete
+                variable computing next state of the variable must be capable to distinguish between
+                the listed cases and either:
+            </p>
+
+            <p>
+                (1) leave the current state of the variable unchanged;
+            </p>
+
+            <p>
+                (2) suggest the next state in the case when one or more situations cause the transition
+                of the variable to the same state, and
+            </p>
+
+            <p>
+                (3) identify cases when two or more simultaneously arising situations suggest a change
+                in the state of the variable to different states and therefore make the calculated value
+                of the function undefined.
+            </p>
+
+            <p>
+                Possibility of the occurrence of the mentioned cases makes the state functions of the
+                variables of a model only partially defined. However, these challenges are not critical.
+                As it is suggested by the technique of modeling qualitative systems, they are naturally
+                resolved, by
+            </p>
+
+            <p>
+                (a) including in the procedure the means of identifying the states of the arguments
+                of the function of the situation present in the state of the system;
+            </p>
+
+            <p>
+            (b) generating the proposed values corresponding to the situations present in the model;
+            </p>
+
+            <p>
+                (c) selecting one of all the generated proposed values; and
+            </p>
+
+            <p>
+                (d) using this value as the result of calculating the function in the event that
+                this value is defined, or using the current value of the variable instead of
+                an undefined value.
+            </p>
+
+<!--            <p>-->
+<!--                An example of one of many possible variants of the algorithm of just described-->
+<!--                procedure of computation of the state function of a variable of a model of a-->
+<!--                qualitative system for n groups of arguments of the function is shown in Figure 1.-->
+<!--            </p>-->
+
+            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+            <!-- Commented out on 2025.03.05-->
+            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+<!--            <p>-->
+<!--                Existence of the described impossibility or possible uncertainty in determining the next-->
+<!--                state of the dependent variable creates the need to adapt the procedure for computation of-->
+<!--                value of the variable to the current state of the model at each computation of the function.-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                Therefore, in order to perform all the computation steps required to determine the-->
+<!--                values of the variable and ensure that the result is obtained for all possible variants-->
+<!--                of the presence of the expected situation in the state of the model, it is necessary to-->
+<!--                provide the procedure for computation of the fiction with the following capabilities to:-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                (1) identify combinations of argument groups as situations present in the model;-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                (2) produce proposed values for situations present in the model, or designate-->
+<!--                the values as undetermined;-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                (3) form a final proposed value of the function by analyzing proposed values produced for-->
+<!--                all existing and non-existent situations; and-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                (4) guarantee valid result of computation of the function even in cases where the final-->
+<!--                value of the function cannot be determined.-->
+<!--            </p>-->
+
+            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+            <!-- Commented out on 2025.03.05-->
+            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
             <p class="second-level-section-header">
                 An Example Algorithm of Computation of State Function of a Variable
             </p>
 
             <p>
-                An example of one of many possible variants of the algorithm of just described procedure of
-                computation of the state function of a variable of a model of a qualitative system for n
-                groups of arguments of the function is shown in Flowchart 1.
+                An example of one of many possible variants of the algorithm of just described procedure
+                of computation of the state function of a variable of a model of a qualitative system for
+                n groups of arguments of the function is shown in Flowchart 1.
             </p>
+
             <!-- developed as Function Computation Procedure Formated-10.png-->
             <img class="center" src="images/function-computation-procedure.png"  width="470" height="600" />
 
