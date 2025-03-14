@@ -107,14 +107,14 @@ Application
                 properties; and, optionally, on the effects of external systems or the environment.
             </p>
 
-            <p>
-                Accordingly, everything that happens around to one or another degree are the processes in
-                which changes of state of some properties of systems depend on changes of the state of
-                others and are, therefore, determined by dependence relations which may be found between them.
-                And, thus, many, if not all, efforts of mathematics consist in developing methods for
-                computation of the states of dependent elements of dependence relations on the states of
-                elements that are considered as independent elements of these relations.
-            </p>
+<!--            <p>-->
+<!--                Accordingly, everything that happens around to one or another degree are the processes in-->
+<!--                which changes of state of some properties of systems depend on changes of the state of-->
+<!--                others and are, therefore, determined by dependence relations which may be found between them.-->
+<!--                And, thus, many, if not all, efforts of mathematics consist in developing methods for-->
+<!--                computation of the states of dependent elements of dependence relations on the states of-->
+<!--                elements that are considered as independent elements of these relations.-->
+<!--            </p>-->
 
 <!--            <p>-->
 <!--                Respectively, when creating models of qualitative systems, we have to: first, define a-->
@@ -125,11 +125,11 @@ Application
 <!--            </p>-->
 
             <p>
-                Objective of this page is to introduce Qualitative Dynamical Systems Mathematical
-                Modeling Technique, and describe modeling solutions proposed by the Modeling Technique
-                which enable creation of models of the qualitative systems intended for reproducing
-                behavior of existing or being designed systems with the purpose of studying or developing
-                mechanisms controlling their behavior.
+                The objective of this page is to describe Qualitative Dynamical Systems Mathematical
+                Modeling Technique, and modeling solutions proposed by the Modeling Technique.
+                Solutions enabling creation of models of the systems, capable of reproducing
+                behavior of existing or being designed qualitative systems conducted for studying or developing
+                mechanisms controlling behavior of the systems.
             </p>
 
 <!--            <p>-->
@@ -214,26 +214,26 @@ Application
 <!--            </p>-->
 
             <p class="section-header">
-                Reproduction of Behavior of Qualitative Dynamical Systems With the Help of Their Models
+                Technique of Reproduction of Behavior of Qualitative Dynamical Systems With the Help of Their Models
 <!--                Technique of Reproducing Behavior of Qualitative Systems in Their Models-->
             </p>
             <!-- text moved form Z-2025.01.29-ABOUT FUNCTION-ONLY on 2025.02.19 -->
 
             <p>
                 Reproducing behavior of qualitative dynamical systems, or, in the other words, simulation
-                modeling of the behavior of these systems, from the general perspective, is a process of
-                recreation in the models of the systems changes observed in the state of modeled systems,
-                happening over time. And, since by definition of the qualitative dynamical systems, all
-                the changes in their state are explained by the changes in its state of these systems
-                happened earlier, organization of the process of reproducing their behavior presumes
-                creation of models of these systems which could be used by the simulation process for
+                modeling of these systems is a process of
+                recreation with the help of the models of these systems changes observed in the state of modeled systems,
+                happening over time. And, since by definition of the behavior of qualitative dynamical systems, all
+                changes of their state are explained by the changes in state of the systems
+                happened earlier, organization of process of reproducing behavior of these systems presumes
+                creating such models of the systems which could be used by the simulation process for
                 generating the same sequences of transitions of the states of the models from their
-                current to the next state, as the sequences of transitions observed in the modeled systems.
+                current to the next state, as the ones observed in the modeled systems.
             </p>
 
             <p>
                 Thus, the process of reproducing behavior of a concrete qualitative system with the help
-                of its simulation model has to be carried out as the sequence of steps that begin with
+                of its simulation model could be carried out as the sequence of steps that begin with
                 transformation of the initial state of the model, performed at the initial moment of
                 simulation t=0, into its state obtained at the next moment in time, that can be denoted
                 as t=1; then the state obtained at the time t=1 should be transformed into the next state
@@ -243,28 +243,41 @@ Application
             </p>
 
             <p>
-                Given a detailed process of reproducing behavior of a qualitative dynamical system
-                utilizing a model created for this purpose describes behavior of the system as a
-                sequence of coarse-grained steps. This perception of the process creates understanding
-                of the role of the model in the process of simulation of its behavior, but says
-                nothing about how such models should be defined and how they should perform the
-                transformations of the current state of the model into its next state.
+                Provided detailed description of the process creates understanding
+                of role of the models in the technique of simulation modeling of behavior of systems. But it says
+                nothing about how the models of the systems should be defined and how they should perform the
+                transformations of the current state of the model into its next state.  Meanwhile, qualitative
+                systems are instances of the class of dynamical systems whose
+                changes of state are described as driven by the dependence of certain properties of the
+                system on the certain combinations of states of groups of properties.
+                Therefore, the main approach to defining the models of qualitative systems is to
+                describe them as:
             </p>
 
-            <p>
-                Meanwhile, qualitative dynamical systems are instances of the class of dynamical systems whose
-                changes of state are described as the dependence of certain properties of the
-                system on the certain state of groups of properties.
-                Therefore, the main approach to defining the  models of qualitative systems is to
-                describe them as: a collection of variables accompanied by the mechanism for
-                computation of the states of the variables of the models. That is as:
-            </p>
+<!--            <p>-->
+<!--                Having a detailed process of reproducing behavior of a qualitative dynamical system-->
+<!--                utilizing a model created for this purpose describes behavior of the system as a-->
+<!--                sequence of coarse-grained steps. This perception of the process creates understanding-->
+<!--                of the role of the model in the process of simulation of its behavior, but says-->
+<!--                nothing about how such models should be defined and how they should perform the-->
+<!--                transformations of the current state of the model into its next state.-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                Meanwhile, qualitative systems are instances of the class of dynamical systems whose-->
+<!--                changes of state are described as the dependence of certain properties of the-->
+<!--                system on the certain state of groups of properties.-->
+<!--                Therefore, the main approach to defining the  models of qualitative systems is to-->
+<!--                describe them as:-->
+<!--&lt;!&ndash;                a collection of variables accompanied by the mechanism for&ndash;&gt;-->
+<!--&lt;!&ndash;                computation of the states of the variables of the models. That is as:&ndash;&gt;-->
+<!--            </p>-->
 
             <p>
                 (1) a collection of n variables, referred to as x<sub>i</sub>, where index i of a variable x runs
-                from 0 to n-1; the variables represent qualitative properties of the modeled system,
-                while the values of the variables are taken from a mathematical set, nature of elements
-                of which makes it possible to use them for representing qualitative states of properties;
+                from 0 to n-1; the variables represent qualitative properties of the modeled system;
+                and the values of the variables should be taken from a mathematical set, characteristics of elements
+                of which make it possible to use them for representing qualitative states of properties;
                 and
 <!--                (1) be created as a collection of n variables, referred to as x<sub>i</sub>, where index i runs-->
 <!--                through values from 0 to n-1, representing qualitative properties of the modeled system, and the-->
@@ -273,14 +286,14 @@ Application
             </p>
 
             <p>
-                (2) the mechanism for computation of the states of the variables of the models defined
-                as the system of n equations, written as: x<sub>i</sub><sup>t+1</sup> = f(args<sup>t</sup>),
+                (2) the mechanism for computation of the states of the variables of the models is defined
+                as the system of n equations, written as: x<sub>i</sub><sup>t+1</sup> = <b>f</b>(args<sup>t</sup>),
                 where: x<sub>i</sub><sup>t+1</sup> is the state of the variable x<sub>i</sub> at time t+1;
                 args<sup>t</sup> stands for the list of arguments of the function <b>f</b>, holding values
-                of variables of the model at time t; and <b>f</b> is the function computing value of variable
+                of groups of variables of the model at time t; and <b>f</b> is the function computing value of variable
                 x<sub>i</sub><sup>t+1</sup>, (i.e., the dependent element of the dependence relation
                 described in the Qualitative System Behavior Specification, see the first page), as
-                the state, corresponding to the values of independent variables of the dependence relation,
+                the state, corresponding to the states of independent variables of the dependence relation,
                 passed to the function as its arguments.
 <!--                (2) be equipped with the system of n equations, written as: x<sub>i</sub><sup>t+1</sup>-->
 <!--                = f(args<sup>t</sup>), where: x<sub>i</sub><sup>t+1</sup> is the state of the variable-->
@@ -293,13 +306,13 @@ Application
             </p>
 
             <p>
-                Hence, for enabling creation of simulation models of qualitative systems, the modeling
-                technique of these systems was developed as a complex of modeling solutions. They are
+                Accordingly, in order to enable creation of simulation models of qualitative systems, the modeling
+                technique has been developed as a complex of modeling solutions. They are
                 based on the general principles of mathematical modeling of dynamical systems, on the
                 one hand, and follow the discrete nature of qualitative properties, as well as the
                 character of behavior of qualitative systems, that are described on the previous page:
                 "Qualitative Dynamical Systems, Their Behavior, and Mathematical Modeling", on the
-                other hand. These modeling solutions  provide creation a simulation models of
+                other hand. These solutions provide creation of simulation models of
                 qualitative systems, by proposing:
             </p>
 
@@ -526,19 +539,49 @@ Application
             </p>
 
             <p>
-                Structure of the QSBSpec, presented in Figure 5 on the previous page "Qualitative Systems,
-                Their Behavior and Mathematical Modeling" is general form of a qualitative system behavior
-                specification defined in terms of identifiers of properties and states of the properties
-                stored in the lists of pairs (unique identifier : text representing element of the specification).
-                Respectively, in order to use QSBSpec as a part of the modeling technique discussed on this page,
-                it has to be converted to the Qualitative Model Behavior Specification QMBSpec elements of which
-                would have the same structure as the elements of the QSBSpec have. However, being intended to
-                specify State Variable Dependence Specification, abbreviated to SVDSpec, elements of these
-                specifications should be not unique identifiers of properties and the states of properties,
-                but be rewritten as the names of the state variables and states of variables described as
-                the values of the variables taken from domain set D of the model.  Result of that conversion
-                is presented in Figure 1.
+<!--                Whatever the qualitative system being modeled would be - whether  existing in reality or only-->
+<!--                in our imagination, in order to create its simulation model capable of reproducing-->
+<!--                behavior of the system, this behavior has to be known and described.-->
+                Whatever the qualitative system being modeled would  be - whether existing  in reality
+                or only in our imagination, in order to create a simulation model that reproduces its
+                behavior, this behavior must be described. And this description should preferably be done
+                in terms of the notation that is used when creating the model. Therefore, the specification
+                of the qualitative system model proposed in this section is based on the specification
+                of the behavior of the qualitative system described on page: "Qualitative Systems,
+                Their Behavior and Mathematical Modeling".
+
+                It follows the structure of the specification of the behavior of the qualitative system
+                in the sense that it is defined as a list of the specification of the dependence of the
+                state of variables.
+
+                However unlike the GDS, each element of the model specification is defined as a list of
+                all Correspondence describing all pairs: "<em>proposed state of the variable / description of the expected values
+                of the group of variables characterizing situation</em>", where the fact of emergence of situation described
+                in the second element of pairs causes changes in the state of the
+                dependent variable of the specification.
             </p>
+
+            <p>
+                This model specification uses not identifiers
+                of names and states of properties, but designations of variables in the form of x<sub>i</sub>
+                and states using constants that are elements of the set <b>D</b>.
+                And the general form of the structure this specification is presented in Figure 1.
+            </p>
+
+<!--            <p>-->
+<!--                Structure of the QSBSpec, presented in Figure 5 on the previous page "Qualitative Systems,-->
+<!--                Their Behavior and Mathematical Modeling" is general form of a qualitative system behavior-->
+<!--                specification defined in terms of identifiers of properties and states of the properties-->
+<!--                stored in the lists of pairs (unique identifier : text representing element of the specification).-->
+<!--                Respectively, in order to use QSBSpec as a part of the modeling technique discussed on this page,-->
+<!--                it has to be converted to the Qualitative Model Behavior Specification QMBSpec elements of which-->
+<!--                would have the same structure as the elements of the QSBSpec have. However, being intended to-->
+<!--                specify State Variable Dependence Specification, abbreviated to SVDSpec, elements of these-->
+<!--                specifications should be not unique identifiers of properties and the states of properties,-->
+<!--                but be rewritten as the names of the state variables and states of variables described as-->
+<!--                the values of the variables taken from domain set D of the model.  Result of that conversion-->
+<!--                is presented in Figure 1.-->
+<!--            </p>-->
 
             <p>
             <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QMBSpec: {<br></div>
