@@ -1674,10 +1674,10 @@ Application
                 its arguments. When recognizing a particular situation, this operation compares all the values
                 of a group of the arguments, which may or may not contain the description of the expected situation
                 present in the model at the time of computation of the function, with their expected values. To
-                perform this comparison, the operation takes two operands whose values are symbols of the set D
-                and yields either symbol "!", which belongs to the set X, if both operands are represented by
-                the same symbol of set D, or the value "~", which also belongs to the set X, if the operands are
-                represented by different symbols of the set D.
+                perform this comparison, the operation takes two operands whose values are symbols of the set <b>D</b>
+                and yields either symbol "!", which belongs to the set <b>X</b>, if both operands are represented by
+                the same symbol of set <b>D</b>, or the value "~", which also belongs to the set <b>X</b>, if the operands are
+                represented by different symbols of the set <b>D</b>.
             </p>
 
             <p>
@@ -1718,7 +1718,7 @@ Application
                 of the function, and thus the next value of the state variable of the model. So, to accomplish
                 the task this operation takes two operands that can be represented by any symbols of the set S.
                 And it is commutative and associative, similar to the Conjunction operation, it is used to
-                compute the n-ary disjunction of all the results of the Production operation.  In the process
+                compute the n-ary disjunction of all the results of the Production operation. In the process
                 of this computation, it selects from all the proposed values produced by the Production
                 operation a single final proposed value that should become the value  of the function (and the
                 next value of the state variable of a model) if such a value can be found among all the
@@ -1734,7 +1734,7 @@ Application
             </p>
 
             <p>
-                2) It yields a symbol "d" that is an element of the set D, produced by the Production operation,
+                2) It yields a symbol "d" that is an element of the set <b>D</b>, produced by the Production operation,
                 as corresponding to the recognized situations in the case when one or more expected situations
                 turned out to be present in the state of the arguments of a function and all recognized
                 situations (when there are several of them) have produced the same proposed value of the variable.
@@ -1763,7 +1763,7 @@ Application
                 variable, in case the calculation of the next value of the variable may not work. Thus, all this
                 operation does is check the type of the final proposed value of the function passed to it as
                 its first operand and determine the computed value of the function using the final proposed value
-                if that value is represented by an element of the D sets, i.e., is a real symbol representing
+                if that value is represented by an element of the set <b>D</b>, i.e., is a real symbol representing
                 the next state of the variable. Or, alternatively, use the value of the additional argument of
                 the function which is the current value of the function which should replace the unevaluated
                 final proposed value.
@@ -1974,12 +1974,12 @@ Application
                 Step 5 is performed by the Application (<) operation. This operation is the guard of the computed
                 value of the variable of the equation. It takes two operands: the current value of the variable
                 and the final proposed value - produced by the Disjunction operation, which can be either the
-                element of the set D or the one of the symbols of the set X. Following its role of guarding, this
+                element of the set <b>D</b> or the one of the symbols of the set <b>X</b>. Following its role of guarding, this
                 operation is to prevent any symbol, other than those that represent the valid next value of the
                 variable, from becoming the result of the computation of the expression. So, the operation checks
-                if the final proposed value, given to it as the operand is a symbol of set D and if it is then
+                if the final proposed value, given to it as the operand is a symbol of set <b>D</b> and if it is then
                 yields the  final proposed value, or otherwise (when the final proposed value is a symbol belonging
-                to set X indicating that the next value of the variable is not computed) yields the first operand
+                to set <b>X</b> indicating that the next value of the variable is not computed) yields the first operand
                 representing the variable's current value, that leads to the value of the variable in fact will be
                 left unmodified. In the Figure 1a the yielded by the Disjunction operation result is represented
                 by symbols "H", therefore next computed value of the variable is computed as the symbol "H"
