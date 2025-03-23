@@ -336,13 +336,13 @@ Application
                     <!-- text moved form Z-2025.01.29-ABOUT FUNCTION-ONLY on 2025.02.19 -->
 
                     <p>
-                        Reproducing behavior of dynamical systems, or, in the other words,
-                        simulation modeling of behavior of these systems is a process of recreation
+                        Reproducing behavior of dynamical systems, or, in the other words
+                        simulation modeling of behavior of these systems, is a process of recreation
                         of changes observed in the state of modeled systems with the help of the models
-                        of these systems. And, since by definition of behavior of qualitative dynamical
+                        of these systems. And, since by definition of behavior of dynamical
                         systems, all changes of their state are explained by the changes in the state
                         of the systems happened earlier, organization of process of reproducing behavior
-                        of these systems presumes creating such models of the systems which could be used
+                        of these systems presumes creating such models of the systems that could be used
                         by the simulation process for generating the same sequences of transitions of states
                         of models from their current state to the next one, as those observed in the modeled
                         systems.
@@ -358,7 +358,8 @@ Application
                     </p>
 
                     <p>
-                        Thus, the process of reproducing behavior of a particular qualitative system with the help
+                        Thus, the process of reproducing behavior of a particular qualitative dynamical system
+                        with the help
                         of its simulation model could be performed as the sequence of steps that begin with
                         transformation of the initial state of the model, performed at the initial moment of
                         simulation t=0, into its state observed at the next moment in time, that can be denoted
@@ -378,14 +379,14 @@ Application
                     </p>
 
                     <p>
-                        This  description creates understanding of role of the models in
-                        the technique of simulation modeling of behavior of systems. But it says nothing
+                        This description creates understanding of role of the models in
+                        the technique of simulation modeling of behavior of qualitative systems. But it says nothing
                         about how the models of the systems should be defined and how they should perform
-                        the transformations of the current state of the model into its next state. Meanwhile,
-                        qualitative systems are instances of the class of dynamical systems whose changes
-                        of state are described as driven by the dependence relations of states of properties
-                        of the systems on the combinations of states of groups of properties. Therefore, the
-                        model of a qualitative system should be:
+                        transformations of current states of the models into their next states. Meanwhile,
+                        qualitative dynamical systems are instances of the class of dynamical systems whose changes
+                        of states are described as driven by the dependence relations of states of properties
+                        of the systems on the combinations of states of groups of properties. Therefore, a
+                        model of a qualitative system should:
         <!--                -->
         <!--                Provided description of the process creates understanding-->
         <!--                of role of the models in the technique of simulation modeling of behavior of systems. But it says-->
@@ -418,8 +419,8 @@ Application
         <!--            </p>-->
 
                     <p>
-                        (1) defined as a collection of n variables, referred to as x<sub>i</sub>, where index i of a variable x runs
-                        from 0 to n-1; these variables represent qualitative properties of the modeled system;
+                        (1) be defined as a collection of n variables, referred to as x<sub>i</sub>, where
+                        index i of a variable x runs from 0 to n-1; variables represent qualitative properties of the modeled system;
                         and values of the variables are taken from a mathematical set, characteristics of elements
                         of that make it possible to use them for representing states of qualitative properties;
                         while
@@ -430,9 +431,9 @@ Application
                     </p>
 
                     <p>
-                        (2) mechanism of computation of the states of the variables of the model is to be defined
+                        (2) the mechanism of computation of the states of the variables of the model has to be defined
                         as the system of n equations, written as: x<sub>i</sub><sup>t+1</sup> = <b>f</b>(args<sup>t</sup>),
-                        where: x<sub>i</sub><sup>t+1</sup> is the state of the variable x<sub>i</sub> at time t+1;
+                        where: x<sub>i</sub><sup>t+1</sup> is the state of the variable x<sub>i</sub> at the time t+1;
                         args<sup>t</sup> stands for the list of arguments of the function <b>f</b>, holding values
                         of groups of variables of the model at time t; and <b>f</b> is the function computing value of variable
                         x<sub>i</sub><sup>t+1</sup>, (i.e., the dependent element of the dependence relation
@@ -454,9 +455,8 @@ Application
                         So, the modeling technique, intended to enable creation of simulation models of qualitative systems,
                         has been developed as a complex of modeling solutions. Those solution are
                         based on the general principles of mathematical modeling of dynamical systems, on the
-                        one hand, and following the discrete nature of qualitative properties, as well as the
-                        character of behavior of qualitative systems, that are also described on the first page,
-                        on the other hand. The solutions propose:
+                        one hand, and reflect discrete nature of qualitative properties, as well as the
+                        character of behavior of qualitative systems, on the other hand. Theis solutions describe:
 
         <!--                Accordingly, in order to enable creation of simulation models of qualitative systems, the modeling-->
         <!--                technique has been developed as a complex of modeling solutions. They are-->
@@ -469,19 +469,19 @@ Application
                     </p>
 
                     <p>
-                        (a) Definition of domain set, elements of which can be used for representation of states
+                        (a) Definition of domain set, elements of which can be used for representing states
                         of variables of models;
                     </p>
 
                     <p>
-                        (b) Specification of Dependence of states of variables of model, derived from
-                        the  Modeled Qualitative Systems Behavior Specification, suggested on the previous page;
+                        (b) Qualitative Models Behavior Specification, derived from
+                        the Qualitative Systems Behavior Specification, suggested on the previous page;
                     </p>
 
                     <p>
-                        (c) Requirements to content of procedure of computation of states functions of
-                        variables of the qualitative models, making it possible to compute values of the state
-                        variables of the model;
+                        (c) Requirements to content of procedure of computation of state functions of
+                        variables of the qualitative models, that make it possible to compute values of the state
+                        variables of the models;
                     </p>
 
                     <p>
@@ -490,8 +490,8 @@ Application
                     </p>
 
                     <p>
-                        (e) Definition of five algebraic operations that can be used for computating algebraic
-                        equations written as the composition of the operations.
+                        (e) Definition of five algebraic operations that can be used for computing algebraic
+                        equations written as the composition of these operations.
                     </p>
 
                     <p>
@@ -566,53 +566,51 @@ Application
                     </p>
 
                     <p>
-                        Creation of dynamical systems mathematical models, based on the idea of
+                        Creation of dynamical systems of mathematical models, based on the idea of
                         defining models as the collections of variables representing collections of
-                        properties and states of the properties of modeled systems, assumes definition
-                        of a mathematical set, nature of elements of which would make it possible
+                        properties and states of the properties of modeled systems, assumes defining
+                        a mathematical sets, nature of elements of which would make it possible
                         to use them as values of variables, denoting modeled qualitative states
                         of properties of the systems. Thus, for example, technique of creating models
-                        of quantitative systems, utilizes sets of integer, real or complex numbers,
+                        of <em>quantitative systems</em>, utilizes sets of integer, real or complex numbers,
                         elements of which are used to denote magnitudes of properties being modeled.
-                        Whereas modeling technique of either logical or discrete systems states of
-                        elements of which may take only two states, uses sets consisting of only
+                        Whereas modeling technique of either logical or discrete systems
+                        elements of which may take only two states, use sets consisting of only
                         two elements, chosen as either "yes" and "no", or "1" and "0", depending on
                         adopted interpretation.
                     </p>
 
                     <p>
-                        However, qualitative systems are neither quantitative nor logical. By giving
+                        But, the <em>qualitative systems</em> are neither quantitative nor logical. By assigning to
                         properties of these systems qualitative assessments of their states, we
                         explicitly assume that they are capable of taking several different states
-                        that are neither quantitative nor logical and that the elements of the set that
+                        that are neither quantitative nor logical, and that the elements of the set which
                         are supposed to denote states of variables representing qualitative states of
                         the properties are supposed to be used as markers of unique qualities and
                         therefore are not supposed to have any associated with them connotation and
-                        interpretation. So, the only relation that can be defined on such a set can only
-                        be the relation of each element of the set to itself and non-equivalence with
-                        all other elements of the set.
+                        interpretation. Hence, the only relation that can be defined on such a set should only
+                        be the relation of equivalence of each element of the set to itself, and the one of
+                        non-equivalence with all other elements of the set.
                     </p>
-
-
 
                     <p>
                         Such a set can certainly be a set of signs, in which the signs can be
                         either the letters, when the description of the model and the states of the
-                        variables is given in the form of text, or be the codes of different colors,
-                        when the states of the model variables are depicted graphically. Accordingly,
-                        both of the ways of representing the states of variables are used in the
-                        creation of algebraic and graphical models.
+                        variables is given in the form of written text, or be the codes of different colors,
+                        when the model and the states of the variables are depicted graphically. Hence,
+                        both of the ways of representing the states of variables are used for creation of
+                        algebraic and graphical models, respectively.
                     </p>
 
                     <p>
-                        So the basic definition of a set of elements used on this page is the following:
+                        So the basic definition of the set used on this page is the following:
                     </p>
 
                     <div class="definition-border">
                         <div class="definition-inner-border" style="padding: 0px 15px 0px 15px;">
                             <p>
                                 The set <b>D</b> of the models of qualitative systems is the domain and
-                                the range of the state functions of variables of the models. It is the collection
+                                the range of the state functions of variables of the models. It is defined as the collection
                                 of uninterpreted uppercase letters of Latin alphabet, that is described as:
                                 <b>D</b> = {A, B, C, ..., Z}.
                                 <!--                        Domain set <b>D</b> of the models of qualitative systems is the collection of uninterpreted-->
@@ -624,7 +622,7 @@ Application
 
 
                     <p>
-                        <em>Remark 1</em>. Definition of a set of models in the form of a set of colors, which in
+                        <em>Remark 1</em>. Definition of a set of models in the form of the set of colors, which in
                         the context of creating graphical models of qualitative systems is called a
                         Palette, is given on the page "Multicolored Logical Net (McLN) Modeling Formalism".
                     </p>
@@ -632,11 +630,11 @@ Application
                     <p>
                         <em>Remark 2</em>. Technique of describing the process of computation of the
                         next state of variables of a model in the form of mathematical expressions
-                        written as a composition of algebraic operations, that involves defining the
-                        carrier set of the models (which includes set <b>D</b>) and defining on this
+                        written as a composition of algebraic operations, that requires defining
+                        carrier set of the models as extension of the  set <b>D</b>, and defining on this
                         set operations necessary for computation of the mathematical formulas, is
-                        described later in the sections devoted defining state functions of variables
-                        of the models in the form of the algebraic expressions.
+                        described later in the sections devoted defining content of the state functions of variables
+                        of models in the form of algebraic expressions.
                     </p>
 
 <!--                    <p>-->
@@ -768,11 +766,11 @@ Application
                         in the sense that it is defined as a list of the specification of the dependence of the
                         state of variables.
 
-                        However unlike the QDS, each element of the model specification is defined as a list of
-                        all Correspondence describing all pairs: "<em>proposed state of the variable / description of the expected values
-                        of the group of variables characterizing situation</em>", where the fact of emergence of situation described
-                        in the second element of pairs causes changes in the state of the
-                        dependent variable of the specification.
+                        However unlike the qualitative dinamical systems, each element of the model specification should be
+                        defined as a list of all Correspondences described as all pairs: "<em>proposed state of the
+                        variable / description of the expected values of the group of variables characterizing situation</em>",
+                        where the fact of emergence of situation described in the second element of pairs causes changes
+                        in the state of the dependent variable of the specification.
                     </p>
 <!--                    <script>-   <a href = "../kp-qds/kp-qds.html">->
 <!--                        const elementToHover = document.-->
@@ -792,10 +790,10 @@ Application
 <!--                            });-->
 <!--                    </script>-->
                     <p>
-                        This model specification uses not identifiers
+                        This model specification should not use identifiers
                         of names and states of properties, but denotations of variables in the form of x<sub>i</sub>
                         and states using constants that are elements of the set <b>D</b>.
-                        And the general form of the structure this specification is presented in Figure 1.
+                        General form of structure of this specification is presented in Figure 1.
                     </p>
 
         <!--            <p>-->
