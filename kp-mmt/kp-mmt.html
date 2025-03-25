@@ -767,26 +767,61 @@ Application
                     </p>
 
                     <p>
-        <!--                Whatever the qualitative system being modeled would be - whether  existing in reality or only-->
-        <!--                in our imagination, in order to create its simulation model capable of reproducing-->
-        <!--                behavior of the system, this behavior has to be known and described.-->
-                        Whatever the qualitative system being modeled would  be - whether existing  in reality
-                        or only in our imagination, in order to create a simulation model that reproduces its
-                        behavior, this behavior must be described. And this description should preferably be done
-                        in terms of the notation that is used when creating the model. Therefore, the specification
-                        of the qualitative system model proposed in this section is based on the specification
-                        of the behavior of the qualitative system described on page:
-                        <em id="element02ToHover">"Qualitative Systems, Their Behavior and Mathematical Modeling"</em>.
-                        It follows the structure of the specification of the behavior of the qualitative system
-                        in the sense that it is defined as a list of the specification of the dependence of the
-                        state of variables.
-
-                        However unlike the qualitative dynamical systems, each element of the model specification should be
-                        defined as a list of all Correspondences described as all pairs: "<em>proposed state of the
-                        variable / description of the expected values of the group of variables characterizing situation</em>",
-                        where the fact of emergence of situation described in the second element of pairs causes changes
-                        in the state of the dependent variable of the specification.
+                        Whatever the modeled qualitative system may be - whether existing in
+                        reality or, when is designed, only in our imagination, in order to
+                        create its model, it is necessary to have detailed specification of
+                        dependence of states of each variable of the model on the states of
+                        various groups of variables characterizing situations that can arise
+                        in the model. And since such models are created for reproducing behavior
+                        of the modeled systems, the structure and the content of the specification
+                        of the model has to be based on observed, or assumed, dependence of states
+                        of each property of the system on the occurrence of situations described
+                        in the Qualitative System Behavior Specification, structure of which is
+                        proposed on the previous page: "<em>Qualitative Systems, Their Behavior and
+                        Mathematical Modeling</em>".
                     </p>
+
+                    <p>
+                        Described in this section Qualitative Model Behavior Specification (QMBSpec)
+                        follows structure of the Qualitative System Behavior Specification (QSBSpec)
+                        in the sense that it is also defined as a list of the specifications of the
+                        dependence of individual elements, but, in this case, those elements are not
+                        properties, but variables. Meanwhile, unlike the QSBSpec (each element of which
+                        describes single Correspondence of proposed state of property to expected
+                        situation) -  each element of the QMBSpec is defined as the pair: [name of the
+                        variable / list of all Correspondences], in which Correspondences determine
+                        dependence of all states of the variable of the pair on all expected situations.
+                    </p>
+
+                    <p>
+                        Thus, in order to reflect the content of the QMBSpec, elements of its list  are
+                        named: State Variable Dependence Specification (SVDSpec); variables in the
+                        SVDSpecs are named x<sub>i</sub>, and values of the variables are denoted by constants
+                        taken from the set <b>D</b>. General form of the structure of QMBSpec  is presented
+                        in Figure 1.
+                    </p>
+
+<!--                    <p>-->
+<!--        &lt;!&ndash;                Whatever the qualitative system being modeled would be - whether  existing in reality or only&ndash;&gt;-->
+<!--        &lt;!&ndash;                in our imagination, in order to create its simulation model capable of reproducing&ndash;&gt;-->
+<!--        &lt;!&ndash;                behavior of the system, this behavior has to be known and described.&ndash;&gt;-->
+<!--                        Whatever the qualitative system being modeled would  be - whether existing  in reality-->
+<!--                        or only in our imagination, in order to create simulation model that reproduces its-->
+<!--                        behavior, this behavior must be described. And this description should preferably be done-->
+<!--                        in terms of the notation that is used when creating the model. Therefore, the specification-->
+<!--                        of the qualitative system model proposed in this section is based on the specification-->
+<!--                        of the behavior of the qualitative system described on page:-->
+<!--                        <em id="element02ToHover">"Qualitative Systems, Their Behavior and Mathematical Modeling"</em>.-->
+<!--                        It follows the structure of the specification of the behavior of the qualitative system-->
+<!--                        in the sense that it is defined as a list of the specification of the dependence of the-->
+<!--                        state of variables.-->
+
+<!--                        However unlike the qualitative dynamical systems, each element of the model specification should be-->
+<!--                        defined as a list of all Correspondences described as all pairs: "<em>proposed state of the-->
+<!--                        variable / description of the expected values of the group of variables characterizing situation</em>",-->
+<!--                        where the fact of emergence of situation described in the second element of pairs causes changes-->
+<!--                        in the state of the dependent variable of the specification.-->
+<!--                    </p>-->
 <!--                    <script>-   <a href = "../kp-qds/kp-qds.html">-->
 <!--                       const elementToHover = document.-->
 <!--                            getElementById('elementToHover');-->
@@ -804,12 +839,12 @@ Application
 <!--                                elementToPopup.style.display = 'none';-->
 <!--                            });-->
 <!--                    </script>-->
-                    <p>
-                        This model specification should not use identifiers
-                        of names and states of properties, but denotations of variables in the form of x<sub>i</sub>
-                        and states using constants that are elements of the set <b>D</b>.
-                        General form of structure of this specification is presented in Figure 1.
-                    </p>
+<!--                    <p>-->
+<!--                        This model specification should not use identifiers-->
+<!--                        of names and states of properties, but denotations of variables in the form of x<sub>i</sub>-->
+<!--                        and states using constants that are elements of the set <b>D</b>.-->
+<!--                        General form of structure of this specification is presented in Figure 1.-->
+<!--                    </p>-->
 
         <!--            <p>-->
         <!--                Structure of the QSBSpec, presented in Figure 5 on the previous page "Qualitative Systems,-->
@@ -1123,7 +1158,7 @@ Application
                         function computation procedure, that respects partial dependence of values
                         of variables on the occurrence of situations, but converts this partial
                         dependence into the algorithm of fully defined function, is presented in
-                        Figure 1.
+                        Figure 2.
                     </p>
 
 
@@ -1304,7 +1339,7 @@ Application
                     <img class="center" src="images/function-computation-procedure.png"  width="470" height="600" />
 
                     <p class="center-text">
-                        Figure 1. Flowchart of algorithm of procedure of computation of state function of a variable.
+                        Figure 2. Flowchart of algorithm of procedure of computation of state function of a variable.
                     </p>
 
                     <p>
@@ -1314,7 +1349,7 @@ Application
                     </p>
 
                     <p>
-                        Depicted in Figure 1, flowchart of the algorithm of computation of a function
+                        Depicted in Figure 2, flowchart of the algorithm of computation of a function
                         (although it noticeably resembles the algorithm of a computer program) is
                         really neither intended for being implemented in the form of a program nor
                         in the form of an algebraic expression. It was created as part of the process of
@@ -1473,7 +1508,7 @@ Application
         <!--            </p>-->
 
                     <p class="section-header">
-                        Proposal of Rearrangement of Algorithm of Procedure<br>of Computation of State Function of Variable
+                        Proposal of Rearrangement of Algorithm of<br>Procedure of Computation of State<br> Function of Variable
                     </p>
 
                     <p>
@@ -1486,7 +1521,7 @@ Application
                         values of the variables of the models, with the elements of set of auxiliary
                         values <b>X</b>, also defined as a set of symbols, used for  denoting results of
                         analysis of the state of process of computation of the functions, creates a
-                        unique opportunity to rearrange algorithm shown in Figure 1. The new
+                        unique opportunity to rearrange algorithm shown in Figure 2. The new
                         algorithm, obtained as the result of the proposed rearrangement, would be
                         based not on exclusion of the data analysis operations from the procedure of
                         computation of a function at all. It is based on the idea of hiding all decision
@@ -1495,7 +1530,7 @@ Application
 
                     <p>
                         Imagine the implementation of the algorithm of procedure of computation of
-                        function, presented in Figure 1 to be rewritten in such a way where all those,
+                        function, presented in Figure 2 to be rewritten in such a way where all those,
                         "if-s" and "then-s", clattering process of computation, (which are usually
                         depicted on the flowcharts in the form of decision operations presented in the
                         form of diamonds testing results of the data evaluations) which are located
@@ -1518,7 +1553,7 @@ Application
 
                     <p>
                         Example of the new laminar algorithm obtained as the result of rearrangement of
-                        that depicted in Figure 1, is presented in Figure 2.
+                        that depicted in Figure 2, is presented in Figure 3.
                         <!--                Example of such rearrangement of the algorithm, presented in the flowchart 1, is presented-->
         <!--                in the Flowchart 2.-->
                     </p>
@@ -1526,7 +1561,7 @@ Application
                     <img class="center" src="images/simplified-function-computation-procedure.png"  width="470" height="600" />
 
                     <p class="center-text">
-                        Figure 2. Same algorithm as in Figure 1, but after all the decision operations are
+                        Figure 3. Same algorithm as in Figure 2, but after all the decision operations are
                         moved from outside to inside the data procesing operations.
                     </p>
 
@@ -2103,7 +2138,7 @@ Application
                         right part of the equation, as the composition of operations defined on the set S. Now,
                         the content of this section is intended to illustrate application of the elements and the
                         operations of the set S in the process of computation of the expression of the equation (1).
-                        The content of the proposed example is presented in Figure 1 which has four sections: a, b,
+                        The content of the proposed example is presented in Figure 4 which has four sections: a, b,
                         c and d.
                     </p>
 
@@ -2130,7 +2165,7 @@ Application
                         but not placed in the remaining three sections since all these sections depict the same
                         execution process while the difference in the content of computation is determined by different
                         values assigned to the arguments of the expression at time of their initialization. Here
-                        below is Figure 1a followed by the detailed description of steps of execution of the operations.
+                        below is Figure 4a followed by the detailed description of steps of execution of the operations.
                     </p>
 
 
@@ -2141,7 +2176,7 @@ Application
                     <img class="center" src="images/example-0.png" width="512" height="230"/>
 
                     <p>
-                        Figure 1a provides a detailed description of the steps of computation of the expression.
+                        Figure 4a provides a detailed description of the steps of computation of the expression.
                         It illustrates the case when the arguments of the expression are initialized as x0 = G;
                         x1 = L; x2 = M; x3 = Q; and thus the situation (x1) is not present and is not recognized,
                         but the situation (x2, x3) is present and recognized. Therefore, the produced proposed
@@ -2157,7 +2192,7 @@ Application
                         the situation (x1), presented as a group of variables consisting of only one variable x1,
                         and to the situation (x2, x3), presented as a group consisting of two variables x2 and x3.
                         So, as it follows from the structure of the expression, the task of this operation is to
-                        test if the current value of each variable is the same as its expected one.  In Figure 1a,
+                        test if the current value of each variable is the same as its expected one.  In Figure 4a,
                         the application of this operation is depicted as three arrows directed vertically from the
                         sign of the Equivalence operation "?" to the symbol yielded as the result depending on the
                         operands of the operation. Thus, as the value of the variable x1 is "L" and its expected
@@ -2191,7 +2226,7 @@ Application
                         the constant corresponding to the recognized situation described in the Correspondence sub-expression
                         and located as the operand of the Production operand placed on the left side of the operation,
                         or as the symbol "$" already used to indicate the fact that the situation was not recognized.
-                        On the Figure 1a, application of the Production operation is depicted as one arrow directed from
+                        On the Figure 4a, application of the Production operation is depicted as one arrow directed from
                         the sign "*" to the domain symbol "H" yielded as result of the application of the operation to
                         its operands, given as symbols of "H" and "!".
                     </p>
@@ -2209,7 +2244,7 @@ Application
                         values are represented by the same element of the set <b>D</b>, or c) an auxiliary symbol "#", indicating
                         the fact that two or more of the recognized situations produced proposed values represented by the
                         different elements of the set <b>D</b>, and thus created the conflict in choosing the single final value
-                        of computation. In Figure 1a the Disjunction operation takes operands given as symbols "$" and "H"
+                        of computation. In Figure 4a the Disjunction operation takes operands given as symbols "$" and "H"
                         and therefore chooses of them as the final proposed values symbol "H";
                     </p>
 
@@ -2224,12 +2259,12 @@ Application
                         yields the  final proposed value, or otherwise (when the final proposed value is a symbol belonging
                         to set <b>X</b> indicating that the next value of the variable is not computed) yields the first operand
                         representing the variable's current value, that leads to the value of the variable in fact will be
-                        left unmodified. In the Figure 1a the yielded by the Disjunction operation result is represented
+                        left unmodified. In the Figure 4a the yielded by the Disjunction operation result is represented
                         by symbols "H", therefore next computed value of the variable is computed as the symbol "H"
                     </p>
 
                     <p>
-                        Execution of step 5 completes the description of computation of the expression, presented in Figure 1a.
+                        Execution of step 5 completes the description of computation of the expression, presented in Figure 4a.
                     </p>
 
                     <p class = "second-level-section-header" >
@@ -2237,8 +2272,8 @@ Application
                     </p>
 
                     <p>
-                        The computation of the rest of the sections of b), c), and d) of Figure 1 follows the same
-                        schema as the computation of presented in Figure 1a, and is different only in the way of
+                        The computation of the rest of the sections of b), c), and d) of Figure 4 follows the same
+                        schema as the computation of presented in Figure 4a, and is different only in the way of
                         initialization of the variables: x1, x2, x3, that make the expression, in spite of the same
                         order of the application of the operations, to compute the expression differently. That is, in
                         fact, based on the internal analysis, conducted by the operations that make them to produce
@@ -2250,7 +2285,7 @@ Application
                     <img class="center" src="images/example-1.png" width="512" height="152" />
 
                     <p>
-                        Figure 1b illustrates case when arguments of the expression are set as  x0 = G; x1 = E; x2 = M;
+                        Figure 4b illustrates case when arguments of the expression are set as  x0 = G; x1 = E; x2 = M;
                         x3 = Q; This makes both: the situation (x1) and the situation (x2, x3) are recognized, and,
                         as the consequence of that, the produced proposed values "P" and "H" create uncertainty in
                         choosing the final value of the variable x0 accomplished by the Disjunction operation that in
@@ -2262,7 +2297,7 @@ Application
                     <img class="center" src="images/example-2.png" width="512" height="155" />
 
                     <p>
-                        Figure 1c illustrates case opposite to the case 1a. Here the arguments of the expression
+                        Figure 4c illustrates case opposite to the case 1a. Here the arguments of the expression
                         are set as  x0 = G; x1 = E; x2 = U; x3 = Q; and this leads to the situation (x1) is recognized,
                         but the situation (x2, x3) is not recognized. Hence, the only produced proposed values "P" of
                         the variable x0 which belongs to the domain set D is computed as the correspondence to the
@@ -2272,7 +2307,7 @@ Application
                     <img class="center" src="images/example-3.png" width="512" height="157" />
 
                     <p>
-                        Figure 1d illustrates case opposite to the case 1b. In this case the arguments of the expression
+                        Figure 4d illustrates case opposite to the case 1b. In this case the arguments of the expression
                         are set as  x0 = G; x1 = R; x2 = M; x3 = Z; This makes that none of the expected situations is
                         present and, hence, none of the expected situations is recognized. And so, as a consequence of
                         that, both proposed values of the variable are marked with the symbol "$". And therefore, similar
