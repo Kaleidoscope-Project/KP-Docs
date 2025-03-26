@@ -378,11 +378,11 @@ Application
                     </p>
 
                     <p>
-                        This description creates understanding of role of the models in
+                        Suggested description creates understanding of role of the models in
                         the technique of simulation modeling of behavior of qualitative systems. But it says nothing
                         about how the models of the systems should be defined and how they should perform
                         transformations of current states of the models into their next states. Meanwhile,
-                        qualitative dynamical systems are instances of the class of dynamical systems whose changes
+                        qualitative dynamical systems are the instances of the class of dynamical systems whose changes
                         of states are described as driven by the dependence relations of states of properties
                         of the systems on the combinations of states of groups of properties. Therefore, a
                         model of a qualitative system should:
@@ -468,8 +468,8 @@ Application
                     </p>
 
                     <p>
-                        (a) Definition of domain set, elements of which can be used for representing states
-                        of variables of models;
+                        (a) Definition of domain set, elements of which can be used for representing qualitative
+                        states of variables of models;
                     </p>
 
                     <p>
@@ -490,12 +490,12 @@ Application
 
                     <p>
                         (e) Definition of five algebraic operations that can be used for computing algebraic
-                        equations written as the composition of these operations.
+                        expressions written as the composition of these operations.
                     </p>
 
                     <p>
                         All listed, and other, associated with them, solutions, as well as an example of a concrete
-                        model of a qualitative system defined based on the specification of model of a concrete
+                        model of qualitative system defined based on the specification of model of a concrete
                         qualitative system, are described in the following sections of this page.
                         <!--                Main modeling solutions constituting the basis of the qualitative systems modeling technique,-->
         <!--                and an example of the model of a concrete qualitative system defined on the basis of the-->
@@ -571,7 +571,7 @@ Application
                         of properties of the modeled systems. Thus, for example, technique of creating models
                         of <em>quantitative systems</em>, utilizes sets of integer, real or complex numbers,
                         elements of which are used to denote magnitude of modeled properties.
-                        Whereas the technique of modeling of either logical or discrete systems
+                        On the other hand, technique of modeling either logical or discrete systems,
                         propositions of which may take only two states, use sets consisting of only
                         two elements, such as "yes" and "no", or "1" and "0", depending on
                         adopted interpretation.
@@ -593,14 +593,13 @@ Application
                     <p>
                         But, the <em>qualitative systems</em> are neither quantitative nor logical. By assigning to
                         properties of these systems different qualitative assessments of their states, we have to
-                        assume that properties are able of taking several qualitative states
-                        which are neither quantitative nor logical, and that the elements of the set which
-                        should denote states of variables, representing qualitative states of
-                        properties, will be used as markers of unique qualities and
-                        therefore are not supposed to have any associated with them connotations and
-                        interpretations. Therefore, the only relation that can be defined on such a set should
-                        be equivalence relation of each element of the set to itself, and, thus, non-equivalence
-                        with all other elements of the set.
+                        assume that properties are able of taking several qualitative states, and that the elements
+                        of the set which should be used as states of variables, representing qualitative states of
+                        properties, will serve as markers of unique qualities of the properties. And,
+                        therefore, the such qualitative markers are not supposed to have any associated with
+                        them connotations and interpretations. Hence, the only relation that can be defined on
+                        such a set should be the equivalence relation of each element of the set to itself, and,
+                        thus, non-equivalence relation with all other elements of the set.
                     </p>
 
                     <p>
@@ -611,7 +610,7 @@ Application
                     </p>
 
                     <p>
-                        So, the basic definition of the set used on this page is the following:
+                        So, the definition of set signs used on this page is the following:
                     </p>
 
                     <div class="definition-border">
@@ -759,7 +758,7 @@ Application
 
                     <p>
                         Whatever the modeled qualitative system may be - whether existing in
-                        reality or, when is designed, only in our imagination, in order to
+                        reality or, when is designed, present only in our imagination, in order to
                         create its model, it is necessary to have detailed specification of
                         dependence of states of each variable of the model on the states of
                         various groups of variables characterizing situations that can arise
@@ -773,20 +772,20 @@ Application
                     </p>
 
                     <p>
-                        Described in this section Qualitative Model Behavior Specification (QMBSpec)
+                        Respectively, described in this section Qualitative Model Behavior Specification (QMBSpec)
                         follows structure of the Qualitative System Behavior Specification (QSBSpec)
                         in the sense that it is also defined as a list of the specifications of the
                         dependence of individual elements, but, in this case, those elements are not
                         properties, but variables. Meanwhile, unlike the QSBSpec (each element of which
                         describes single Correspondence of proposed state of property to expected
                         situation) -  each element of the QMBSpec is defined as the pair: [name of the
-                        variable / list of all Correspondences], in which Correspondences determine
+                        variable / list of all Correspondences], in which the Correspondences determine
                         dependence of all states of the variable of the pair on all expected situations.
                     </p>
 
                     <p>
                         Thus, in order to reflect the content of the QMBSpec, elements of its list  are
-                        named: State Variable Dependence Specification (SVDSpec); variables in the
+                        named: State Variable Dependence Specification (SVDSpec), variables in each
                         SVDSpecs are named x<sub>i</sub>, and values of the variables are denoted by constants
                         taken from the set <b>D</b>. General form of the structure of QMBSpec  is presented
                         in Figure 1.
@@ -876,12 +875,12 @@ Application
                     </p>
 
                     <p>
-                        In the Figure:
+                        In the Figure 1:
                     </p>
 
                     <p>
-                        (1) QMBSpec is defined as a <b>L</b> <span class="column"><sup>n</sup><sub>i=0</sub></span>
-                        list of n SVDSpec<sub>i</sub>.
+                        (1) QMBSpec is defined as the list <b>L</b> <span class="column"><sup>n</sup><sub>i=0</sub></span>
+                         of n SVDSpec<sub>i</sub>.
                     </p>
 
                     <p>
@@ -1046,12 +1045,11 @@ Application
 
                     <p>
                         Respectively, in order to define the content of the procedure of computation of the
-                        state function of a variable intended for for reproducing changes of the state of a
-                        variable of a qualitative system depending on the occurrence of a situation in the
-                        system, or more precisely, on the occurrence of certain combinations of states in
+                        state function intended for reproducing changes of the state of a
+                        variable of a qualitative system depending on the occurrence of certain combinations of states in
                         certain groups of variables of a model, characterizing situations, the function should be able
                         to compute values of the variable based on the content of Correspondences described
-                        in the specification of the dependence of the state of the particular variable.
+                        in the particular State Variable Dependence Specification.
         <!--                Respectively, in order to define the content of the procedure of computation of the-->
         <!--                state function of a variable intended for reproducing changes of the state of a-->
         <!--                variable of a qualitative system depending on the occurrence of a situation in the-->
@@ -1063,7 +1061,7 @@ Application
 
                     <p>
                         However, this has to be done by taking into account that the suggested way
-                        for computation of the procedure must ensure obtaining results despite the
+                        for computation of the procedure must ensure obtaining results despite possible
                         challenges of computation of the functions caused by the characteristics of
                         dependence of states of variables of models on irregularities of the
                         occurrence of situations.
@@ -1077,71 +1075,116 @@ Application
                     </p>
 
                     <p>
-                        Being a means of reproducing behavior of qualitative systems acting
+                        Being the means of reproducing behavior of qualitative systems acting
                         asynchronously and producing change in their state fragmentary,  the
-                        functions of models of qualitative systems that perform transformations of
+                        functions of models of qualitative systems performing transformations of
                         states of variables of the model from their current state to the next one, can
-                        encounter at the moment of computation of values of variables three
-                        deterministic but quite various cases of computation of values of the
-                        variables, emerging:
+                        encounter, at the moment of computation of values of the variables, three
+                        although deterministic, but quite various cases of computation of values of the
+                        variables:
                     </p>
 
                    <p>
-                       (a) when the situations expected in the state of a model have not yet formed,
+                       (a) case when situations expected in the state of a model, have not yet formed;
                    </p>
 
                     <p>
-                        (b) when only one situation can arise in the system at a time, or
+                        (b) case when only one situation may exist in the model at a time; or
                     </p>
 
                     <p>
-                        (c) when asynchronously and concurrently acting components produce
-                        fragmentary changes in the state of a system and thus simultaneously
-                        create several different situations.
+                        (c) case when asynchronously and concurrently acting components produce
+                        fragmentary changes in the state of a system and thus create
+                        several different simultaneously present in the model situations.
                     </p>
 
                     <p>
-                        And, hence since in the general case, it may turn out that any of the case
-                        "a", "b", or "c", may occur at any moment of computation of a function,
-                        expected situations may either not exist in the model at all, appear in it only
-                        sequentially one after another, or arise and be present in the model
-                        concurrently, state function of a variable, computing next state of a
-                        particular variable must be able to distinguish between following cases
-                        listed below. They should:
+                        The problem of computation of the values of the variables emerges because
+                        the functions computing values of variables does not know which of the
+                        expected situations really exist in the model, and therefor are present
+                        in the arguments of the functions at the moment of their computation, and
+                        which are not. Therefore, since, the task of computation  of a variable
+                        is to produce the next state of a variable, the function must be able to
+                        distinguish between three cases listed below and if necessarrily prevent them.
+                        They should:
                     </p>
 
                     <p>
                         (1) identify case when none of the situations described in the specification
-                        of the dependence of states of being computed variable is present in the
-                        state of the model, and, in order to avoid corruption of the state of
-                        computed variable,  mark the proposed next state of the variable with the
-                        symbol indicating that it is undefined;
+                        of the dependence of states of being computed variable is present in the state
+                        of the model, and, in order to avoid corruption of the state of computed
+                        variable, mark the proposed next state of the variable with the symbol
+                        indicating that it is undefined;
                     </p>
 
                     <p>
-                        (2) propose the next state of a variable as taken from the description of its
-                        correspondence to detected situation (or situations), in case when there
-                        exists one or more situations causing the variable to transition to the same
-                        state; and
+                        (2) generate the next state of a variable as the proposed state of the
+                        variable taken from the description of the correspondence of the detected
+                        situation (or situations), but only in case when there exists one or more
+                        situations causing the variable to transition to the same state; and
                     </p>
 
                     <p>
-                        (3) identify cases when two or more simultaneously occurring situations
-                        suggest changes of state of a variable to different states and, in order to
-                        avoid corruption of the state of computed variable in that case too, mark the
-                        proposed the next state of the variable with the symbol indicating conflict of
-                        the proposed values;
+                        (3) identify cases when two or more simultaneously occurred situations
+                        propose changes of the variable into different states and thus, in order
+                        to avoid corruption of the state of computed variable, mark the proposed
+                        the next state of the variable with the symbol indicating conflict of the
+                        proposed values;
                     </p>
 
+<!--                    <p>                         -->
+<!--                        Hence, since, it may always turn out that any of the cases-->
+<!--                        "a", "b", or "c", may occur at any moment of computation of a function,-->
+<!--                        expected situations may either not exist in the model at all, appear in it only-->
+<!--                        sequentially one after another, or arise and be present in the model-->
+<!--                        concurrently, state function of a variable, computing next state of a-->
+<!--                        particular variable must be able to distinguish between following cases-->
+<!--                        listed below. They should:-->
+<!--                    </p>-->
+
+<!--                    <p>-->
+<!--                        (1) identify case when none of the situations described in the specification-->
+<!--                        of the dependence of states of being computed variable is present in the-->
+<!--                        state of the model, and, in order to avoid corruption of the state of-->
+<!--                        computed variable,  mark the proposed next state of the variable with the-->
+<!--                        symbol indicating that it is undefined;-->
+<!--                    </p>-->
+
+<!--                    <p>-->
+<!--                        (2) propose the next state of a variable as taken from the description of its-->
+<!--                        correspondence to detected situation (or situations), in case when there-->
+<!--                        exists one or more situations causing the variable to transition to the same-->
+<!--                        state; and-->
+<!--                    </p>-->
+
+<!--                    <p>-->
+<!--                        (3) identify cases when two or more simultaneously occurring situations-->
+<!--                        suggest changes of state of a variable to different states and, in order to-->
+<!--                        avoid corruption of the state of computed variable in that case too, mark the-->
+<!--                        proposed the next state of the variable with the symbol indicating conflict of-->
+<!--                        the proposed values;-->
+<!--                    </p>-->
+
                     <p>
-                        And in order to resolve cases 1 and 3 and, thus, to turn the described above
-                        partial dependence of variables on the situations into the fully defined
-                        function its computation procedure should produce the final proposed value o
-                        f the function that should become the next state of the variables, in the
-                        event when this value is defined, as it is described in case 2 above, or
-                        produce the current value of the variable instead of an undefined value.
-                        This will still produce and assign to the computed variable its next state but
-                        will effectively make the variable unchanged.
+                        Cases 1 and 3 of computation of functions occur when status of arguments of a function
+                        cannot be mapped into its value and make the function partial. Therefore, in order to
+                        turn partial function into the fully defined both case mark result of their computation
+                        with the symbol indicating that it is undefined. Analysing result of computation
+                        function computation procedure may produce the final proposed value of
+                        the function that should become the next state of the variables, in the
+                        event when this value is defined, as it is described in case 2, or
+                        produce the current value of the variable instead of the undefined value,
+                        as it is described in case 1 and 3. This substitution still assigns to the computed
+                        variable its next state, but would make the variable effectively unchanged.
+
+<!--                        And in order to resolve cases 1 and 3 and, thus, to turn the described above-->
+<!--                        partial dependence of variables on the situations into the fully defined-->
+<!--                        function its computation procedure should produce the final proposed value o-->
+<!--                        f the function that should become the next state of the variables, in the-->
+<!--                        event when this value is defined, as it is described in case 2 above, or-->
+<!--                        produce the current value of the variable instead of an undefined value.-->
+<!--                        This will still produce and assign to the computed variable its next state but-->
+<!--                        will effectively make the variable unchanged.-->
                     </p>
 
                     <p>
