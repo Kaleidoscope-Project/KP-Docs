@@ -342,7 +342,7 @@ Application
                         models of these systems. And, since by definition of behavior of dynamical
                         systems, all changes of their state are explained by the changes in the state
                         of the systems happened earlier, organization of process of reproducing behavior
-                        of these systems presumes creating such models of the systems that could be used
+                        of these systems presumes creating such models that could be used
                         by the simulation process for generating the same sequences of transitions of states
                         of models from their current state to the next one, as those observed in the modeled
                         systems.
@@ -365,7 +365,7 @@ Application
                         simulation t=0, into its state observed at the next moment in time, that can be denoted
                         as t=1; then the state at the time t=1 should be transformed into the next state
                         observed at the next moment t=2; and then the process should continue as a systematic
-                        repetition of steps of transformations at moments t=2, 3, 4, 5, etc., as long as this
+                        repetition of steps of transformations at the moments t=2, 3, 4, 5, etc., as long as this
                         makes practical sense.
         <!--                -->
         <!--                Thus, the process of reproducing behavior of a concrete qualitative system with the help-->
@@ -420,9 +420,9 @@ Application
 
                     <p>
                         (1) be defined as a collection of n variables, referred to as x<sub>i</sub>, where
-                        index i of a variable x runs from 0 to n-1; variables represent qualitative properties of the modeled system;
+                        index i of variable x runs from 0 to n-1; variables represent qualitative properties of the modeled system;
                         and values of the variables are taken from a mathematical set, characteristics of elements
-                        of that make it possible to use them for representing states of qualitative properties;
+                        of which make it possible to use them for representing states of qualitative properties;
                         while
         <!--                (1) be created as a collection of n variables, referred to as x<sub>i</sub>, where index i runs-->
         <!--                through values from 0 to n-1, representing qualitative properties of the modeled system, and the-->
@@ -431,16 +431,17 @@ Application
                     </p>
 
                     <p>
-                        (2) the mechanism of computation of the states of the variables of the model has to be defined
-                        as the system of n equations, written as: x<sub>i</sub><sup>t+1</sup> = <b>f</b>(args<sup>t</sup>),
-                        where: x<sub>i</sub><sup>t+1</sup> is the state of the variable x<sub>i</sub> at the time t+1;
-                        args<sup>t</sup> stands for the list of arguments of the function <b>f</b>, holding values
-                        of groups of variables of the model at time t; and <b>f</b> is the function computing value of variable
-                        x<sub>i</sub><sup>t+1</sup>, (i.e., the dependent element of the dependence relation
-                        described in the Qualitative System Behavior Specification, defined on the first page:
-                        "Qualitative Dynamical Systems, Their Behavior, and Mathematical Modeling"), as
-                        the state, corresponding to the states of independent variables of the dependence relation,
-                        passed to the function as its arguments.
+                        (2) the mechanism of computation of the states of the variables of the model has to
+                        be defined as the system of n equations, written as: x<sub>i</sub><sup>t+1</sup> =
+                        <b>f</b>(args<sup>t</sup>), where: x<sub>i</sub><sup>t+1</sup> is the state of the
+                        variable x<sub>i</sub> at the time t+1; args<sup>t</sup> stands for the list of
+                        arguments of the function <b>f</b>, holding values of groups of variables of the
+                        model at time t; and <b>f</b> is the function computing value of variable
+                        x<sub>i</sub><sup>t+1</sup>, as the dependent element of the dependence relation
+                        (described in the <em>Qualitative System Behavior Specification</em>) corresponding
+                        to values of independent variables of the relation, passed to the function as
+                        its arguments.
+
         <!--                (2) be equipped with the system of n equations, written as: x<sub>i</sub><sup>t+1</sup>-->
         <!--                = f(args<sup>t</sup>), where: x<sub>i</sub><sup>t+1</sup> is the state of the variable-->
         <!--                x<sub>i</sub> at time t+1; args<sup>t</sup> stands for the list of arguments of the-->
