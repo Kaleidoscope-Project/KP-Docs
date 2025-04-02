@@ -1096,7 +1096,7 @@ Application
                         must be passed to it as arguments and which are not, cannot be obtained until
                         its computation begins, absolutely all groups of variables listed in the
                         SVDSpec, must be included in the list of arguments of state function of each
-                        variable; so to say just in case. And, thus, in fact, it turns out that, not
+                        variable; so to say just in case. And, thus, because of that, it turns out that, not
                         all, but only those groups of arguments, that at the moment of computation of
                         the functions,  characterize expected situations, can be used for computing
                         values of functions (and their variables) corresponding to the expected
@@ -1104,9 +1104,9 @@ Application
                     </p>
 
                     <p>
-                        Hence, taking into account all said, in order to compute the function, its
-                        procedure, (that can be also referred as algorithm) have to be enabled for a)
-                        systematic scanning the list of all groups of arguments of the function for
+                        Hence, taking into account all that has been said by now, in order to compute the
+                        function, its procedure, (that can be also referred as algorithm) have to be enabled
+                        for a) systematic scanning the list of all groups of arguments of the function for
                         identifying among them expected situations, b) producing either the real
                         proposed values of the variable taken from the Correspondences of
                         the Specification in cases when either a single, or few expected situation
@@ -1515,67 +1515,174 @@ Application
                     <img class="center" src="images/function-computation-procedure.png"  width="470" height="600" />
 
                     <p class="center-text">
-                        Figure 2. Flowchart of algorithm of procedure of computation of state function of a variable.
+                        Figure 2. Flowchart of the algorithm implementing content of<br>computation procedure of
+                        a state function of variable described<br>in the previous section.
+
+<!--                        of procedure of computation of state function of a variable.-->
+                    </p>
+
+<!--                    <p>-->
+<!--                        The purpose of rather detailed description of the algorithm for computing a-->
+<!--                        state function of a variable, suggested below, is to show its content from the point of view-->
+<!--                        of the operations necessary for transformation of arguments of the function into its values.-->
+<!--                    </p>-->
+
+<!--                    <p>-->
+<!--                        Depicted in Figure 2, flowchart of the algorithm of computation of a function-->
+<!--                        (although it noticeably resembles the algorithm of a computer program) is-->
+<!--                        really neither intended for being implemented in the form of a program nor-->
+<!--                        in the form of an algebraic expression. It was created as part of the process of-->
+<!--                        studying the nature of the mechanism for computing state functions of-->
+<!--                        mathematical models of qualitative systems, and is an attempt to understand-->
+<!--                        what kind of the organization the algorithm of computation of these functions-->
+<!--                        should have, and what kind of operations are needed to construct it.-->
+<!--                        Respectively, while comprehending this algorithm, one could make two-->
+<!--                        following conclusions.-->
+<!--                    </p>-->
+
+                    <p>
+                        As it is shown in the Figure 2, the algorithm takes four arguments. Its first
+                        argument is a list of groups of variables of the model, passed into the function
+                        at the moment of its computation. The second and third arguments are taken
+                        directly from the Correspondences of the specification. They are passed to
+                        the function as a list of groups of constant, describing expected situations
+                        which may be formed as combinations of values of groups of variables passed
+                        to the function as its first argument; and as a list of constants denoting
+                        proposed values corresponding to the expected situations. The fourth argument
+                        is the current value of the variable being computed. It is used as the spare value
+                        of the function in case when its computed value turns out to be undefined.
                     </p>
 
                     <p>
-                        The purpose of rather detailed description of the algorithm for computing a
-                        state function of a variable, suggested below, is to show its content from the point of view
-                        of the operations necessary for transformation of arguments of the function into its values.
+                        This algorithm organizes the evaluation of a function in the form of a cycle
+                        through all groups of the first argument of the function, performed with the
+                        purpose: 1) to identify all situations expected by the function that may be
+                        present, at the time of evaluation of the function, in the list of groups
+                        of its first argument; 2) to determine the proposed value of the variable
+                        for each group of variables as corresponding to the identified situation or
+                        to mark it as undefined using the auxiliary symbol $ for this purpose; 3)
+                        to analyze the state of each proposed value, which may turn out to be either
+                        defined or not, and to determine the final proposed value of the function,
+                        which thus may also turn out to be undefined due to the fact that either
+                        none of the expected in the list of groups of the first argument situations
+                        was detected, or two or more expected situations were detected, but it
+                        turned out that their proposed values are different and therefore, during
+                        the analysis, the final proposed value was marked with the symbol #.
+
+<!--                        and 4)-->
+<!--                        to use, after completion of the cycle, as the computed value of the function-->
+<!--                        the final proposed value, computed in the cycle, if it holds a symbol that-->
+<!--                        belongs to set D, or to use the current state of the variable, passed to the-->
+<!--                        function as its fourth argument when the final proposed value is undefined.-->
                     </p>
 
                     <p>
-                        Depicted in Figure 2, flowchart of the algorithm of computation of a function
-                        (although it noticeably resembles the algorithm of a computer program) is
-                        really neither intended for being implemented in the form of a program nor
-                        in the form of an algebraic expression. It was created as part of the process of
-                        studying the nature of the mechanism for computing state functions of
-                        mathematical models of qualitative systems, and is an attempt to understand
-                        what kind of the organization the algorithm of computation of these functions
-                        should have, and what kind of operations are needed to construct it.
-                        Respectively, while comprehending this algorithm, one could make two
-                        following conclusions.
+                        And since the cycle can be completed with cases where the final proposed value
+                        of the function may be either computed or undefined, the last operation of the
+                        algorithm, performed after the end of the cycle, uses as the computed value of
+                        the function (and its state variable) the final proposed value when it contains
+                        a symbol belonging to the set D, which means it is computed, or replaces
+                        it with the current state of the variable passed to the function as its fourth
+                        argument when the final proposed value is undefined.
                     </p>
+
+<!--                    <p>-->
+<!--                        The algorithm organizes computation in the form of a cycle through-->
+<!--                        all groups of variables of the model, listed in the first argument of the function.-->
+<!--                        It is performed with the purpose of: 1) identifying at each iteration of the-->
+<!--                        cycle if the combination of states of the current group of first argument characterizes-->
+<!--                        the situation expected in the function, and ignoring if it is not, and 2) determining the value of the function and-->
+<!--                        the variable taking into account all identified and missing situations. So, in-->
+<!--                        order to achieve required result, the algorithm details-->
+<!--                        general vision of content of the computation procedure of the function described-->
+<!--                        in the previous section by performing at each iteration of the loop three-->
+<!--                        major steps, following step of application of the obtained result;-->
+<!--                    </p>-->
+
+<!--                    <p>-->
+<!--                        (a) Executes its internal loop whose task is to determine whether the expected-->
+<!--                        situation is present in the current group of the arguments of function or not,-->
+<!--                        For that the loop systematically compares elements of the current group of arguments-->
+<!--                        with their expected values presented in the second argument  are appeared equal,-->
+<!--                        and obtaining confirmation that either all elements of the current-->
+<!--                        group have compared with their expected values and thus the expected-->
+<!--                        situation exists and should be considered as the cause of the change of the-->
+<!--                        state of the variable, or that at least one pair: an element of the current-->
+<!--                        argument group and its expected value have not been compared and thus the-->
+<!--                        situation is considered absent.-->
+<!--                    </p>-->
+
+<!--                    <p>-->
+<!--                        (b) Produces a proposed value of the variable corresponding to the current-->
+<!--                        situation, which may be either a constant belonging to the set D representing-->
+<!--                        the next state of the variable if the situation was recognized, or an auxiliary-->
+<!--                        symbol "$" meaning that the expected situation was not recognized and therefore-->
+<!--                        the proposed value corresponding to it is undefined.-->
+<!--                    </p>-->
+
+<!--                    <p>-->
+<!--                        (c) Perform an analysis of the generated proposed value in order to identify-->
+<!--                        one of the possible cases determining the final proposed value of the function-->
+<!--                        by comparing first the initial final proposed value specified during the-->
+<!--                        initialization of the algorithm and then each previously calculated final proposed-->
+<!--                        value with the just generated proposed value, and consists in implementing the-->
+<!--                        case recognition technique proposed in the description of the content of the-->
+<!--                        procedure in the previous section. Following the logic described there and updating-->
+<!--                        the final proposed value at each iteration of the main loop, the algorithm sets-->
+<!--                        the final proposed value such that after the loop terminates, the final proposed-->
+<!--                        value contains 1) the symbol $ in the rumor when none of the expected situations-->
+<!--                        was found in any argument group, 2) a symbol belonging to the set D when one or-->
+<!--                        more situations were recognized and all proposed the same next value for the-->
+<!--                        variable, or 3) the symbol # meaning that two or more recognized situations proposed-->
+<!--                        different next states of the variable and the resulting conflict of next-->
+<!--                        values makes the final proposed value, as in the first case, undefined.-->
+<!--                    </p>-->
+
+<!--                    <p>-->
+<!--                        (d) The algorithm, as described in the section "contents" is determined by the-->
+<!--                        analysis of the final proposed value of the function, which in the case when-->
+<!--                        this value is defined, or in other words, represented by one of the symbols-->
+<!--                        belonging to the set D, is considered the calculated value of the function and-->
+<!--                        the variable, or by replacing the indefinite final proposed value with the value-->
+<!--                        of the current state of the variable passed to the algorithm as a spare value-->
+<!--                        of the variable, the need for which may arise when the final proposed value is-->
+<!--                        indefinite.-->
+<!--                    </p>-->
 
                     <p>
-                        (1) As it is shown in the Figure 2, the algorithm takes four arguments. Its first argument
-                        is a list of groups of variables of the model, passed into the function at the moment of its
-                        computation. The second and third arguments are the expected values and proposed values. They are
-                        passed to the function as a list of groups of constant, characterizing situations that can be
-                        formed as combinations of values of groups of variables passed to the function as its first argument;
-                        and as a list of constants denoting proposed values corresponding to situations.
-                        The groups of variables of the first argument are referred
-                        from the specification of dependence of the variable which the function computes, and the constants
-                        used in the second and the third arguments are taken directly from the Correspondences of the
-                        specification. The fourth argument is the current value of the computed variable. It is used as the
-                        spare value which the function returns in the case when its computed value turns out to be undefined.
+                        <b>A note</b>. Described algorithm is called "First" in this section because
+                        it is the first attempt at a formal description of the procedure for calculating
+                        the state function of the model variables. This makes it possible to evaluate its
+                        content from the point of view of the operations necessary to calculate the function.
+                        Therefore, the analysis of this algorithm continues in the sections of this page
+                        following the current one.
                     </p>
 
-                    <p>
-                        (2) Assuming that any group in the list of groups of variables, passed into the function as its
-                        first argument, may characterize a situation and that the only one way to find out which of
-                        the groups describes the really existing one and which does not, algorithm organizes
-                        computation of the value of the function in the form of loop through all groups of variables.
-                        And each iteration of the loop computes the first three steps listed in the scheme of steps
-                        of a function.
-                    </p>
+<!--                    <p>-->
+<!--                        (2) Assuming that any group in the list of groups of variables, passed into the function as its-->
+<!--                        first argument, may characterize a situation and that the only one way to find out which of-->
+<!--                        the groups describes the really existing one and which does not, algorithm organizes-->
+<!--                        computation of the value of the function in the form of loop through all groups of variables.-->
+<!--                        And each iteration of the loop computes the first three steps listed in the scheme of steps-->
+<!--                        of a function.-->
+<!--                    </p>-->
 
 
-                    <p>
-                        (3) All data state checks performed by the algorithm are the natural elements
-                        of the process of transforming the function arguments into its values. And
-                        therefore, they must be present in any implementation of the algorithm;
-                    </p>
+<!--                    <p>-->
+<!--                        (3) All data state checks performed by the algorithm are the natural elements-->
+<!--                        of the process of transforming the function arguments into its values. And-->
+<!--                        therefore, they must be present in any implementation of the algorithm;-->
+<!--                    </p>-->
 
-                    <p>
-                        (4) The denotations of all values of all variables of a model is carried out by
-                        assigning to them symbols taken from the set <b>D</b>, used to represent states of
-                        the modeled properties. Therefore, for denotations of the undefined proposed
-                        values and the single final value of the variable should be also used
-                        symbols. However, these symbols should not belong to the set <b>D</b>, but form a
-                        set of auxiliary symbols, which, when is mentioned, will be, further on,
-                        referred to as <b>X</b>.
-                    </p>
+<!--                    <p>-->
+<!--                        (4) The denotations of all values of all variables of a model is carried out by-->
+<!--                        assigning to them symbols taken from the set <b>D</b>, used to represent states of-->
+<!--                        the modeled properties. Therefore, for denotations of the undefined proposed-->
+<!--                        values and the single final value of the variable should be also used-->
+<!--                        symbols. However, these symbols should not belong to the set <b>D</b>, but form a-->
+<!--                        set of auxiliary symbols, which, when is mentioned, will be, further on,-->
+<!--                        referred to as <b>X</b>.-->
+<!--                    </p>-->
 
 
         <!--            <p>-->
@@ -1688,34 +1795,66 @@ Application
                     </p>
 
                     <p>
-                        Two listed at the end of previous section conclusions, that by themselves do
-                        not seem to be of fundamental importance for determining the technique of
-                        modeling qualitative systems, turns out, may play significant role in forming
-                        the way of defining the functions in the form of an algebraic expression
-                        described as a composition of algebraic operations. Emerging homogeneity
-                        of the elements of set <b>D</b>, defined as a set of symbols, used for denoting
-                        values of the variables of the models, with the elements of set of auxiliary
-                        values <b>X</b>, also defined as a set of symbols, used for  denoting results of
-                        analysis of the state of process of computation of the functions, creates a
-                        unique opportunity to rearrange algorithm shown in Figure 2. The new
-                        algorithm, obtained as the result of the proposed rearrangement, would be
-                        based not on exclusion of the data analysis operations from the procedure of
-                        computation of a function at all. It is based on the idea of hiding all decision
-                        operations inside the operations processing data.
+                        Perhaps, the first thing that anyone, involved in the software development, could
+                        say, about what is present in Figure 2, is that this is just a flowchart of a
+                        typical algorithm of a computer program. And it would be really difficult
+                        to argue with that perception. Indeed, the multitude of rhombuses scattered
+                        around that check the estimates of the state of data and select, depending on
+                        the values of these estimates, different directions of development of the
+                        computational process, greatly distinguish this algorithm from algorithms of
+                        sequential computations of algebraic expressions.
                     </p>
 
                     <p>
-                        Imagine the implementation of the algorithm of procedure of computation of
-                        function, presented in Figure 2 to be rewritten in such a way where all those,
-                        "if-s" and "then-s", clattering process of computation, (which are usually
-                        depicted on the flowcharts in the form of decision operations presented in the
-                        form of diamonds testing results of the data evaluations) which are located
+                        Meanwhile, we know that the result of the computational algorithm can be often obtained
+                        not only by means of checking many conditions and changing the order of execution
+                        of operations. Very often when creating algorithms that use
+                        sub-algorithms, we place all the logic of data analysis in those sub-algorithms,
+                        leaving to the main algorithm only the task of controlling invocations of the
+                        sub-algorithms in the computation process.
+                    </p>
+
+<!--                    <p>-->
+<!--                        Two listed at the end of previous section conclusions, that by themselves do-->
+<!--                        not seem to be of fundamental importance for determining the technique of-->
+<!--                        modeling qualitative systems, turns out, may play significant role in forming-->
+<!--                        the way of defining the functions in the form of an algebraic expression-->
+<!--                        described as a composition of algebraic operations. Emerging homogeneity-->
+<!--                        of the elements of set <b>D</b>, defined as a set of symbols, used for denoting-->
+<!--                        values of the variables of the models, with the elements of set of auxiliary-->
+<!--                        values <b>X</b>, also defined as a set of symbols, used for  denoting results of-->
+<!--                        analysis of the state of process of computation of the functions, creates a-->
+<!--                        unique opportunity to rearrange algorithm shown in Figure 2. The new-->
+<!--                        algorithm, obtained as the result of the proposed rearrangement, would be-->
+<!--                        based not on exclusion of the data analysis operations from the procedure of-->
+<!--                        computation of a function at all. It is based on the idea of hiding all decision-->
+<!--                        operations inside the operations processing data.-->
+<!--                    </p>-->
+
+                    <p>
+                        Imagine for a second, that implementation of the algorithm of computation of
+                        function, presented in Figure 2, is rearranged in such a way that all those
+                        "if-s" and "then-s", cluttering process of computation which are usually
+                        depicted on the flowcharts in the form of diamonds, located
                         outside the data processing rectangles, would be suddenly relocated inside
                         the rectangles and become a part of operations that compute the data. That
                         would make the flow of execution of the operations of computation of the
                         functions to be entirely laminar and thus providing the ability to implement
                         the algorithm in the form of a classical algebraic expression.
                     </p>
+
+<!--                    <p>-->
+<!--                        Imagine for a second, implementation of the algorithm of computation of-->
+<!--                        function, presented in Figure 2 rearranged in such a way that all those,-->
+<!--                        "if-s" and "then-s", clattering process of computation, (which are usually-->
+<!--                        depicted on the flowcharts in the form of decision operations presented in the-->
+<!--                        form of diamonds testing results of the data evaluations) which are located-->
+<!--                        outside the data processing rectangles, would be suddenly relocated inside-->
+<!--                        the rectangles and become a part of operations that compute the data. That-->
+<!--                        would make the flow of execution of the operations of computation of the-->
+<!--                        functions to be entirely laminar and thus providing the ability to implement-->
+<!--                        the algorithm in the form of a classical algebraic expression.-->
+<!--                    </p>-->
 
         <!--            <p>-->
         <!--                Imagine implementation of the presented algorithm of procedure of  computation of function,-->
@@ -1728,7 +1867,7 @@ Application
         <!--            </p>-->
 
                     <p>
-                        Example of the streamlined algorithm of computation of state function of variable,
+                        Example of such a streamlined algorithm of computation of state function of variable,
                         obtained as result of rearrangement of the First Algorithm, depicted in Figure 2,
                         is presented in Figure 3.
                         <!--                Example of such rearrangement of the algorithm, presented in the flowchart 1, is presented-->
@@ -1743,51 +1882,108 @@ Application
                     </p>
 
                     <p>
-                        So what practically should be done to turn the vision of such an imaginary algorithm
-                        into an existing reality.
-                        All experience in creating mathematical models of numerical, continuous and discrete,
-                        as well as logical systems shows that in order to transform the current state of the
-                        model into the next, it is necessary that the functions computing the values of the
-                        dependent variables of the model from the values of their arguments representing the
-                        independent variables be defined as a mathematical expression; and that for this purpose
-                        sets should be used whose elements are used to represent the states of the variables,
-                        while the operations defined on the set are used to compute the values of the function
-                        as dependent on their arguments. Accordingly, the technique for computing the functions
-                        of qualitative models should be based on the definition of a set of the model, the elements
-                        of which could be used both to represent the states of the variables and the results of
-                        logical assessments of their state, and the operations used in partially defined functions
-                        would ensure the computation of the values of the variables whose values are not defined
-                        for all values of the arguments of the functions.
+                        So what should be practically done to turn the vision of such an imaginary algorithm
+                        into an existing reality? The answer to this question is actually quite simple.
+                        And it is based on the following obvious chain of observations (1), (2), and (3).
                     </p>
 
                     <p>
-                        The solution proposed by the qualitative systems modeling technique thus involves:
+                        (1) Since both local variables: "proposed state of variable" and "final
+                        proposed state of variable", used in the algorithm, are qualitative and hence,
+                        according to the definition made above, elements of the set <b>D</b> must be used
+                        to represent their computed values, and also since in order to represent
+                        different undefined values of both variables must be used different special
+                        signs, then for compatibility by type, all special signs must be compatible
+                        with the elements of the set <b>D</b>, and therefore the entire variety of auxiliary
+                        signs should be defined as a set of auxiliary symbols <b>X</b> = { #, $, ! }.
                     </p>
 
                     <p>
-                        (1) a description of all symbols used in the algorithm depicted in Figure 2 in the form of
-                        a set of auxiliary symbols of the model defined as <b>X</b> = { !, $, # };
+                        (2) Emerging as a result of observation (1), homogeneity of elements of the
+                        set <b>D</b> with elements of the set <b>X</b>, existing due to the necessity to use
+                        both: elements of the set <b>D</b> and elements of the set <b>X</b> as values of the
+                        qualitative variables of the algorithm, creates unique opportunity to
+                        consider idea of defining  unified carrier set <b>S</b> of the model as the union
+                        of the set of values of variables <b>D</b> and the set of auxiliary symbols <b>X</b>, on
+                        the one hand; and to define on the set a family of hybrid operations capable
+                        of taking operands and producing the result of applying the operation to
+                        operands that can be elements of the set <b>S</b>, on the other hand.
                     </p>
 
                     <p>
-                        (2) a definition of a homogeneous supporting set of the model <b>S</b> = <b>D</b> U <b>X</b>
-                        as the union of a set of symbols <b>D</b> serving as a damian set of all functions of the model
-                        defined earlier and a set of auxiliary symbols <b>X</b>; and
+                        (3) If when striving to define a procedure for computation of a function
+                        in the form of an algebraic expression, we, for achieving this goal, would
+                        make a decision to follow the idea of moving all state testing operations
+                        of the computation process and its data to a lower level of the hierarchy
+                        of algorithm, i.e. on the level of data processing operations used in the
+                        process of computing  algebraic expressions, then this would mean that, in
+                        accordance with the emerging homogeneity of the elements of the set <b>D</b> with the
+                        elements of the sets <b>X</b> described in observation (2) would be that practical
+                        solution that makes it possible to use he set <b>S</b> and the operations for
+                        implementing the functions computation algorithm in the form of algebraic
+                        expressions implemented as a composition of operations defined on the set <b>S</b>.
                     </p>
 
-                    <p>
-                        (3) a definition on the combined set of symbols <b>S</b> of a family of closed on the set of
-                        hybrid binary operations capable of accepting operands and producing results belonging
-                        to both the set of subject and the set of auxiliary symbols and therefore providing the
-                        possibility of defining state functions of the model variables in the form of an algebraic
-                        expression and of computing this expression as a composition of operations defined
-                        on the set <b>S</b>.
-                    </p>
+<!--                    <p>-->
+<!--                        (1) If when striving to define a procedure for computation of a function in the-->
+<!--                        form of an algebraic expression, we, for achieving this goal, made a decision-->
+<!--                        to follow the idea of moving all state testing operations of the computation-->
+<!--                        process and its data to a lower level of the hierarchy of algorithm, i.e. on the-->
+<!--                        level of data processing operations used in the process of computing algebraic-->
+<!--                        expressions, then this would mean that, on the one hand, the carrier set of the-->
+<!--                        model <b>S</b> should be defined as the union of the set of values of variables-->
+<!--                        <b>D</b> and the set of auxiliary symbols <b>X</b>, and that, on the other hand,-->
+<!--                        the operations defined on the set S should be hybrid, i.e. capable of taking-->
+<!--                        operands and producing the result of applying the operation to operands that can-->
+<!--                        be elements of the set <b>S</b>.-->
+
+<!--                    </p>-->
+
+<!--                    <p>-->
+<!--                        Well, all the experience accumulated in creating mathematical-->
+<!--                        models of numerical, continuous and discrete,-->
+<!--                        as well as logical systems shows that in order to transform any current state of the-->
+<!--                        model into its next one, it is necessary that the functions computing the values of the-->
+<!--                        dependent variables of the model corresponding to the values of their arguments representing the-->
+<!--                        independent variables to be defined as a mathematical expression; and that for this purpose-->
+<!--                        should be used mathematical sets whose elements could be used to represent the states of the variables,-->
+<!--                        while the operations defined on the set are used to compute the values of the function-->
+<!--                        as dependent on values of their arguments. Accordingly, the technique for computing the functions-->
+<!--                        of qualitative models should be based on the definition of a set of the model, the elements-->
+<!--                        of which could be used both to represent the states of the variables and the results of-->
+<!--                        logical assessments of their state, and the operations used in partially defined functions-->
+<!--                        would ensure the computation of the values of the variables whose values are not defined-->
+<!--                        for all values of the arguments of the functions.-->
+<!--                    </p>-->
+
+<!--                    <p>-->
+<!--                        The solution proposed by the qualitative systems modeling technique thus involves:-->
+<!--                    </p>-->
+
+<!--                    <p>-->
+<!--                        (1) a description of all symbols used in the algorithm depicted in Figure 2 in the form of-->
+<!--                        a set of auxiliary symbols of the model defined as <b>X</b> = { !, $, # };-->
+<!--                    </p>-->
+
+<!--                    <p>-->
+<!--                        (2) a definition of a homogeneous supporting set of the model <b>S</b> = <b>D</b> U <b>X</b>-->
+<!--                        as the union of a set of symbols <b>D</b> serving as a damian set of all functions of the model-->
+<!--                        defined earlier and a set of auxiliary symbols <b>X</b>; and-->
+<!--                    </p>-->
+
+<!--                    <p>-->
+<!--                        (3) a definition on the combined set of symbols <b>S</b> of a family of closed on the set of-->
+<!--                        hybrid binary operations capable of accepting operands and producing results belonging-->
+<!--                        to both the set of subject and the set of auxiliary symbols and therefore providing the-->
+<!--                        possibility of defining state functions of the model variables in the form of an algebraic-->
+<!--                        expression and of computing this expression as a composition of operations defined-->
+<!--                        on the set <b>S</b>.-->
+<!--                    </p>-->
 
                     <p>
-                        So, research on the feasibility of defining on the set S operations capable of performing
-                        required computation was conducted. And its result made it possible to construct five
-                        hybrid operations, letting to implement the procedure of computation of state functions
+                        So, research on the feasibility of defining on the set <b>S</b> operations capable of
+                        performing required computation was conducted. And its result made it possible to construct
+                        five hybrid operations, letting to implement the procedure of computation of state functions
                         of variables of models of qualitative systems in the form of the algebraic expression
                         written as a composition of these operations. The names, denoting symbols and comments
                         on the roles of the operations in the process of computation of the expression are
