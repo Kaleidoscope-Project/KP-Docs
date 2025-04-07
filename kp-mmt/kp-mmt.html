@@ -21,7 +21,8 @@
 
     <!--/*   S c r i p t s   */-->
 
-    <script type="text/javascript" src="javascripts/initialization.js"></script>
+    <script type="text/javascript" src="javascripts/mmt-popups-scripts.js"></script>
+<!--    <script type="text/javascript" src="javascripts/script.js"></script>-->
 
     <!--/*   S t y l e    S h e e t s   */-->
 
@@ -33,16 +34,17 @@
     <style>
         body {
             background-image: url("../common/images/line-bg.png");
+            font-family: Arial, sans-serif;
         }
 
-       span.column {
-        flex-direction: column;
-        display: inline-flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: left;
-        vertical-align: text-top;
-    }
+        span.column {
+            flex-direction: column;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            vertical-align: text-top;
+        }
 
     sup {
         line-height: .5;
@@ -78,13 +80,10 @@ Application
 <!--    display: inline-block;-->
 <!--    position: relative;-->
 <!--    }-   CC28E8; -->
+    <!--            color: #35664D;-->
     <style>
-
-        #element01ToHover {
-        color: #35664D;
-        }
-        #element02ToHover {
-        color: #35664D;
+        .popup-able{
+            color: #668800;
         }
 
         #elementToPopup {
@@ -131,11 +130,60 @@ Application
 <!--        .popup-trigger-01 {-->
 <!--            color: green;-->
 <!--        }-->
-    </style>
 
+.popup-style{
+    display: none; /* Hidden by default */
+    position: absolute;
+
+    left: 50%;
+    width: 300pt;
+    background-color: white;
+    padding: 16px;
+    border-radius: 14px;
+    transform: translate(-50%, 0%);
+    box-shadow: 0 30px 90px -20px rgba(0, 0, 0, 0.3), 0 0 1px 1px rgba(0, 0, 0, 0.05);
+    z-index: 2; /* Sit on top of the overlay */
+}
+
+<!--.popup-style{-->
+<!--    display: none; /* Hidden by default */-->
+<!--    position: fixed;-->
+<!--    top: 50%;-->
+<!--    left: 50%;-->
+<!--    width: 300pt;-->
+<!--    transform: translate(-50%, -50%);-->
+<!--    background-color: white;-->
+<!--    padding: 16px;-->
+<!--    border-radius: 14px;-->
+
+<!--    box-shadow: 0 30px 90px -20px rgba(0, 0, 0, 0.3), 0 0 1px 1px rgba(0, 0, 0, 0.05);-->
+<!--    z-index: 2; /* Sit on top of the overlay */-->
+<!--}-->
+
+#curs:hover {
+  cursor: wait;
+}
+
+.cursor:hover {
+  cursor: pointer;
+<!--  color: red;-->
+}
+
+
+    </style>
+<!--    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Example box-shadow */
+-->
 </head>
 
+<!--<body>-->
 <body onload="init()">
+
+<!-- Added on 2025.04.03 -->
+
+<!--<button onclick="openPopup()">Open Popup</button>-->
+
+<!-- End of Added on 2025.04.03 -->
 
 <div class="container">
     <img  style="height: 6px; width: 100%;" src="../common/images/two-red-lines.png" alt=""/>
@@ -175,14 +223,6 @@ Application
 <!--    <div id="elementToHover">Hover Over Content-->
 <!--        - Javascript Approach</div>-->
 
-    <div>
-    <p id="elementToPopup"> Popped Up Content
-        - Javascript Approach</p>
-    </div>
-
-
-
-
 
 <!--     transform: translateX(-100%);  <h2>JavaScript</h2>-->
 
@@ -215,12 +255,20 @@ Application
                 <div style="margin-top: 33px; margin-bottom: 0px; "> <!-- content holder -->
 
                     <p>
-                        While studying behavior of dynamical systems phenomenologically - that is not by delving into
-                        their internal machinery, but instead considering only abstract collections of their properties,
+                        While studying behavior of dynamical systems phenomenologically - that is
+                        not by delving into their internal
+                        openPopup2(event, popup01)
+                        <span class="popup-able" onmouseenter="openPopup2(event,popup01)" onmouseleave="closePopup()">
+                        <a href = "../kp-qds/kp-qds.html" target="_blank"><em>machinery</em></a></span>,
+
+                        but instead considering only abstract collections of their properties,
                         changing over time - we, following fundamental principles of mathematical modeling, tend to
                         explain causes of changes of states of properties by existence of certain
-                        dependence relations of the states of the properties on changes of states of the same or some other
-                        properties; and, <em id="element01ToHover" >optionally</em>, on the effects of external systems or the environment.
+                        dependence relations of the states of the properties on changes of states of the same or some
+                        other properties; and,
+                        <span class="popup-able" onmouseenter="openPopup2(event, popup02)" onmouseleave="closePopup()">
+                            <a href = "../kp-qds/kp-qds.html" target="_blank"><em>optionally</em></a></span>, on the effects of
+                        external systems or the environment.
                     </p>
 
         <!--            <p>-->
@@ -239,9 +287,11 @@ Application
         <!--                In such equations, the functions f are generally referred to as the state functions of the variables,-->
         <!--                and their task is to compute transitions of the variables from current to the next state.-->
         <!--            </p>-->
-
+<!--                    onmouseenter="mouse-over(this)" onmouseleave="normalImg(this)"-->
                     <p>
-                        Objective of this page is to describe Qualitative Dynamical Systems Mathematical Modeling Technique,
+                        <span class="popup-able" onmouseenter="openPopup2(event, popup03)" onmouseleave="closePopup()">
+                        <a href = "../kp-qds/kp-qds.html" target="_blank"><em>Objective</em></a></span>
+                        of this page is to describe Qualitative Dynamical Systems Mathematical Modeling Technique,
                         and modeling solutions proposed by the Modeling Technique. The purpose of the technique
                         and the solutions is to enable creation of qualitative system models, capable of reproducing behavior
                         of existing or being designed systems, while studying or developing mechanisms controlling behavior
@@ -336,16 +386,19 @@ Application
                     <!-- text moved form Z-2025.01.29-ABOUT FUNCTION-ONLY on 2025.02.19 -->
 
                     <p>
-                        Reproducing behavior of dynamical systems, or, in the other words
-                        simulation modeling of behavior of these systems, is a process of recreation
+                        To reproduce behavior of dynamical systems, or, in the other words
+                        to conduct simulation modeling of behavior of these systems, is a process of recreation
                         of changes observed in the state of modeled systems with the help of the simulation
                         models of these systems. And, since by definition of behavior of dynamical
                         systems, all changes of their state are explained by the changes in the state
                         of the systems happened earlier, organization of process of reproducing behavior
-                        of these systems presumes creating such models that could be used
+                        of the systems presumes creating such models that could be used
                         by the simulation process for generating the same sequences of transitions of states
                         of models from their current state to the next one, as those observed in the modeled
                         systems.
+<!--                        <span class="popup-able" onmouseenter="openPopup2(event, popup01)" onmouseleave="closePopup()">-->
+<!--                        <a href = "../kp-qds/kp-qds.html" target="_blank"><em>EEEEEEE</em></a></span>,-->
+<!--                        <em class="popup-able" onmouseenter="openPopup(popup04)")>EEEEEEE</em>-->
         <!--                Reproducing behavior of qualitative dynamical systems, or, in the other words, simulation-->
         <!--                modeling of these systems is a process of-->
         <!--                recreation with the help of the models of these systems changes observed in the state of modeled systems,-->
@@ -438,9 +491,12 @@ Application
                         arguments of the function <b>f</b>, holding values of groups of variables of the
                         model at time t; and <b>f</b> is the function computing value of variable
                         x<sub>i</sub><sup>t+1</sup>, as the dependent element of the dependence relation
-                        (described in the <em>Qualitative System Behavior Specification</em>) corresponding
-                        to values of independent variables of the relation, passed to the function as
-                        its arguments.
+                        (described in the
+                        <span class="popup-able" onmouseenter="openPopup2(event, popup04)" onmouseleave="closePopup()">
+                        <a href = "../kp-qds/kp-qds.html" target="_blank"><em>Qualitative System Behavior
+                        Specification</em></a></span>)
+                        corresponding to values of independent variables of the relation, passed to
+                        the function as its arguments.
 
         <!--                (2) be equipped with the system of n equations, written as: x<sub>i</sub><sup>t+1</sup>-->
         <!--                = f(args<sup>t</sup>), where: x<sub>i</sub><sup>t+1</sup> is the state of the variable-->
@@ -782,9 +838,22 @@ Application
                         of the modeled systems, the structure and the content of the specification
                         of the model has to be based on observed, or assumed, dependence of states
                         of each property of the system on the occurrence of situations. This dependence is described
-                        in the <em>Qualitative System Behavior Specification</em> (QSBSpec), structure of which is
-                        proposed on the previous page: "Qualitative Systems, Their Behavior and
-                        Mathematical Modeling".
+                        in the
+<!--                        <span class class="popup-able" onmouseenter="openPopup(popup04)" onmouseleave="closePopup()">-->
+<!--                        <a href = "../kp-qds/kp-qds.html" target="_blank"><em>Qualitative System Behavior-->
+<!--                            Specification (QSBSpec)</em></a></span>,-->
+
+                        <span class="popup-able" onmouseenter="openPopup2(event, popup04)" onmouseleave="closePopup()">
+                        <em>Qualitative System Behavior Specification (QSBSpec)</em></span>,
+
+                        structure of which is proposed on the previous page:
+
+<!--                        <span class="popup-able" onmouseenter="openPopup(popup06)" onmouseleave="closePopup()">-->
+<!--                        <a href = "../kp-qds/kp-qds.html" target="_blank"><em>Qualitative Systems, Their-->
+<!--                            Behavior and Mathematical Modeling</em></a></span>.-->
+
+                        <span class="popup-able" onmouseenter="openPopup2(event, popup06)" onmouseleave="closePopup()">
+                        <em>Qualitative Systems, Their Behavior and Mathematical Modeling</em></span>.
                     </p>
 
                     <p>
@@ -1878,7 +1947,7 @@ Application
 
                     <p class="center-text">
                         Figure 3. Flowchart of Streamlined First Algorithm obtained after all the
-                        decision operations have ben moved from outside to inside data processing operations.
+                        decision operations have been moved from outside to inside data processing operations.
                     </p>
 
                     <p>
@@ -2793,5 +2862,93 @@ Application
 
         </div> <!-- end of container -->
 
+        <!--             -->
+        <!-- p o p u p s -->
+        <!--             -->
+
+        <div class="popup-style" id="element01ToPopup">
+            <b>Page: Qualitative Systems, Their Behavior and Mathematical Modeling</b>
+            <p>
+                Objective of this page is to describe Qualitative Dynamical Systems Mathematical Modeling Technique,
+                and modeling solutions proposed by the Modeling Technique. The purpose of the technique
+                and the solutions is to enable creation of qualitative system models, capable of reproducing behavior
+                of existing or being designed systems, while studying or developing their behavior controlling mechanisms.
+            </p>
+<!--            <p class="cursor" style="color:blue">-->
+<!--                <span onclick="closePopup()">Close</span> &nbsp;   &nbsp;&nbsp;   &nbsp;&nbsp;   &nbsp;&nbsp;   &nbsp;-->
+<!--                <span class="cursor" style="color:blue" onclick="jumpToPage(urlArg)">&nbsp;Open Page in new tab</span>-->
+<!--            </p>-->
+        </div>
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <div class="popup-style" id="element02ToPopup">
+            <b>Page: Qualitative Systems, Their Behavior and Mathematical Modeling</b>
+            <p>
+                Objective of this page is to describe Qualitative Dynamical Systems Mathematical Modeling Technique,
+            </p>
+<!--            <p  class="popup-able cursor"  style="color:blue">-->
+<!--                <span onclick="closePopup()">Close</span> &nbsp;or&nbsp;-->
+<!--                <span onclick="jumpToPage(urlArg)">Jump to this Page</span>-->
+<!--            </p>-->
+        </div>
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <div class="popup-style" id="element03ToPopup">
+            <b>Page: Qualitative Systems, Their Behavior and Mathematical Modeling</b>
+            <p>
+                ###################################
+            </p>
+<!--            <p  class="popup-able cursor"  style="color:blue">-->
+<!--                <span onclick="closePopup()">Close</span> &nbsp;or&nbsp;-->
+<!--                <span onclick="jumpToPage(urlArg)">Jump to this Page</span>-->
+<!--            </p>-->
+        </div>
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <div class="popup-style" id="element04ToPopup">
+            <b>Page: Qualitative Systems, Their Behavior and Mathematical Modeling</b>
+            <p>
+                !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            </p>
+<!--            <p  class="popup-able cursor"  style="color:blue">-->
+<!--                <span onclick="closePopup()">Close</span> &nbsp;or&nbsp;-->
+<!--                <span onclick="jumpToPage(urlArg)">Jump to this Page</span>-->
+<!--            </p>-->
+        </div>
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <div class="popup-style" id="element05ToPopup">
+            <b>Section: Qualitative System Behavior Specification</b>
+            <p>
+                Objective of this page is to describe Qualitative Dynamical Systems Mathematical Modeling Technique,
+                and modeling solutions proposed by the Modeling Technique. The purpose of the technique
+                and the solutions is to enable creation of qualitative system models, capable of reproducing behavior
+                of existing or being designed systems, while studying or developing their behavior controlling mechanisms.
+            </p>
+<!--            <p  class="popup-able cursor"  style="color:blue">-->
+<!--                <span onclick="closePopup()">Close</span> &nbsp;or&nbsp;-->
+<!--                <span onclick="jumpToPage(urlArg)">Jump to this Page</span>-->
+<!--            </p>-->
+        </div>
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <div class="popup-style" id="element06ToPopup">
+            <b>Page: Qualitative Systems, Their Behavior and Mathematical Modeling</b>
+            <p>
+                Objective of this page is to describe Qualitative Dynamical Systems Mathematical Modeling Technique,
+                and modeling solutions proposed by the Modeling Technique. The purpose of the technique
+                and the solutions is to enable creation of qualitative system models, capable of reproducing behavior
+                of existing or being designed systems, while studying or developing their behavior controlling mechanisms.
+            </p>
+<!--            <p  class="popup-able cursor"  style="color:blue">-->
+<!--                <span onclick="closePopup()">Close</span> &nbsp;or &nbsp;-->
+<!--                <span onclick="jumpToPage(urlArg)">Jump to this Page</span>-->
+<!--            </p>-->
+        </div>
         </body>
         </html>
