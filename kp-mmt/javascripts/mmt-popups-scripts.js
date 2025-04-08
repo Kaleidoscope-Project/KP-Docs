@@ -34,6 +34,9 @@
     function init(){
         console.log("INITIALIZING");
         document.addEventListener('keyup', keyboardEventListener);
+//        $('a').click(function(){
+//            $(this).addClass("visited");
+//        });
 //        settingPopupListeners(element01, popup01);
 //        settingPopupListeners(element02, popup01);
 //        settingPopupListeners(element03, popup01);
@@ -77,6 +80,7 @@
                 console.log('keyboardEventListener: currentPopup is:', currentPopup);
                 currentPopup.style.display = 'none';
                 currentPopup = 0;
+                currentPopupID = 0
             }
         }
     }
