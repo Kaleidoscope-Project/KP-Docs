@@ -22,15 +22,9 @@
     <!--/*   S c r i p t s   */-->
 
     <script type="text/javascript" src="javascripts/mmt-popup-scripts.js"></script>
-<!--    <script type="text/javascript" src="javascripts/script.js"></script>-->
 
     <!--/*   S t y l e    S h e e t s   */-->
 
-    <!-- Span for Formulas -->
-    <!-- End of Span for Formulas -->
-
-    <!-- Table for Operations -->
-    <!-- End of Table for Operations -->
     <style>
         body {
             background-image: url("../common/images/line-bg.png");
@@ -46,45 +40,34 @@
             vertical-align: text-top;
         }
 
-    sup {
-        line-height: .5;
-        font-size: 0.8em;
-    }
+        sup {
+            line-height: .5;
+            font-size: 0.8em;
+        }
 
-    sub {
-        line-height:  .99;
-        font-size: 0.8em;
-    }
+        sub {
+            line-height:  .99;
+            font-size: 0.8em;
+        }
 
-    table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-    table {
-        margin: auto;
-    }
-    th, td {
-        font-size:12pt;
-        text-align: center;
-    }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        table {
+            margin: auto;
+        }
+        th, td {
+            font-size:12pt;
+            text-align: center;
+        }
 
-    </style>
-<!--
-checkifsame
-Conjunction
-Production
-Disjunction
-Application
--->
-<!--    #elementToHover {-->
-<!--    display: inline-block;-->
-<!--    position: relative;-->
-<!--    }-   CC28E8; -->
-    <!--            color: #35664D;  #695EA6 7064B1;-->
-    <!--    3366CC - Blue        color: #551ABB; purple - #205081; color: #888888;  -->
-    <style>
+        /*  */
+        /* =====   POPUP styles   ===== */
+        /*  */
+
         .popup-able{
-            color: #2850A1; /* blue */
+            color: #2850C1; /* blue */
             text-decoration:none;
         }
 
@@ -96,114 +79,41 @@ Application
           text-decoration:underline;
         }
 
-<!--        a[0]:focus {-->
-<!--            color:blue;-->
-<!--            outline: none;-->
-<!--        }-->
-<!--        a:visited {-->
-<!--            color:#35664D;-->
-<!--        }-->
-
-        #elementToPopup {
-            display: none;
-            position: fixed;
-            background-color: #FFFFFF;
-            box-shadow: 12px 12px 12px rgba(230, 230, 230, 0.5);
-            color: #000;
-            padding: 8px;
-            border: 1px solid #000;
-            border-radius: 12px;
-            z-index: 10;
-            height: 50px;
-            width: 400px;
-            text-align: center;
-        }
-
-<!--        body {-->
-<!--            font-family: Arial, sans-serif;-->
-<!--            text-align: center;-->
-<!--            padding: 50px;-->
-<!--        }-->
-
-        .popup-container {
-            color: green;
-            display: inline-block;
-            position: relative;
-        }
-
-        .popup-content {
-            display: none;
+        .popup-style{
+            display: none; /* Hidden by default */
             position: absolute;
-            top: 100%;
             left: 50%;
-            padding: 10px;
-            background-color: #f1f1f1;
-            border: 1px solid #ccc;
-            border-radius: 15px;
+            width: 300pt;
+            background-color: white;
+            padding: 16px;
+            border-radius: 12px;
+            transform: translate(-50%, 0%);
+            box-shadow: 0 30px 90px -20px rgba(0, 0, 0, 0.3), 0 0 1px 1px rgba(0, 0, 0, 0.05);
+            z-index: 2; /* Sit on top of the overlay */
         }
 
-<!--        .popup-trigger-01 {-->
-<!--            color: green;-->
-<!--        }-->
-<!--        .popup-trigger-01 {-->
-<!--            color: green;-->
-<!--        }-->
+        .cursor:hover {
+          cursor: pointer;
+        }
 
-.popup-style{
-    display: none; /* Hidden by default */
-    position: absolute;
+    </style>
+</head>
 
-    left: 50%;
-    width: 300pt;
-    background-color: white;
-    padding: 16px;
-    border-radius: 12px;
-    transform: translate(-50%, 0%);
-    box-shadow: 0 30px 90px -20px rgba(0, 0, 0, 0.3), 0 0 1px 1px rgba(0, 0, 0, 0.05);
-    z-index: 2; /* Sit on top of the overlay */
-}
+<!--
+checkifsame
+Conjunction
+Production
+Disjunction
+Application
+-->
 
 <!-- background-image: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff 50%);-->
 
-<!--.popup-style{-->
-<!--    display: none; /* Hidden by default */-->
-<!--    position: fixed;-->
-<!--    top: 50%;-->
-<!--    left: 50%;-->
-<!--    width: 300pt;-->
-<!--    transform: translate(-50%, -50%);-->
-<!--    background-color: white;-->
-<!--    padding: 16px;-->
-<!--    border-radius: 14px;-->
+<!--    }-   CC28E8; -->
+<!--            color: #35664D;  #695EA6 7064B1;-->
+<!--    3366CC - Blue        color: #551ABB; purple - #205081; color: #888888;  -->
 
-<!--    box-shadow: 0 30px 90px -20px rgba(0, 0, 0, 0.3), 0 0 1px 1px rgba(0, 0, 0, 0.05);-->
-<!--    z-index: 2; /* Sit on top of the overlay */-->
-<!--}-->
-
-#curs:hover {
-  cursor: wait;
-}
-
-.cursor:hover {
-  cursor: pointer;
-<!--  color: red;-->
-}
-
-
-    </style>
-<!--    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Example box-shadow */
--->
-</head>
-
-<!--<body>-->
-<body onload="init()">
-
-<!-- Added on 2025.04.03 -->
-
-<!--<button onclick="openPopup()">Open Popup</button>-->
-
-<!-- End of Added on 2025.04.03 -->
+<body onload="initMMTPage()">
 
 <div class="container">
     <img  style="height: 6px; width: 100%;" src="../common/images/two-red-lines.png" alt=""/>
@@ -219,79 +129,37 @@ box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Example box-shadow */
 
     <!-- =================================================================================== -->
 
-<!--    <div class="popup-container" id="popupContainer">-->
-<!--        Hover me to see popup-->
-<!--        <div class="popup-content" id="popupContent">-->
-<!--            Hey Geek, <br />-->
-<!--            Welcome to GeeksforGeeks!!-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <script>-->
-<!--        const popupContainer =-->
-<!--            document.getElementById('popupContainer');-->
-<!--        const popupContent =-->
-<!--            document.getElementById('popupContent');-->
-<!--        popupContainer.addEventListener-->
-<!--            ('mouseover', function () {-->
-<!--                popupContent.style.display = 'block';-->
-<!--            });-->
-<!--        popupContainer.addEventListener-->
-<!--            ('mouseout', function () {-->
-<!--                popupContent.style.display = 'none';-->
-<!--            });-->
-<!--    </script>-->
-<!--    <div id="elementToHover">Hover Over Content-->
-<!--        - Javascript Approach</div>-->
+    <!--    H e a d e r  font: 14px Ariel, Helvetica; -->
 
+    <!-- THIS TEXT IS COPIED on 2024.12.17 FROM FILE: "Z 24.12.10 MMT A-C-C TRANSLATED"  last touched on 2024.12.14 -->
 
-<!--     transform: translateX(-100%);  <h2>JavaScript</h2>-->
+    <div class="text-container">
 
-<!--&lt;!&ndash;    <button onclick="alert('Qualitative Dynamical Systems, Their Behavior, and Mathematical Modeling')">Try it</button>&ndash;&gt;-->
-<!--    <div class="popup" onclick="myFunction()">Click me to toggle the popup!-->
-<!--        <span class="popuptext" id="myPopup">A Simple Popup!</span>-->
-<!--    </div>-->
+        <center>
+            <div class="page-header">
+                Qualitative Dynamical Systems Mathematical Modeling Technique
+            </div>
+        </center>
 
-<!--    <script>-->
-<!--        // When the user clicks on div, open the popup-->
-<!--        function myFunction() {-->
-<!--          var popup = document.getElementById("myPopup");-->
-<!--          popup.classList.toggle("show");-->
-<!--        }-->
-<!--    </script>-->
-            <!-- =================================================================================== -->
+        <div style="margin-top: 33px; margin-bottom: 0px; "> <!-- content holder -->
 
-            <!--    H e a d e r  font: 14px Ariel, Helvetica; -->
+            <p>
+                While studying behavior of dynamical systems phenomenologically - that is
+                not by delving into their internal
+                <span class="popup-able" onmouseenter="openPopup(event, popup01)" onmouseleave="closePopup()">
+                <a class="popup-able" href = "../kp-qds/kp-qds.html" target="_blank">
+                    <em>machinery</em></a></span>,
 
-            <!-- THIS TEXT IS COPIED on 2024.12.17 FROM FILE: "Z 24.12.10 MMT A-C-C TRANSLATED"  last touched on 2024.12.14 -->
-
-            <div class="text-container">
-
-                <center>
-                    <div class="page-header">
-                        Qualitative Dynamical Systems Mathematical Modeling Technique
-                    </div>
-                </center>
-
-                <div style="margin-top: 33px; margin-bottom: 0px; "> <!-- content holder -->
-
-                    <p>
-                        While studying behavior of dynamical systems phenomenologically - that is
-                        not by delving into their internal
-                        openPopup2(event, popup01)
-                        <span class="popup-able" onmouseenter="openPopup2(event,popup01)" onmouseleave="closePopup()">
-                        <a class="popup-able" href = "../kp-qds/kp-qds.html" target="_blank">
-                            <em>machinery</em></a></span>,
-
-                        but instead considering only abstract collections of their properties,
-                        changing over time - we, following fundamental principles of mathematical modeling, tend to
-                        explain causes of changes of states of properties by existence of certain
-                        dependence relations of the states of the properties on changes of states of the same or some
-                        other properties; and,
-                        <span class="popup-able" onmouseenter="openPopup2(event, popup02)" onmouseleave="closePopup()">
-                            <a class="popup-able" href = "../kp-qds/kp-qds.html" target="_blank">
-                                <em>optionally</em></a></span>, on the effects of
-                        external systems or the environment.
-                    </p>
+                but instead considering only abstract collections of their properties,
+                changing over time - we, following fundamental principles of mathematical modeling, tend to
+                explain causes of changes of states of properties by existence of certain
+                dependence relations of the states of the properties on changes of states of the same or some
+                other properties; and,
+                <span class="popup-able" onmouseenter="openPopup(event, popup02)" onmouseleave="closePopup()">
+                    <a class="popup-able" href = "../kp-qds/kp-qds.html" target="_blank">
+                        <em>optionally</em></a></span>, on the effects of
+                external systems or the environment.
+            </p>
 
         <!--            <p>-->
         <!--                Accordingly, everything that happens around to one or another degree are the processes in-->
@@ -311,7 +179,7 @@ box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Example box-shadow */
         <!--            </p>-->
 <!--                    onmouseenter="mouse-over(this)" onmouseleave="normalImg(this)"-->
                     <p>
-                        <span class="popup-able" onmouseenter="openPopup2(event, popup03)" onmouseleave="closePopup()">
+                        <span class="popup-able" onmouseenter="openPopup(event, popup03)" onmouseleave="closePopup()">
                         <a class="popup-able" href = "../kp-qds/kp-qds.html" target="_blank">
                             <em>Objective</em></a></span>
                         of this page is to describe Qualitative Dynamical Systems Mathematical Modeling Technique,
@@ -419,18 +287,6 @@ box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Example box-shadow */
                         by the simulation process for generating the same sequences of transitions of states
                         of models from their current state to the next one, as those observed in the modeled
                         systems.
-<!--                        <span class="popup-able" onmouseenter="openPopup2(event, popup01)" onmouseleave="closePopup()">-->
-<!--                        <a href = "../kp-qds/kp-qds.html" target="_blank"><em>EEEEEEE</em></a></span>,-->
-<!--                        <em class="popup-able" onmouseenter="openPopup(popup04)")>EEEEEEE</em>-->
-        <!--                Reproducing behavior of qualitative dynamical systems, or, in the other words, simulation-->
-        <!--                modeling of these systems is a process of-->
-        <!--                recreation with the help of the models of these systems changes observed in the state of modeled systems,-->
-        <!--                happening over time. And, since by definition of the behavior of qualitative dynamical systems, all-->
-        <!--                changes of their state are explained by the changes in state of the systems-->
-        <!--                happened earlier, organization of process of reproducing behavior of these systems presumes-->
-        <!--                creating such models of the systems which could be used by the simulation process for-->
-        <!--                generating the same sequences of transitions of the states of the models from their-->
-        <!--                current to the next state, as the ones observed in the modeled systems.-->
                     </p>
 
                     <p>
@@ -515,7 +371,7 @@ box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Example box-shadow */
                         model at time t; and <b>f</b> is the function computing value of variable
                         x<sub>i</sub><sup>t+1</sup>, as the dependent element of the dependence relation
                         (described in the
-                        <span class="popup-able" onmouseenter="openPopup2(event, popup01)" onmouseleave="closePopup()">
+                        <span class="popup-able" onmouseenter="openPopup(event, popup01)" onmouseleave="closePopup()">
                         <a class="popup-able" href = "../kp-qds/kp-qds.html" target="_blank">
                             <em>Qualitative System Behavior Specification</em></a></span>)
                         corresponding to values of independent variables of the relation, passed to
@@ -862,21 +718,13 @@ box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Example box-shadow */
                         of the model has to be based on observed, or assumed, dependence of states
                         of each property of the system on the occurrence of situations. This dependence is described
                         in the
-<!--                        <span class class="popup-able" onmouseenter="openPopup(popup04)" onmouseleave="closePopup()">-->
-<!--                        <a href = "../kp-qds/kp-qds.html" target="_blank"><em>Qualitative System Behavior-->
-<!--                            Specification (QSBSpec)</em></a></span>,-->
-
-                        <span class="popup-able" onmouseenter="openPopup2(event, popup04)" onmouseleave="closePopup()">
+                        <span class="popup-able" onmouseenter="openPopup(event, popup04)" onmouseleave="closePopup()">
                         <a class="popup-able" href = "../kp-qds/kp-qds.html" target="_blank">
                             <em>Qualitative System Behavior Specification (QSBSpec)</em></a></span>,
 
                         structure of which is proposed on the previous page:
 
-<!--                        <span class="popup-able" onmouseenter="openPopup(popup06)" onmouseleave="closePopup()">-->
-<!--                        <a href = "../kp-qds/kp-qds.html" target="_blank"><em>Qualitative Systems, Their-->
-<!--                            Behavior and Mathematical Modeling</em></a></span>.-->
-
-                        <span class="popup-able" onmouseenter="openPopup2(event, popup06)" onmouseleave="closePopup()">
+                        <span class="popup-able" onmouseenter="openPopup(event, popup06)" onmouseleave="closePopup()">
                         <a class="popup-able" href = "../kp-qds/kp-qds.html" target="_blank">
                             <em>Qualitative Systems, Their Behavior and Mathematical Modeling</em></a></span>.
                     </p>
@@ -902,9 +750,9 @@ box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Example box-shadow */
                     </p>
 
 <!--                    <p>-->
-<!--        &lt;!&ndash;                Whatever the qualitative system being modeled would be - whether  existing in reality or only&ndash;&gt;-->
-<!--        &lt;!&ndash;                in our imagination, in order to create its simulation model capable of reproducing&ndash;&gt;-->
-<!--        &lt;!&ndash;                behavior of the system, this behavior has to be known and described.&ndash;&gt;-->
+<!--                        Whatever the qualitative system being modeled would be - whether  existing in reality or only&ndash;&gt;-->
+<!--                        in our imagination, in order to create its simulation model capable of reproducing&ndash;&gt;-->
+<!--                        behavior of the system, this behavior has to be known and described.&ndash;&gt;-->
 <!--                        Whatever the qualitative system being modeled would  be - whether existing  in reality-->
 <!--                        or only in our imagination, in order to create simulation model that reproduces its-->
 <!--                        behavior, this behavior must be described. And this description should preferably be done-->
@@ -922,24 +770,7 @@ box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Example box-shadow */
 <!--                        where the fact of emergence of situation described in the second element of pairs causes changes-->
 <!--                        in the state of the dependent variable of the specification.-->
 <!--                    </p>-->
-<!--                    <script>-   <a href = "../kp-qds/kp-qds.html">-->
-<!--                       const elementToHover = document.-->
-<!--                            getElementById('elementToHover');-->
-<!--                        const elementToPopup = document.-->
-<!--                            getElementById('elementToPopup');-->
-
-<!--                        elementToHover.addEventListener('mouseenter',-->
-<!--                            () => {-->
-<!--                                elementToPopup.style.display = 'inline-block';-->
-<!--                                elementToPopup.innerHTML = "My new text!xxxxxxxxxxxxxxxxxxx";-->
-<!--                            });-->
-
-<!--                        elementToHover.addEventListener('mouseleave',-->
-<!--                            () => {-->
-<!--                                elementToPopup.style.display = 'none';-->
-<!--                            });-->
-<!--                    </script>-->
-<!--                    <p>-->
+<!--
 <!--                        This model specification should not use identifiers-->
 <!--                        of names and states of properties, but denotations of variables in the form of x<sub>i</sub>-->
 <!--                        and states using constants that are elements of the set <b>D</b>.-->
@@ -983,10 +814,6 @@ box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Example box-shadow */
                     <p style = "text-align: center;">
                         <b>Figure 1.</b> Structure of Qualitative Model Behavior Specification. In this Figure:
                     </p>
-
-<!--                    <p>-->
-<!--                        In the Figure 1:-->
-<!--                    </p>-->
 
                     <p>
                         (1) QMBSpec is defined as the list <b>L</b> <span class="column"><sup>n</sup><sub>i=0</sub></span>
