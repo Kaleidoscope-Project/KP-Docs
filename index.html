@@ -81,8 +81,16 @@
 
     </style>
 
+    <script>
+        function removeHashTag() {
+          const currentURL = window.location.href;
+          const newURL = currentURL.substring(0, currentURL.indexOf('#')); // Or use split('#')[0]
+          history.replaceState(null, '', newURL);
+        }
+    </script>
+
 </head>
-<body>
+<body onload="removeHashTag()">
 <div class="container">
     <img style="height: 6px; width: 100%;" src="common/images/two-red-lines.png" alt="Header lines"/>
 
@@ -187,7 +195,7 @@
 
             <span id="sec.4.0"></span>
             <p class="sub-section-centered-header">
-                <b>Solution 1:</b> Extended Disjunctive Normal Form - XDNF,<br>and XDNF-Expression Calculator
+                <b>Solution 1:</b> Extended Disjunctive Normal Form - XDNF,<br>and XDNF Expression Calculator
             </p>
 
             <p>
@@ -220,7 +228,7 @@
             <span id="sec.5.0"></span>
             <p class="sub-section-centered-header">
                 <!--                <b>Solution 2:</b> Qualitative System Model State Space Matrix<br>Equation and This Equation Calculator-->
-                <b>Solution 2:</b> Qualitative Dynamical Systems Vector State-Space Modeling Approach
+                <b>Solution 2:</b> Vector State-Space Model Representation and Model Transitions Calculator
             </p>
 
             <p>

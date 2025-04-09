@@ -22,6 +22,7 @@
 //        const element06 = "element06ToHover";
         const popup06 = "element06ToPopup";
 
+        var currentElement = null;
         var currentPopupID = 0;
         var currentPopup = 0;
         const urlArg = "../kp-qds/kp-qds.html";
@@ -34,6 +35,13 @@
     function init(){
         console.log("INITIALIZING");
         document.addEventListener('keyup', keyboardEventListener);
+//        window.addEventListener('scroll', function() {
+//        if(currentElement != null){
+//         const localRect = currentElement.getBoundingClientRect();
+//         console.log("text position T = ",localRect.top, " L = ", localRect.left, " B = ", localRect.bottom, " W = ", localRect.width, " H = ", localRect.height);
+//         console.log("");
+//         }
+//        });
 //        $('a').click(function(){
 //            $(this).addClass("visited");
 //        });
@@ -164,18 +172,23 @@ function openPopup2(e, popupID) {
         currentPopupID = popupID;
         currentPopup = document.getElementById(popupID);
 
-        positionPopup(e, currentPopup)
+
 
 //        console.log('openPopup: currentPopup is:', currentPopup);
         currentPopup.style.display = 'block';
+        positionPopup(e, currentPopup);
 //        console.log("openPopup ",popupID);
 console.log("positionPopup ",currentPopup.style.left, "  ", currentPopup.style.top,  "  ", currentPopup.offsetHeight);
     }
 
+    var elem ;
+    var elemRect;
+
 //    var bodyRect = document.body.getBoundingClientRect();
     function positionPopup(e, currentPopup) {
         var bodyRect = document.body.getBoundingClientRect();
-        var elemRect = e.target.getBoundingClientRect();
+        currentElement = e.target;
+        const elemRect = e.target.getBoundingClientRect();
         var popupRect = currentPopup.getBoundingClientRect();
         offsetY   = elemRect.bottom - bodyRect.top;
         offsetX   = elemRect.left/2 - bodyRect.left/2;
@@ -183,15 +196,30 @@ console.log("positionPopup ",currentPopup.style.left, "  ", currentPopup.style.t
 //        offsetX   = elemRect.left - bodyRect.left;
 //        offsetY   = elemRect.bottom + 130;
 console.log("positionPopup-elemRect: ",elemRect);
-        console.log("positionPopup ",elemRect.left, "  ", elemRect.bottom, " W = ", elemRect.width);
+        console.log("positionPopup ",elemRect.top, "  ", elemRect.bottom, " W = ", elemRect.width, " H = ", elemRect.height);
+        console.log("Popup rect ",popupRect.left, "  ", popupRect.bottom, " W = ", popupRect.width, " H = ", popupRect.height);
 //                currentPopup.style.left = bodyRect.width/2 - (bodyRect.width - popupRect.width)/2 + 'px';
-               currentPopup.style.left = document.body.offsetLeft + (bodyRect.width -  popupRect.width)/  + 'px';
+//               currentPopup.style.left = document.body.offsetLeft + (bodyRect.width -  popupRect.width)/  + 'px';
 //                currentPopup.style.left = (e.clientX + offsetX) + 'px';
-                currentPopup.style.top = (offsetY+10) + 'px';
+        const popupTop = elemRect.top - 10 - popupRect.height;
+        console.log("POPUP TOP = ", popupTop);
+        if(popupTop > 0){
+            offsetY = elemRect.top  - bodyRect.top + 10;
+            var popupY = popupRect.height ;
+            currentPopup.style.top = (offsetY-popupY) + 'px';
+        }else{
+            currentPopup.style.top = (offsetY+10) + 'px';
+        }
 //        currentPopup.style.left = ( 200) + 'px';
 //        currentPopup.style.top = 299 + 'px';
 
     }
+
+    function findPopupLocation(e, currentPopup){
+    const placePopupAboveText = false;
+    }
+
+
 //(elemRect.left+elemRect.width/2) + 'px';
      function positionPopupThisFunctionWorks(e, currentPopup) {
             var bodyRect = document.body.getBoundingClientRect();
