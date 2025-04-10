@@ -66,7 +66,7 @@
         /* =====   POPUP styles   ===== */
         /*  */
 
-        .popup-able{
+        .popup-link{
             color: #2850B1; /* blue */
             text-decoration:none;
         }
@@ -79,12 +79,16 @@
           text-decoration:underline;
         }
 
+        /*  border-style: solid; border-width: 2px; background-color: border-style: solid; white; border-color:E0E0E0 #E5E7EB;  border-color: #FF0000; */
         .popup-style{
             display: none; /* Hidden by default */
             position: absolute;
             left: 50%;
             width: 300pt;
             background-color: white;
+            border-style: solid;
+            border-width: 1.5px;
+            border-color: #E0E0E0;
             padding: 16px;
             border-radius: 12px;
             transform: translate(-50%, 0%);
@@ -146,8 +150,8 @@ Application
             <p>
                 While studying behavior of dynamical systems phenomenologically - that is
                 not by delving into their internal
-                <span class="popup-able" onmouseenter="openPopup(event, popup01)" onmouseleave="closePopup()">
-                <a class="popup-able" href = "../kp-qds/kp-qds.html" target="_blank">
+                <span class="popup-link" onmouseenter="openPopup(event, popup01)" onmouseleave="closePopup()">
+                <a class="popup-link" href = "../kp-qds/kp-qds.html" target="_blank">
                     <em>machinery</em></a></span>,
 
                 but instead considering only abstract collections of their properties,
@@ -155,8 +159,8 @@ Application
                 explain causes of changes of states of properties by existence of certain
                 dependence relations of the states of the properties on changes of states of the same or some
                 other properties; and,
-                <span class="popup-able" onmouseenter="openPopup(event, popup02)" onmouseleave="closePopup()">
-                    <a class="popup-able" href = "../kp-qds/kp-qds.html" target="_blank">
+                <span class="popup-link" onmouseenter="openPopup(event, popup02)" onmouseleave="closePopup()">
+                    <a class="popup-link" href = "../kp-qds/kp-qds.html" target="_blank">
                         <em>optionally</em></a></span>, on the effects of
                 external systems or the environment.
             </p>
@@ -178,8 +182,8 @@ Application
         <!--                and their task is to compute transitions of the variables from current to the next state.-->
         <!--            </p>-->
                     <p>
-                        <span class="popup-able" onmouseenter="openPopup(event, popup03)" onmouseleave="closePopup()">
-                        <a class="popup-able" href = "../kp-qds/kp-qds.html" target="_blank">
+                        <span class="popup-link" onmouseenter="openPopup(event, popup03)" onmouseleave="closePopup()">
+                        <a class="popup-link" href = "../kp-qds/kp-qds.html" target="_blank">
                             <em>Objective</em></a></span>
                         of this page is to describe Qualitative Dynamical Systems Mathematical Modeling Technique,
                         and modeling solutions proposed by the Modeling Technique. The purpose of the technique
@@ -369,10 +373,6 @@ Application
                         arguments of the function <b>f</b>, holding values of groups of variables of the
                         model at time t; and <b>f</b> is the function computing value of variable
                         x<sub>i</sub><sup>t+1</sup>, as the dependent element of the dependence relation
-                        (described in the
-                        <span class="popup-able" onmouseenter="openPopup(event, popup01)" onmouseleave="closePopup()">
-                        <a class="popup-able" href = "../kp-qds/kp-qds.html" target="_blank">
-                            <em>Qualitative System Behavior Specification</em></a></span>)
                         corresponding to values of independent variables of the relation, passed to
                         the function as its arguments.
 
@@ -385,6 +385,11 @@ Application
         <!--                states of the variable, see the first page), as the state, corresponding to the values of-->
         <!--                independent variables of the dependence relation, passed to the function as its arguments.-->
                     </p>
+
+<!--            (described in the-->
+<!--            <span class="popup-able" onmouseenter="openPopup(event, popup01)" onmouseleave="closePopup()">-->
+<!--                        <a class="popup-able" href = "../kp-qds/kp-qds.html" target="_blank">-->
+<!--                            <em>Qualitative System Behavior Specification</em></a></span>)-->
 
                     <p>
                         So, the modeling technique, intended to enable creation of simulation models of qualitative systems,
@@ -403,17 +408,20 @@ Application
                     </p>
 
                     <p>
-                        (a) Definition of domain set, elements of which can be used for representing qualitative
+                        (a) definition of domain set, elements of which can be used for representing qualitative
                         values of variables of models;
                     </p>
 
                     <p>
-                        (b) Definition of Qualitative Model Behavior Specification, derived from
-                        the <em>Qualitative System Behavior Specification</em>, proposed on the previous page;
+                        (b) definition of Qualitative Model Behavior Specification describing all
+                        changes in the state of each variable occurring in the response to all situations
+                        causing that changes;
+<!--                        (b) Definition of Qualitative Model Behavior Specification, derived from-->
+<!--                        the <em>Qualitative System Behavior Specification</em>, proposed on the previous page;-->
                     </p>
 
                     <p>
-                        (c) Definition of content of computation procedure of state functions of
+                        (c) definition of content of computation procedure of state functions of
                         variables of models of qualitative systems, that makes it possible to compute
                         values of state variables of the models;
 
@@ -426,12 +434,12 @@ Application
 <!--                    </p>-->
 
                     <p>
-                        (d) Approach enabling creation of models of qualitative systems in the form of algebraic
+                        (d) approach enabling creation of models of qualitative systems in the form of algebraic
                         expressions; and
                     </p>
 
                     <p>
-                        (e) Definition of five algebraic operations that can be used for computing algebraic
+                        (e) definition of five algebraic operations that can be used for computing algebraic
                         expressions written as the composition of these operations.
                     </p>
 
@@ -575,8 +583,12 @@ Application
                     <p>
                         <em>Remark 1</em>. Definition of set of models in the form of the set of colors,
                         which in the context of creating qualitative systems graphical models is called a
-                        Palette, is given on the page "<em>Multicolored Logical Net (McLN) Modeling Formalism</em>".
+                        Palette, is given on the page
+                        <span class="popup-link" onmouseenter="openPopup(event, popup01)" onmouseleave=
+                        "closePopup()"> <a class="popup-link" href = "../kp-mcln/kp-mcln.html" target="_blank">
+                        <em>"Multicolored Logical Net (McLN) Modeling Formalism"</em></a></span>.
                     </p>
+
 
                     <p>
                         <em>Remark 2</em>. Technique of description of process of computation of
@@ -717,14 +729,14 @@ Application
                         of the model has to be based on observed, or assumed, dependence of states
                         of each property of the system on the occurrence of situations. This dependence is described
                         in the
-                        <span class="popup-able" onmouseenter="openPopup(event, popup04)" onmouseleave="closePopup()">
-                        <a class="popup-able" href = "../kp-qds/kp-qds.html" target="_blank">
+                        <span class="popup-link" onmouseenter="openPopup(event, popup02)" onmouseleave="closePopup()">
+                        <a class="popup-link" href = "../kp-qds/kp-qds.html#QDS.SEC.1.0" target="_blank">
                             <em>Qualitative System Behavior Specification (QSBSpec)</em></a></span>,
 
                         structure of which is proposed on the previous page:
 
-                        <span class="popup-able" onmouseenter="openPopup(event, popup06)" onmouseleave="closePopup()">
-                        <a class="popup-able" href = "../kp-qds/kp-qds.html" target="_blank">
+                        <span class="popup-link" onmouseenter="openPopup(event, popup03)" onmouseleave="closePopup()">
+                        <a class="popup-link" href = "../kp-qds/kp-qds.html" target="_blank">
                             <em>Qualitative Systems, Their Behavior and Mathematical Modeling</em></a></span>.
                     </p>
 
@@ -2716,8 +2728,39 @@ Application
         <!--             -->
         <!-- p o p u p s -->
         <!--             -->
-
         <div class="popup-style" id="element01ToPopup">
+            <b>Page: Multicolored Logical Net (McLN) Modeling Formalism</b>
+            <p>
+                Objective of this page is to describe Qualitative Dynamical Systems Mathematical Modeling Technique,
+                and modeling solutions proposed by the Modeling Technique. The purpose of the technique
+                and the solutions is to enable creation of qualitative system models, capable of reproducing behavior
+                of existing or being designed systems, while studying or developing their behavior controlling mechanisms.
+            </p>
+            <!--            <p  class="popup-able cursor"  style="color:blue">-->
+            <!--                <span onclick="closePopup()">Close</span> &nbsp;or&nbsp;-->
+            <!--                <span onclick="jumpToPage(urlArg)">Jump to this Page</span>-->
+            <!--            </p>-->
+        </div>
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <div class="popup-style" id="element02ToPopup">
+            <b>Section: Qualitative System Behavior Specification</b>
+            <p>
+                Objective of this page is to describe Qualitative Dynamical Systems Mathematical Modeling Technique,
+                and modeling solutions proposed by the Modeling Technique. The purpose of the technique
+                and the solutions is to enable creation of qualitative system models, capable of reproducing behavior
+                of existing or being designed systems, while studying or developing their behavior controlling mechanisms.
+            </p>
+            <!--            <p  class="popup-able cursor"  style="color:blue">-->
+            <!--                <span onclick="closePopup()">Close</span> &nbsp;or&nbsp;-->
+            <!--                <span onclick="jumpToPage(urlArg)">Jump to this Page</span>-->
+            <!--            </p>-->
+        </div>
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <div class="popup-style" id="element03ToPopup">
             <b>Page: Qualitative Systems, Their Behavior and Mathematical Modeling</b>
             <p>
                 Objective of this page is to describe Qualitative Dynamical Systems Mathematical Modeling Technique,
@@ -2733,7 +2776,7 @@ Application
         <!--  -->
         <!--  -->
         <!--  -->
-        <div class="popup-style" id="element02ToPopup">
+        <div class="popup-style" id="element04ToPopup">
             <b>Page: Qualitative Systems, Their Behavior and Mathematical Modeling</b>
             <p>
                 Objective of this page is to describe Qualitative Dynamical Systems Mathematical Modeling Technique,
@@ -2746,7 +2789,7 @@ Application
         <!--  -->
         <!--  -->
         <!--  -->
-        <div class="popup-style" id="element03ToPopup">
+        <div class="popup-style" id="element05ToPopup">
             <b>Page: Qualitative Systems, Their Behavior and Mathematical Modeling</b>
             <p>
                 ###################################
@@ -2759,7 +2802,7 @@ Application
         <!--  -->
         <!--  -->
         <!--  -->
-        <div class="popup-style" id="element04ToPopup">
+        <div class="popup-style" id="element06ToPopup">
             <b>Page: Qualitative Systems, Their Behavior and Mathematical Modeling</b>
             <p>
                 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -2772,34 +2815,20 @@ Application
         <!--  -->
         <!--  -->
         <!--  -->
-        <div class="popup-style" id="element05ToPopup">
-            <b>Section: Qualitative System Behavior Specification</b>
-            <p>
-                Objective of this page is to describe Qualitative Dynamical Systems Mathematical Modeling Technique,
-                and modeling solutions proposed by the Modeling Technique. The purpose of the technique
-                and the solutions is to enable creation of qualitative system models, capable of reproducing behavior
-                of existing or being designed systems, while studying or developing their behavior controlling mechanisms.
-            </p>
-<!--            <p  class="popup-able cursor"  style="color:blue">-->
-<!--                <span onclick="closePopup()">Close</span> &nbsp;or&nbsp;-->
-<!--                <span onclick="jumpToPage(urlArg)">Jump to this Page</span>-->
+
+
+<!--        <div class="popup-style" id="element06ToPopup">-->
+<!--            <b>Page: Qualitative Systems, Their Behavior and Mathematical Modeling</b>-->
+<!--            <p>-->
+<!--                Objective of this page is to describe Qualitative Dynamical Systems Mathematical Modeling Technique,-->
+<!--                and modeling solutions proposed by the Modeling Technique. The purpose of the technique-->
+<!--                and the solutions is to enable creation of qualitative system models, capable of reproducing behavior-->
+<!--                of existing or being designed systems, while studying or developing their behavior controlling mechanisms.-->
 <!--            </p>-->
-        </div>
-        <!--  -->
-        <!--  -->
-        <!--  -->
-        <div class="popup-style" id="element06ToPopup">
-            <b>Page: Qualitative Systems, Their Behavior and Mathematical Modeling</b>
-            <p>
-                Objective of this page is to describe Qualitative Dynamical Systems Mathematical Modeling Technique,
-                and modeling solutions proposed by the Modeling Technique. The purpose of the technique
-                and the solutions is to enable creation of qualitative system models, capable of reproducing behavior
-                of existing or being designed systems, while studying or developing their behavior controlling mechanisms.
-            </p>
-<!--            <p  class="popup-able cursor"  style="color:blue">-->
-<!--                <span onclick="closePopup()">Close</span> &nbsp;or &nbsp;-->
-<!--                <span onclick="jumpToPage(urlArg)">Jump to this Page</span>-->
-<!--            </p>-->
-        </div>
+<!--&lt;!&ndash;            <p  class="popup-able cursor"  style="color:blue">&ndash;&gt;-->
+<!--&lt;!&ndash;                <span onclick="closePopup()">Close</span> &nbsp;or &nbsp;&ndash;&gt;-->
+<!--&lt;!&ndash;                <span onclick="jumpToPage(urlArg)">Jump to this Page</span>&ndash;&gt;-->
+<!--&lt;!&ndash;            </p>&ndash;&gt;-->
+<!--        </div>-->
         </body>
         </html>

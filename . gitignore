@@ -1,2 +1,3 @@
 # ignores directory and all subdirectories inside the directory, along with any files in them.
 IGNORED-DEV-ARCHIVE/
+NAME-CHEAP-DOMAIN-NAME/

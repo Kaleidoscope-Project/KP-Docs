@@ -57,9 +57,17 @@
 
     </style>
 
+    <script>
+        function qdsRemoveHashTag() {
+            const currentURL = window.location.href;
+            const newURL = currentURL.substring(0, currentURL.indexOf('#')); // Or use split('#')[0]
+            history.replaceState(null, '', newURL);
+        }
+    </script>
+
 </head>
 
-<body>
+<body onload="qdsRemoveHashTag()">
 <div class="container">
     <img  style="height: 6px; width: 100%;" src="../common/images/two-red-lines.png"/>
 
@@ -759,8 +767,9 @@
                 the expected colors of dots marking the recognizing connections.
             </p>
 
+            <span id="QDS.SEC.1.0"></span>
             <p class="section-header">
-                Explanation of Modeling Formalism Used in Figures
+                Qualitative Systems Behavior Specification
             </p>
 
             <p>
