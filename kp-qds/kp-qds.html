@@ -17,6 +17,9 @@
     <!-- style sheets   -->
     <link rel="stylesheet" href="../common/stylesheets/common.css">
 
+    <!-- java scripts   -->
+    <script type="text/javascript" src="../common/javascripts/common-javascripts.js"></script>
+
     <style>
         body {
             background-image: url("../common/images/line-bg.png");
@@ -57,17 +60,9 @@
 
     </style>
 
-    <script>
-        function qdsRemoveHashTag() {
-            const currentURL = window.location.href;
-            const newURL = currentURL.substring(0, currentURL.indexOf('#')); // Or use split('#')[0]
-            history.replaceState(null, '', newURL);
-        }
-    </script>
-
 </head>
 
-<body onload="qdsRemoveHashTag()">
+<body onload="removeHashTag()">
 <div class="container">
     <img  style="height: 6px; width: 100%;" src="../common/images/two-red-lines.png"/>
 
@@ -933,12 +928,10 @@
 
             <!-- =================================================================================================== -->
             <!-- =================================================================================================== -->
-        </div> <!-- end of content holder ​​ -->
+        </div> <!-- end of content holder  -->
     </div> <!-- end of text-container -->
 
     <!-- =================================================================================== -->
-
-<!--    <br>-->
 
     <a href="../kp-sem-views/sem-screenshots.html">
         <img src="../common/images/prev.png" alt="Previous Page"></a>
@@ -949,7 +942,6 @@
     <a href="../kp-mmt/kp-mmt.html">
         <img src="../common/images/next.png" alt="Next Page"></a>
 
-<!--    <div class="space-above-footer"></div>-->
     <div class="end-of-page-red-line-1"></div>
     <div class="end-of-page-red-line-2"></div>
     <div class="space-below-footer"></div>

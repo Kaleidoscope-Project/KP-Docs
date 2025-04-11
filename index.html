@@ -7,6 +7,10 @@
 
     <!-- style sheets   background-color: #f4f4f0;-->
     <link rel="stylesheet" href="common/stylesheets/common.css">
+
+    <!-- java scripts   -->
+    <script type="text/javascript" src="common/javascripts/common-javascripts.js"></script>
+
     <!-- bg color CCFF99 D4FF90 D7FF90 CBFF90 CFFFCF E5FFDA E6FFDE E5FFD8 E4FFD8 E4FFCF E6FFBA - 07.01.2023
                   EBFFAA - before 07.01.2023
                   EEFEAD E4FEA3  DAFE99 D0FE8F C6FE85 BCFE71 good:A8FE5D
@@ -81,15 +85,8 @@
 
     </style>
 
-    <script>
-        function removeHashTag() {
-          const currentURL = window.location.href;
-          const newURL = currentURL.substring(0, currentURL.indexOf('#')); // Or use split('#')[0]
-          history.replaceState(null, '', newURL);
-        }
-    </script>
-
 </head>
+
 <body onload="removeHashTag()">
 <div class="container">
     <img style="height: 6px; width: 100%;" src="common/images/two-red-lines.png" alt="Header lines"/>
@@ -124,14 +121,13 @@
             </p>
 
             <p>
-                Objective of this page is to introduce a notion of the class of Qualitative Dynamical System and to
-                describe characteristics of the nature and the behavior of Qualitative Systems,
-                constituting the basis for creation of mathematical models of these systems. This page
+                Objective of this page is to introduce notion of class of Qualitative Dynamical Systems and to
+                describe characteristics of the nature and behavior of Qualitative Dynamical Systems,
+                constituting foundation for creation of mathematical models of these systems. This page
                 identifies atomic element of behavior of the systems and
-                describes ways of composition of these elements letting the model of a system to be able
-                to reproduce various forms of behavior observed in the Qualitative Dynamical Systems being modeled.<br>
-                <a style="text-align: center" href="kp-qds/kp-qds.html"
-                   class="open-the-page">Open the Page</a>
+                describes basic ways of composition of these elements letting the models of the system to be capable
+                of reproducing various forms of behavior, observed in the qualitative dynamical systems.<br>
+                <a style="text-align: center" href="kp-qds/kp-qds.html" class="open-the-page">Open the Page</a>
             </p>
 
             <!-- =================================================================================================== -->
@@ -142,9 +138,15 @@
             </p>
 
             <p>
-                Objective of this page is to introduce Qualitative Dynamical Systems Mathematical Modeling Technique,
-                developed within the Kaleidoscope Project, and to describe modeling solutions proposed by the Modeling
-                Technique.
+                This page is to introduce Qualitative Dynamical Systems Mathematical Modeling
+                Technique, developed as part of the Kaleidoscope Project, and to describe modeling solutions
+                proposed by the Modeling Technique. The purpose of the technique and the solutions is to enable
+                creating qualitative systems simulation models, capable of reproducing behavior of existing or
+                being designed systems, when studying or developing their behavior controlling machinery.
+
+<!--                Objective of this page is to introduce Qualitative Dynamical Systems Mathematical Modeling -->
+<!--                Technique, developed as part of the Kaleidoscope Project, and to describe modeling solutions -->
+<!--                proposed by the Modeling Technique.-->
 
                 <!--                <br><br>As the behavior of dynamical systems is generally perceived as a sequence of observed-->
                 <!--                transitions of states of properties of the systems over time, modeling solutions suggest:-->
