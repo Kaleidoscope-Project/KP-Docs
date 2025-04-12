@@ -68,7 +68,7 @@
         currentPopup = $('#'+popupID).get(0);
 //        currentPopup = document.getElementById(popupID);
 //        currentPopup.style.display = 'block';
-        $('#'+popupID).stop(true, false).fadeIn(100,
+        $('#'+popupID).stop(true, false).fadeIn(150,
         function() {
             // Code to execute after fade-in is complete
             // console.log("Fade in complete");
@@ -130,7 +130,7 @@
         closingPopupID = popupID;
 
         // currentPopup.style.display = 'none';
-        $('#'+closingPopupID).stop(true, false).fadeOut(100,
+        $('#'+closingPopupID).stop(true, false).fadeOut(150,
         function() {
             // Code to execute after fade-out is complete
             // console.log("Fade out complete");
