@@ -111,10 +111,10 @@
             // APPLYING SHIFT
             if(popupTop > 0){
                 // placing popup above text
-                offsetY = elemRect.top  - bodyRect.top + 7;
+                offsetY = elemRect.top  - bodyRect.top + 1;
                 var popupY = popupRect.height;
-                currentPopup.style.top = (offsetY-popupY) + 'px';
-                $('#'+currentPopupID).animate({top: (offsetY-popupY+3) + 'px'});
+                currentPopup.style.top = (offsetY-popupY ) + 'px';
+                $('#'+currentPopupID).animate({top: (offsetY-popupY+9) + 'px'});
             } else {
                 // placing popup below text
                 currentPopup.style.top = (offsetY+15) + 'px';
