@@ -21,7 +21,6 @@
     //
     function initMMTPage(){
 //        console.log("initMMTPage: INITIALIZING");
-        $('#element04ToPopup').hide();
         document.addEventListener('keyup', keyboardEventListener);
 
         currentPopup = document.getElementById(popup01);
