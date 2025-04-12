@@ -94,12 +94,32 @@
 //        console.log("Popup rect ",popupRect.left, "  ", popupRect.bottom, " W = ", popupRect.width, " H = ", popupRect.height);
         const popupTop = elemRect.top - 10 - popupRect.height;
 //        console.log("POPUP TOP = ", popupTop);
-        if(popupTop > 0){
-            offsetY = elemRect.top  - bodyRect.top + 10;
-            var popupY = popupRect.height ;
-            currentPopup.style.top = (offsetY-popupY) + 'px';
-        }else{
-            currentPopup.style.top = (offsetY+10) + 'px';
+
+        const noShift = false;
+        if (noShift) {
+            // NO SHIFT
+            if(popupTop > 0){
+                // placing popup above text
+                offsetY = elemRect.top  - bodyRect.top + 10;
+                var popupY = popupRect.height ;
+                currentPopup.style.top = (offsetY-popupY) + 'px';
+            } else {
+                // placing popup below text
+                currentPopup.style.top = (offsetY+10) + 'px';
+            }
+        } else {
+            // APPLYING SHIFT
+            if(popupTop > 0){
+                // placing popup above text
+                offsetY = elemRect.top  - bodyRect.top + 7;
+                var popupY = popupRect.height;
+                currentPopup.style.top = (offsetY-popupY) + 'px';
+                $('#'+currentPopupID).animate({top: (offsetY-popupY+3) + 'px'});
+            } else {
+                // placing popup below text
+                currentPopup.style.top = (offsetY+15) + 'px';
+                $('#'+currentPopupID).animate({top: (offsetY+9) + 'px'});
+            }
         }
     }
 
