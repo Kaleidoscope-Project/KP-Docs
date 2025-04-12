@@ -68,7 +68,7 @@
         currentPopup = $('#'+popupID).get(0);
 //        currentPopup = document.getElementById(popupID);
 //        currentPopup.style.display = 'block';
-        $('#'+popupID).stop(true, false).fadeIn(300,
+        $('#'+popupID).stop(true, false).fadeIn(100,
         function() {
             // Code to execute after fade-in is complete
             // console.log("Fade in complete");
@@ -77,7 +77,6 @@
         });
 
         positionPopup(e, currentPopup);
-
 //          console.log("openPopup ",popupID);
 //          console.log("positionPopup ",currentPopup.style.left, "  ", currentPopup.style.top,  "  ", currentPopup.offsetHeight);
     }
@@ -111,7 +110,7 @@
         closingPopupID = popupID;
 
         // currentPopup.style.display = 'none';
-        $('#'+closingPopupID).stop(true, false).fadeOut(300,
+        $('#'+closingPopupID).stop(true, false).fadeOut(100,
         function() {
             // Code to execute after fade-out is complete
             // console.log("Fade out complete");
