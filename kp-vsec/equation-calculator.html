@@ -27,8 +27,8 @@
 
     <!--/*   S c r i p t s   */-->
 
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
-    <script type="text/javascript" src="../common/javascripts/jquery-3.7.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!--    <script type="text/javascript" src="../common/javascripts/jquery-3.7.1.min.js"></script>-->
 
     <script type="text/javascript" src="javascripts/AoS.js"></script>
 
@@ -128,7 +128,7 @@
             border-radius:22px;
             border: 2px solid #C89A4C; /* C8984A + 2 2 = C89A4C   #c89F4F; rgb(205,160,135) rgb(210,162,120) rgb(210,175,138);    */
             background: #FFFFF2;  /*rgb(200,150,20 );    */
-            width: 470pt;
+             width: 430pt;
             height: 33px;
             outline: none;
             box-sizing:border-box;
@@ -162,6 +162,15 @@
             background-color: #fffdfd; /*  background-color: #F4F4F4;   F7FCFF bluish */
             border-radius:12px;  /*  8px;   */
             border: 1px solid #CCCCCC; /*  EEEEEE */
+        }
+
+        .model-view-ara-holder {
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            width: 900px;
+
+<!--            background-color: #ff0000;-->
         }
 
         .model-spase-flex-container {
@@ -327,7 +336,7 @@
     <a href="../kp-mcln/kp-mcln.html">
         <img src="../common/images/next.png" alt="Next Page"></a>
 
-    <div class="text-container">
+    <div class="text-container"> <!-- Page Upper Text Container -->
 
         <center>
             <div class="page-header">
@@ -349,12 +358,14 @@
 
         <!--onchange  //////////////////////////   M o d e l   S e l e c t i o n   D r o p d o w n   //////////////////////  -->
 
-        <div>
-            <center>
+<!--        <div>-->
+<!--            <center>-->
 
-                <div style="text-align: center;">Model Chooser. Select predefined model to be simulated
-                </div>
-                <select class="dropdown" id="dropdown"
+        <div style="text-align: center;"><b>Model Chooser. Select predefined model to be simulated</b>
+                <p>
+                    Models Are Grouped, and Are Selected by Clicking on the Items Under the Group Headers
+                </p>
+                <select class="dropdown"
                         style=" font-weight: plain; font-size: 10pt; text-align-last:center;"
                         onClick="dropDownSelectionHandler(this)"
                         onfocusout="dropdownFocusOutHandler(event)"
@@ -365,8 +376,7 @@
                     <!--                        onfocusout="dropdownFocusOutHandler(event)">-->
 
                     <option class="dropdown-option" value="exp00">
-                        &nbsp;<<< Models Are Grouped, and Are Selected by Clicking on the Items Under the Group Headers
-                        >>>
+                        &nbsp;<<< Introductory model is preselected. Choose one of other demo models >>>
                         <!--                    &nbsp;<<< Expressions are selected by clicking on the variable's initial values in the dropdown list-->
                         <!--           78320A             >>>-->
                     </option>
@@ -395,15 +405,15 @@
                               label="Mixed: State & Input Driven Behavior" value="c02">
 
                         <option class="dropdown-option" value="exp03">
-                            Model 2.1: State & Input driven model. Full situations input. Situations are reordered.
+                            Model 2.1: State Input driven model. Reordered situations full input. Situations are reordered.
                         </option>
 
                         <option class="dropdown-option" value="exp22">
-                            Model 2.2: Two State & Input driven processes. One process is finite, the other is endless.
+                            Model 2.2: Two State Input driven processes. One process is finite, the other is endless.
                         </option>
 
                         <option class="dropdown-option" value="exp01">
-                            Model 2.3: One State & Input driven process. Sporadic situations, fragmentary changes in state.
+                            Model 2.3: One State Input driven process with random situations and state changes.
                         </option>
 
                     </optgroup>
@@ -422,14 +432,18 @@
                 <div style="margin-top: 11pt; margin-bottom: 4pt; font-size: 15pt; text-align: center;">
                     Model Representation and Simulation Area
                 </div>
-            </center>
-        </div>
+                </div>
+<!--            </center>-->
+<!--        </div>-->
 
-    </div> <!-- End of First Text Container -->
+    </div> <!-- End of Page Upper Text Container -->
 
     <!--  Introductory Model 723100 color:#85200C;///////////////   M o d e l   S i m u l a t i o n   A r e a   ///////////////////////////////////////////  -->
 
+    <!-- Model Display Area id not under Txt Container because it is wider than Text Container -->
     <center>
+        <div class= "model-view-ara-holder">
+
         <div id="model-simulation-display" class="model-spase-flex-container" style="text-align:center;">
 
             <div id="model-name-panel" class="model-name-container" style="justify-content: space-between;text-align: left;">
@@ -543,10 +557,11 @@
             <span id="simulationStepExecutedViewID" style="width: 150pt; text-align: center;">No steps were executed</span>
         </div>
 
-        </div>
-
+        </div> <!-- End of Model View Display Area-->
+        </div>  <!-- End of Model View Area Holder -->
         <!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
 
+        <!-- Page Lower Text Container -->
         <div class="text-container" style="font-size:19px; color: #333; margin-top:  5pt;text-align: center; ">
 
             <button class="control-button" id="one-step-simulation-button" disabled
@@ -587,7 +602,7 @@
                     <span style="color: #444;"><b>Micro Step</b></span> let you execute equation computation steps.
                     Toggle button
                     <span style="color: #444;"><b>Start/Stop Auto Simulation</b></span>
-                    lets you to start/stop auto simulation in steps corresponding to the last button clicked or
+                    lets you start/stop auto simulation in steps corresponding to the last button clicked or
                     in the major step if none of the step buttons is yet clicked. Button
                     <span style="color: #444;"><b>Reset Simulation</b></span> resets the simulation process into its initial
                     state letting it run again from the beginning.
@@ -1087,13 +1102,12 @@
 
             </div>
 
-        </div>  <!-- End of Second Text Container -->
+        </div>  <!-- End of Page Text Container -->
 
-    </center>
+        <!-- This Centers Model View Area -->
+        </center>
 
     <!-- =================================================================================== -->
-
-    <br/>
 
     <a href="../kp-xdnf/xdnf-expression-calculator.html">
         <img src="../common/images/prev.png" alt="Previous Page"></a>
@@ -1104,13 +1118,10 @@
     <a href="../kp-mcln/kp-mcln.html">
         <img src="../common/images/next.png" alt="Next Page"></a>
 
-    <center>
         <div class="end-of-page-red-line-1"></div>
         <div class="end-of-page-red-line-2"></div>
         <div class="space-below-footer"></div>
-        <br/>
-    </center>
 
-</div>
+</div> <!-- End of container -->
 </body>
 </html>
