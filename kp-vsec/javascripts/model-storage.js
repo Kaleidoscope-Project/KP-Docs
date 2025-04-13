@@ -8,9 +8,9 @@
         ["Model 1.2: State driven model with partial sub-situations.","Model-1-2"],
         ["Model 1.3: Two State driven sub-processes with two independent partial sub-situations.","Model-1-3"],
 
-        ["Model 2.1: State & Input driven model. Full situations input. Situations are reordered.","Model-2-1"],
-        ["Model 2.2: Two State & Input driven processes. One process is finite, the other is endless.","Model-2-2"],
-        ["Model 2.3: One State & Input driven process. Sporadic situations, fragmentary changes in state.","Model-2-3"],
+        ["Model 2.1: State Input driven model. Full situations input. Situations are reordered.","Model-2-1"],
+        ["Model 2.2: Two State Input driven processes. One process is finite, the other is endless.","Model-2-2"],
+        ["Model 2.3: One State Input driven process. Sporadic situations, fragmentary state changes.","Model-2-3"],
     ]
 
     const selectorDropDownChoicesToModelKeyMap = new Map(selectorDropDownChoices);

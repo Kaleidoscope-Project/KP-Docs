@@ -349,10 +349,10 @@
 
 //        console.log("selectedText RECOGNIZED: user choice ModelID is \""+userChoiceModelKey+"\"");
 
-        // This as they say might help to handle Dropdown
+        // This, as they say, might help to handle Dropdown
         // Menu behavior
         let selector = document.getElementById("dropdown");
-        selector.blur();
+//        selector.blur();
 
         // Setting user choice as current simulation model.
         let currentModel = setUserSelectedModelAsCurrent(userChoiceModelKey);
