@@ -71,8 +71,11 @@
         top: 10px;
         font-size:23pt;
         font-weight: plain;
+        text-align: center;
     }
 /*
+text-align: center;
+style="text-align: center;"
     .word-page-in-section-header {
         position: relative;
         top: 0px;
