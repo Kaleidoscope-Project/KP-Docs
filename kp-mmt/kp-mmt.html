@@ -187,8 +187,8 @@ Application
                     While studying behavior of dynamical systems phenomenologically - that is not by delving
                     into their internal machinery, but instead considering only abstract collections of
                     their properties, changing over time - we, following fundamental principles of
-                    mathematical modeling, tend to explain causes of changes of states of properties by
-                    existence of certain dependence relations of the states of the properties on changes of
+                    mathematical modeling, tend to explain causes of changes of states of the properties by
+                    existence of certain dependence relations of the states of properties on changes of
                     states of the same or some other properties; and, optionally, on the effects of external
                     systems or the environment.
                 </p>
@@ -414,7 +414,7 @@ Application
                     next state of variables of the models in the form of mathematical expressions
                     written as a composition of algebraic operations, that requires having a carrier
                     set allowing definition on it operations necessary for computing algebraic expressions,
-                    is described later in the sections devoted defining content of the state functions
+                    is described later in the sections of this page, devoted defining content of the state functions
                     of variables of the models.
                 </p>
 
@@ -484,29 +484,33 @@ Application
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
 
                 <p style = "text-align: center;">
-                    <b>Figure 1.</b> Structure of Qualitative Model Behavior Specification. In this Figure:
+                    <b>Figure 1.</b> Structure of Qualitative Model Behavior Specification.
                 </p>
 
                 <p>
-                    (1) QMBSpec is defined as the list <b>L</b> <span class="column"><sup>n</sup><sub>i=0</sub></span>
-                     of n SVDSpec<sub>i</sub>.
+                    In this Figure:
                 </p>
 
                 <p>
-                    (2) Each i-th SVDSpec<sub>i</sub>{  x<sub>i</sub>   :
+                    (1) QMBSpec is defined as the iterator through the list <b>L</b>
+                    <span class="column"><sup>n</sup><sub>i=0</sub></span> of n SVDSpec<sub>i</sub>.
+                </p>
+
+                <p>
+                    (2) Each i-th SVDSpec<sub>i</sub> { x<sub>i</sub>   :
                     <b>C</b> <span class="column"><sup>cn(i)</sup><sub>j=0</sub></span>
-                    { } } is defined as a pair where the first element
-                    of the pair x<sub>i</sub>  is the dependent state variable of the SVDSpeci whereas the second
-                    element is the list of Correspondences, iterator through which is denoted as <b>C</b>
-                    <span class="column"><sup>cn(i)</sup><sub>j=0</sub></span> of i,j-th Correspondences.
+                    { } } is a pair, where the first element
+                    of the pair x<sub>i</sub> is the dependent variable of the SVDSpec<sub>i</sub>, whereas the second
+                    element is the iterator through the list of Correspondences <b>C</b>
+                    <span class="column"><sup>cn(i)</sup><sub>j=0</sub></span>, number of which cn(i) depends on index i.
                 </p>
-
+<!--                of i,j-th Correspondences.-->
                 <p>
                     (3) Each i,j-th Correspondence { cv<span class="column"><sup>t+1</sup><sub>i,j</sub></span> :
-                    <b>S</b> <span class="column"><sup>sn(i,j)</sup><sub>k=0</sub></span> {  } is also defined as a pair.
+                    <b>S</b> <span class="column"><sup>sn(i,j)</sup><sub>k=0</sub></span> {  } is also a pair.
                     In that pair first element cv<span class="column"><sup>t+1</sup><sub>i,j</sub></span> belongs to
                     domain set <b>D</b>. It is a constant value which is supposed to be assigned to
-                    variable x<sub>i</sub> as its proposed value, as the response of the model to emergence of the i,j-th
+                    variable x<sub>i</sub> as its proposed value, in response of the model to emergence of the i,j-th
                     situation <b>S</b> <span class="column"><sup>sn(i,j)</sup><sub>k=0</sub></span>,
                     described in the second part of the pair.
                 </p>
