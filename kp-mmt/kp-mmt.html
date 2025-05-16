@@ -646,172 +646,155 @@ Application
                 </p>
 
                 <p class="second-level-section-header">
-                    Trial Algorithm of Computation of State Function of Variable
+                    Proposal of Implementation of the State Functions of Variables in the Form of Algebraic Expressions
                 </p>
 
                 <p>
-                    Flowchart of the algorithm visualizing understanding of the content of the
-                    function computation procedure, that respects partial dependence of values
-                    of variables on the occurrence of situations, but converts this partial
-                    dependence into the algorithm of fully defined function, is presented in
-                    Figure 2.
-                </p>
-
-                <img class="center" src="images/function-computation-procedure.png"  width="470" height="600" alt=""/>
-
-                <p class="center-text">
-                    Figure 2. Flowchart of the algorithm implementing content of<br>computation procedure of
-                    a state function of variable described<br>in the previous section.
-                </p>
-
-                <p>
-                    As it is shown in the Figure 2, the algorithm takes four arguments. Its first
-                    argument is a list of groups of variables of the model, passed into the function
-                    at the moment of its computation. The second and third arguments are taken
-                    directly from the Correspondences of the specification. They are passed to
-                    the function as a list of groups of constant, describing expected situations
-                    which may be formed as combinations of values of groups of variables passed
-                    to the function as its first argument; and as a list of constants denoting
-                    proposed values corresponding to the expected situations. The fourth argument
-                    is the current value of the variable being computed. It is used as the spare value
-                    of the function in case when its computed value turns out to be undefined.
+                    If a model of a qualitative system were created as a computer program, then each
+                    of its functions, based on the understanding of its content described above, would
+                    most likely be implemented in the form of a loop through all groups of its arguments
+                    that possibly represent situations expected by the function, and each iteration of
+                    the loop could begin with a test whether the group of arguments, being processed
+                    in the current iteration, characterizes expected situation, and then compute the
+                    value of the function by performing various checks that would choose different
+                    computational operations depending on whether the processed situation is present
+                    in the state of the model or not. This general description of the content of a
+                    computation procedure of a function is exactly that process which the algebraic
+                    expression, implementing the function, needs to perform.
                 </p>
 
                 <p>
-                    This algorithm organizes the evaluation of a function in the form of a cycle
-                    through all groups of the first argument of the function, performed with the
-                    purpose: 1) to identify all situations expected by the function that may be
-                    present, at the time of evaluation of the function, in the list of groups
-                    of its first argument; 2) to determine the proposed value of the variable
-                    for each group of variables as corresponding to the identified situation or
-                    to mark it as undefined using the auxiliary symbol $ for this purpose; 3)
-                    to analyze the state of each proposed value, which may turn out to be either
-                    defined or not, and to determine the final proposed value of the function,
-                    which thus may also turn out to be undefined due to the fact that either
-                    none of the expected in the list of groups of the first argument situations
-                    was detected, or two or more expected situations were detected, but it
-                    turned out that their proposed values are different and therefore, during
-                    the analysis, the final proposed value was marked with the symbol #.
+                    So, making an attempt to imagine how to fit all such features of structure of
+                    algorithms, as cycles and ways of controlling the course of computation, into the
+                    linear computational process of algebraic expression, we have nothing left, but
+                    to assume that the structure of this expressions must be defined in the way similar
+                    to the one of defining structure of discrete functions of Boolean algebra; i.e.,
+                    in the form of an algebraic polynomial, or to be more precise, as a kind of extended
+                    version of the form, known as the Disjunctive Normal Form. Thus further on, the
+                    form of the algebraic expression used for implementation of the procedure of
+                    computation of qualitative functions will be referred to as the Extended Disjunctive
+                    Normal Form, or XDNF, which specifies the process of computation of expression as the
+                    composition of terms. The terms in this structure must correspond to situations
+                    expected by the function and therefore their number must be the same as the number
+                    of groups of variables in the arguments of the function whose combinations of
+                    values may characterize expected situations.
+                </p>
+
+                <p class="third-level-section-header-bold-size-14">
+                    Operations That Should Compute Terms and Compositions
                 </p>
 
                 <p>
-                    And since the cycle can be completed with cases where the final proposed value
-                    of the function may be either computed or undefined, the last operation of the
-                    algorithm, performed after the end of the cycle, uses as the computed value of
-                    the function (and its state variable) the final proposed value when it contains
-                    a symbol belonging to the set <b>D</b>, which means it is computed, or replaces
-                    it with the current state of the variable passed to the function as its fourth
-                    argument when the final proposed value is undefined.
+                    Detailing the process of computation of XDNF expressions more deeply, and considering
+                    for that the content of the operations, necessary for computing the function, one
+                    should also assume that the operations included in the expressions must act beyond
+                    their regular ability of evaluating the expressions. In fact, some of these operations
+                    must be capable of analyzing the state of the arguments of the expression, or intermediate
+                    data of the computational process. Whereas, some others have to use results of the
+                    analysis for modifying their output, while carrying out following steps of computation
+                    of the expression. Described vision of mechanism of computation of the XDNF expressions
+                    determines the content of their terms and of the operation that has to combine the
+                    results of the computation of the term.
                 </p>
 
                 <p>
-                    <b>A note</b>. Described in this section, algorithm is considered "trial" because
-                    it is an attempt of formal description of the procedure for computing the
-                    state function of a variable of a model. It presents content of the procedure of
-                    evaluation of the function from the point of view of the operations needed for
-                    computing the function. Therefore, its discussion continues in the sections to follow.
+                    So, accordingly, the task of the terms of the expression should consist in computing
+                    proposed values of the target variable of the function as corresponding
+                    to the expected situations described in the specification of dependence of states
+                    of variables of the model. Therefore, the technique of computing the terms should
+                    include: a) operations which ensure detection of whether the situation, expected
+                    by the term, turned out present in the state of the model and b) operations producing
+                    proposed value of the variable which (depending on whether the expected situation is
+                    present or absent in the model at the time of computation of the expression) may
+                    turn out to be either defined or undefined.
                 </p>
+
+                <p>
+                    And the task of composition of the proposed values, computed for the terms, is to
+                    compute the final proposed value of the function (and its target variable). And,
+                    thus, it should be implemented as choosing from all possible produced proposed
+                    values of the variable of only a single final proposed value. Hence, the operation,
+                    computing this value, has to systematically analyze which of the proposed values
+                    are defined and which are not, as well as, to test if the proposed values, computed
+                    for different terms, produced different and therefore contradicting each other
+                    proposed values. Having these tests accomplished, the operation should mark the
+                    final proposed value as undefined in all those cases when either all proposed values
+                    happened to be undefined and therefore the final proposed value should also be
+                    undefined, or when  two or more of the proposed values terne out to be different.
+                </p>
+
+                <p class="third-level-section-header-bold-size-14">
+                    XDNF Expression Data Flow and Interaction of the Operations
+                </p>
+
+                <p>
+                    Despite the enriched capabilities of the described operations, intended for
+                    calculating XDNF expressions, the structure of the data flow in those expressions,
+                    as it is in all other algebraic expressions, has to continue stay laminar.<br>
+
+                    That is the computation of these expressions, like any other, must still
+                    be organized as a single, but now integrated (i.e., transmitting both
+                    defined and undefined results of operations, marked differently) data flow,
+                    directed from one operation in the expression computation scheme to another.
+                    But the data transmitted along the integrated flow may be both definite and
+                    indefinite. So their values must be represented both by elements taken from
+                    the set of states of variables <b>D</b> and by elements taken from another, auxiliary
+                    set <b>X</b>, the elements of which must be used instead of the elements of <b>D</b> and
+                    therefore, for compatibility with the elements of <b>D</b>, must also be symbols.
+                    Meaning of elements of the set <b>X</b> can be expressed in the form of different
+                    statements. Instances of the qualitative assessments of state of a computational
+                    process are: "<em>Situation recognized</em>", "<em>Situation not recognized</em>",
+                    "<em>Proposed value not defined</em>",
+                    "<em>The final value of the function is not defined as none of the
+                    expected situations is present in the state of the model</em>", or
+                    "<em>The final value of the function is not defined as a contradiction
+                    of proposed values is detected</em>".
+                </p>
+
+                <div class="definition-border">
+                    <div class="definition-inner-border" style="padding: 0px 15px 0px 15px;">
+                        <p>
+                            Described above assumption of possibility defining functions in the form
+                            of the XDNF expression and utilizing, in addition to the earlier defined
+                            domain set of the functions <b>D</b>, an auxiliary set of symbols <b>X</b>
+                            turned out to be not just imaginary, but the major key factor terning the
+                            described trial approach into a real modeling solution of the qualitative
+                            systems mathematical modeling technique.
+                        </p>
+                    </div> <!-- End of definition inner border -->
+                </div> <!-- End of definition outer border -->
 
                 <p class="second-level-section-header">
-                    Proposal of Streamlining the Trial Algorithm of the State<br>Function of Variable
+                    Homogeneous Carrier Set of Model and Family of<br>
+                    Hybrid, Binary Operations Closed on the Set
                 </p>
 
-                <p>
-                    Perhaps, the first thing that anyone, involved in the software development, could
-                    say, about what is present in Figure 2, is that this is just a flowchart of a
-                    typical algorithm of a computer program. And it would be really difficult
-                    to argue with that perception. Indeed, the multitude of rhombuses scattered
-                    around that check the estimates of the state of data and select, depending on
-                    the values of these estimates, different directions of development of the
-                    computational process, greatly distinguish this algorithm from algorithms of
-                    sequential computations of algebraic expressions.
-                </p>
-
-                <p>
-                    Meanwhile, we know that the result of the computational algorithm can be often obtained
-                    not only by means of checking many conditions and changing the order of execution
-                    of operations. Very often when creating algorithms that use
-                    sub-algorithms, we place all the logic of data analysis in those sub-algorithms,
-                    leaving to the main algorithm only the task of controlling invocations of the
-                    sub-algorithms in the computation process.
-                </p>
-
-                <p>
-                    Imagine for a second, that implementation of the algorithm of computation of
-                    function, presented in Figure 2, is rearranged in such a way that all those
-                    "if-s" and "then-s", cluttering process of computation which are usually
-                    depicted on the flowcharts in the form of diamonds, located
-                    outside the data processing rectangles, would be suddenly relocated inside
-                    the rectangles and become a part of operations that compute the data. That
-                    would make the flow of execution of the operations of computation of the
-                    functions to be entirely laminar and thus providing the ability to implement
-                    the algorithm in the form of a classical algebraic expression.
-                </p>
-
-                <p>
-                    Example of such a streamlined algorithm of computation of state function of variable,
-                    obtained as result of rearrangement of the Trial Algorithm, depicted in Figure 2,
-                    is presented in Figure 3.
-                </p>
-
-                <img class="center" src="images/simplified-function-computation-procedure.png"  width="470" height="600" alt=""/>
-
-                <p class="center-text">
-                    Figure 3. Flowchart of Streamlined Trial Algorithm obtained after all the
-                    decision operations have been moved from outside to inside data processing operations.
-                </p>
-
-                <p>
-                    So what should be practically done to turn the vision of such an imaginary algorithm
-                    into an existing reality? The answer to this question is actually quite simple.
-                    And it is based on the following obvious chain of observations (1), (2), and (3).
-                </p>
-
-                <p>
-                    (1) Since both local variables: "proposed state of variable" and "final
-                    proposed state of variable", used in the algorithm, are qualitative and hence,
-                    according to the definition made above, elements of the set <b>D</b> must be used
-                    to represent their computed values, and also since in order to represent
-                    different undefined values of both variables must be used different special
-                    signs, then for compatibility by type, all special signs must be compatible
-                    with the elements of the set <b>D</b>, and therefore the entire variety of auxiliary
-                    signs should be defined as a set of auxiliary symbols <b>X</b> = { #, $, ! }.
-                </p>
-
-                <p>
-                    (2) Emerging as a result of observation (1), homogeneity of elements of the
-                    set <b>D</b> with elements of the set <b>X</b>, existing due to the necessity to use
-                    both: elements of the set <b>D</b> and elements of the set <b>X</b> as values of the
-                    qualitative variables of the algorithm, creates unique opportunity to
-                    consider idea of defining  unified carrier set <b>S</b> of the model as the union
-                    of the set of values of variables <b>D</b> and the set of auxiliary symbols <b>X</b>, on
-                    the one hand; and to define on the set a family of hybrid operations capable
-                    of taking operands and producing the result of applying the operation to
-                    operands that can be elements of the set <b>S</b>, on the other hand.
-                </p>
-
-                <p>
-                    (3) If when striving to define a procedure for computation of a function
-                    in the form of an algebraic expression, we, for achieving this goal, would
-                    make a decision to follow the idea of moving all state testing operations
-                    of the computation process and its data to a lower level of the hierarchy
-                    of algorithm, i.e. on the level of data processing operations used in the
-                    process of computing  algebraic expressions, then this would mean that, in
-                    accordance with the emerging homogeneity of the elements of the set <b>D</b> with the
-                    elements of the sets <b>X</b> described in observation (2) would be that practical
-                    solution that makes it possible to use he set <b>S</b> and the operations for
-                    implementing the functions computation algorithm in the form of algebraic
-                    expressions implemented as a composition of operations defined on the set <b>S</b>.
-                </p>
+                <div class="definition-border">
+                    <div class="definition-inner-border" style="padding: 0px 15px 0px 15px;">
+                        <p>
+                            In fact, as it was shown by the study of feasibility of defining functions of models
+                            of qualitative systems in the form of the algebraic expressions, homogeneity
+                            of the sets <b>D</b> and <b>X</b>, arising as a result of defining both of
+                            them as sets, whose elements are symbols, creates unique opportunity to define
+                            the carrier set of the functions of a model as the union of these two sets.
+                            And the definition of the carrier set of the model as the homogeneous, i.e., as
+                            <b>S</b> = <b>D</b> U <b>X</b>, based on the definition made, in turn, makes
+                            it possible defining on the set <b>S</b> a family of hybrid, binary, and closed on
+                            the set, operations, whose operands are capable of taking either the elements
+                            of the set <b>D</b> or the elements of the set <b>X</b> and producing any element
+                            of the set <b>S</b>.
+                        </p>
+                    </div> <!-- End of definition inner border -->
+                </div> <!-- End of definition outer border -->
 
                 <p>
                     So, research on the feasibility of defining on the set <b>S</b> operations capable of
                     performing required computation was conducted. And its result made it possible to construct
                     five hybrid operations, letting to implement the procedure of computation of state functions
-                    of variables of models of qualitative systems in the form of the algebraic expression
-                    written as a composition of these operations. The names, denoting symbols and comments
-                    on the roles of the operations in the process of computation of the expression are
-                    listed in Table 1.
+                    of variables of models of qualitative systems in the form of extended disjunctive normal form
+                    of the algebraic expression written as a composition of these operations. The names,
+                    denoting symbols and comments on the roles of the operations in the process of
+                    computation of the expression are listed in Table 1.
                 </p>
 
                 <DIV style="align: center; width: 400pt; text-align: right;">Table 1</DIV>
@@ -861,7 +844,7 @@ Application
                     of the operations presented in the table are listed below.
                 </p>
 
-            <!--   O P E R A T I O N S         -->
+            <!--   O P E R A T I O N S    -->
 
                 <p>
                     <b>Equivalence</b> (?) operation is the first that begins computation of the procedure of a function.
@@ -1312,21 +1295,24 @@ Application
             </div> <!-- end of content holder  -->
         </div> <!-- end of text-container -->
 
+
         <!-- =================================================================================== -->
+        <p>
+            <a href="../kp-qds/kp-qds.html">
+                <img src="../common/images/prev.png" alt="Previous Page"></a>
 
-        <a href="../kp-qds/kp-qds.html">
-            <img src="../common/images/prev.png" alt="Previous Page"></a>
+            <a style="margin-left: 7pt;margin-right: 7pt;"  href="../index.html#sec.2.0">
+                <img src="../common/images/up.png" alt="Main Page"></a>
 
-        <a style="margin-left: 7pt;margin-right: 7pt;"  href="../index.html#sec.2.0">
-            <img src="../common/images/up.png" alt="Main Page"></a>
+            <a href="../kp-aos/kp-aos.html">
+                <img src="../common/images/next.png" alt="Next Page"></a>
+        </p>
 
-        <a href="../kp-aos/kp-aos.html">
-            <img src="../common/images/next.png" alt="Next Page"></a>
-
-        <div class="end-of-page-red-line-1"></div>
-        <div class="end-of-page-red-line-2"></div>
-        <div class="space-below-footer"></div>
-
+        <p>
+            <div class="end-of-page-red-line-1"></div>
+            <div class="end-of-page-red-line-2"></div>
+            <div class="space-below-footer"></div>
+        </p>
     </div> <!-- end of container -->
 
         <!--             -->
