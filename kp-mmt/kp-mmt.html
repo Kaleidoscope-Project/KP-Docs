@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
     <head>
 
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
@@ -646,7 +646,7 @@ Application
                 </p>
 
                 <p class="second-level-section-header">
-                    Proposal of Implementation of the State Functions of Variables in the Form of Algebraic Expressions
+                    Proposal of Implementation of State Functions of Variables in the Form of Algebraic Expressions
                 </p>
 
                 <p>
@@ -669,11 +669,11 @@ Application
                     linear computational process of algebraic expression, we have nothing left, but
                     to assume that the structure of this expressions must be defined in the way similar
                     to the one of defining structure of discrete functions of Boolean algebra; i.e.,
-                    in the form of an algebraic polynomial, or to be more precise, as a kind of extended
-                    version of the form, known as the Disjunctive Normal Form. Thus further on, the
+                    in the form of a special type of algebraic polynomial, or to be more precise, as a kind of extended
+                    version of the form, known as the Boolean polynomial or Disjunctive Normal Form. Thus, further on, the
                     form of the algebraic expression used for implementation of the procedure of
-                    computation of qualitative functions will be referred to as the Extended Disjunctive
-                    Normal Form, or XDNF, which specifies the process of computation of expression as the
+                    computation of qualitative functions will be referred to as the <em>Qualitative Disjunctive
+                    Normal Form</em>, or  <em>QDNF</em> , which specifies the process of computation of expression as the
                     composition of terms. The terms in this structure must correspond to situations
                     expected by the function and therefore their number must be the same as the number
                     of groups of variables in the arguments of the function whose combinations of
@@ -947,6 +947,16 @@ Application
                     final proposed value.
                 </p>
 
+                <p>
+                    Complete description of the sets <b>D</b>, <b>X</b>, and <b>S</b>, as well as of the
+                    five operations defined on the set <b>S</b>, that all together constitute the algebraic
+                    system, is presented on the page
+                    <span class="popup-link" onmouseenter="openPopup(event, popup04)"
+                          onmouseleave= "closePopup(popup04)">
+                        <a class="popup-link" href = "../kp-aos/kp-aos.html" target="_blank">
+                    <em>"The Algebra of Symbols"</em></a></span>.
+                </p>
+
                 <p class="second-level-section-header">
                     General Form of Expression of State Equation of a Model<br> as the Expanded Disjunctive Normal Form (X-DNF)
                 </p>
@@ -961,6 +971,9 @@ Application
 
                 <p>
                     Being a general form of the expression, this formula states that:
+                </p>
+
+                <p>
                     (a) The value of the variable x<sub>i</sub> at time t+1 is computed as an expression of the Algebra of
                     Symbols defined as a composition of five operations defined on the set <b>S</b>.
                 </p>
@@ -995,6 +1008,14 @@ Application
                     ev[i,c,k] is the i,c,k-th element of set <b>S</b> used to represent expected value of the i,c,k-th
                     argument of the expression. These pairs: argument[i,c,k]/ev[i,c,k] serve as the operands of
                     the Equivalence operation.
+                </p>
+
+                <p>
+                    XDNF Expressions Calculator is presented on the page
+                    <span class="popup-link" onmouseenter="openPopup(event, popup05)"
+                          onmouseleave= "closePopup(popup05)">
+                        <a class="popup-link" href = "../kp-xdnf/xdnf-expression-calculator.html" target="_blank">
+                    <em>"Extended Disjunctive Normal Form Expression Calculator"</em></a></span>.
                 </p>
 
                 <!-- ########################################################################################### -->
@@ -1378,13 +1399,13 @@ Application
         <!--  -->
         <div class="popup-style" id="element04ToPopup">
             <div style="text-align: center;">
-                <b>Page: Qualitative Dynamical Systems Mathematical Modeling Technique</b></div>
+                <b>Page: The Algebra of Symbols</b></div>
             <p>
-                This page introduces Qualitative Dynamical Systems Mathematical Modeling
-                Technique, developed as part of the Kaleidoscope Project, and to describe modeling solutions
-                proposed by the Technique. The purpose of this technique and the solutions is to enable
-                creating qualitative systems simulation models, capable of reproducing behavior of existing or
-                being designed systems.
+                The page is to introduce and describe an algebraic system, named "The
+                Algebra of Symbols" or AoS. The AoS is developed as a solution of the Qualitative
+                Dynamical Systems Mathematical Modeling Technique described on this page. It
+                is intended to be used as the means of computation of functions of models of
+                the qualitative systems implemented as the Extended Disjunctive Normal Form.
             </p>
             <p class="clicking-link">
                 Clicking the link opens named page in a new tab.
@@ -1396,9 +1417,13 @@ Application
         <!--  -->
         <div class="popup-style" id="element05ToPopup">
             <div style="text-align: center;">
-                <b>Page: Qualitative Systems</b></div>
+                <b>Page: Extended Disjunctive Normal Form Expression Calculator</b></div>
             <p>
-                ###################################
+                This page illustrates mechanism of computation of several imaginary examples of state
+                equation of a variable of model of qualitative dynamical system, written as y = f(args),
+                where the functional (right-hand) part of the equation is defined in the form of the
+                algebraic expression, structure of which is implemented as the Extended Disjunctive
+                Normal Form.
             </p>
             <p class="clicking-link">
                 Clicking the link opens named page in a new tab.

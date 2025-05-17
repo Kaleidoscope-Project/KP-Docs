@@ -111,7 +111,8 @@
             // APPLYING SHIFT
             if(popupTop > 0){
                 // placing popup above text
-                offsetY = elemRect.top  - bodyRect.top + 1;
+//                offsetY = elemRect.top  - bodyRect.top + 1;
+                offsetY = elemRect.top  - bodyRect.top - 1 ;
                 var popupY = popupRect.height;
                 currentPopup.style.top = (offsetY-popupY ) + 'px';
                 $('#'+currentPopupID).animate({top: (offsetY-popupY+9) + 'px'});
