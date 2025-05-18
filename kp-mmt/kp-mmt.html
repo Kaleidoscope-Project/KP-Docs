@@ -663,39 +663,76 @@ Application
                     expression, implementing the function, needs to perform.
                 </p>
 
+                // Added on 2025.05.17
                 <p>
-                    So, making an attempt to imagine how to fit all such features of structure of
-                    algorithms, as cycles and ways of controlling the course of computation, into the
-                    linear computational process of algebraic expression, we have nothing left, but
-                    to assume that the structure of this expressions must be defined in the way similar
-                    to the one of defining structure of discrete functions of Boolean algebra; i.e.,
-                    in the form of a special type of algebraic polynomial, or to be more precise, as a kind of extended
-                    version of the form, known as the Boolean polynomial or Disjunctive Normal Form. Thus, further on, the
-                    form of the algebraic expression used for implementation of the procedure of
-                    computation of qualitative functions will be referred to as the <em>Qualitative Disjunctive
-                    Normal Form</em>, or  <em>QDNF</em> , which specifies the process of computation of expression as the
-                    composition of terms. The terms in this structure must correspond to situations
-                    expected by the function and therefore their number must be the same as the number
-                    of groups of variables in the arguments of the function whose combinations of
-                    values may characterize expected situations.
+                    So, making an attempt to imagine how to fit into the linear computational process
+                    of algebraic expression all controlling elements of  structure of algorithms; such
+                    as cycles or computations and usages of estimates of state of data of process,
+                    providing execution of some computational operations and bypassing of others, i,
+                    we have nothing left, but to assume that the structure of this expressions must be
+                    defined in the way similar to the one of defining structure of discrete functions
+                    of Boolean algebra. That is, in the form of an algebraic polynomial, or to be more
+                    precise, in the form of its kind of special version that can be defined as the extension
+                    of the well known Disjunctive Normal Form. Thus further on, the form of the algebraic
+                    expression used for implementation of the procedure of computation of qualitative
+                    functions will be referred to as the Extended Disjunctive Normal Form, or XDNF, which
+                    specifies the process of computation of expression as the composition of terms. The
+                    terms in this structure must correspond to situations expected by the function and
+                    therefore their number must be the same as the number of groups of variables in the
+                    arguments of the function whose combinations of values may characterize expected situations.
                 </p>
+
+<!--                // Added on 2025.05.15-16-->
+
+<!--                <p>-->
+<!--                    So, making an attempt to imagine how to fit all such features of structure of-->
+<!--                    algorithms, as cycles and ways of controlling the course of computation, into the-->
+<!--                    linear computational process of algebraic expression, we have nothing left, but-->
+<!--                    to assume that the structure of this expressions must be defined in the way similar-->
+<!--                    to the one of defining structure of discrete functions of Boolean algebra; i.e.,-->
+<!--                    in the form of a special type of algebraic polynomial, or to be more precise, as a kind of extended-->
+<!--                    version of the form, known as the Boolean polynomial or Disjunctive Normal Form. Thus, further on, the-->
+<!--                    form of the algebraic expression used for implementation of the procedure of-->
+<!--                    computation of qualitative functions will be referred to as the <em>Qualitative Disjunctive-->
+<!--                    Normal Form</em>, or  <em>QDNF</em> , which specifies the process of computation of expression as the-->
+<!--                    composition of terms. The terms in this structure must correspond to situations-->
+<!--                    expected by the function and therefore their number must be the same as the number-->
+<!--                    of groups of variables in the arguments of the function whose combinations of-->
+<!--                    values may characterize expected situations.-->
+<!--                </p>-->
 
                 <p class="third-level-section-header-bold-line-size">
                     Operations That Should Compute Terms and Compositions
                 </p>
 
+                // Added on 2025.05.17
                 <p>
-                    Detailing the process of computation of XDNF expressions more deeply, and considering
-                    for that the content of the operations, necessary for computing the function, one
-                    should also assume that the operations included in the expressions must act beyond
-                    their regular ability of evaluating the expressions. In fact, some of these operations
-                    must be capable of analyzing the state of the arguments of the expression, or intermediate
-                    data of the computational process. Whereas, some others have to use results of the
-                    analysis for modifying their output, while carrying out following steps of computation
-                    of the expression. Described vision of mechanism of computation of the XDNF expressions
-                    determines the content of their terms and of the operation that has to combine the
-                    results of the computation of the term.
+                    Detailing the process of computation of XDNF expressions more deeply, and trying
+                    to reveal the content of the operations necessary for computing the function,
+                    one should also assume that the operations included in the expressions should act
+                    beyond their regular ability of evaluating the expressions. In fact, some of
+                    these operations should be capable of analyzing states of the arguments of the
+                    expression, or of intermediate data of the computational process. However, some
+                    others have to use the results of the analysis for modifying their output, while
+                    carrying out next steps of computation of the expression. Described vision of the
+                    assumed mechanism of computation of the XDNF expressions determines the content of
+                    their terms and of the operation that has to combine the results of the computation
+                    of the term.
                 </p>
+
+<!--                // Added on 2025.05.15-16-->
+<!--                <p>-->
+<!--                    Detailing the process of computation of XDNF expressions more deeply, and considering-->
+<!--                    for that the content of the operations, necessary for computing the function, one-->
+<!--                    should also assume that the operations included in the expressions must act beyond-->
+<!--                    their regular ability of evaluating the expressions. In fact, some of these operations-->
+<!--                    must be capable of analyzing the state of the arguments of the expression, or intermediate-->
+<!--                    data of the computational process. Whereas, some others have to use results of the-->
+<!--                    analysis for modifying their output, while carrying out following steps of computation-->
+<!--                    of the expression. Described vision of mechanism of computation of the XDNF expressions-->
+<!--                    determines the content of their terms and of the operation that has to combine the-->
+<!--                    results of the computation of the term.-->
+<!--                </p>-->
 
                 <p>
                     So, accordingly, the task of the terms of the expression should consist in computing
@@ -710,18 +747,34 @@ Application
                 </p>
 
                 <p>
-                    And the task of composition of the proposed values, computed for the terms, is to
+                    And the task of composition of the proposed values, computed by the terms, should be to
                     compute the final proposed value of the function (and its target variable). And,
-                    thus, it should be implemented as choosing from all possible produced proposed
-                    values of the variable of only a single final proposed value. Hence, the operation,
-                    computing this value, has to systematically analyze which of the proposed values
-                    are defined and which are not, as well as, to test if the proposed values, computed
-                    for different terms, produced different and therefore contradicting each other
-                    proposed values. Having these tests accomplished, the operation should mark the
-                    final proposed value as undefined in all those cases when either all proposed values
-                    happened to be undefined and therefore the final proposed value should also be
-                    undefined, or when  two or more of the proposed values terne out to be different.
+                    since any variable may take only a single value, the composition step of the computation
+                    should be implemented as choosing (from all the produced proposed values of the variable)
+                    only a single final proposed value, that should become the value of the function.
+                    Hence, the operation, computing this value, should  systematically analyze which
+                    of the proposed values are defined and which are not. And it also should test if
+                    the proposed values, computed for different terms, have produced different and
+                    therefore contradicting each other proposed values. Having, then, these tests
+                    accomplished, the operation should mark the final proposed value as undefined in
+                    all those cases when either all proposed values happened to be undefined and
+                    therefore the final proposed value should also be undefined, or when  two or more
+                    of the proposed values appeared to be different.
                 </p>
+
+<!--                <p>-->
+<!--                    And the task of composition of the proposed values, computed for the terms, is to-->
+<!--                    compute the final proposed value of the function (and its target variable). And,-->
+<!--                    thus, it should be implemented as choosing from all possible produced proposed-->
+<!--                    values of the variable of only a single final proposed value.-->
+<!--                    Hence, the operation, computing this value, has to systematically analyze which of the proposed values-->
+<!--                    are defined and which are not, as well as, to test if the proposed values, computed-->
+<!--                    for different terms, produced different and therefore contradicting each other-->
+<!--                    proposed values. Having these tests accomplished, the operation should mark the-->
+<!--                    final proposed value as undefined in all those cases when either all proposed values-->
+<!--                    happened to be undefined and therefore the final proposed value should also be-->
+<!--                    undefined, or when  two or more of the proposed values tern out to be different.-->
+<!--                </p>-->
 
                 <p class="third-level-section-header-bold-line-size">
                     XDNF Expression Data Flow and Interaction of the Operations
@@ -730,7 +783,7 @@ Application
                 <p>
                     Despite the enriched capabilities of the described operations, intended for
                     calculating XDNF expressions, the structure of the data flow in those expressions,
-                    as it is in all other algebraic expressions, has to continue stay laminar.<br>
+                    as it is in all other algebraic expressions, has to continue stay laminar.<br><br>
 
                     That is the computation of these expressions, like any other, must still
                     be organized as a single, but now integrated (i.e., transmitting both
