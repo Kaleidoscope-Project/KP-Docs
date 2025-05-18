@@ -22,7 +22,7 @@
         <!--/*   S c r i p t s   */-->
         <script type="text/javascript" src="../common/javascripts/jquery-3.7.1.min.js"></script>
         <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
-        <script type="text/javascript" src="javascripts/mmt-popup-scripts.js"></script>
+        <script type="text/javascript" src="../common/javascripts/mmt-popup-scripts.js"></script>
 
         <!--/*   S t y l e    S h e e t s   */-->
 
@@ -663,24 +663,77 @@ Application
                     expression, implementing the function, needs to perform.
                 </p>
 
-                // Added on 2025.05.17
+<!--                // Added on 2025.05.18-->
                 <p>
-                    So, making an attempt to imagine how to fit into the linear computational process
-                    of algebraic expression all controlling elements of  structure of algorithms; such
-                    as cycles or computations and usages of estimates of state of data of process,
-                    providing execution of some computational operations and bypassing of others, i,
-                    we have nothing left, but to assume that the structure of this expressions must be
-                    defined in the way similar to the one of defining structure of discrete functions
-                    of Boolean algebra. That is, in the form of an algebraic polynomial, or to be more
-                    precise, in the form of its kind of special version that can be defined as the extension
-                    of the well known Disjunctive Normal Form. Thus further on, the form of the algebraic
-                    expression used for implementation of the procedure of computation of qualitative
-                    functions will be referred to as the Extended Disjunctive Normal Form, or XDNF, which
-                    specifies the process of computation of expression as the composition of terms. The
-                    terms in this structure must correspond to situations expected by the function and
-                    therefore their number must be the same as the number of groups of variables in the
-                    arguments of the function whose combinations of values may characterize expected situations.
+                    So, taking into account sequential character of data flow, inherent in the algebraic
+                    expressions, and making the attempt to imagine how to fit into the linear computational
+                    process of algebraic expression all such elements of algorithms as cycles, computations
+                    of runtime estimates of state of data and conditional choices for execution of some
+                    operations and bypassing the others, we have nothing left, but to consider two
+                    fundamental for developing modeling technique, intended to implement functions in the
+                    form of algebraic expression, assumptions.
                 </p>
+
+                <p>
+                    The first of these assumptions is that the structure of the expressions, implementing
+                    procedures of computation of qualitative functions, should be defined in a way similar
+                    to the one of defining structure of discrete functions of Boolean algebra. Or, to be
+                    more precise, as a kind of special version of polynomial representation that can be
+                    defined as the extension of the well known Disjunctive Normal Form. This form of the
+                    algebraic expression will be further referred to as the Extended Disjunctive Normal
+                    Form, or XDNF, which specifies the process of computation of expression as the
+                    composition of terms. The terms in this structure should compute proposed values of
+                    the variable corresponding to situations expected by the function and therefore their
+                    number must be the same as the number of groups of variables in the arguments of the
+                    function whose combinations of values characterize expected situations.
+                </p>
+
+                <p>
+                    And the second assumption, on the other hand, is that, in order to allow the algebraic
+                    expression to analyze and control computation process in accordance with the results
+                    of the analysis, the structure of the XDNF expressions should include operations
+                    capable of processing two kinds of the data, t.e., main data being computed and the
+                    auxiliary data representing results of analysis and undefined results of computation.
+                    And from this it follows that the data flow from the arguments of the expression,
+                    through the sequence of its all operations to the result should consist not only of
+                    the source, intermediate and final main data. It also should include markers presenting
+                    results of the analysis and markers explaining "that", or "why", the result of the
+                    computation of the expression is undefined.
+                </p>
+
+<!--                <p>-->
+<!--                    So, making an attempt to imagine how to fit into the linear computational process-->
+<!--                    of algebraic expression all such elements of algorithms as cycles, computations-->
+<!--                    of runtime estimates of state of data and conditional choices for execution of-->
+<!--                    some operations while bypassing the others, we have nothing left, but to assume-->
+<!--                    that the structure of those expressions should include operations capable of-->
+<!--                    taking and yielding both the main data being processed and the auxiliary data representing-->
+<!--                    state of the estimates or undefined results of the computation. And this also-->
+<!--                    assumes that the data flow from the arguments of the expression, through the sequence-->
+<!--                    of its all operations to the result should consist not only of the source, intermediate-->
+<!--                    and final main data. It also should include markers presenting results of the estimations-->
+<!--                    and markers explaining "that", or "why", the result of the computation of the expression-->
+<!--                    is undefined.-->
+<!--                </p>-->
+
+<!--                // Added on 2025.05.17-->
+<!--                <p>-->
+<!--                    So, making an attempt to imagine how to fit into the linear computational process-->
+<!--                    of algebraic expression all controlling elements of  structure of algorithms; such-->
+<!--                    as cycles or computations and usages of estimates of state of data of process,-->
+<!--                    providing execution of some computational operations and bypassing of others, i,-->
+<!--                    we have nothing left, but to assume that the structure of this expressions must be-->
+<!--                    defined in the way similar to the one of defining structure of discrete functions-->
+<!--                    of Boolean algebra. That is, in the form of an algebraic polynomial, or to be more-->
+<!--                    precise, in the form of its kind of special version that can be defined as the extension-->
+<!--                    of the well known Disjunctive Normal Form. Thus, further on, the form of the algebraic-->
+<!--                    expression used for implementation of the procedure of computation of qualitative-->
+<!--                    functions will be referred to as the Extended Disjunctive Normal Form, or XDNF, which-->
+<!--                    specifies the process of computation of expression as the composition of terms. The-->
+<!--                    terms in this structure must correspond to situations expected by the function and-->
+<!--                    therefore their number must be the same as the number of groups of variables in the-->
+<!--                    arguments of the function whose combinations of values may characterize expected situations.-->
+<!--                </p>-->
 
 <!--                // Added on 2025.05.15-16-->
 
@@ -705,7 +758,7 @@ Application
                     Operations That Should Compute Terms and Compositions
                 </p>
 
-                // Added on 2025.05.17
+<!--                // Added on 2025.05.17-->
                 <p>
                     Detailing the process of computation of XDNF expressions more deeply, and trying
                     to reveal the content of the operations necessary for computing the function,
@@ -807,7 +860,7 @@ Application
                 <div class="definition-border">
                     <div class="definition-inner-border" style="padding: 0px 15px 0px 15px;">
                         <p>
-                            Described above assumption of possibility defining functions in the form
+                            Described above assumptions of possibility defining functions in the form
                             of the XDNF expression and utilizing, in addition to the earlier defined
                             domain set of the functions <b>D</b>, an auxiliary set of symbols <b>X</b>
                             turned out to be not just imaginary, but the major key factor terning the
@@ -822,26 +875,26 @@ Application
                     Hybrid, Binary Operations Closed on the Set
                 </p>
 
-                <div class="definition-border">
-                    <div class="definition-inner-border" style="padding: 0px 15px 0px 15px;">
+<!--                <div class="definition-border">-->
+<!--                    <div class="definition-inner-border" style="padding: 0px 15px 0px 15px;">-->
                         <p>
-                            In fact, as it was shown by the study of feasibility of defining functions of models
+                            As it was shown by the study of feasibility of defining functions of models
                             of qualitative systems in the form of the algebraic expressions, homogeneity
                             of the sets <b>D</b> and <b>X</b>, arising as a result of defining both of
-                            them as sets, whose elements are symbols, creates unique opportunity to define
+                            them as sets, whose elements are symbols, creates <em>unique opportunity</em> to define
                             the carrier set of the functions of a model as the union of these two sets.
                             And the definition of the carrier set of the model as the homogeneous, i.e., as
                             <b>S</b> = <b>D</b> U <b>X</b>, based on the definition made, in turn, makes
                             it possible defining on the set <b>S</b> a family of hybrid, binary, and closed on
-                            the set, operations, whose operands are capable of taking either the elements
+                            the entire set, operations, whose operands are capable of taking either the elements
                             of the set <b>D</b> or the elements of the set <b>X</b> and producing any element
                             of the set <b>S</b>.
                         </p>
-                    </div> <!-- End of definition inner border -->
-                </div> <!-- End of definition outer border -->
+<!--                    </div> &lt;!&ndash; End of definition inner border &ndash;&gt;-->
+<!--                </div> &lt;!&ndash; End of definition outer border &ndash;&gt;-->
 
                 <p>
-                    So, research on the feasibility of defining on the set <b>S</b> operations capable of
+                    Research on the feasibility of defining on the set <b>S</b> operations capable of
                     performing required computation was conducted. And its result made it possible to construct
                     five hybrid operations, letting to implement the procedure of computation of state functions
                     of variables of models of qualitative systems in the form of extended disjunctive normal form
@@ -893,112 +946,112 @@ Application
                     The table lists all five operations in the order they are used in the expression. Names of the
                     operations are presented in the first column of the table. The second column contains symbols
                     used to denote the operations in an expression where the operations are written in their infix
-                    form. And the third column provides a brief description of the operations. Detailed descriptions
-                    of the operations presented in the table are listed below.
+                    form. And the third column provides a brief description of the operations.
+<!--                    Detailed descriptions of the operations presented in the table are listed below.-->
                 </p>
 
             <!--   O P E R A T I O N S    -->
 
-                <p>
-                    <b>Equivalence</b> (?) operation is the first that begins computation of the procedure of a function.
-                    It is used to recognize situations, description of which is passed to a function as the groups of
-                    its arguments. When recognizing a particular situation, this operation compares all the values
-                    of a group of the arguments, which may or may not contain the description of the expected situation
-                    present in the model at the time of computation of the function, with their expected values. To
-                    perform this comparison, the operation takes two operands whose values are symbols of the set <b>D</b>
-                    and yields either symbol "!", which belongs to the set <b>X</b>, if both operands are represented by
-                    the same symbol of set <b>D</b>, or the value "~", which also belongs to the set <b>X</b>, if the operands are
-                    represented by different symbols of the set <b>D</b>.
-                </p>
+<!--                <p>-->
+<!--                    <b>Equivalence</b> (?) operation is the first that begins computation of the procedure of a function.-->
+<!--                    It is used to recognize situations, description of which is passed to a function as the groups of-->
+<!--                    its arguments. When recognizing a particular situation, this operation compares all the values-->
+<!--                    of a group of the arguments, which may or may not contain the description of the expected situation-->
+<!--                    present in the model at the time of computation of the function, with their expected values. To-->
+<!--                    perform this comparison, the operation takes two operands whose values are symbols of the set <b>D</b>-->
+<!--                    and yields either symbol "!", which belongs to the set <b>X</b>, if both operands are represented by-->
+<!--                    the same symbol of set <b>D</b>, or the value "~", which also belongs to the set <b>X</b>, if the operands are-->
+<!--                    represented by different symbols of the set <b>D</b>.-->
+<!--                </p>-->
 
-                <p>
-                    <b>Conjunction</b> (&) operation is also used to recognize situations, or more precisely to
-                    compute the indicators representing the fact that all the results of comparing the states of
-                    properties with their expected values obtained as a result of applying the Equivalence
-                    operation have been compared and thus the expected situation is recognized. It is called
-                    Conjunction because it inherits its role from the Conjunction operation defined on a set
-                    consisting of only two elements and solves the same problem. This operation takes two operands
-                    computed by the Equivalence operation by comparing its operands, each of which can be either
-                    the "!" symbol or the "~" symbol, and returns the "!" symbol only in case - when  both of its
-                    operands contain the "!" symbol, or the "~" symbol for all other combinations of operands.
-                    Properties of the commutativity and associativity of the Conjunction operation allow it to be
-                    used for computing n-ary conjunction of all results of the Equivalence operation, where the
-                    output of n-ary conjunction is the value "!" if and only if all results of the Equivalence
-                    operation are represented by the symbol "!", or the symbol "~" otherwise.
-                </p>
+<!--                <p>-->
+<!--                    <b>Conjunction</b> (&) operation is also used to recognize situations, or more precisely to-->
+<!--                    compute the indicators representing the fact that all the results of comparing the states of-->
+<!--                    properties with their expected values obtained as a result of applying the Equivalence-->
+<!--                    operation have been compared and thus the expected situation is recognized. It is called-->
+<!--                    Conjunction because it inherits its role from the Conjunction operation defined on a set-->
+<!--                    consisting of only two elements and solves the same problem. This operation takes two operands-->
+<!--                    computed by the Equivalence operation by comparing its operands, each of which can be either-->
+<!--                    the "!" symbol or the "~" symbol, and returns the "!" symbol only in case - when  both of its-->
+<!--                    operands contain the "!" symbol, or the "~" symbol for all other combinations of operands.-->
+<!--                    Properties of the commutativity and associativity of the Conjunction operation allow it to be-->
+<!--                    used for computing n-ary conjunction of all results of the Equivalence operation, where the-->
+<!--                    output of n-ary conjunction is the value "!" if and only if all results of the Equivalence-->
+<!--                    operation are represented by the symbol "!", or the symbol "~" otherwise.-->
+<!--                </p>-->
 
-                <p>
-                    <b>Production</b> (*) operation is the generator of the  proposed state of the variable. It has
-                    gotten its name because it acts in the same
-                    way as the production rule. One of the operands of this operation is the result of recognition
-                    of the situation, i.e. it may contain either symbol "!" or "~" obtained after  computation
-                    of the n-ary conjunction accomplished by the Conjunction operation. While the second argument
-                    is the element of the set <b>D</b>, that is described in the Correspondence of the specification as
-                    the proposed value of the variable. The operation produces a proposed value of the variable
-                    that is a dependent element of the relation computed by the function in case when the operand,
-                    representing the result of recognition of situation "!" indicates that the situation is recognized,
-                    or the symbol "~" when the result of recognition is the symbol "~" meaning that the situation is
-                    not recognized.
-                </p>
+<!--                <p>-->
+<!--                    <b>Production</b> (*) operation is the generator of the  proposed state of the variable. It has-->
+<!--                    gotten its name because it acts in the same-->
+<!--                    way as the production rule. One of the operands of this operation is the result of recognition-->
+<!--                    of the situation, i.e. it may contain either symbol "!" or "~" obtained after  computation-->
+<!--                    of the n-ary conjunction accomplished by the Conjunction operation. While the second argument-->
+<!--                    is the element of the set <b>D</b>, that is described in the Correspondence of the specification as-->
+<!--                    the proposed value of the variable. The operation produces a proposed value of the variable-->
+<!--                    that is a dependent element of the relation computed by the function in case when the operand,-->
+<!--                    representing the result of recognition of situation "!" indicates that the situation is recognized,-->
+<!--                    or the symbol "~" when the result of recognition is the symbol "~" meaning that the situation is-->
+<!--                    not recognized.-->
+<!--                </p>-->
 
-                <p>
-                    <b>Disjunction</b> (|) operation is called Disjunction because in the process of
-                    computation of the function it plays a role similar to the role of the Disjunction operation
-                    of an algebra defined on a set of two elements. Its task is to look through all the proposed
-                    values and do the best to find a single "final proposed value" which should become the value
-                    of the function, and thus the next value of the state variable of the model. So, to accomplish
-                    the task this operation takes two operands that can be represented by any symbols of the set <b>S</b>.
-                    And it is commutative and associative, similar to the Conjunction operation, it is used to
-                    compute the n-ary disjunction of all the results of the Production operation. In the process
-                    of this computation, it selects from all the proposed values produced by the Production
-                    operation a single final proposed value that should become the value  of the function (and the
-                    next value of the state variable of a model) if such a value can be found among all the
-                    proposed values produced as corresponding to all situations, regardless of whether
-                    the situation is recognized or not. There are three possible outcomes of the application of
-                    this operation produced as a final proposed value. Based on the following three rules.
-                </p>
+<!--                <p>-->
+<!--                    <b>Disjunction</b> (|) operation is called Disjunction because in the process of-->
+<!--                    computation of the function it plays a role similar to the role of the Disjunction operation-->
+<!--                    of an algebra defined on a set of two elements. Its task is to look through all the proposed-->
+<!--                    values and do the best to find a single "final proposed value" which should become the value-->
+<!--                    of the function, and thus the next value of the state variable of the model. So, to accomplish-->
+<!--                    the task this operation takes two operands that can be represented by any symbols of the set <b>S</b>.-->
+<!--                    And it is commutative and associative, similar to the Conjunction operation, it is used to-->
+<!--                    compute the n-ary disjunction of all the results of the Production operation. In the process-->
+<!--                    of this computation, it selects from all the proposed values produced by the Production-->
+<!--                    operation a single final proposed value that should become the value  of the function (and the-->
+<!--                    next value of the state variable of a model) if such a value can be found among all the-->
+<!--                    proposed values produced as corresponding to all situations, regardless of whether-->
+<!--                    the situation is recognized or not. There are three possible outcomes of the application of-->
+<!--                    this operation produced as a final proposed value. Based on the following three rules.-->
+<!--                </p>-->
 
-                <p>
-                    1) It yields symbol "~" when it turns out that none of the expected situations that are
-                    independent elements in relation to the dependence of the variable on the situation were
-                    recognized since none of them are present in the state of the function arguments;
-                </p>
+<!--                <p>-->
+<!--                    1) It yields symbol "~" when it turns out that none of the expected situations that are-->
+<!--                    independent elements in relation to the dependence of the variable on the situation were-->
+<!--                    recognized since none of them are present in the state of the function arguments;-->
+<!--                </p>-->
 
-                <p>
-                    2) It yields a symbol "d" that is an element of the set <b>D</b>, produced by the Production operation,
-                    as corresponding to the recognized situations in the case when one or more expected situations
-                    turned out to be present in the state of the arguments of a function and all recognized
-                    situations (when there are several of them) have produced the same proposed value of the variable.
-                </p>
+<!--                <p>-->
+<!--                    2) It yields a symbol "d" that is an element of the set <b>D</b>, produced by the Production operation,-->
+<!--                    as corresponding to the recognized situations in the case when one or more expected situations-->
+<!--                    turned out to be present in the state of the arguments of a function and all recognized-->
+<!--                    situations (when there are several of them) have produced the same proposed value of the variable.-->
+<!--                </p>-->
 
-                <p>
-                    3) Or, it yields the symbol "#" denoting the case when at least two of the expected situations
-                    are present in the model (and the arguments of a function) and are recognized, but corresponding
-                    to the situations proposed values require the computed variable to simultaneously take
-                    different values. And since the function, by definition, can compute only one value, it is
-                    interpreted by the next operation as the fact that the final proposed value that this operation
-                    should produce could not be found among the previously computed proposed values. And.
-                </p>
+<!--                <p>-->
+<!--                    3) Or, it yields the symbol "#" denoting the case when at least two of the expected situations-->
+<!--                    are present in the model (and the arguments of a function) and are recognized, but corresponding-->
+<!--                    to the situations proposed values require the computed variable to simultaneously take-->
+<!--                    different values. And since the function, by definition, can compute only one value, it is-->
+<!--                    interpreted by the next operation as the fact that the final proposed value that this operation-->
+<!--                    should produce could not be found among the previously computed proposed values. And.-->
+<!--                </p>-->
 
-                <p>
-                    <b>Application</b> (<) operation is the last one in the procedure of computation of a function.
-                    Yet, its role has nothing to do with the continuation of computation of the function. It is used
-                    to redefine the function by transforming it from partially defined to defined on all possible
-                    combinations of its arguments (whether they represent or not represent situations) and, thus,
-                    for eliminating cases when, due to a conflict of values detected by the Disjunction
-                    operation, the final value turned out to be undefined; that is, to transform a partially defined
-                    function into a complete one. In solving this problem, the Application operation, like all previous
-                    operations, also takes two operands. But unlike all previous operations, it is not commutative.
-                    Its first operand is the final proposed value (computed or not by the Disjunction operation),
-                    and the second is an additional argument of the function containing the current value of the
-                    variable, in case the computation of the next value of the variable may not work. Thus, all this
-                    operation does is check the type of the final proposed value of the function passed to it as
-                    its first operand and determine the computed value of the function using the final proposed value
-                    if that value is represented by an element of the set <b>D</b>, i.e., is a real symbol representing
-                    the next state of the variable. Or, alternatively, use the value of the additional argument of
-                    the function which is the current value of the function which should replace the unevaluated
-                    final proposed value.
-                </p>
+<!--                <p>-->
+<!--                    <b>Application</b> (<) operation is the last one in the procedure of computation of a function.-->
+<!--                    Yet, its role has nothing to do with the continuation of computation of the function. It is used-->
+<!--                    to redefine the function by transforming it from partially defined to defined on all possible-->
+<!--                    combinations of its arguments (whether they represent or not represent situations) and, thus,-->
+<!--                    for eliminating cases when, due to a conflict of values detected by the Disjunction-->
+<!--                    operation, the final value turned out to be undefined; that is, to transform a partially defined-->
+<!--                    function into a complete one. In solving this problem, the Application operation, like all previous-->
+<!--                    operations, also takes two operands. But unlike all previous operations, it is not commutative.-->
+<!--                    Its first operand is the final proposed value (computed or not by the Disjunction operation),-->
+<!--                    and the second is an additional argument of the function containing the current value of the-->
+<!--                    variable, in case the computation of the next value of the variable may not work. Thus, all this-->
+<!--                    operation does is check the type of the final proposed value of the function passed to it as-->
+<!--                    its first operand and determine the computed value of the function using the final proposed value-->
+<!--                    if that value is represented by an element of the set <b>D</b>, i.e., is a real symbol representing-->
+<!--                    the next state of the variable. Or, alternatively, use the value of the additional argument of-->
+<!--                    the function which is the current value of the function which should replace the unevaluated-->
+<!--                    final proposed value.-->
+<!--                </p>-->
 
                 <p>
                     Complete description of the sets <b>D</b>, <b>X</b>, and <b>S</b>, as well as of the
@@ -1360,7 +1413,7 @@ Application
                     to described on this page set <b>S</b> and its five operations as the algebra, named "The Algebra of
                     Symbols" and continues as presentations of other modeling solution proposing representation of
                     the system of qualitative equations of the model based on the Vector State Space approach and
-                    the Graph Based Multi Colored Logical Net (McLN) modeling formalism, creation of which is
+                    the Graph Based Multicolored Logical Net (McLN) modeling formalism, creation of which is
                     supported by the application named Qualitative Systems Modeling and Simulating Environment.
                 </p>
 
