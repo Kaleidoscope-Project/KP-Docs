@@ -127,7 +127,7 @@
     /*
     */
     function closePopup(popupID) {
-        // console.log("closePopup fadingin ",fadingin);
+        // console.log("closePopup fading in ",fading in);
         closingPopupID = popupID;
 
         // currentPopup.style.display = 'none';
