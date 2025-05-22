@@ -549,17 +549,16 @@ Application
                     To define a function, in a general sense, means to suggest a way for computing
                     its values for all possible combinations of values of its arguments. Respectively,
                     in order to define state function of a variable of a model of qualitative
-                    system (intended for reproducing changes of state of a property observed
+                    system (intended for reproducing changes of state of the modeled property observed
                     in a modeled system), it is necessary to define a computation procedure of
                     the function, capable of producing values of the variable for all possible
                     combinations of values of groups of variables of the model, characterizing
                     situations which are described in the Correspondences of the SVDSpec of the
-                    variable being computed and ought to be passed to the function as its arguments.
+                    variable being computed and which ought to be passed to the function as its arguments.
                 </p>
 
                 <p>
-                    However, in order to construct a computation procedure of state function of variable,
-                    it is necessary to take
+                    However, in order to construct such a computation procedure, it is necessary to take
                     into account that the suggested way for its computing must ensure obtaining
                     results despite the challenges caused by the characteristics of dependence
                     of states of variables of models of the qualitative systems on irregularities
@@ -691,7 +690,7 @@ Application
                 </p>
 
                 <p>
-                    And the second assumption, on the other hand, is that, in order to allow the algebraic
+                    The second assumption, on the other hand, is that, which in order to allow the algebraic
                     expression to analyze and control computation process in accordance with the results
                     of the analysis, the structure of the XDNF expressions should include operations
                     capable of processing two kinds of the data, t.e., main data being computed and the
@@ -767,7 +766,7 @@ Application
                     one should also assume that the operations included in the expressions should act
                     beyond their regular ability of evaluating the expressions. In fact, some of
                     these operations should be capable of analyzing states of the arguments of the
-                    expression, or of intermediate data of the computational process. However, some
+                    expression, or of intermediate data of the computational process. Meanwhile, some
                     others have to use the results of the analysis for modifying their output, while
                     carrying out next steps of computation of the expression. Described vision of the
                     assumed mechanism of computation of the XDNF expressions determines the content of
@@ -802,7 +801,7 @@ Application
                 </p>
 
                 <p>
-                    And the task of composition of the proposed values, computed by the terms, should be to
+                    The following task - the composition of the proposed values, computed by the terms, should be to
                     compute the final proposed value of the function (and its target variable). And,
                     since any variable may take only a single value, the composition step of the computation
                     should be implemented as choosing (from all the produced proposed values of the variable)
@@ -832,66 +831,72 @@ Application
 <!--                </p>-->
 
                 <p class="third-level-section-header-bold-line-size">
-                    XDNF Expression Data Flow and Interaction of the Operations
+                    XDNF Expression Data Flow and Interaction of Operations
                 </p>
 
                 <p>
                     Despite the enriched capabilities of the described operations, intended for
-                    calculating XDNF expressions, the structure of the data flow in those expressions,
+                    computing XDNF expressions, structure of the data flow in those expressions,
                     as it is in all other algebraic expressions, has to continue stay laminar.<br><br>
 
-                    That is the computation of these expressions, like any other, must still
-                    be organized as a single, but now integrated (i.e., transmitting both
-                    defined and undefined results of operations, marked differently) data flow,
+                    In fact, the computation of these expressions, like any others, must still
+                    be performed as a single, but transmitting two different (defined and undefined)
+                    results of operations, marked different types of symbols; i.e., now integrated data flow,
                     directed from one operation in the expression computation scheme to another.
                     But the data transmitted along the integrated flow may be both definite and
-                    indefinite. So their values must be represented both by elements taken from
-                    the set of states of variables <b>D</b> and by elements taken from another, auxiliary
-                    set <b>X</b>, the elements of which must be used instead of the elements of <b>D</b> and
+                    indefinite. So their values must be represented by both the elements taken from
+                    the set of states of variables <b>D</b> and the elements taken from the set of auxiliary
+                    symbols <b>X</b>, the elements of which must be used instead of the elements of <b>D</b> and
                     therefore, for compatibility with the elements of <b>D</b>, must also be symbols.
                     Meaning of elements of the set <b>X</b> can be expressed in the form of different
                     statements. Instances of the qualitative assessments of state of a computational
-                    process are: "<em>Situation recognized</em>", "<em>Situation not recognized</em>",
-                    "<em>Proposed value not defined</em>",
-                    "<em>The final value of the function is not defined as none of the
-                    expected situations is present in the state of the model</em>", or
-                    "<em>The final value of the function is not defined as a contradiction
-                    of proposed values is detected</em>".
+                    process are: "Situation recognized", "Situation not recognized",
+                    "Proposed value not defined",
+                    "The final value of the function is not defined as none of the
+                    expected situations is present in the state of the model", or
+                    "The final value of the function is not defined as a contradiction
+                    of proposed values is detected".
                 </p>
 
-                <div class="definition-border">
-                    <div class="definition-inner-border" style="padding: 0px 15px 0px 15px;">
+<!--                <div class="single-line-frame">-->
+<!--                <div class="definition-border">-->
+<!--                    <div class="definition-inner-border" style="padding: 0px 15px 0px 15px;">-->
                         <p>
-                            Described above assumptions of possibility defining functions in the form
+                            <em>Described above assumptions of possibility defining functions in the form
                             of the XDNF expression and utilizing, in addition to the earlier defined
                             domain set of the functions <b>D</b>, an auxiliary set of symbols <b>X</b>
                             turned out to be not just imaginary, but the major key factor terning the
                             described trial approach into a real modeling solution of the qualitative
-                            systems mathematical modeling technique.
+                            systems mathematical modeling technique</em>.
                         </p>
-                    </div> <!-- End of definition inner border -->
-                </div> <!-- End of definition outer border -->
+<!--                    </div> &lt;!&ndash; End of definition inner border &ndash;&gt;-->
+<!--                </div> &lt;!&ndash; End of definition outer border &ndash;&gt;-->
 
                 <p class="second-level-section-header">
                     Homogeneous Carrier Set of Model and Family of<br>
                     Hybrid, Binary Operations Closed on the Set
                 </p>
 
+                <div class="single-line-frame">
 <!--                <div class="definition-border">-->
 <!--                    <div class="definition-inner-border" style="padding: 0px 15px 0px 15px;">-->
                         <p>
-                            As it was shown by the study of feasibility of defining functions of models
+                            <em>As it was shown by the study of feasibility of defining functions of models
                             of qualitative systems in the form of the algebraic expressions, homogeneity
-                            of the sets <b>D</b> and <b>X</b>, arising as a result of defining both of
-                            them as sets, whose elements are symbols, creates <em>unique opportunity</em> to define
-                            the carrier set of the functions of a model as the union of these two sets.
-                            And the definition of the carrier set of the model as the homogeneous, i.e., as
+                            of the sets <b>D</b> and <b>X</b>, arising in the result of defining both of
+                            them as sets, whose elements are symbols, creates a unique opportunity to define
+                            the carrier set of the functions of a model as the union of these two sets</em>.
+                        </p>
+
+                        <p>
+                            So, the definition of the carrier set of the model as the homogeneous, i.e., as
                             <b>S</b> = <b>D</b> U <b>X</b>, based on the definition made, in turn, makes
                             it possible defining on the set <b>S</b> a family of hybrid, binary, and closed on
                             the entire set, operations, whose operands are capable of taking either the elements
                             of the set <b>D</b> or the elements of the set <b>X</b> and producing any element
                             of the set <b>S</b>.
                         </p>
+                </div>
 <!--                    </div> &lt;!&ndash; End of definition inner border &ndash;&gt;-->
 <!--                </div> &lt;!&ndash; End of definition outer border &ndash;&gt;-->
 
@@ -899,7 +904,7 @@ Application
                     Research on the feasibility of defining on the set <b>S</b> operations capable of
                     performing required computation was conducted. And its result made it possible to construct
                     five hybrid operations, letting to implement the procedure of computation of state functions
-                    of variables of models of qualitative systems in the form of extended disjunctive normal form
+                    of variables of qualitative systems models in the form of extended disjunctive normal form
                     of the algebraic expression written as a composition of these operations. The names,
                     denoting symbols and comments on the roles of the operations in the process of
                     computation of the expression are listed in Table 1.
