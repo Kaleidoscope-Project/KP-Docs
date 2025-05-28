@@ -199,7 +199,7 @@ Application
                     Technique, developed as part of the Kaleidoscope Project, and to describe modeling solutions
                     proposed by the Technique. The purpose of this technique and its solutions is to enable
                     creating qualitative systems simulation models, capable of reproducing behavior of existing or
-                    being designed systems.
+                    being designed qualitative dynamical systems.
                 </p>
 
                 <p class="section-header">
@@ -449,7 +449,7 @@ Application
                     <span class="popup-link" onmouseenter="openPopup(event, popup03)"
                                              onmouseleave="closePopup(popup03)">
                     <a class="popup-link" href = "../kp-qds/kp-qds.html" target="_blank">
-                        <em>Qualitative Systems, Their Behavior and Mathematical Modeling</em></a></span>.
+                        <em>Qualitative Dynamical Systems, Their Behavior and Mathematical Modeling</em></a></span>.
                 </p>
 
                 <p>
@@ -608,251 +608,285 @@ Application
                     distinguish three possible outcomes identified as cases occurring when:
                 </p>
 
-                <p>
-                    (1) none of the situations, described in the SVDSpec of the variable, is
-                    present in the state of the model, and, therefore, in order to avoid corruption
-                    of the state of variable, the final proposed value of the function should
-                    be marked with some auxiliary symbol indicating that this value is undefined; or when
-                </p>
+<!--                <p>-->
+<!--                    (1) none of the situations, described in the SVDSpec of the variable, is-->
+<!--                    present in the state of the model, and, therefore, in order to avoid corruption-->
+<!--                    of the state of variable, the final proposed value of the function should-->
+<!--                    be marked with some auxiliary symbol indicating that this value is undefined; or when-->
+<!--                </p>-->
 
-                <p>
-                    (2) there are found one or more situations proposed values of which require
-                    the variable to transition to the same state which means that any of these
-                    proposed values may be assigned to final proposed value of the function;
-                    or when
-                </p>
+<!--                <p>-->
+<!--                    (2) there are found one or more situations proposed values of which require-->
+<!--                    the variable to transition to the same state which means that any of these-->
+<!--                    proposed values may be assigned to final proposed value of the function;-->
+<!--                    or when-->
+<!--                </p>-->
 
-                <p>
-                    (3) two or more simultaneously existing situations produce different states
-                    which has to be assigned to the computed variable at once, and thus, in order
-                    to avoid collision among the proposed state of the computed variable occurring
-                    in that case, the final proposed state of the variable should, similar to
-                    the case 1, be marked with some other auxiliary symbol, that also does not
-                    belong to the set <b>D</b>, indicating conflict of the proposed values.
-                </p>
+<!--                <p>-->
+<!--                    (3) two or more simultaneously existing situations produce different states-->
+<!--                    which has to be assigned to the computed variable at once, and thus, in order-->
+<!--                    to avoid collision among the proposed state of the computed variable occurring-->
+<!--                    in that case, the final proposed state of the variable should, similar to-->
+<!--                    the case 1, be marked with some other auxiliary symbol, that also does not-->
+<!--                    belong to the set <b>D</b>, indicating conflict of the proposed values.-->
+<!--                </p>-->
 
-                <p>
-                    So,  only case 2 produces valid final proposed value and later assigns
-                    it to the computed variable, but the final proposed value produced
-                    in cases 1 and 3 are invalid. They indicate that next
-                    value of the function is undefined and therefore the current value of the
-                    variable should remain unchanged. However,  a solution, suitable to the cases
-                    1 and 3, which makes any undefined final proposed value of the function to be
-                    always defined exists. This solution suggests the function has to always
-                    produce the current value of the variable, instead of the final proposed
-                    value of the function when the computed final proposed value  is undefined.
-                    With this approach, the computed variable, that is already in its current state,
-                    gets the same current value again, and, thus, leaves the value of the variable
-                    effectively unchanged.
-                </p>
+<!--                <p>-->
+<!--                    So,  only case 2 produces valid final proposed value and later assigns-->
+<!--                    it to the computed variable, but the final proposed value produced-->
+<!--                    in cases 1 and 3 are invalid. They indicate that next-->
+<!--                    value of the function is undefined and therefore the current value of the-->
+<!--                    variable should remain unchanged. However,  a solution, suitable to the cases-->
+<!--                    1 and 3, which makes any undefined final proposed value of the function to be-->
+<!--                    always defined exists. This solution suggests the function has to always-->
+<!--                    produce the current value of the variable, instead of the final proposed-->
+<!--                    value of the function when the computed final proposed value  is undefined.-->
+<!--                    With this approach, the computed variable, that is already in its current state,-->
+<!--                    gets the same current value again, and, thus, leaves the value of the variable-->
+<!--                    effectively unchanged.-->
+<!--                </p>-->
 
                 <p class="second-level-section-header">
                     Proposal of Implementation of State Functions of Variables in the Form of Algebraic Expressions
                 </p>
 
+<!--            // Added on 2025.05.26-->
                 <p>
-                    If a model of a qualitative system were created as a computer program, then each
-                    of its functions, based on the understanding of its content described above, would
-                    most likely be implemented in the form of a loop through all groups of its arguments
-                    that possibly represent situations expected by the function, and each iteration of
-                    the loop could begin with a test whether the group of arguments, being processed
-                    in the current iteration, characterizes expected situation, and then compute the
-                    value of the function by performing various checks that would choose different
-                    computational operations depending on whether the processed situation is present
-                    in the state of the model or not. This general description of the content of a
-                    computation procedure of a function is exactly that process which the algebraic
-                    expression, implementing the function, needs to perform.
-                </p>
-
-<!--                // Added on 2025.05.18-->
-                <p>
-                    So, taking into account sequential character of data flow, inherent in the algebraic
-                    expressions, and making the attempt to imagine how to fit into the linear computational
-                    process of algebraic expression all such elements of algorithms as cycles, computations
-                    of runtime estimates of state of data and conditional choices for execution of some
-                    operations and bypassing the others, we have nothing left, but to consider two
-                    fundamental for developing modeling technique, intended to implement functions in the
-                    form of algebraic expression, assumptions.
-                </p>
-
-                <p>
-                    The first of these assumptions is that the structure of the expressions, implementing
-                    procedures of computation of qualitative functions, should be defined in a way similar
-                    to the one of defining structure of discrete functions of Boolean algebra. Or, to be
-                    more precise, as a kind of special version of polynomial representation that can be
-                    defined as the extension of the well known Disjunctive Normal Form. This form of the
-                    algebraic expression will be further referred to as the Extended Disjunctive Normal
-                    Form, or XDNF, which specifies the process of computation of expression as the
-                    composition of terms. The terms in this structure should compute proposed values of
-                    the variable corresponding to situations expected by the function and therefore their
-                    number must be the same as the number of groups of variables in the arguments of the
-                    function whose combinations of values characterize expected situations.
-                </p>
-
-                <p>
-                    The second assumption, on the other hand, is that, which in order to allow the algebraic
-                    expression to analyze and control computation process in accordance with the results
-                    of the analysis, the structure of the XDNF expressions should include operations
-                    capable of processing two kinds of the data, t.e., main data being computed and the
-                    auxiliary data representing results of analysis and undefined results of computation.
-                    And from this it follows that the data flow from the arguments of the expression,
-                    through the sequence of its all operations to the result should consist not only of
-                    the source, intermediate and final main data. It also should include markers presenting
-                    results of the analysis and markers explaining "that", or "why", the result of the
-                    computation of the expression is undefined.
+                    If a model of a qualitative system were created as a computer program, then each of
+                    its functions, based on the understanding of its content, described above, would most
+                    likely be implemented in the form of a loop through all groups of its arguments,
+                    characterizing different situations expected by the function. Whereas, each iteration
+                    of the loop could begin with the test if the situation, being processed, is present
+                    in the state of the model, and performing computation of the value of the function
+                    by checking state of data and executing computational operations depending on whether
+                    the situation is present or not.
                 </p>
 
 <!--                <p>-->
-<!--                    So, making an attempt to imagine how to fit into the linear computational process-->
-<!--                    of algebraic expression all such elements of algorithms as cycles, computations-->
-<!--                    of runtime estimates of state of data and conditional choices for execution of-->
+<!--                    If a model of a qualitative system were created as a computer program, then each-->
+<!--                    of its functions, based on the understanding of its content described above,-->
+<!--                    would most likely be implemented in the form of a loop through all groups of-->
+<!--                    its arguments; some of which would represent situations expected by the-->
+<!--                    function, while the others not. Whereas, each iteration of the loop could-->
+<!--                    begin with the test whether the group of arguments, being processed in the-->
+<!--                    current iteration, characterizes expected situation, and then performing-->
+<!--                    computing the value of the function by checking state of the data and executing-->
+<!--                    computational operations depending on whether the processed situation is-->
+<!--                    present in the state of the model or not.-->
+<!--                </p>-->
+
+<!--            // Added on 2025.05.26-->
+                <p>
+                    However, when creating mathematical models of qualitative systems, whose functions should be
+                    defined as algebraic expressions, we have to deal with such kind of computation, dataflow
+                    in which, so to speak, is laminar. And, thus, it can develop only in one direction - from
+                    the values of independent elements of the dependence relation of the variable, i.e.,
+                    from the arguments of the function (leaves of the computation tree) to the dependent
+                    element of the relation, i.e., the computed value of the function (root of the
+                    computation tree). And, it is obvious, that this process cannot contain any
+                    cycles, and to branch out in order to execute some computational operations
+                    while bypassing others depending on the state of the data.
+                </p>
+
+<!--                // Added on 2025.05.25-->
+<!--                <p>-->
+<!--                    But when creating mathematical models whose functions are defined as algebraic-->
+<!--                    expression, we have to deal with such kind of computation, dataflow in which can-->
+<!--                    develop only in one direction - from the values of independent elements of the-->
+<!--                    dependence relation of the variable, i.e., from the arguments of the function-->
+<!--                    (leaves of the computation tree) to the dependent element of the relation, i.e.,-->
+<!--                    the computed value of the function (root of the computation tree). And, it is-->
+<!--                    obvious, that this process cannot contain any cycles, and to branch out in order-->
+<!--                    to execute some computational operations while bypassing others depending on the-->
+<!--                    state of the data.-->
+<!--                </p>-->
+
+<!--            // Added on 2025.05.26-->
+                <p>
+                    Described in this section procedure for computing a function in the form of an
+                    algebraic expression is an experimental attempt to fit into an inherently linear
+                    process of sequential execution of operations of algebraic expression, all such
+                    features of algorithms as: cycles, dynamic computation of estimates of states
+                    of data, and conditional choices for executing some operations while bypassing
+                    others; which usually make structure of algorithm quite branchy.
+                </p>
+
+<!--            // Added on 2025.05.25-->
+<!--                <p>-->
+<!--                    So, making attempt to imagine how to fit into the sequential computational process,-->
+<!--                    inherent in the algebraic expressions, all such features of algorithms as cycles,-->
+<!--                    computations of runtime estimates of state of data and conditional execution of-->
 <!--                    some operations while bypassing the others, we have nothing left, but to assume-->
-<!--                    that the structure of those expressions should include operations capable of-->
-<!--                    taking and yielding both the main data being processed and the auxiliary data representing-->
-<!--                    state of the estimates or undefined results of the computation. And this also-->
-<!--                    assumes that the data flow from the arguments of the expression, through the sequence-->
-<!--                    of its all operations to the result should consist not only of the source, intermediate-->
-<!--                    and final main data. It also should include markers presenting results of the estimations-->
-<!--                    and markers explaining "that", or "why", the result of the computation of the expression-->
-<!--                    is undefined.-->
-<!--                </p>-->
-
-<!--                // Added on 2025.05.17-->
-<!--                <p>-->
-<!--                    So, making an attempt to imagine how to fit into the linear computational process-->
-<!--                    of algebraic expression all controlling elements of  structure of algorithms; such-->
-<!--                    as cycles or computations and usages of estimates of state of data of process,-->
-<!--                    providing execution of some computational operations and bypassing of others, i,-->
-<!--                    we have nothing left, but to assume that the structure of this expressions must be-->
-<!--                    defined in the way similar to the one of defining structure of discrete functions-->
-<!--                    of Boolean algebra. That is, in the form of an algebraic polynomial, or to be more-->
-<!--                    precise, in the form of its kind of special version that can be defined as the extension-->
-<!--                    of the well known Disjunctive Normal Form. Thus, further on, the form of the algebraic-->
-<!--                    expression used for implementation of the procedure of computation of qualitative-->
-<!--                    functions will be referred to as the Extended Disjunctive Normal Form, or XDNF, which-->
-<!--                    specifies the process of computation of expression as the composition of terms. The-->
-<!--                    terms in this structure must correspond to situations expected by the function and-->
-<!--                    therefore their number must be the same as the number of groups of variables in the-->
-<!--                    arguments of the function whose combinations of values may characterize expected situations.-->
-<!--                </p>-->
-
-<!--                // Added on 2025.05.15-16-->
-
-<!--                <p>-->
-<!--                    So, making an attempt to imagine how to fit all such features of structure of-->
-<!--                    algorithms, as cycles and ways of controlling the course of computation, into the-->
-<!--                    linear computational process of algebraic expression, we have nothing left, but-->
-<!--                    to assume that the structure of this expressions must be defined in the way similar-->
-<!--                    to the one of defining structure of discrete functions of Boolean algebra; i.e.,-->
-<!--                    in the form of a special type of algebraic polynomial, or to be more precise, as a kind of extended-->
-<!--                    version of the form, known as the Boolean polynomial or Disjunctive Normal Form. Thus, further on, the-->
-<!--                    form of the algebraic expression used for implementation of the procedure of-->
-<!--                    computation of qualitative functions will be referred to as the <em>Qualitative Disjunctive-->
-<!--                    Normal Form</em>, or  <em>QDNF</em> , which specifies the process of computation of expression as the-->
-<!--                    composition of terms. The terms in this structure must correspond to situations-->
-<!--                    expected by the function and therefore their number must be the same as the number-->
-<!--                    of groups of variables in the arguments of the function whose combinations of-->
-<!--                    values may characterize expected situations.-->
+<!--                    that in order to implement a function computation procedure in the form of-->
+<!--                    algebraic expression one should rely on following considerations, developed as a-->
+<!--                    part of model defining solutions of the modeling technique. As it was shown by-->
+<!--                    the study, the possibility of implementing functions of models of qualitative-->
+<!--                    systems in the form of algebraic expressions is determined by the following-->
+<!--                    solutions.-->
 <!--                </p>-->
 
                 <p class="third-level-section-header-bold-line-size">
-                    Operations That Should Compute Terms and Compositions
-                </p>
-
-<!--                // Added on 2025.05.17-->
-                <p>
-                    Detailing the process of computation of XDNF expressions more deeply, and trying
-                    to reveal the content of the operations necessary for computing the function,
-                    one should also assume that the operations included in the expressions should act
-                    beyond their regular ability of evaluating the expressions. In fact, some of
-                    these operations should be capable of analyzing states of the arguments of the
-                    expression, or of intermediate data of the computational process. Meanwhile, some
-                    others have to use the results of the analysis for modifying their output, while
-                    carrying out next steps of computation of the expression. Described vision of the
-                    assumed mechanism of computation of the XDNF expressions determines the content of
-                    their terms and of the operation that has to combine the results of the computation
-                    of the term.
-                </p>
-
-<!--                // Added on 2025.05.15-16-->
-<!--                <p>-->
-<!--                    Detailing the process of computation of XDNF expressions more deeply, and considering-->
-<!--                    for that the content of the operations, necessary for computing the function, one-->
-<!--                    should also assume that the operations included in the expressions must act beyond-->
-<!--                    their regular ability of evaluating the expressions. In fact, some of these operations-->
-<!--                    must be capable of analyzing the state of the arguments of the expression, or intermediate-->
-<!--                    data of the computational process. Whereas, some others have to use results of the-->
-<!--                    analysis for modifying their output, while carrying out following steps of computation-->
-<!--                    of the expression. Described vision of mechanism of computation of the XDNF expressions-->
-<!--                    determines the content of their terms and of the operation that has to combine the-->
-<!--                    results of the computation of the term.-->
-<!--                </p>-->
-
-                <p>
-                    So, accordingly, the task of the terms of the expression should consist in computing
-                    proposed values of the target variable of the function as corresponding
-                    to the expected situations described in the specification of dependence of states
-                    of variables of the model. Therefore, the technique of computing the terms should
-                    include: a) operations which ensure detection of whether the situation, expected
-                    by the term, turned out present in the state of the model and b) operations producing
-                    proposed value of the variable which (depending on whether the expected situation is
-                    present or absent in the model at the time of computation of the expression) may
-                    turn out to be either defined or undefined.
+                    From Computer Algorithm to Algebraic Sequential Computation
                 </p>
 
                 <p>
-                    The following task - the composition of the proposed values, computed by the terms, should be to
-                    compute the final proposed value of the function (and its target variable). And,
-                    since any variable may take only a single value, the composition step of the computation
-                    should be implemented as choosing (from all the produced proposed values of the variable)
-                    only a single final proposed value, that should become the value of the function.
-                    Hence, the operation, computing this value, should  systematically analyze which
-                    of the proposed values are defined and which are not. And it also should test if
-                    the proposed values, computed for different terms, have produced different and
-                    therefore contradicting each other proposed values. Having, then, these tests
-                    accomplished, the operation should mark the final proposed value as undefined in
-                    all those cases when either all proposed values happened to be undefined and
-                    therefore the final proposed value should also be undefined, or when  two or more
-                    of the proposed values appeared to be different.
+                    Unlike description of behavior of quantitative systems, nature of
+                    computing next state of which lies in the transformation of quantitative
+                    values of arguments of functions into the quantitative value of the function, i.e.,
+                    literally in physical <em>modification of quantities</em>, characterizing states
+                    of properties of quantitative systems, the essence of computing transitions
+                    of qualitative systems from state to state, is the
+                    <em>replacement of some qualitative estimates</em> of state of properties
+                    with other <em>qualitative estimates</em>. And
+                    this difference, in the content of the process of these computations, opens up a
+                    fundamentally new way of describing the computational process of the functions of
+                    the qualitative systems.
                 </p>
 
 <!--                <p>-->
-<!--                    And the task of composition of the proposed values, computed for the terms, is to-->
-<!--                    compute the final proposed value of the function (and its target variable). And,-->
-<!--                    thus, it should be implemented as choosing from all possible produced proposed-->
-<!--                    values of the variable of only a single final proposed value.-->
-<!--                    Hence, the operation, computing this value, has to systematically analyze which of the proposed values-->
-<!--                    are defined and which are not, as well as, to test if the proposed values, computed-->
-<!--                    for different terms, produced different and therefore contradicting each other-->
-<!--                    proposed values. Having these tests accomplished, the operation should mark the-->
-<!--                    final proposed value as undefined in all those cases when either all proposed values-->
-<!--                    happened to be undefined and therefore the final proposed value should also be-->
-<!--                    undefined, or when  two or more of the proposed values tern out to be different.-->
+<!--                    Description of the behavior of <em>quantitative</em> systems, the nature of-->
+<!--                    calculating next state of which lies in the transformation of the quantitative-->
+<!--                    values of arguments of the functions (i.e., in physical modification of the-->
+<!--                    <em>quantities</em>, characterizing states of properties of quantitative systems)-->
+<!--                    into the quantitative value of the function. But, unlike of these systems, the-->
+<!--                    essence of computation of transitions of the <em>qualitative</em> systems-->
+<!--                    from one state to another, is the <em>replacement</em> of some qualitative estimates-->
+<!--                    of the state of properties of the quantitative systems with the other ones. And-->
+<!--                    this difference, in the content of the process of that computation, opens up a-->
+<!--                    fundamentally new way of describing the computational process of the functions of-->
+<!--                    the qualitative systems.-->
 <!--                </p>-->
+
+                <p>
+                    As it was shown by the study, the feasibility of implementing functions of models
+                    of qualitative systems in the form of algebraic expressions is determined by
+                    presence of certain challenges and the approach to constructing algebraic expressions
+                    of functions, that makes the challenges surmountable. They are described below.
+<!--                    <br><br>-->
+<!--                    As it was shown by the study, the feasibility of implementing functions of models-->
+<!--                    of qualitative systems in the form of algebraic expressions is determined by-->
+<!--                    existence of certain challenges and the model implementation solutions, suggested by the-->
+<!--                    modeling technique. They are described below.-->
+                </p>
+
+                <p>
+                    (1) Since in accordance with the specification, any single states of a variable may
+                    depend on existence of several different situations and all the variety of situations
+                    that may cause change of all states of the variable can, in the worst case, emerge
+                    independently, it is possible that during each computation of the function either
+                    none or only a part of all expected situations may be present in the groups of the
+                    arguments of a function. Therefore.<br/>
+
+                    <div class="single-line-frame">
+                        The task of the computation of the expression
+                        is to systematically consider all described in the specification situations and
+                        groups of arguments passed in the function representing current situations.
+                    </div>
+                </p>
+
+                <p>
+                    (2) Dependence of a value of a function on several situations assumes that the
+                    process, computing values of a state variable of a model, should a) contain
+                    operations which produce proposed values corresponding to situations described
+                    in the specification of the state variable, and b) an operation that analyzes
+                    the obtained proposed values and selects from them the only final value of the
+                    function. Therefore.<br/>
+
+                    <div class="single-line-frame">
+                        In order to reflect that way of computation, performed by the expression, its
+                        structure should be defined as a polynomial (or, in the other words, as the
+                        "sum of products"), written in the way similar to the well known Disjunctive
+                        Normal Form, yet, to be more precise, as the Extended Disjunctive Normal Form (XDNF).
+                    </div>
+
+<!--                    Dependence of value of a function on several situations assumes that the process-->
+<!--                    of computing the value should contain operations which produce proposed values-->
+<!--                    corresponding to each of the proposed values described in the specification of the-->
+<!--                    state variable and an operation that analyzes the obtained proposed values and-->
+<!--                    selects from them the only final value of the function. Therefore, to reflect that-->
+<!--                    way of computation in the the expression its structure should be defined as a polynomial,-->
+<!--                    written in the vay similar to the well known Disjunctive Normal Form, or, to be-->
+<!--                    more precise, as the Extended Disjunctive Normal Form (XDNF).-->
+                </p>
+
+                <p>
+                    (3) Since the state of the model is constantly changing from iteration to iteration
+                    and, thus, any knowledge about changes of situations is represented in the model
+                    only by the state of its variables, revealing which of the situations, expected by
+                    the expression, are present and which are absent, at the time of its computation,
+                    can only be carried out by the expression itself. Therefore.<br/>
+
+                    <div class="single-line-frame">
+                        In addition to the usual ability of operations of transforming the values of their
+                        arguments into result, the operations used in the XDNF expression must be endowed with
+                        capabilities to a) analyze state of the arguments or data produced by other operations
+                        and create estimates of their state, and b) take as operands of the operations created
+                        estimates (together with the intermediate values being computed) and change yielded
+                        result, depending on the state of the estimates.
+                    </div>
+                </p>
+
+                <p>
+                    (4) Since the estimates of the data state, originally created to control the course
+                    of the computation process, may later be used instead of defined values that were
+                    for some reason not computed, i.e., as the markers of undefined values, the values
+                    used as the markers of the estimates should be taken from another set, elements of
+                    which should be considered as auxiliary and be compatible in type with the elements
+                    (i.e., symbols) of the set <b>D</b>. Therefore.<br/>
+
+                    <div class="single-line-frame">
+                        This set should be defined as a set of auxiliary symbols X = { !, $, # }, meaning of
+                        which is explained as the part of description of their application.
+                    </div>
+                </p>
+
+                <p>
+                    (5) Technique of computing algebraic expressions does not assume  presence of any
+                    variables in the expression. Dataflow, in them, is distributed from the output of
+                    any executed operations directly to the input of the following operation and so on.
+                    However, the operations used for computing XDNF expressions can yield results whose
+                    values are taken either from the set <b>D</b>, or from the set <b>X</b>, and take
+                    elements of both types as their operands as well. Therefore.<br/>
+
+                    <div class="single-line-frame">
+                        The dataflow in the XDNF expressions is formed on the basis of both types of data
+                        - symbols taken from the set <b>D</b> and symbols taken from the set <b>X</b>.
+                    </div>
+                </p>
 
                 <p class="third-level-section-header-bold-line-size">
-                    XDNF Expression Data Flow and Interaction of Operations
+                    Meaning of the Elements of Set <b>X</b>
+                </p>
+<!--                <p>-->
+<!--                    Meaning of elements of set <b>X</b> is following:-->
+<!--                </p>-->
+
+                <p>
+                    (o) the symbol "!" must be used to denote the fact of presence of the expected situation
+                    in the group of arguments of the expression;
                 </p>
 
                 <p>
-                    Despite the enriched capabilities of the described operations, intended for
-                    computing XDNF expressions, structure of the data flow in those expressions,
-                    as it is in all other algebraic expressions, has to continue stay laminar.<br><br>
+                    (o) the symbol "$" must be used to denote the fact of absence of the expected situation
+                    in the group of arguments of the expression, and also either as a proposed value when
+                    this value is indefinite because the situation that could produce it turned out to be
+                    absent, or as a final proposed value when it is indefinite because simultaneously all
+                    situations expected in the expression turned out to be absent and as a result none of
+                    the proposed values of the variable was computed;
+                </p>
 
-                    In fact, the computation of these expressions, like any others, must still
-                    be performed as a single, but transmitting two different (defined and undefined)
-                    results of operations, marked different types of symbols; i.e., now integrated data flow,
-                    directed from one operation in the expression computation scheme to another.
-                    But the data transmitted along the integrated flow may be both definite and
-                    indefinite. So their values must be represented by both the elements taken from
-                    the set of states of variables <b>D</b> and the elements taken from the set of auxiliary
-                    symbols <b>X</b>, the elements of which must be used instead of the elements of <b>D</b> and
-                    therefore, for compatibility with the elements of <b>D</b>, must also be symbols.
-                    Meaning of elements of the set <b>X</b> can be expressed in the form of different
-                    statements. Instances of the qualitative assessments of state of a computational
-                    process are: "Situation recognized", "Situation not recognized",
-                    "Proposed value not defined",
-                    "The final value of the function is not defined as none of the
+                <p>
+                    (o) and the symbol "#" shall be used to denote a final proposed value when it cannot
+                    be determined because in the process of computing that value it was discovered that
+                    two or more proposed values were different and thus a conflict of variable values arose
+                    which prevented the final value from being computed as determined.
+                </p>
+
+                <p>
+                    Examples of interpretation of meaning of elements of the set <b>X</b> can be expressed
+                    in the form of different statements. Instances of the qualitative assessments of state
+                    of a computational process are: "Situation recognized", "Situation not recognized",
+                    "Proposed value not defined", "The final value of the function is not defined as none of the
                     expected situations is present in the state of the model", or
                     "The final value of the function is not defined as a contradiction
                     of proposed values is detected".
@@ -1071,56 +1105,63 @@ Application
                 </p>
 
                 <p class="second-level-section-header">
-                    General Form of Expression of State Equation of a Model<br> as the Expanded Disjunctive Normal Form (X-DNF)
+                    General Form of State Equation of Model Defined as<br>the Expanded Disjunctive Normal Form - XDNF
                 </p>
 
                 <p>
-                    The general form of a state equation of a variable whose right-hand side is defined as an
-                    algebraic expression defined as a composition of hybrid operations defined on the model set
-                    <b>S</b> can be written as the formula.
+                    The general form of a state equation of a variable whose right-hand side function
+                    is implemented as the XDNF expression written as a composition of hybrid operations
+                    defined on the model's carrier set <b>S</b> can be presented as the formula.
                 </p>
+
+<!--                <p>-->
+<!--                    The general form of a state equation of a variable whose right-hand side is defined as an-->
+<!--                    algebraic expression written as a composition of hybrid operations defined on the model set-->
+<!--                    <b>S</b> can be written as the formula.-->
+<!--                </p>-->
 
                 <img  class="center" src="images/xdnf-formula.png" width="450" height="50" alt="">
 
                 <p>
-                    Being a general form of the expression, this formula states that:
+                    The arguments of this expression are variables representing current state of
+                    a model and constants taken from the model variable dependency specification.
+                    They are passed to the function as: 1) a list <b>gv</b>, elements of which are groups of
+                    variable some concrete combinations of values of which can characterize situations
+                    expected by the function, 2) a list <b>ev</b> elements of which are groups of expected
+                    values of variables, given in the groups of array <b>gv</b>; they are used to recognize
+                    combinations of values characterizing expected situations that may be present in
+                    the groups of variable of array <b>gv</b>, 3) a list <b>pv</b> holding proposed values
+                    of computed variable, corresponding to the expected situations, and 4) a constant
+                    <b>sv</b> that serves as the spare value holding current state of the computed state
+                    variable, which should be used when computed value turns out be undefined.
                 </p>
 
                 <p>
-                    (a) The value of the variable x<sub>i</sub> at time t+1 is computed as an expression of the Algebra of
-                    Symbols defined as a composition of five operations defined on the set <b>S</b>.
+                    Computation  of this equation can be described as performing Disjunction operation
+                    that yields value of the function as result obtained via processing all proposed
+                    values generated as a result of computing all terms of the expression. Whereas the
+                    computation of each particular term is accomplished as execution of the Production
+                    operation that generates proposed values of the variable either as constant taken
+                    from the array <b>pv</b>, when expected situation is recognized, or as the auxiliary
+                    symbol $, when the situation is not recognized. Meanwhile, the recognition is carried
+                    out by two operations: Equivalence and Conjunction. First of them - Equivalence
+                    performs by-element comparison of the variables of the group of array <b>gv</b>
+                    with their expected values represented by the constants in the groups of array <b>ev</b>.
+                    And the Conjunction operation is used to confirm that all results of comparison of
+                    all elements of both groups of both array are compared and, thus, the situation can
+                    be deemed as recognized.
                 </p>
 
                 <p>
-                    (b) Following the requirement to keep values of variable x to be denoted by only elements of
-                    domain set <b>D</b> and the QVDSpec the structure of the expression. written from left to right,
-                    (which is opposite to the order of execution of operations) begins with the sign "<"  that
-                    indicates Application operation task of which is to protect value of the variable in case when
-                    its next value is not defined,
-                </p>
-
-                <p>
-                    (c) The structure of the formula placed in curly braces is determined by the specification.
-                    The part of expression in it, written as Disjunction from c = 0 to cn(i) of elements written
-                    in the square brackets is the cn(i)-ary disjunction, where cn(i) is the number of Correspondence
-                    computing proposed values of the variable x<sub>i</sub> and part in the square brackets is the general
-                    form of the sub-expression computing proposed values pv(i, c), where pv(i, c) stands for element
-                    of set <b>S</b> that should be used as the proposed value generated by the c-th Correspondence of the
-                    i-th variable, that should be used as one of the operands of operation Production, denoted
-                    by symbol "*".
-                </p>
-
-                <p>
-                    (d) The part located on the right side of the Production operation, written as Conjunction
-                    from s = 0 to sn(i) is the sn(i)-ary conjunction of the results of Equivalence (?) operation.
-                    Here sn(i) is the number of pairs: argument[i,c,k]/ev[i,c,k]  which characterize i,c-th situation.
-                </p>
-
-                <p>
-                    (e) The parts of the pair: argument[i,c,k] is the i,c,k-th argument of the expression and the
-                    ev[i,c,k] is the i,c,k-th element of set <b>S</b> used to represent expected value of the i,c,k-th
-                    argument of the expression. These pairs: argument[i,c,k]/ev[i,c,k] serve as the operands of
-                    the Equivalence operation.
+                    Ultimately, since (as it was discussed earlier) the final proposed value
+                    yielded by the Disjunction operation may be undefined, the last operation that completes
+                    the computation, is the Application operation; it is denoted by the symbol "<". This
+                    operation checks the result of the Disjunction operation and, in the case when it is
+                    undefined, uses the value of the last spare argument of the function - <b>sv</b>, containing
+                     current value of the computed variable, instead of the undefined result of
+                    computation. And, as a consequence of this replacement, the computed variable of the
+                    equation receives the same value that it is alredy holds again and, thus, effectively
+                    remains unchanged.
                 </p>
 
                 <p>
@@ -1130,6 +1171,63 @@ Application
                         <a class="popup-link" href = "../kp-xdnf/xdnf-expression-calculator.html" target="_blank">
                     <em>"Extended Disjunctive Normal Form Expression Calculator"</em></a></span>.
                 </p>
+
+                <p>
+                    More detailed description of the process of computation of the XDNF expression is
+                    provided in two following sections. They present several examples of computing the
+                    only expression with different values passed to it as arguments. The examples are used
+                    for illustrating and describing steps of the execution of the expression, so to speak,
+                    in the "debugging" mode.
+                </p>
+
+<!--                <p>-->
+<!--                    Being a general form of the expression, this formula states that:-->
+<!--                </p>-->
+
+<!--                <p>-->
+<!--                    (a) The value of the variable x<sub>i</sub> at time t+1 is computed as an expression of the Algebra of-->
+<!--                    Symbols defined as a composition of five operations defined on the set <b>S</b>.-->
+<!--                </p>-->
+
+<!--                <p>-->
+<!--                    (b) Following the requirement to keep values of variable x to be denoted by only elements of-->
+<!--                    domain set <b>D</b> and the QVDSpec the structure of the expression. written from left to right,-->
+<!--                    (which is opposite to the order of execution of operations) begins with the sign "<"  that-->
+<!--                    indicates Application operation task of which is to protect value of the variable in case when-->
+<!--                    its next value is not defined,-->
+<!--                </p>-->
+
+<!--                <p>-->
+<!--                    (c) The structure of the formula placed in curly braces is determined by the specification.-->
+<!--                    The part of expression in it, written as Disjunction from c = 0 to cn(i) of elements written-->
+<!--                    in the square brackets is the cn(i)-ary disjunction, where cn(i) is the number of Correspondence-->
+<!--                    computing proposed values of the variable x<sub>i</sub> and part in the square brackets is the general-->
+<!--                    form of the sub-expression computing proposed values pv(i, c), where pv(i, c) stands for element-->
+<!--                    of set <b>S</b> that should be used as the proposed value generated by the c-th Correspondence of the-->
+<!--                    i-th variable, that should be used as one of the operands of operation Production, denoted-->
+<!--                    by symbol "*".-->
+<!--                </p>-->
+
+<!--                <p>-->
+<!--                    (d) The part located on the right side of the Production operation, written as Conjunction-->
+<!--                    from s = 0 to sn(i) is the sn(i)-ary conjunction of the results of Equivalence (?) operation.-->
+<!--                    Here sn(i) is the number of pairs: argument[i,c,k]/ev[i,c,k]  which characterize i,c-th situation.-->
+<!--                </p>-->
+
+<!--                <p>-->
+<!--                    (e) The parts of the pair: argument[i,c,k] is the i,c,k-th argument of the expression and the-->
+<!--                    ev[i,c,k] is the i,c,k-th element of set <b>S</b> used to represent expected value of the i,c,k-th-->
+<!--                    argument of the expression. These pairs: argument[i,c,k]/ev[i,c,k] serve as the operands of-->
+<!--                    the Equivalence operation.-->
+<!--                </p>-->
+
+<!--                <p>-->
+<!--                    XDNF Expressions Calculator is presented on the page-->
+<!--                    <span class="popup-link" onmouseenter="openPopup(event, popup05)"-->
+<!--                          onmouseleave= "closePopup(popup05)">-->
+<!--                        <a class="popup-link" href = "../kp-xdnf/xdnf-expression-calculator.html" target="_blank">-->
+<!--                    <em>"Extended Disjunctive Normal Form Expression Calculator"</em></a></span>.-->
+<!--                </p>-->
 
                 <!-- ########################################################################################### -->
                 <!--       E X A M P L E   O F   S P E C I F I C A T I O N   A N D   C O M P U T A T I O N       -->
@@ -1183,7 +1281,7 @@ Application
     <!--                ////////////////////////////////////////////////////////  -->
 
                 <p class="second-level-section-header">
-                    Example of the X-DNF expression
+                    Example of State Equation Implemented as the XDNF<br>Expression
                 </p>
 
                 <p>
@@ -1406,23 +1504,60 @@ Application
                     value "G".
                 </p>
 
-                <p class = "section-header" >
-                    Conclusion
-                </p>
+<!--                <p class = "section-header" >-->
+<!--                    Other Pages of the Kaleidoscope Project Are:-->
+<!--                </p>-->
+<!--                <ul class="justified-text">-->
 
-                <p>
-                    And as it often happens, obtaining an answer to one question may immediately pave the road
-                    to the emergence of the next one, a more general question. So, obtaining the answers to two
-                    questions, asked at the beginning of this page, immediately sparks interest in getting the
-                    answer to the new question: How should the models of the qualitative systems be organized.
-                    All the remaining pages of the description of the project are devoted to answering this question.
-                    And the description of this starts right on the next page providing the more formal definition
-                    to described on this page set <b>S</b> and its five operations as the algebra, named "The Algebra of
-                    Symbols" and continues as presentations of other modeling solution proposing representation of
-                    the system of qualitative equations of the model based on the Vector State Space approach and
-                    the Graph Based Multicolored Logical Net (McLN) modeling formalism, creation of which is
-                    supported by the application named Qualitative Systems Modeling and Simulating Environment.
-                </p>
+<!--                    <li><a href="aos.html">-->
+<!--                        The Algebra of Symbols.-->
+<!--                    </a>-->
+<!--                    </li>-->
+
+<!--                    <li><a href="mcln-mf.html">-->
+<!--                        The Multicolored Logical Net - A Qualitative Systems Graphical Modeling Formalism.-->
+<!--                    </a>-->
+<!--                    </li>-->
+
+<!--                    <li><a href="math-modeling.html">-->
+<!--                        Extended Disjunctive Normal Form Expression Calculator.-->
+<!--                    </a>-->
+<!--                    </li>-->
+
+<!--                    <li><a href="math-modeling.html">-->
+<!--                        Qualitative Dynamical Systems Vector Space Representation and Calculator.-->
+<!--                    </a>-->
+<!--                    </li>-->
+
+<!--                    <li><a href="math-modeling.html">-->
+<!--                        Qualitative Dynamical Systems Modeling & Simulation Environment.-->
+<!--                    </a>-->
+<!--                    </li>-->
+
+<!--                    <li><a href="math-modeling.html">-->
+<!--                        Space Exploration Mission Agent Behavior Simulator.-->
+<!--                    </a>-->
+<!--                    </li>-->
+
+<!--                    <li><a href="math-modeling.html">-->
+<!--                        Download Kaleidoscope Project Applications.-->
+<!--                    </a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+
+<!--                <p>-->
+<!--                    And as it often happens, obtaining an answer to one question may immediately pave the road-->
+<!--                    to the emergence of the next one, a more general question. So, obtaining the answers to two-->
+<!--                    questions, asked at the beginning of this page, immediately sparks interest in getting the-->
+<!--                    answer to the new question: How should the models of the qualitative systems be organized.-->
+<!--                    All the remaining pages of the description of the project are devoted to answering this question.-->
+<!--                    And the description of this starts right on the next page providing the more formal definition-->
+<!--                    to described on this page set <b>S</b> and its five operations as the algebra, named "The Algebra of-->
+<!--                    Symbols" and continues as presentations of other modeling solution proposing representation of-->
+<!--                    the system of qualitative equations of the model based on the Vector State Space approach and-->
+<!--                    the Graph Based Multicolored Logical Net (McLN) modeling formalism, creation of which is-->
+<!--                    supported by the application named Qualitative Systems Modeling and Simulating Environment.-->
+<!--                </p>-->
 
                 <!-- =================================================================================================== -->
                 <!-- =================================================================================================== -->
@@ -1492,13 +1627,13 @@ Application
         <!--  -->
         <div class="popup-style" id="element03ToPopup" >
             <div style="text-align: center;">
-                <b>Page: Qualitative Systems, Their Behavior and Mathematical Modeling</b></div>
+                <b>Page: Qualitative Dynamical Systems, Their Behavior<br> and Mathematical Modeling</b></div>
             <p >
                 Objective of this page is to introduce notion of class of Qualitative Dynamical Systems
                 and to describe characteristics of the nature and behavior of Qualitative Dynamical Systems,
-                constituting foundation for creation of mathematical models of these systems. The page
-                identifies atomic element of behavior of the systems and describes basic ways of composition
-                of these elements letting the models of the system to be capable of reproducing various
+                constituting foundation for creating mathematical models of these systems. The page
+                identifies atomic element of behavior of these systems and describes basic ways of composition
+                of the elements letting the models of the systems to be capable of reproducing various
                 forms of behavior, observed in the qualitative dynamical systems.
             </p>
             <p class="clicking-link">

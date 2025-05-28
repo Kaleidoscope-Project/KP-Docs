@@ -16,9 +16,12 @@
 
     <!-- style sheets   -->
     <link rel="stylesheet" href="../common/stylesheets/common.css">
+    <link rel="stylesheet" href="../common/stylesheets/all-pages-popups.css">
 
     <!-- java scripts   -->
     <script type="text/javascript" src="../common/javascripts/common-javascripts.js"></script>
+    <script type="text/javascript" src="../common/javascripts/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../common/javascripts/all-pages-popup-scripts.js"></script>
 
     <style>
         body {
@@ -921,7 +924,11 @@
 
             <p>
                 Adaptation of the QSBSpec to its application for creating models of qualitative systems is
-                described on the next page: “Qualitative Dynamical Systems Mathematical Modeling Technique”.
+                described on the next page:
+                <span class="popup-link" onmouseenter="openPopup(event, qds01)"
+                      onmouseleave= "closePopup(qds01)">
+                        <a class="popup-link" href = "../kp-mmt/kp-mmt.html" target="_blank">
+                    <em>“Qualitative Dynamical Systems Mathematical Modeling Technique”</em></a></span>.
             </p>
 
             <!-- =================================================================================================== -->
@@ -931,24 +938,42 @@
 
     <br/>
 
-    <!-- =================================================================================== -->
+        <!-- =================================================================================== -->
 
 
-    <a href="../kp-apps/kp-downland.html">
-        <img src="../common/images/prev.png" alt="Previous Page"></a>
+        <a href="../kp-apps/kp-downland.html">
+            <img src="../common/images/prev.png" alt="Previous Page"></a>
 
-    <a style="margin-left: 7pt;margin-right: 7pt;" href="../index.html#sec.1.0">
-        <img src="../common/images/up.png" alt="Main Page"></a>
+        <a style="margin-left: 7pt;margin-right: 7pt;" href="../index.html#sec.1.0">
+            <img src="../common/images/up.png" alt="Main Page"></a>
 
-    <a href="../kp-mmt/kp-mmt.html">
-        <img src="../common/images/next.png" alt="Next Page"></a>
+        <a href="../kp-mmt/kp-mmt.html">
+            <img src="../common/images/next.png" alt="Next Page"></a>
 
-    <p>
-        <div class="end-of-page-red-line-1"></div>
-        <div class="end-of-page-red-line-2"></div>
-        <div class="space-below-footer"></div>
-    </p>
+        <p>
+            <div class="end-of-page-red-line-1"></div>
+            <div class="end-of-page-red-line-2"></div>
+            <div class="space-below-footer"></div>
+        </p>
 
-</div> <!-- End of container -->
-</body>
+        </div> <!-- End of container -->
+
+        <!--             -->
+        <!-- p o p u p s -->
+        <!--             -->
+        <div class="popup-style" id="elementQDS01ToPopup">
+            <div style="text-align: center;">
+                <b>Page: Qualitative Dynamical Systems Mathematical Modeling Technique</b></div>
+            <p>
+                This Page is to introduce Qualitative Dynamical Systems Mathematical Modeling Technique,
+                developed as part of the Kaleidoscope Project. The purpose of the technique and its
+                solutions is to enable creating qualitative systems simulation models, capable of
+                reproducing behavior of existing or being designed qualitative dynamical systems.
+            </p>
+            <p class="clicking-link">
+                Clicking the link opens named page in a new tab.
+                <!--                Clicking that link will open this page in a new tab.-->
+            </p>
+        </div>
+    </body>
 </html>
