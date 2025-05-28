@@ -703,7 +703,7 @@ Application
 
 <!--            // Added on 2025.05.26-->
                 <p>
-                    Described in this section procedure for computing a function in the form of an
+                    Described in this section approach to computing a function in the form of an
                     algebraic expression is an experimental attempt to fit into an inherently linear
                     process of sequential execution of operations of algebraic expression, all such
                     features of algorithms as: cycles, dynamic computation of estimates of states
@@ -758,16 +758,44 @@ Application
 <!--                </p>-->
 
                 <p>
-                    As it was shown by the study, the feasibility of implementing functions of models
-                    of qualitative systems in the form of algebraic expressions is determined by
-                    presence of certain challenges and the approach to constructing algebraic expressions
-                    of functions, that makes the challenges surmountable. They are described below.
+                    All observed changes of variables of models of qualitative systems are generally
+                    explained by the discrete nature of these systems, fragmentary changes of state of
+                    their properties and asynchronous occurrence of the situation in the systems
+                    (and their models). However, these factors
+                    can create challenges when calculating the algebraic expressions of the functions.
+                    They arise because not all but only some of the situations described in the
+                    specifications of the state equations of the variables actually exist in the
+                    model (and in the groups of arguments of the functions) at the moment of computing
+                    the functions, and also because of what particular proposed values the expression
+                    computes as a response to the appearance or disappearance of situations in the model.
+                    And these challenges must be resolved.
+                </p>
+
+                <p>
+                    But the mathematical model of a dynamic system is just a collection of state equations
+                    of the system, and nothing more. Therefore, this proposes that the resolution of
+                    challenges should occur not outside but inside the algebraic expression, and be
+                    provided by the operations used for computing the expression. This, as it was shown
+                    by the study, the feasibility of implementing functions of models of qualitative
+                    systems in the form of algebraic expressions is determined by the approach to
+                    constructing algebraic expressions of functions, that makes the challenges surmountable.
+                    This approach and its solutions are described below.
+                </p>
+
+<!--                <p>-->
+<!--                    As it was shown by the study, the feasibility of implementing functions of models-->
+<!--                    of qualitative systems in the form of algebraic expressions is determined by-->
+<!--                    existence of certain challenges and the approach to constructing algebraic expressions-->
+<!--                    of functions, that makes the challenges surmountable. They are described below.-->
+<!--                </p>-->
+
+<!--                <p>-->
 <!--                    <br><br>-->
 <!--                    As it was shown by the study, the feasibility of implementing functions of models-->
 <!--                    of qualitative systems in the form of algebraic expressions is determined by-->
 <!--                    existence of certain challenges and the model implementation solutions, suggested by the-->
 <!--                    modeling technique. They are described below.-->
-                </p>
+<!--                </p>-->
 
                 <p>
                     (1) Since in accordance with the specification, any single states of a variable may
