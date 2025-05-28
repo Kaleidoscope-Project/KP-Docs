@@ -1147,8 +1147,9 @@ Application
 <!--                    algebraic expression written as a composition of hybrid operations defined on the model set-->
 <!--                    <b>S</b> can be written as the formula.-->
 <!--                </p>-->
-
+                <p>
                 <img  class="center" src="images/xdnf-formula.png" width="450" height="50" alt="">
+                </p>
 
                 <p>
                     The arguments of this expression are variables representing current state of
@@ -1282,33 +1283,33 @@ Application
 
     <!--                ////////////////////////////////////////////////////////  -->
 
-                <p class="second-level-section-header">
-                    Example of the QMBSpec having Single QVDSpecs
-                </p>
+<!--                <p class="second-level-section-header">-->
+<!--                    Example of the QMBSpec having Single QVDSpecs-->
+<!--                </p>-->
 
-                <div class="definition-border">
-                    <div class="definition-inner-border" style="padding: 0px 15px 0px 15px;">
-                        <p class = "formula">
-                            x0 : [K : {(x1 : A), (x2 : B)}];  [L : {(x3 : M)}];  [H : {(x4 : E), (x5 : D), (x6 : N)}]
-                        </p>
-                    </div> <!-- End of definition inner border -->
-                </div> <!-- End of definition outer border -->
+<!--                <div class="definition-border">-->
+<!--                    <div class="definition-inner-border" style="padding: 0px 15px 0px 15px;">-->
+<!--                        <p class = "formula">-->
+<!--                            x0 : [K : {(x1 : A), (x2 : B)}];  [L : {(x3 : M)}];  [H : {(x4 : E), (x5 : D), (x6 : N)}]-->
+<!--                        </p>-->
+<!--                    </div> &lt;!&ndash; End of definition inner border &ndash;&gt;-->
+<!--                </div> &lt;!&ndash; End of definition outer border &ndash;&gt;-->
 
-                <p>
-                    Presented example describes dependence of a single variable x0 whose values depend on three Correspondences.
-                    The first Correspondence  [K : {(x1 : A), (x2 : B)}] states that variable x0 should take value K,
-                    when the values of the variables x1 and x2 hold expected values A and B. The second Correspondence
-                    [L : {(x3 : M)}] states that variable x0 should take value L, when the value of variable x3 holds
-                    expected values M. And the third Correspondence  [H : {(x4 : E), (x5 : D), (x6 : N)}] states that
-                    variable x0 should take value H, when the values of the variables x4, x5 and x6 take expected values
-                    E, D and N.
-                </p>
+<!--                <p>-->
+<!--                    Presented example describes dependence of a single variable x0 whose values depend on three Correspondences.-->
+<!--                    The first Correspondence  [K : {(x1 : A), (x2 : B)}] states that variable x0 should take value K,-->
+<!--                    when the values of the variables x1 and x2 hold expected values A and B. The second Correspondence-->
+<!--                    [L : {(x3 : M)}] states that variable x0 should take value L, when the value of variable x3 holds-->
+<!--                    expected values M. And the third Correspondence  [H : {(x4 : E), (x5 : D), (x6 : N)}] states that-->
+<!--                    variable x0 should take value H, when the values of the variables x4, x5 and x6 take expected values-->
+<!--                    E, D and N.-->
+<!--                </p>-->
 
-                <p>
-                    This example will be used later to illustrate the process of computation of the state equation
-                    of the variable x0 whose expression is defined on the basis of the specification presented
-                    in this section.
-                </p>
+<!--                <p>-->
+<!--                    This example will be used later to illustrate the process of computation of the state equation-->
+<!--                    of the variable x0 whose expression is defined on the basis of the specification presented-->
+<!--                    in this section.-->
+<!--                </p>-->
 
     <!--                ////////////////////////////////////////////////////////  -->
 
@@ -1324,7 +1325,7 @@ Application
                 </p>
 
                 <p style = "text-align: center;">
-                    x0 = x0 < [ ( P * (x1 ? E) )  |  ( H * ( (x2 ? M) & (x3 ? Q) ) ) ];       (1)
+                    x0 = x0 < [ ( P * (x1 ? E) )  |  ( H * ( (x2 ? M) & (x3 ? Q) ) ) ];&nbsp;&nbsp;&nbsp;(1)
                 </p>
 
                 <p>
