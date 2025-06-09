@@ -9,10 +9,10 @@
     <meta name="author" content="Vlad Lakin"/>
     <meta name="version" content="last updated 08/17/2018"/>
     <meta name="keywords" content="dining philosophers, discrete, event, dynamical, system, simulation, simulating,
-            logic, behavior, based, robatics, control, software, asynchronous, concurrent, architecture, modeling, automaton,
+            logic, behavior, based, robotics, control, software, asynchronous, concurrent, architecture, modeling, automaton,
             Petri, Net"/>
     <meta name="news_keywords" content="Discrete Symbolic Dynamical Systems & Models,
-            dining philosophers, dynamical system, behaviour based robatics"/>
+            dining philosophers, dynamical system, behaviour based robotics"/>
     <meta name="description" content="Discrete Symbolic Dynamical Systems & Models"/>
 
     <!-- style sheets   -->
@@ -46,7 +46,8 @@
 </head>
 
 <body>
-<div class="container">
+<div class="container"> <!-- Main Container -->
+
     <img  style="height: 6px; width: 100%;" src="../common/images/two-red-lines.png"/>
 
     <a href="../kp-vsec/equation-calculator.html">
@@ -55,7 +56,7 @@
     <a style="margin-left: 7pt;margin-right: 7pt;"  href="../index.html#sec.6.0">
         <img src="../common/images/up.png" alt="Main Page"></a>
 
-    <a href="../kp-dse-views/dse-screenshots.html">
+    <a href="../kp-mse/mse-screenshots.html">
         <img src="../common/images/next.png" alt="Next Page"></a>
 
     <!-- =================================================================================== -->
@@ -70,19 +71,22 @@
 
         <div style="margin-top: 33px; margin-bottom: 0px; "> <!-- Content holder -->
 
-            <p>
-                When reasoning about and discussing behavior of discrete action systems at
-                the everyday level regardless of be they living organisms, devices created by
-                us, or systems of computer programs that imitate behavior of the both, we
-                basically pay attention to the actions which these systems perform. And that
-                is understandable. We know which of the actions would make no harm (and
-                even may be useful), or, on the contrary, be quite dangerous. And this is
-                exactly what is important in the context of our conversations about the
-                systems. Therefore, while studying the essence of mechanisms of behavior of
-                the systems, we want to know not only what kind of actions systems can
-                perform. We want to understand why they perform those or other actions.
-                And to learn that, it is necessary to know what actually happens in the systems
-                right before they activate actions and right after the actions have been completed.
+<!--            <p>-->
+<!--                Commented out on 2025.06.07-->
+<!--                When reasoning about and discussing behavior of discrete action systems at-->
+<!--                the everyday level regardless of be they living organisms, devices created by-->
+<!--                us, or systems of computer programs that imitate behavior of the both, we-->
+<!--                basically pay attention to the actions which these systems perform. And that-->
+<!--                is understandable. We know which of the actions would make no harm (and-->
+<!--                even may be useful), or, on the contrary, be quite dangerous. And this is-->
+<!--                exactly what is important in the context of our conversations about the-->
+<!--                systems. Therefore, while studying the essence of mechanisms of behavior of-->
+<!--                the systems, we want to know not only what kind of actions systems can-->
+<!--                perform. We want to understand why they perform those or other actions.-->
+<!--                And to learn that, it is necessary to know what actually happens in the systems-->
+<!--                right before they activate actions and right after the actions have been completed.-->
+<!--                End of Commented out on 2025.06.07-->
+
                 <!--                When reasoning about and discussing behavior of discrete action systems at the-->
 <!--                everyday level regardless of be they living organisms, devices created by us,-->
 <!--                or systems of computer programs that imitate behavior of the both, we basically-->
@@ -95,18 +99,19 @@
 <!--                they perform those or other actions. And for that, it is necessary to know what-->
 <!--                actually happens in the system right before it activates the actions and right-->
 <!--                after the actions that were performed and which we observed are completed.-->
-            </p>
+<!--            </p>-->
 
-            <p>
-                Respectively, the nature of behavior of qualitative systems described on the
-                page: "Qualitative Dynamical Systems, Their Behavior, and Mathematical
-                Modeling" and the modeling solutions described on the page: "Qualitative
-                Dynamical Systems Mathematical Modeling Technique" propose creation of
-                models of qualitative systems capable of reproducing their behavior by
-                changing state of variables of the models in accordance with the
-                occurrence of situations considered as causes of changes observed in the
-                systems, and thus reproduced in the models.
-            </p>
+<!--            <p>-->
+                <!--                Commented out on 2025.06.07-->
+<!--                Respectively, the nature of behavior of qualitative systems described on the-->
+<!--                page: "Qualitative Dynamical Systems, Their Behavior, and Mathematical-->
+<!--                Modeling" and the modeling solutions described on the page: "Qualitative-->
+<!--                Dynamical Systems Mathematical Modeling Technique" propose creation of-->
+<!--                models of qualitative systems capable of reproducing their behavior by-->
+<!--                changing state of variables of the models in accordance with the-->
+<!--                occurrence of situations considered as causes of changes observed in the-->
+<!--                systems, and thus reproduced in the models.-->
+<!--            </p>-->
 
             <p>
                 This page describes graphical modeling formalism called the Multicolor
@@ -116,14 +121,83 @@
                 the form of a bipartite directed graph.
             </p>
 
+<!--            Представление Модели как Элементов Структуры Графа-->
+
             <p class="section-header">
-                Representation of McLN model in the form of bipartite graph
+                Representation of McLN Model in the Form of Bipartite Oriented Graph
             </p>
 
             <p>
-                Example of popular, and therefore well known model of asynchronous discrete system
-                called: "Dining Philosophers" states of properties of which are considered qualitative
-                is presented in the figure 1.
+                This page is to describe a qualitative systems modeling approach, based on the Multicolor
+                Logical Net, or McLN, graphical modeling formalism,  introduced by the Kaleidoscope project.
+                This approach is intended for representing: properties of the modeled systems, facts of
+                occurrence of situations, and dependencies of facts on the current state of properties and
+                the next state of properties on the state of facts in the form of a directed graph that can
+                be depicted on such drawing surfaces as: a computer screen or a sheet of paper.
+            </p>
+
+            <p>
+                From the mathematical point of view this graph is a bipartite oriented graph that consists
+                of two types of nodes, depicted as the big and small circles, and two types of arcs directed
+                form big to small, and from small to big nodes.
+            </p>
+
+            <p>
+                Big nodes represent Properties of the modeled systems, states of which are indicated as
+                solid color that fills the circles. Small circles are the facts state of which may either
+                assert that: “The expected situation recognized” or that “The expected situation not
+                recognized”. These states are represented as a solid white (situation is recognized) or
+                gray (situation is not recognized) color, that fills the circles of the Condition node,
+                respectively.
+            </p>
+
+            <p>
+                Arcs directed from some Property nodes to a Fact node represent dependence of that Fact
+                on a certain combination of states of Property nodes. These arcs are marked with the
+                colored dots, particular colors of which are those expected states that the arcs’ input
+                Properties should have in order for the situation to be deemed as existing.
+            </p>
+
+            <p>
+                Accordingly, arcs directed from a Fact node to some Property nodes represent dependence
+                of the state of the Property nodes on the state of their input Fact. These arcs have a
+                small arrow head which is marked with color that is generated as the proposed state of
+                the Property nodes depending on the state of the Fact.
+            </p>
+
+            <p>
+                So, all these connections literally mean that the state of each Fact node may depend on
+                the state of one or more Property nodes, which may characterize a particular situation
+                determined by the colors of the dots marking arcs directed from Property nodes to the Fact
+                node. And, at the same time, the state of each Property node may depend on the state of
+                one or more Fact nodes, and take state denoted by the color used to mark the arrow head
+                of the arc directed form the  Fact node to the dependent Property node in case when the
+                Fact indicates that its input Properties represent situation denoted by the marks of
+                their output arcs.
+            </p>
+
+            <p class="section-header">
+                Functionality of Elements of McLN Model of a Qualitative Dynamical System
+            </p>
+
+            <p>
+                Although a pure mathematically, bipartite graph is merely two sets of nodes connected by
+                arcs, a model of a qualitative dynamical system whose structure is defined on the basis
+                of a bipartite graph is also various functions associated with the elements of the graph
+                that ensure certain transformation of content of the dataflows, while the data move from
+                one node of the graph to another, that are performed by the elements of the graph.
+            </p>
+
+            <p class="section-header">
+                Example of Qualitative System Model Developed Based on McLN Graphical Modeling Formalism
+            </p>
+
+            <p>
+                Presented below example is the McLN model of popular discrete dynamical
+                system widely known as the "Dining Philosophers". States of properties of this system are
+                considered qualitative and the mechanizm of behavior is based on Qualitative System Behavior
+                Specification described on the page "". The McLN view of this model is presented in the
+                figure 1.
             </p>
 
             <img class="center" src="Illustrations/Dining-Philosophers.png" />
@@ -160,10 +234,9 @@
                 whose state can change as a result of external input-events, during constructing of the model.
             </p>
 
-
 <!--            !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
             <p class="sub-section-centered-header">
-                Multicolored Logical Net Structure and Simulation Examples
+                More of Multicolored Logical Net Structure and Simulation Examples
             </p>
 
             <p>
@@ -199,7 +272,7 @@
     <a style="margin-left: 7pt;margin-right: 7pt;"  href="../index.html#sec.6.0">
         <img src="../common/images/up.png" alt="Main Page"></a>
 
-    <a href="../kp-dse-views/dse-screenshots.html">
+    <a href="../kp-mse/mse-screenshots.html">
         <img src="../common/images/next.png" alt="Next Page"></a>
 
 <!--    <div class="space-below-footer"></div>-->
@@ -207,6 +280,6 @@
     <div class="end-of-page-red-line-2"></div>
     <div class="space-below-footer"></div>
 
-</div> <!-- end of container -->
+</div> <!-- End of Main Container -->
 </body>
 </html>

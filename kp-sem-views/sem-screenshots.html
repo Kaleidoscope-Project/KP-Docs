@@ -16,6 +16,12 @@
 
     <!-- style sheets   -->
     <link rel="stylesheet" href="../common/stylesheets/common.css">
+    <link rel="stylesheet" href="../common/stylesheets/all-pages-popups.css">
+
+    <!-- java scripts   -->
+    <script type="text/javascript" src="../common/javascripts/common-javascripts.js"></script>
+    <script type="text/javascript" src="../common/javascripts/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../common/javascripts/all-pages-popup-scripts.js"></script>
 
     <style>
         body {
@@ -26,10 +32,11 @@
 </head>
 
 <body>
-<div class="container">
+<div class="container"> <!-- Main Container -->
+
     <img  style="height: 6px; width: 100%;" src="../common/images/two-red-lines.png"/>
 
-    <a href="../kp-dse-views/dse-screenshots.html">
+    <a href="../kp-mse/mse-screenshots.html">
         <img src="../common/images/prev.png" alt="Previous Page"></a>
 
     <a style="margin-left: 7pt;margin-right: 7pt;"  href="../index.html#sec.7.0">
@@ -42,23 +49,25 @@
     <div class="text-container">
 
         <div class="page-header">
-            The Space Exploration Mission // An Agent-Robot Behavior Simulator
+            Space Exploration Mission // Agent-Robot Behavior Simulator
         </div>
 
         <div style="margin-top: 33px; margin-bottom: 0px; font-family:family:verdana; text-align: justify;
         font-size:19px; color: #222; ">   <!-- Content holder -->
 
             <p>
-                This page is a brief description of Space Exploration Mission - an acting Agent-Robot behavior
-                simulator Java desktop application backed by some screenshots. The Application is imaginary Mission
-                Control and Monitoring Center (MCMC) interacting with the remote Agent-Robot - a rover that may
+                This page is a brief presentation of the Space Exploration Mission Software -
+                an acting agent-robot behavior simulator that is implemented as the Java desktop application.
+                The Application is imaginary Mission
+                Control and Monitoring Center (MCMC) interacting with the remotely acting Agent-Robot - a rover that may
                 execute different operations. The task of the Agent is to explore the designated space, collect
-                environmental parameters and transmit ita current coordinates packed with collected data to MCMC
+                environmental parameters and transmit its current coordinates packed with collected data to MCMC
                 in accordance with scheduled exchange sessions. The Agent can be controlled manually - via manual
-                controls, or automatically - by McLN-based Agent Behavior Controller. The task of the Agent
-                Behavior Controller is to take input from Agent's sensors, recognize situations arising dynamically,
-                make real-time control decisions, and activate relevant to situations actions by communicating
-                with Agent's local controllers. The application screenshots layout is presented in <b>Figure 1</b>.
+                controls, or automatically - by McLN-based Agent Behavior Controller (ABC). The ABC takes input
+                from Agent's sensors, recognizes situations arising dynamically,
+                makes real-time control decisions, and activates relevant to the situations actions by communicating
+                with Agent's local operation controllers. Screenshot of the layout of the application's panels
+                is presented in <b>Figure 1</b>.
             </p>
 
             <center>
@@ -67,32 +76,34 @@
             </center>
 
             <p>
-                Space Exploration Mission application screen is the imitation of the Mission Control and Monitoring
-                Center
-                dashboard.
-                It consists of following control and monitoring panels: (1) Manual Robot Control panel (left
+                Space Exploration Mission application screen is the imitation of the MCMC dashboard.
+                It consists of following control and monitoring panels: (1) Manual Agent Control panel (left
                 panel),
-                (2) McLN-based Robot Behavior Controller (center panel), (3) Robot Observation Monitors -
-                the cluster of monitors occupying right part of the screen, displaying a) the remote
-                world and accomplishing its exploratory mission robot 3D view, b) robot 2D front and side views c)
-                the
-                robot's view - the world view as it is seeing from the cabin of the Rover, and
-                (4) Running Text Panel - the panel located below the monitor panels presenting received from the
-                Rover
-                remote data.
-
-                <br><br>Utilized by the Robot Behavior Controller McLN model is developed with the Qualitative
-                Dynamical Systems Development & Simulating Environment application described below.
+                (2) McLN-based Agent Behavior Controller (center panel), (3) Agent Observation Monitors -
+                the cluster of monitors occupying the right part of the screen, displaying a) the remote
+                world and the agent in 3D view, while it accomplishes its exploratory mission,
+                b) agent in 2D front and side views, c) the world view as it is
+                seeing from the cabin of the Rover, and (4) Running Text Panel - the panel located below
+                the monitor panels presenting received from the remote Rover data.
             </p>
-        </div>
 
+            <p>
+                The McLN model, utilized by the ABC, has been developed in the Modeling & Simulating
+                Environment software application described on the page:
+                <span class="popup-link" onmouseenter="openPopup(event, sem01)"
+                      onmouseleave= "closePopup(sem01)">
+                        <a class="popup-link" href = "../kp-mse/mse-screenshots.html" target="_blank">
+                    <em>“Qualitative Dynamical Systems Modeling & Simulating Environment”</em></a></span>.
+            </p>
+
+        </div> <!-- end of content holder  -->
     </div> <!-- end of text-container-->
 
     <!-- =================================================================================== -->
 
     <br>
 
-    <a href="../kp-dse-views/dse-screenshots.html">
+    <a href="../kp-mse/mse-screenshots.html">
         <img src="../common/images/prev.png" alt="Previous Page"></a>
 
     <a style="margin-left: 7pt;margin-right: 7pt;"  href="../index.html#sec.7.0">
@@ -109,6 +120,22 @@
 
     <div class="space-below-footer"></div>
 
-</div>
-</body>
+    </div> <!-- End of Main Container -->
+
+        <!--             -->
+        <!-- p o p u p s -->
+        <!--             -->
+        <div class="popup-style" id="elementSEM01ToPopup">
+            <div style="text-align: center;">
+                <b>Page: Qualitative Dynamical Systems Modeling & Simulating Environment</b></div>
+            <p>
+                This page is a brief description of the Qualitative Dynamical Systems Modeling
+                & Simulation Environment, or QDS MSE. It is arranged as a number of screenshots of
+                the application that demonstrate its major features, backed by short explanations.
+            </p>
+            <p class="clickable-link">
+                Clicking the link opens named page in a new tab.
+            </p>
+        </div>
+    </body>
 </html>
