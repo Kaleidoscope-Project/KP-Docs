@@ -1,0 +1,37 @@
+
+/*  border-style: solid; border-width: 2px; background-color: border-style: solid;
+             white; border-color:E0E0E0 #E5E7EB;  border-color: #FF0000; */
+
+.popup-style{
+    display: none;
+    position: absolute;
+    left: 50%;
+    width: 300pt;
+    background-color: white;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: #E0E0E0;
+    padding: 16px 16px 2px 16px;
+    border-radius: 12px;
+    transform: translate(-50%, 0%);
+    box-shadow: 0 30px 90px -20px rgba(0, 0, 0, 0.3), 0 0 1px 1px rgba(0, 0, 0, 0.05);
+    z-index: 2; /* Sit on top of the overlay */
+    text-align: justify;
+}
+
+.popup-link{
+    color: #2850B1; /* blue */
+    text-decoration:none;
+}
+
+a:active {
+    color: #770020;
+}
+
+ a:hover {
+  text-decoration:underline;
+}
+
+.clickable-link {
+    color:#774400;
+}
