@@ -333,7 +333,7 @@
                     <strong>Expression operators:</strong>
                     There is regular Assignment operator and five AoS operators in the expression.<br>
                 </p>
-                <div style=" padding-left: 75pt;">
+                <div style=" padding-left: 10pt;">
                     Character &nbsp;"=" &nbsp;is the operator of regular Assignment operation.<br>
                     Character &nbsp;"<" &nbsp;is the operator of AoS Application operation.<br>
                     Character &nbsp;"|" &nbsp;is the operator of AoS Disjunction operation.<br>
@@ -345,7 +345,7 @@
                 <p>
                     <strong>Operator&nbsp;precedence:</strong>
                     The order of calculation is defined by the operator priorities, where the Equals (?) operator
-                    has highest priority, and therefore is executed first. Then operators: Conjunction (&),
+                    has the highest priority, and therefore is executed first. Then operators: Conjunction (&),
                     Production (*), Disjunction (|), Application (&lt;), and Assignment (=) are executed.
                 </p>
 
@@ -402,26 +402,30 @@
                 The AoS Application operation is invoked. Operation takes dependent variable current
                 value <b>y</b>, as its first argument, and obtained from the function <b>f</b> result, as its second argument.
                 Upon the execution, operation yield depends on the value of its second argument.
-                In fact the operation does:"<br/><br/>
-                &nbsp;&nbsp;a) returns obtained from the function <b>f</b> result if the result is
-                symbol representing dependent variable suggested state, or<br/>
-                &nbsp;&nbsp;b) returns, provided as the call first argument, dependent variable current value if obtained from the function <b>f</b>
-                result appeared to be not defined. This makes the dependent variable to be assigned
-                its current state - state it is  already in. The subsequent assignment to the dependent variable its
-                current state, in fact, means no change of the variable state.
-                <br/>
-                <br/>
+                In fact, the operation:<br/><br/>
+
+                (a) returns obtained from the function <b>f</b> result if the result is
+                symbol representing dependent variable suggested state, or<br/><br/>
+
+                (b) returns, provided as the call first argument, dependent variable current value if obtained
+                from the function <b>f</b> result appeared to be not defined. This makes the dependent variable
+                to be assigned its current state - state it is  already in. The subsequent assignment to the
+                dependent variable its current state, in fact, means no change of the variable state.
+
+                <br/><br/>
                 The execution of the Application operation completes the expression calculation and
-                the return of Application operation is considered to be the value of the assignment expression's right side.
-                <br/>
-                <br/>
+                the return of Application operation is considered to be the value of the assignment
+                expression's right side.
+
+                <br/><br/>
                 <b>Step 3</b>.
                 This last calculation step is the Assignment operation. The operation modifies dependent variable <b>y</b>
                 initial value by replacing it with just calculated AoS expression result and thus
                 completes the Calculator run.
                 <br/>
                 <br/>
-                <b>A note</b>.
+
+                <em>A note</em>.
                 The last (third) selectable from the Expression Selector example, represents a case where
                 the left-hand-side variable <b>y</b> is also the right-hand-side AoS expression's argument.
                 Thus, ones calculated variable <b>y</b> becomes the Expression's updated argument, letting you
