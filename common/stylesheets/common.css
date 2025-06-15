@@ -82,7 +82,7 @@
     .page-header {
         position: relative;
         top: 10px;
-        font-size:23pt;
+        font-size:21pt;
         font-weight: plain;
         text-align: center;
     }
@@ -99,7 +99,7 @@ style="text-align: center;"
     .section-header {
         margin-top: 20pt;
         margin-bottom: 10pt;
-        font-size: 19pt;
+        font-size: 18pt;
         font-weight: plain;
         text-align: center;
     }
@@ -107,7 +107,7 @@ style="text-align: center;"
     .second-level-section-header {
         margin-top: 20pt;
         margin-bottom: 10pt;
-        font-size: 17pt;
+        font-size: 15pt;
         text-align: center;
     }
 
@@ -115,7 +115,7 @@ style="text-align: center;"
         margin-top: 20pt;
         margin-bottom: 10pt;
         font-weight: bold;
-        font-size: 15pt;
+        font-size: 14pt;
         text-align: left;
     }
 
@@ -132,7 +132,7 @@ style="text-align: center;"
             margin-top: 20pt;
             margin-bottom: 10pt;
             font-weight: bold;
-            font-size: 15pt;
+            font-size: 14pt;
             text-align: center;
     }
 
@@ -146,7 +146,7 @@ style="text-align: center;"
     .sub-section-centered-header {
             margin-top: 20pt;
             margin-bottom: 10pt;
-            font-size: 18pt;
+            font-size: 17pt;
             text-align: center;
     }
 
