@@ -114,79 +114,174 @@
 <!--            </p>-->
 
             <p>
-                This page describes graphical modeling formalism called the Multicolor
-                Logical Net (McLN) intended for representing: properties of the modeled system,
-                facts of occurrence of situations, and dependencies of facts on the current
-                state of properties and the next state of properties on the state of facts in
-                the form of a bipartite directed graph.
+                This page introduces Multicolor Logical Net Modeling Formalism, or McLN MF, which
+                is intended for creating models of the behavior of qualitative dynamical systems in the form
+                of their graphical models.
             </p>
+
+            <p>
+                McLN models can be assembled, on a computer screen, using four graphical
+                elements - properties, facts, dependence of facts on properties
+                and the dependence of the properties on the facts. Accordingly,
+                the McLN MF can be considered as the graphical construction set consisting of four
+                elements. Therefore, the McLN model is, indeed, created as the graphical net, structure of
+                which is based on the notion of bipartite directed graph, while the mechanism of reproducing behavior of
+                the modeled system is provided by associating with the elements of the graph operations of the AoS.
+            </p>
+
+<!--            <p>-->
+<!--                McLN models can be assembled, on a computer screen, using four graphical-->
+<!--                elements and, thus, the McLN MF can be considered as the graphical construction set of four-->
+<!--                elements - -->
+<!--                properties, facts, dependence relations of states of the facts on states of the properties-->
+<!--                and dependence relations of the states of the properties on the states of the facts. Accordingly,-->
+<!--                the McLN model is, indeed, created as the graphical net, structure of-->
+<!--                which is based on the notion of bipartite directed graph, and the mechanism of reproducing behavior of-->
+<!--                the modeled system is provided by associating with these elements operations of the AoS.-->
+<!--&lt;!&ndash;                , usage of which make it possible to build  qualitative systems models in the form&ndash;&gt;-->
+<!--&lt;!&ndash;                of a network of these elements.&ndash;&gt;-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                Being a way of constructing models of qualitative systems as consisting of four graphical elements - -->
+<!--                properties, facts, dependence relations of states of the facts on states of the properties-->
+<!--                and dependence relations of the states of the properties on the states of the facts. Accordingly,-->
+<!--                the McLN model is, indeed, created as the graphical net, structure of-->
+<!--                which is based on the notion of bipartite directed graph, and the mechanism of reproducing behavior of-->
+<!--                the modeled system is provided by associating with these elements operations of the AoS.-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                This page describes graphical modeling formalism called the Multicolor-->
+<!--                Logical Net (McLN) intended for representing: properties of the modeled system,-->
+<!--                facts of occurrence of situations, and dependencies of facts on the current-->
+<!--                state of properties and the next state of properties on the state of facts in-->
+<!--                the form of a bipartite directed graph.-->
+<!--            </p>-->
 
 <!--            Представление Модели как Элементов Структуры Графа-->
 
             <p class="section-header">
-                Representation of McLN Model in the Form of Bipartite Oriented Graph
+                Structure of the McLN Model
+<!--                Representation of McLN Model in the Form of Bipartite Oriented Graph-->
             </p>
 
             <p>
-                This page is to describe a qualitative systems modeling approach, based on the Multicolor
-                Logical Net, or McLN, graphical modeling formalism,  introduced by the Kaleidoscope project.
-                This approach is intended for representing: properties of the modeled systems, facts of
-                occurrence of situations, and dependencies of facts on the current state of properties and
-                the next state of properties on the state of facts in the form of a directed graph that can
-                be depicted on such drawing surfaces as: a computer screen or a sheet of paper.
+                Being based on the notion of bipartite directed graph, the McLN model is constructed of two types
+                of nodes, depicted as the big and small circles, and two types of arcs directed form big to
+                small, and from small to big circles.
             </p>
 
             <p>
-                From the mathematical point of view this graph is a bipartite oriented graph that consists
-                of two types of nodes, depicted as the big and small circles, and two types of arcs directed
-                form big to small, and from small to big nodes.
+                Big circles are the Properties. They represent properties and states of the properties of the
+                modeled systems, which are indicated as solid color that fills the circles. Small circles are the
+                Conditions causing changes of states of Properties. Hence, their states may either represent
+                fact that expected situation is recognized or the fact that it is not recognized. These
+                states of are represented as the solid white or gray colors, respectively.
+            </p>
+
+<!--            <p>-->
+<!--                Big nodes represent Properties of the modeled systems, states of which are indicated as-->
+<!--                solid color that fills the circles. Small circles are the facts state of which may either-->
+<!--                assert that: “The expected situation recognized” or that “The expected situation not-->
+<!--                recognized”. These states are represented as a solid white (situation is recognized) or-->
+<!--                gray (situation is not recognized) color, that fills the circles of the Condition node,-->
+<!--                respectively.-->
+<!--            </p>-->
+
+            <p>
+                Arcs directed from Property nodes to a Condition node represent dependence of the fact
+                of recognition of situation on a certain combination of states of Property nodes. These
+                arcs are marked with the colored dots, particular colors of which are those expected states
+                that the arcs’ input Properties should have in order for the situation to be deemed as
+                existing and to be recognized.
             </p>
 
             <p>
-                Big nodes represent Properties of the modeled systems, states of which are indicated as
-                solid color that fills the circles. Small circles are the facts state of which may either
-                assert that: “The expected situation recognized” or that “The expected situation not
-                recognized”. These states are represented as a solid white (situation is recognized) or
-                gray (situation is not recognized) color, that fills the circles of the Condition node,
-                respectively.
+                Arcs directed from a Condition node to some Property nodes represent dependence
+                of the state of the Property nodes on the fact of existence of the expected situation. These
+                arcs have a small arrow head marked with the color of that proposed state which
+                the arcs' output Property nodes should take when the state of Condition node indicate fact
+                that the expected situation is exists.
+<!--                is generated as the proposed state of-->
+<!--                the Property nodes depending on the state of the Fact.-->
+<!--                designated by the color of that state-->
             </p>
 
             <p>
-                Arcs directed from some Property nodes to a Fact node represent dependence of that Fact
-                on a certain combination of states of Property nodes. These arcs are marked with the
-                colored dots, particular colors of which are those expected states that the arcs’ input
-                Properties should have in order for the situation to be deemed as existing.
-            </p>
-
-            <p>
-                Accordingly, arcs directed from a Fact node to some Property nodes represent dependence
-                of the state of the Property nodes on the state of their input Fact. These arcs have a
-                small arrow head which is marked with color that is generated as the proposed state of
-                the Property nodes depending on the state of the Fact.
-            </p>
-
-            <p>
-                So, all these connections literally mean that the state of each Fact node may depend on
-                the state of one or more Property nodes, which may characterize a particular situation
-                determined by the colors of the dots marking arcs directed from Property nodes to the Fact
-                node. And, at the same time, the state of each Property node may depend on the state of
-                one or more Fact nodes, and take state denoted by the color used to mark the arrow head
-                of the arc directed form the  Fact node to the dependent Property node in case when the
-                Fact indicates that its input Properties represent situation denoted by the marks of
-                their output arcs.
+                So, structure of the McLN literally mean that the state of each Condition node depends on
+                the state of one or more of its input Property nodes, characterizing particular expected situation
+                determined by the colors of the dots marking the Properties' output arcs. And, at the same
+                time, the state of each Property node depends on the state of
+                one or more of its input Condition nodes, and should take state denoted by the color marking the arrow head
+                of the arc directed form the Condition node to the dependent Property node in case when the
+                Condition indicates that all its input Properties represent expected situation denoted by
+                the marks of their output arcs.
             </p>
 
             <p class="section-header">
-                Functionality of Elements of McLN Model
+                Reproducibility of Behavior of Modeled System in<br>McLN Model
             </p>
 
             <p>
-                Although a pure mathematically, bipartite graph is merely two sets of nodes connected by
-                arcs, a model of a qualitative dynamical system whose structure is defined on the basis
-                of a bipartite graph is also various functions associated with the elements of the graph
-                that ensure certain transformation of content of the dataflows, while the data move from
-                one node of the graph to another, that are performed by the elements of the graph.
+                Although pure mathematically, the bipartite directed graph is merely two sets of nodes
+                connected by the directed arcs, the McLN model of a qualitative dynamical system, structure
+                of which is based on the bipartite graph, in addition to the roles assigned to the elements of the
+                graph, described above, should also be capable of reproducing behavior of modeled
+                system. And that means the graph should have in its possession a collection of functions associated
+                with its elements. These functions have to ensure certain transformations of states
+                of Property nodes, and the motion of their states from some Property nodes to others.
+                And, thus, all that activity should be performed by the Property nodes, Condition nodes and by the both
+                types of the arcs of the graph itself. And this is achieved by endowing each element of the
+                model with the ability to perform operation of the algebra of symbol, associated with it.
             </p>
+
+            <p>
+                Execution of the model assumes that the states of its all properties are always defined.
+                Accordingly, performance of the operations of the elements of the model always begins
+                with identifying situations present in the model.
+            </p>
+
+            <p>
+                Arcs directed from Properties to Conditions are recognizers of expected states of their
+                input Properties. Respectively, each this arc implements the Equivalence operation, which
+                compares the color of its input Property with the color that marks the arc.
+            </p>
+
+            <p>
+                Conditions perform recognition of the fact of presence of the expected situation in the model.
+                Therefore, each input arc of the Condition implements Conjunction operation, task of which
+                is to compute conjunction of all the results of comparisons performed by its input arcs.
+            </p>
+
+            <p>
+                Arcs directed from Condition to Properties are generators of the proposed state of their
+                output Properties. They implement Production operations. The task of each such arc
+                is to produce proposed state represented by the color marking the arrowhead of the arc in the
+                case when state of its input Condition is the fact of the existence of the expected
+                situation. Or, alternatively, to produce proposed state represented by the color indicating
+                that the expected situation is not recognized.
+            </p>
+
+            <p>
+                Properties accept results produced by arcs directed to them from all Conditions. Each
+                Property should accept state computed based on all proposed states produced by all generator
+                arcs entering it. And since the new state of Property may be not always computed, the
+                Property should implement two operations - Disjunction and Application. Disjunction
+                operation should compute final proposed value, and Application operation should either
+                change the color of the property to the color computed by the Disjunction operation, when
+                it is defined, or leaves the state  of the Property unchanged when the result of the
+                Disjunction operation turns out to be undefined.
+            </p>
+
+<!--            <p>-->
+<!--                Although pure mathematically, the bipartite directed graph is merely two sets of nodes connected-->
+<!--                by the directed arcs, the McLN model of a qualitative dynamical system whose structure is defined-->
+<!--                on the basis of a bipartite graph should also have in its possession a collection of functions-->
+<!--                associated with the elements of the graph that ensure certain transformations of states of-->
+<!--                Property nodes, and motion of their states from one Property node of the graph to another.-->
+<!--                And that should be performed by the elements of the graph itself.-->
+<!--            </p>-->
 
             <p class="section-header">
                 Example of Qualitative System Model Developed Based on McLN Graphical Modeling Formalism
