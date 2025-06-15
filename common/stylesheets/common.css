@@ -50,18 +50,18 @@
             position: relative;
             margin-left: auto;
             margin-right: auto;
-            width: 580px;  <!-- 615pt = 7.5 -->
+            width: 540px;  <!-- 615pt = 7.5 -->
     }
 
     .courier-font{
             font-family: 'Courier New', monospace;
             text-align: justify;
-            font-size:8pt;
+            font-size:7.5pt;
             color: #333;
             position: relative;
             margin-left: auto;
             margin-right: auto;
-            width: 580px;  <!-- 615pt = 7.5 -->
+            width: 540px;  <!-- 615pt = 7.5 -->
         }
 
     <!--/*   H e a d e r   */-->
