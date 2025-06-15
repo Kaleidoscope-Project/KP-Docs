@@ -29,15 +29,28 @@
         height: 2pt;
     }
 */
+/*
     .text-container{
         font-family:family:helvetica;
         text-align: justify;
-        font-size:14pt;
+        font-size:12.5pt;
         color: #333;
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        width: 580px;  <!-- 615pt = 7.5 -->
+        width: 520px;  <!-- 615pt = 7.5 -->
+    }
+*/
+
+    .text-container{
+            font-family:family:helvetica;
+            text-align: justify;
+            font-size:13pt;
+            color: #333;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            width: 580px;  <!-- 615pt = 7.5 -->
     }
 
     .courier-font{
