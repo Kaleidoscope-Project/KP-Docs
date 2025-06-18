@@ -17,6 +17,14 @@
 
     <!-- style sheets   -->
     <link rel="stylesheet" href="../common/stylesheets/common.css">
+    <link rel="stylesheet" href="../common/stylesheets/all-pages-popups.css">
+
+    <!--/*   S c r i p t s   */-->
+    <script type="text/javascript" src="../common/javascripts/common-javascripts.js"></script>
+    <script type="text/javascript" src="../common/javascripts/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../common/javascripts/all-pages-popup-scripts.js"></script>
+
+    <!--/*   S t y l e    S h e e t s   */-->
 
     <style>
         body {
@@ -124,9 +132,10 @@
                 elements - properties, facts, dependence of facts on properties
                 and the dependence of the properties on the facts. Accordingly,
                 the McLN MF can be considered as the graphical construction set consisting of four
-                elements. Therefore, the McLN model is, indeed, created as the graphical net, structure of
+                elements. Therefore, the McLN model is, indeed, created as the graphical net, the structure of
                 which is based on the notion of bipartite directed graph, while the mechanism of reproducing behavior of
-                the modeled system is provided by associating with the elements of the graph operations of the AoS.
+                the modeled system is provided by associating with the elements of the graph operations of the
+                Algebra of Symbols, or AoS.
             </p>
 
 <!--            <p>-->
@@ -163,14 +172,21 @@
 
             <p class="section-header">
                 Structure of the McLN Model
-<!--                Representation of McLN Model in the Form of Bipartite Oriented Graph-->
             </p>
 
             <p>
                 Being based on the notion of bipartite directed graph, the McLN model is constructed of two types
-                of nodes, depicted as the big and small circles, and two types of arcs directed form big to
-                small, and from small to big circles. Simple example of McLN model is presented in Figure 1.
+                of nodes: Property nodes, depicted as the big circles or big hexagons, Conditions depicted as
+                small circles, and two types of arcs directed form the Property nodes to the Conditions nodes, and
+                from the Conditions nodes to the Property nodes. Simple example of the McLN model is presented
+                in Figure 1.
             </p>
+
+<!--            <p>-->
+<!--                Being based on the notion of bipartite directed graph, the McLN model is constructed of two types-->
+<!--                of nodes, depicted as the big or and small circles, and two types of arcs directed form big to-->
+<!--                small, and from small to big circles. Simple example of McLN model is presented in Figure 1.-->
+<!--            </p>-->
 
             <img class="center" src="Illustrations/Three-Rules.png" />
 
@@ -178,14 +194,23 @@
                 <b>Figure 1.</b> One Property depending on three situations.
             </p>
 
-
             <p>
-                Big circles are the Properties. They represent properties and states of the properties of the
-                modeled systems, which are indicated as solid color that fills the circles. Small circles are the
-                Conditions causing changes of states of Properties. Hence, their states may either represent
-                fact that expected situation is recognized or the fact that it is not recognized. These
-                states of are represented as the solid white or gray colors, respectively.
+                Property nodes represent properties and states of the properties of the modeled systems, where
+                the states are denoted as solid color that fills the circles or the hexagons. Conditions nodes
+                are the conditions of changes of states of Property nodes. They represent facts of existence of
+                expected situations that cause Property nodes, dependent on occurrence of situations, to change
+                their states. Hence, states of Conditions nodes may either represent the fact that the expected
+                situation is recognized or the fact that it is not recognized. These states are represented as
+                the solid white color with symbol "+" drawn on it, or gray colors with symbol "-", respectively.
             </p>
+<!--            <p>-->
+<!--                Big circles () or hexagons are the Properties. They represent properties and states of the properties of the-->
+<!--                modeled systems, which are indicated as solid color that fills the node. Small circles are the-->
+<!--                Conditions. They represent fact of existing of expected situations and cause dependent on-->
+<!--                occurrence of sitiations Property nodel to changes their states. Hence, their states may either represent-->
+<!--                fact that expected situation is recognized or the fact that it is not recognized. These-->
+<!--                states are represented as the solid white or gray colors, respectively.-->
+<!--            </p>-->
 
 <!--            <p>-->
 <!--                Big nodes represent Properties of the modeled systems, states of which are indicated as-->
@@ -206,41 +231,124 @@
 
             <p>
                 Arcs directed from a Condition node to some Property nodes represent dependence
-                of the state of the Property nodes on the fact of existence of the expected situation. These
+                of the state of the Property nodes on the fact of the existence of the expected situation. These
                 arcs have a small arrow head marked with the color of that proposed state which
-                the arcs' output Property nodes should take when the state of Condition node indicate fact
-                that the expected situation is exists.
+                the arcs' output Property nodes should take when the state of Condition node indicates the fact
+                that the expected situation exists.
 <!--                is generated as the proposed state of-->
 <!--                the Property nodes depending on the state of the Fact.-->
 <!--                designated by the color of that state-->
             </p>
 
             <p>
-                So, structure of the McLN literally mean that the state of each Condition node depends on
-                the state of one or more of its input Property nodes, characterizing particular expected situation
+                So, the structure of the McLN literally means that the state of each Condition node depends on
+                the state of one or more of its input Property nodes, characterizing a particular expected situation
                 determined by the colors of the dots marking the Properties' output arcs. And, at the same
                 time, the state of each Property node depends on the state of
-                one or more of its input Condition nodes, and should take state denoted by the color marking the arrow head
+                one or more of its input Condition nodes, and should take state denoted by the color marking the arrowhead
                 of the arc directed form the Condition node to the dependent Property node in case when the
                 Condition indicates that all its input Properties represent expected situation denoted by
                 the marks of their output arcs.
             </p>
 
             <p class="section-header">
-                Reproducibility of Behavior of Modeled<br>Systems in McLN Models
+                The Mechanism of the McLN model's Behavior
             </p>
+
+            <p>
+                Unlike the mechanism for computing the XDNF expression, based on the idea of traversing the
+                expression calculation tree obtained as a result of grammatical analysis of the expression,
+                or the mechanism for computing the matrix equation of the qualitative system state, performed
+                as first multiplying the System State Vector by the Situations Recognition Matrix, then
+                multiplying the Facts Vector by the Generation Matrix producing the Proposed Values Vector,
+                and finally applying the Application operation to it to get the System Next State Vector,
+                <em>the process of transformation of the current state of the McLN model into its next state is
+                controlled by the flow of events.</em>
+            </p>
+
+            <p>
+                For that purpose the Simulation Engine, that provides the work of the McLN model has and
+                maintains the Event Queue. Whereas, the model behavior, also provided by the Simulation Engine,
+                consists of two parts: "Model Initialization" and "Model Behavior Controller".
+            </p>
+
+            <p class="second-level-section-header">
+                Part: Model Initialization
+<!--                Organization of the McLN model's Simulation Engine-->
+            </p>
+
+            <p>
+                Part "Initialization" is executed only once. It first, identifies all situations present in
+                the model existing as the result of assigning to Property nodes their initial state defined
+                during creation of the model; and then places events in the Event Queue to inform the
+                Simulation Engine that some of the expected situations exist and, thus, the process of the
+                model's responses to the situations can begin.
+            </p>
+
+            <p class="second-level-section-header">
+                Part: Model Behavior Controller
+            </p>
+
+            <p>
+                Part: Model Behavior Controller has several tasks to perform. It checks whether the Event Queue
+                contains any events and if the queue is not empty - responds to these events, during which
+                transforms the current state of Properties into their next states doing this for those properties
+                changes of which require by the events which have occurred. Then it checks if just made changes
+                of the state of the properties formed new situations and if yes checks if just arisen situations
+                have dependent on them Properties. And if they have and the states of these Properties have to
+                be changed, Controller creates for them Property State Change Events and places them in the Event
+                Queue. This package of events will be processed at the next iteration of the Controller, during
+                which the transformation of the states of the Properties, referred to in the events, will be
+                carried out and the newly updated state of the model into its next state will be performed,
+                and so on.
+            </p>
+
+            <p>
+                Thus, the main content of the Model Behavior Controller is a process consisting of: changing
+                the state of the Model Properties, recognizing the situations that have emerged as a result of
+                these changes, determining the changes in the properties corresponding to the aroused situations
+                and placing, in the Event Queue, of the Property Change Events informing the Controller about
+                the need to change state of the properties that must be processed at the next iteration of
+                unloading the event queue.
+            </p>
+
+<!--            <p class="second-level-section-header">-->
+<!--                Mechanism of Interactions of the McLM Model<br>With Outside World-->
+<!--            </p>-->
+
+
+
+            <p class="third-level-section-header-bold-line-size">
+                Mechanism of Transformations of State of the McLN Model
+            </p>
+
+<!--            <p class="second-level-section-header">-->
+<!--                Mechanism of Transformations of State of the McLN<br>Model Into Its Next State-->
+<!--            </p>-->
 
             <p>
                 Although pure mathematically, the bipartite directed graph is merely two sets of nodes
                 connected by the directed arcs, the McLN model of a qualitative dynamical system, structure
                 of which is based on the bipartite graph, in addition to the roles assigned to the elements of the
                 graph, described above, should also be capable of reproducing behavior of modeled
-                system. And that means the graph should have in its possession a collection of functions associated
+                system.
+            </p>
+
+            <p>
+                And that means the graph should have in its possession a collection of functions associated
                 with its elements. These functions have to ensure certain transformations of states
                 of Property nodes, and the motion of their states from some Property nodes to others.
                 And, thus, all that activity should be performed by the Property nodes, Condition nodes and by the both
                 types of the arcs of the graph itself. And this is achieved by endowing each element of the
-                model with the ability to perform operation of the algebra of symbol, associated with it.
+                model with the ability to perform the AoS operation, associated with it.
+            </p>
+
+            <p>
+                When describing transformation of state of McLN Model to the next state performed by the
+                part: Model Behavior Controller, it is best to consider: 1) elements of a model
+                as some kind of simple discrete devices, 2) work of the model (i.e., its behavior) as
+                the interaction of these devices, and 3) the mechanism for controlling the work of the
+                model as the process of performing functions associated with these devices.
             </p>
 
             <p>
@@ -250,36 +358,42 @@
             </p>
 
             <p>
-                Arcs directed from Properties to Conditions are recognizers of expected states of their
-                input Properties. Respectively, each this arc implements the Equivalence operation, which
-                compares the color of its input Property with the color that marks the arc.
+                Arcs directed from Properties to Conditions are comparators. Each arc implements the Equivalence
+                operation, which compares the color of its input Property with the color that marks the arc.
             </p>
 
             <p>
                 Conditions perform recognition of the fact of presence of the expected situation in the model.
-                Therefore, each input arc of the Condition implements Conjunction operation, task of which
-                is to compute conjunction of all the results of comparisons performed by its input arcs.
+                Therefore, each Condition implements the Conjunction operation, whose task is to compute the
+                conjunction of all the results of comparisons performed by its input arcs.
             </p>
 
             <p>
                 Arcs directed from Condition to Properties are generators of the proposed state of their
-                output Properties. They implement Production operations. The task of each such arc
-                is to produce proposed state represented by the color marking the arrowhead of the arc in the
-                case when state of its input Condition is the fact of the existence of the expected
-                situation. Or, alternatively, to produce proposed state represented by the color indicating
+                output Properties. They implement Production operation. The task of each such arc
+                is to produce a proposed state represented by the color marking the arrowhead of the arc in the
+                case when the state of its input Condition is the fact of the existence of the expected
+                situation. Or, alternatively, to produce a proposed state represented by the color indicating
                 that the expected situation is not recognized.
             </p>
 
             <p>
                 Properties accept results produced by arcs directed to them from all Conditions. Each
-                Property should accept state computed based on all proposed states produced by all generator
+                Property accepts state computed based on all proposed states produced by all generator
                 arcs entering it. And since the new state of Property may be not always computed, the
-                Property should implement two operations - Disjunction and Application. Disjunction
-                operation should compute final proposed value, and Application operation should either
-                change the color of the property to the color computed by the Disjunction operation, when
+                Property implements two operations - Disjunction and Application. Disjunction
+                operation computes final proposed value, and Application operation either
+                changes the color of the property to the color computed by the Disjunction operation, when
                 it is defined, or leaves the state  of the Property unchanged when the result of the
                 Disjunction operation turns out to be undefined.
             </p>
+
+<!--            <p>-->
+<!--                Thus, when it turns out that either the initial state of the model holds some combinations-->
+<!--                of states of properties characterizing the expected situations, the model begins to work.-->
+<!--                And this happens under control of a mechanism simulating the work of the model, which is-->
+<!--                called a simulating machine.-->
+<!--            </p>-->
 
 <!--            <p>-->
 <!--                Although pure mathematically, the bipartite directed graph is merely two sets of nodes connected-->
@@ -289,6 +403,52 @@
 <!--                Property nodes, and motion of their states from one Property node of the graph to another.-->
 <!--                And that should be performed by the elements of the graph itself.-->
 <!--            </p>-->
+
+            <p class="third-level-section-header-bold-line-size">
+                Mechanism of Interactions of the McLM Model With Outside World
+            </p>
+
+            <p>
+                Like any other dynamic system, a qualitative dynamical system can interact with the world
+                around it, thet is to experience the influence of the world and influence it.
+            </p>
+
+            <p>
+                Analysis of changes in state of Properties of modeled qualitative systems allows us to
+                notice two main reasons of causing their changes. These are changes caused by external
+                processes that are observed as spontaneous changes in the state of some properties
+                of the system that, like all other changes, participate in the formation of the situation.
+                And changes in the state of Properties caused by internal processes of the model, the
+                reasons for which are previously occurring changes in the state of Properties caused either
+                by the dependence of these Properties on the expected situation, i.e., as a result of
+                the process of simulating a change in the state of the model on the situation, or spontaneous
+                changes caused by external influences. In both cases, changes in state caused by the
+                dependence of the state of a Property on its own state that arose earlier, as changes
+                caused by external influences, are perceived as spontaneous.
+            </p>
+
+            <p>
+                Reproduction of spontaneous changes in the state of properties, the cause of which is not
+                known and therefore not described in the Qualitative Systems Behavior Specification,
+                is implemented in the McLN models by including in the description of those Properties
+                that may act spontaneously, lists of rules called either the Time Driven Program and
+                the State Driven Program.
+            </p>
+
+            <p>
+                Properties that have a program associated with them are depicted on the model graph in the
+                form of hexagons, where the number of ticks that must pass before it changes its current
+                state to the state described in the program is depicted using a number placed inside the
+                hexagons. This number is the countdown to the moment when the change of the state of the
+                property caused by the program to occur.
+            </p>
+
+            <p>
+                For example, all the properties located in the bottom row of Figure 1 are the ones that have
+                a Time Driven Program, and that, therefore, they are depicted in the form of hexagons. And
+                that the numbers shown inside these hexagons indicate that there are only two ticks left before
+                the pre-programmed change of the state of these properties will take place.
+            </p>
 
             <p class="section-header">
                 Example of Qualitative System Model Based<br>on McLN Modeling Formalism
@@ -311,12 +471,12 @@
             <p>
                 In this example the model is implemented as the McLN, and thus in the form of
                 a bipartite directed graph. Hence, all the properties of the modeled system
-                which are the five Philosophers and five Chopsticks, depicted in the model as
-                the big and small circles, respectively.
+                which are the five Philosophers depicted in the model as the big
+                hexagons and the five Chopsticks depicted as the big circles.
             </p>
 
             <p>
-                According to observed behavior of the modeled system real Philosophers may
+                According to the known behavior of the modeled system real Philosophers may
                 be in four different stated: Contemplating, Hungry, Waiting for Availability
                 of Chopsticks and Dining. Their behavior iterates through named four states
                 where state Dining transitions to state Contemplating and circle repeats.
@@ -326,14 +486,18 @@
                 Behavior of this model is driven by two external input events where the first one causes
                 feeling of hungriness, and the second indicates that the period of Dining is ended with
                 satisfaction and the philosopher may proceed with strolling and contemplating again.
-            </p>
-
-            <p>
-                Both of these input events are generated by the Qualitative Dynamical System Modeling &
-                Simulation Environment used for creating McLN models and simulation of their behavior.
                 These input events are provided with the help of a list of tick/action pairs, called a
                 State Driven Program. While, the program is being created and associated with a property
                 whose state can change as a result of external input-events, during constructing of the model.
+            </p>
+
+            <p>
+                Both examples, presented in Figure 1 and Figure 2 are developed in the
+                <span class="popup-link" onmouseenter="openPopup(event, gmf01)"
+                      onmouseleave= "closePopup(gmf01)">
+                        <a class="popup-link" href = "../kp-mse/mse-screenshots.html" target="_blank">
+                    <em>"Qualitative Dynamical System Modeling & Simulation Environment"</em></a></span>
+                  - the software application developed for creating McLN models and simulation of their behavior.
             </p>
 
 <!--            !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
@@ -382,6 +546,27 @@
     <div class="end-of-page-red-line-2"></div>
     <div class="space-below-footer"></div>
 
-</div> <!-- End of Main Container -->
-</body>
+    </div> <!-- End of Main Container -->
+
+    <!-- =================================================================================== -->
+    <!--  P O P   U P S -->
+    <!-- =================================================================================== -->
+
+        <!--             -->
+        <!-- p o p u p s -->
+        <!--             -->
+        <div class="popup-style" id="elementGMF01ToPopup">
+            <div style="text-align: center;">
+                <b>Page: Qualitative Dynamical Systems Modeling & Simulation Environment</b></div>
+            <p>
+                This page is a brief description of the Qualitative Dynamical Systems Modeling
+                & Simulation Environment, or QDS MSE. It is arranged as a number of screenshots of
+                the application which demonstrate its major features, backed by short explanations.
+            </p>
+            <p class="clickable-link">
+                Clicking the link opens named page in a new tab.
+            </p>
+        </div>
+
+    </body>
 </html>
