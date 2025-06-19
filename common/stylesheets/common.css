@@ -121,13 +121,22 @@ style="text-align: center;"
 
     .third-level-section-header-bold-line-size {
             text-align: left;
-            margin-top: 20pt;
+            margin-top: 15pt;
             margin-bottom: 10pt;
             font-weight: bold;
             font-size: 13pt;
             color: #444444;
-        }
-
+    }
+/*
+    .third-level-section-header-bold-line-size-aligned-left {
+        text-align: left;
+        margin-top: 10pt;
+        margin-bottom: 10pt;
+        font-weight: bold;
+        font-size: 13pt;
+        color: #444444;
+    }
+*/
     .third-level-section-header-bold-centered {
             text-align: center;
             margin-top: 20pt;

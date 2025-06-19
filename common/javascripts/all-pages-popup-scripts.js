@@ -16,6 +16,7 @@
     const popup06 = "element06ToPopup";
 
     const gmf01 = "elementGMF01ToPopup";
+    const gmf02 = "elementGMF02ToPopup";
 
     // MSE
     const mse01 = "elementMSE01ToPopup";

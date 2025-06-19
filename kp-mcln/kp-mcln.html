@@ -171,7 +171,7 @@
 <!--            Представление Модели как Элементов Структуры Графа-->
 
             <p class="section-header">
-                Structure of the McLN Model
+                McLN Model Structure
             </p>
 
             <p>
@@ -201,7 +201,7 @@
                 expected situations that cause Property nodes, dependent on occurrence of situations, to change
                 their states. Hence, states of Conditions nodes may either represent the fact that the expected
                 situation is recognized or the fact that it is not recognized. These states are represented as
-                the solid white color with symbol "+" drawn on it, or gray colors with symbol "-", respectively.
+                the solid white color with symbol "+" drawn on it, or as just the solid gray color, respectively.
             </p>
 <!--            <p>-->
 <!--                Big circles () or hexagons are the Properties. They represent properties and states of the properties of the-->
@@ -457,9 +457,16 @@
             <p>
                 Presented below example is the McLN model of popular discrete dynamical
                 system widely known as the "Dining Philosophers". States of properties of this system are
-                considered qualitative and the mechanism of behavior is based on Qualitative System Behavior
-                Specification described on the page "". The McLN view of this model is presented in the
-                figure 1.
+                considered qualitative and the mechanism of its behavior is based on the
+                Qualitative Systems Behavior Specification described on the page: "Qualitative Dynamical
+                Systems, Their Behavior, and Mathematical Modeling" in the section:
+                <span class="popup-link" onmouseenter="openPopup(event, gmf01)"
+                      onmouseleave="closePopup(gmf01)">
+                        <a class="popup-link" href = "../kp-qds/kp-qds.html#QDS.SEC.1.0" target="_blank">
+                            <em>Qualitative System Behavior Specification</em>
+                        </a>
+                    </span>.
+                The McLN view of this model is presented in the figure 2.
             </p>
 
             <img class="center" src="Illustrations/Dining-Philosophers.png" />
@@ -469,32 +476,123 @@
             </p>
 
             <p>
-                In this example the model is implemented as the McLN, and thus in the form of
-                a bipartite directed graph. Hence, all the properties of the modeled system
-                which are the five Philosophers depicted in the model as the big
-                hexagons and the five Chopsticks depicted as the big circles.
+                This, more comprehensive than the presented in Figure 1, McLN model consists of five property
+                nodes, representing Philosophers that are depicted on the outer radius of the model as
+                the big hexagons, and five property nodes, representing Chinese Chopstick, that are
+                depicted on its inner radius as the big circles. It serves for reproducing behavior of five
+                asynchronous processes causing fragmentary changes in the state of both types of the
+                system's properties.
+            </p>
+
+            <p class="third-level-section-header-bold-line-size">
+                Structure
             </p>
 
             <p>
-                According to the known behavior of the modeled system real Philosophers may
-                be in four different stated: Contemplating, Hungry, Waiting for Availability
-                of Chopsticks and Dining. Their behavior iterates through named four states
-                where state Dining transitions to state Contemplating and circle repeats.
+                According to specified behavior of the modeled system, Philosophers can take four successively
+                occurring states: “Strolling and Contemplating” (blue), “Feeling Hungry” (red), “Dining”
+                (magenta) and “Satisfied” (light green). Chopsticks may be in only two states -
+                “Available” (green) or “Busy” (yellow).
             </p>
 
             <p>
-                Behavior of this model is driven by two external input events where the first one causes
-                feeling of hungriness, and the second indicates that the period of Dining is ended with
-                satisfaction and the philosopher may proceed with strolling and contemplating again.
-                These input events are provided with the help of a list of tick/action pairs, called a
-                State Driven Program. While, the program is being created and associated with a property
-                whose state can change as a result of external input-events, during constructing of the model.
+                Transitions of Philosophers from state "Strolling and Contemplating" to state "Hungry",
+                and from state "Dining" to state "Satisfied" happen for unknown reasons, which, therefore,
+                are deemed as unexplained factors. All that is known about these transitions is only
+                that both of these changes occur spontaneously, but always require that some small
+                random time has to pass after the Philosophers acquire states causing these changes.
+                These transitions are handled by the Simulation Engine as external events generated by
+                the State Driven Program associated with each Philosopher node, which are depicted in
+                Figure 2 as hexagons.
             </p>
+
+            <p>
+                Condition for philosophers to transition from state "Hungry" to state "Dining" is the
+                situation that occurs when the philosophers are in the "Hungry" state and both Chopsticks
+                located to the left and the right of them are in the "Available" state. Occurrence of
+                this situation transfers such philosophers to state "Dining" and both Chopsticks to
+                the "Busy" state.
+            </p>
+
+            <p>
+                Condition for Philosophers to transition from state "Satisfied" to state "Strolling and
+                Contemplating" is the situation that occurs when the Philosophers have finished dining
+                and are in the "Satisfied" state. Occurrence of this situation transfers Philosophers
+                from the state: "Satisfied" to the "Strolling and Contemplating" state and both Chopsticks
+                to the "Available" state.
+            </p>
+
+            <p class="third-level-section-header-bold-line-size">
+                Behavior
+            </p>
+
+            <p>
+                In the initial state of the model, all Philosophers are walking in the garden and are,
+                thus, in the "Strolling and Contemplating" state. Therefore, simulation of behavior of
+                dining philosophers starts as their transitions from the "Strolling and Contemplating"
+                state and is performed as both driven by the external and internal events,
+            </p>
+
+            <p>
+                Transition from the state: "Strolling and Contemplating” to the state: "Feeling Hungry"
+                occurs for a reason not presented in the model and is therefore perceived as spontaneous.
+                It is implemented as an external event generated by the State Driven Program that has
+                a requirement to replace state: "Strolling and Contemplating" with the state: "Feeling
+                Hungry" after the random number of ticks.
+            </p>
+
+            <p>
+                Transition from the state of "Feeling Hungry" to the state “Dining” depends on the
+                availability of both Chopsticks and is therefore determined by the moment of occurrence
+                of the expected situation arising when both Chopsticks necessary for the beginning of
+                the meal are in state “Available”. Simultaneously available Chopsticks allow Philosophers
+                to start dining immediately. However, facing a case when either one or both Chopsticks
+                are in “Busy” state, a particular Philosopher has to wait until one or both of his
+                neighbors at the table to finish dining and release the Chopsticks they are using.
+            </p>
+
+            <p>
+                Duration of dinner, as well as the duration of the walking in the garden, also depends on
+                many factors unknown to the model; and is, therefore, also implemented as the operation
+                of the State Driven Program, which replaces state: “Dining” with the state: “Satisfied”,
+                in a random number of ticks after the dining has begun.
+            </p>
+
+            <p>
+                While in the “Satisfied” state, Philosophers release both Chopsticks to the table and,
+                thus, make them available to the other Philosophers who may be at the table to the
+                left or to the right of them, and move to the state: "Strolling and Contemplating”,
+                starting, thus, a new iteration of the strolling and dining.
+            </p>
+
+
+<!--            <p>-->
+<!--                In this example the model is implemented as the McLN, and thus in the form of-->
+<!--                a bipartite directed graph. Hence, all the properties of the modeled system-->
+<!--                which are the five Philosophers depicted in the model as the big-->
+<!--                hexagons and the five Chopsticks depicted as the big circles.-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                According to the known behavior of the modeled system real Philosophers may-->
+<!--                be in four different stated: Contemplating, Hungry, Waiting for Availability-->
+<!--                of Chopsticks and Dining. Their behavior iterates through named four states-->
+<!--                where state Dining transitions to state Contemplating and circle repeats.-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                Behavior of this model is driven by two external input events where the first one causes-->
+<!--                feeling of hungriness, and the second indicates that the period of Dining is ended with-->
+<!--                satisfaction and the philosopher may proceed with strolling and contemplating again.-->
+<!--                These input events are provided with the help of a list of tick/action pairs, called a-->
+<!--                State Driven Program. While, the program is being created and associated with a property-->
+<!--                whose state can change as a result of external input-events, during constructing of the model.-->
+<!--            </p>-->
 
             <p>
                 Both examples, presented in Figure 1 and Figure 2 are developed in the
-                <span class="popup-link" onmouseenter="openPopup(event, gmf01)"
-                      onmouseleave= "closePopup(gmf01)">
+                <span class="popup-link" onmouseenter="openPopup(event, gmf02)"
+                      onmouseleave= "closePopup(gmf02)">
                         <a class="popup-link" href = "../kp-mse/mse-screenshots.html" target="_blank">
                     <em>"Qualitative Dynamical System Modeling & Simulation Environment"</em></a></span>
                   - the software application developed for creating McLN models and simulation of their behavior.
@@ -552,10 +650,30 @@
     <!--  P O P   U P S -->
     <!-- =================================================================================== -->
 
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <div class="popup-style" id="elementGMF01ToPopup">
+            <div style="text-align: center;">
+                <b>Section: Qualitative System Behavior Specification</b>
+            </div>
+            <p>
+                This section is located on the page: "Qualitative Dynamical Systems, Their Behavior and
+                Mathematical Modeling Technique". It proposes a way of describing behavior of particular
+                qualitative dynamical system by listing rules of dependence of each state of each property
+                of the system on the state of groups of properties, occurrence of which causes
+                transition of the dependent property from its current to the next state, which is
+                deemed the "proposed state of the property", provided by the rule.
+            </p>
+            <p class="clickable-link">
+                Clicking the link opens named section in a new tab.
+            </p>
+        </div>
+
         <!--             -->
         <!-- p o p u p s -->
         <!--             -->
-        <div class="popup-style" id="elementGMF01ToPopup">
+        <div class="popup-style" id="elementGMF02ToPopup">
             <div style="text-align: center;">
                 <b>Page: Qualitative Dynamical Systems Modeling & Simulation Environment</b></div>
             <p>
