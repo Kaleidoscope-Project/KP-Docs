@@ -174,41 +174,41 @@
     <div class="text-container">
 
         <div class="page-header">
-            Extended Disjunctive Normal Form<br>Expression Calculator
+            AoS Based Extended Disjunctive Normal<br>Form Expression Calculator
         </div>
 
         <center>
             <div style="margin-top: 33px; margin-bottom: 0pt; text-align: justify;"> <!-- Content holder -->
 
-                Algebra of Symbols (AoS), and AoS Extended Disjunctive Normal Form (XDNF) expression
-                calculator are parts of open source Kaleidoscope Project.
+                Algebra of Symbols (AoS), and AoS based Extended Disjunctive Normal Form (XDNF) expression
+                calculator are parts of the Kaleidoscope Project.
+
                 <p>
-                    The AoS is a mathematical means intended to describe existing among qualitative system
-                    characteristics causal dependencies in the form of variable state equations.
-                    The dependent variable is presented on the left side
-                    of the equation, while determining its value, AoS expression is placed
+                    The AoS is the algebraic system used as the mathematical means intended to describe
+                    causal dependencies, existing among characteristics of a qualitative system, in the
+                    form of the XDNF state equation of the variables. In this equation, the dependent variable
+                    is located on its left side, while the XDNF expression, computing its value, is placed
                     on the equation's right side.
                 </p>
+
                 <p>
-                    Presented on this page AoS
-                    Expression Calculator provides several illustrative AoS Expression examples. The AoS Expressions
-                    can be selected from the dropdown list of the Expression Selector, and shown in the Expression View
-                    field below.
-                    Selected expression is evaluated by clicking on green "Calculate" button, located below the
-                    Expression View field.
-                    The result of evaluation is presented in the field: "Calculation result".
+                    Presented on this page, XDNF Expression Calculator provides several illustrative examples of
+                    the XDNF equations. An XDNF equation can be selected from the dropdown list of the
+                    Equation Selector, and shown in the Equation View field below. The selected equation is evaluated
+                    by clicking on the green "Compute" button, located below the Equation View field.
+                    The result of the evaluation is presented in the field: "Computation result".
                 </p>
             </div>
             <!--<br>-->
             <div>
-                Expression Selector. Select predefined AoS expression to be calculated<br>
+                Equation Selector. Select predefined XDNF equation to be computed<br>
                 <select class="dropdown" id="dropdown" onchange="dropDownSelectionHandler(this)"
                         style=" font-weight: plain; font-size: 10pt; text-align-last:center;"
                         onfocus="dropdownFocusHandler(event)"
                         onfocusout="dropdownFocusOutHandler(event)">
 
                     <option class="dropdown-option" value="exp00">
-                        <<< Expressions are selected by clicking on highlighted lines >>>
+                        <<< Equation is selected by clicking on highlighted lines >>>
                     </option>
 
 <!--                    <option class="dropdown-option" value="exp00">-->
@@ -262,7 +262,7 @@
                 </select>
             </div>
 
-            <div style="margin-top: 20pt; margin-bottom: 8pt;">The expression variables are initialized as follows:
+            <div style="margin-top: 20pt; margin-bottom: 8pt;">Selected expression's variables are initialized as follows:
                 <div class="variables" id="variables" style=" font-weight: plain; font-size: 11pt;
             height:27px; line-height:27px; table-cell; vertical-align: middle;">
                     <!--abc = "L"; &nbsp;&nbsp;xyz = "D"; &nbsp;&nbsp;lmn = "T";-->
@@ -271,7 +271,7 @@
 
 
             <div style="margin-top: 5pt; margin-bottom: 5pt;">
-                Expression View. Click "Calculate" button to obtain result.<br>
+                Equation View. Click the "Compute" button to obtain the result.<br>
                 <!--Optionally modify selected or type in your own expression. Click Calculate button.<br>-->
                 <div class="input-field" id="input" type="text" contenteditable="false" spellcheck="false"
                      name="expression"
@@ -306,7 +306,7 @@
             <br><br>
 
 
-            <div style="margin-top: 5pt; margin-bottom: 5pt; ">Calculated result:
+            <div style="margin-top: 5pt; margin-bottom: 5pt; ">Computed result:
                 <div class="result" id="result"
                      style="font-weight: plain; font-size: 11pt; height: 33px; line-height:29px;"></div>
             </div>
@@ -314,7 +314,7 @@
             <p>
             <div class="header">
                 <div style="font-size:18px; font-weight: bold;">
-                    AoS Expression and Calculator Explanation
+                    XDNF Expression and Calculator Explanation
                 </div>
             </div>
             </p>
@@ -323,16 +323,17 @@
 
                 <p>
                     <strong>Representation&nbsp;conventions:</strong>
-                    All variables are represented as one-to-three letters and digits long, lower case strings.&nbsp;
+                    All variables are represented as one-to-three lower case letters and digits long.&nbsp;
                     All constants are represented as one upper case letter. It is assumed all variable
-                    values and constants are taken from AoS carrier set of all upper case letters:
-                    <b>A</b>&nbsp;=&nbsp;{A,&nbsp;B,&nbsp;C,&nbsp;...,&nbsp;Z}.
+                    values and constants are taken from AoS domain set <b>D</b>, defined as:
+                    <b>D</b>&nbsp;=&nbsp;{A,&nbsp;B,&nbsp;C,&nbsp;...,&nbsp;Z}.
 
                 </p>
 
                 <p>
                     <strong>Expression operators:</strong>
-                    There is regular Assignment operator and five AoS operators in the expression.<br>
+                    There are regular Assignment operator and five operators of AoS algebraic operations
+                    in the equation.<br>
                 </p>
                 <div style=" padding-left: 10pt;">
                     Character &nbsp;"=" &nbsp;is the operator of regular Assignment operation.<br>
@@ -345,14 +346,14 @@
 
                 <p>
                     <strong>Operator&nbsp;precedence:</strong>
-                    The order of calculation is defined by the operator priorities, where the Equals (?) operator
+                    The order of computation is defined by the operator priorities, where the Equals (?) operator
                     has the highest priority, and therefore is executed first. Then operators: Conjunction (&),
                     Production (*), Disjunction (|), Application (&lt;), and Assignment (=) are executed.
                 </p>
 
                 <p>
                     <strong>Parentheses:</strong>
-                    All parentheses in the examples are optional and are merely used for grouping
+                    All parentheses in the examples are optional and are used merely for grouping
                     parts of the expression to improve visual perception. They may embrace:
                     Equals operator group(s), conjunctive expression, production rule group(s), and the entire
                     disjunctive form. Any expression may not have any parentheses at all.
@@ -370,68 +371,100 @@
                     that create contradictory requirement implying dependent on them
                     property to be simultaneously in different states.
 
-                    Following the awareness of this nature, calculated AoS expression
-                    is defined as a superposition of subexpressions where the top
-                    level view of the expression is:
+                    Following the awareness of this nature, computed XDNF expression
+                    is defined as a composition of subexpressions where the top
+                    level view of the expression is written as:
 
                 <p style=" padding-left: 150pt;">
                     y = y < <b>f</b>&nbsp;(x1, x2, ..., xn);
                 </p>
 
-                In the expression, the change of the dependant variable <b>y</b>  may only be caused with some,
-                but not all, possible combinations of arguments, that the function can potentially
-                be called with. The function, therefore in general case, is a partially defined function
-                and either is supposed to be always called with such combinations of  arguments on
-                which it is sertainly  defined, or to be capable to provide indication whether returned
-                from the function result is the dependant variable new vadid state, or new state could
-                not be prodused on the given combinations of arguments.  Implemented AoS expression
-                calculator utilizes latter  approah by accomplishing the evaluation in three steps
-                detailed below.<br/><br/>
+                <p>
+                    In the expression, the change of the dependent variable <b>y</b> may only be caused by some,
+                    but not all, possible combinations of arguments, that the function can potentially be
+                    called with. The function, therefore, in general case, is a partially defined and
+                    either is supposed to be always called with such combinations of arguments on which it
+                    certainly depends, or to be capable to provide indication that either the result,
+                    returned from the function, is the new valid state of the dependant variable, or that
+                    new state was not produced for the given combination of arguments. Presented XDNF
+                    expression calculator utilizes the latter approach by accomplishing computation of the
+                    expression in three steps detailed below.
+                </p>
 
-                <b>Step 1</b>.
-                On this step partially defined  function <b>f</b> is called, with all the argument variables initialized
-                and tries to calculate dependent variable suggested state. If it appears that on the current
-                combination of arguments the function is defined,  it produces a meaningful result -
-                new symbol from set <b>A</b>, provided as a constant specified in one of the function's subexpressions.
-                If, from the other hand,  it appears that on the current combination of arguments the function
-                is NOT defined, the function returns distinguished symbol indicating that no meaningful
-                results can be produced. Handling emerged in the case of undefined dependent variable suggested state
-                uncertainty is addressed by the Application operation, that is being invoked on the Step 2.
-                <br/><br/>
+                <p>
+                    <b>Step 1</b>.
+                    On this step the partially defined function <b>f</b> is called, with all the argument variables
+                    initialized and tries to calculate dependent variable suggested state. If it appears
+                    that the function result for the current combination of arguments is defined,  then it
+                    produces  result corresponding to this combination as the new meaningful value represented
+                    as a symbol that belongs to subset <b>D</b> of the carrier set <b>S</b> of the model.
+                    If, on the other hand, it turns out that for the current combination of arguments of
+                    the function its result is NOT defined, the function returns an auxiliary symbol, belonging
+                    to subset <b>X</b> of the carrier set <b>S</b>. This symbol indicates that meaningful
+                    results can not be produced. Handling emerged in the case of undefined dependent variable
+                    suggested state uncertainty is addressed by the Application operation, that is being
+                    invoked on the Step 2.
+                    <!--                    On this step partially defined  function <b>f</b> is called, with all the argument variables initialized-->
+<!--                    and tries to calculate dependent variable suggested state. If it appears that on the current-->
+<!--                    combination of arguments the function is defined,  it produces a meaningful result - -->
+<!--                    new symbol from set <b>A</b>, provided as a constant specified in one of the function's subexpressions.-->
+<!--                    If, from the other hand,  it appears that on the current combination of arguments the function-->
+<!--                    is NOT defined, the function returns distinguished symbol indicating that no meaningful-->
+<!--                    results can be produced. Handling emerged in the case of undefined dependent variable suggested state-->
+<!--                    uncertainty is addressed by the Application operation, that is being invoked on the Step 2.-->
+                </p>
 
-                <b>Step 2</b>.
-                The AoS Application operation is invoked. Operation takes dependent variable current
-                value <b>y</b>, as its first argument, and obtained from the function <b>f</b> result, as its second argument.
-                Upon the execution, operation yield depends on the value of its second argument.
-                In fact, the operation:<br/><br/>
+                <p>
+                    <b>Step 2</b>.
+                    When the AoS Application operation is invoked, it takes the result, computed by the function
+                    <b>f</b>, as its one operand, and the current value of the dependent variable <b>y</b>, as
+                    its another operand. And it yields its result depending on the value of
+                    operand computed by the function <b>f</b>. In fact, the Application operation:
+<!--                    The AoS Application operation is invoked. Operation takes dependent variable current-->
+<!--                    value <b>y</b>, as its first argument, and obtained from the function <b>f</b> result, as its second argument.-->
+<!--                    Upon the execution, operation yield depends on the value of its second argument.-->
+<!--                    In fact, the operation:-->
+                </p>
 
-                (a) returns obtained from the function <b>f</b> result if the result is
-                symbol representing dependent variable suggested state, or<br/><br/>
+                <p>
+                    (a) yields result obtained from  the function <b>f</b>, when it is valid proposed value,
+                    i.e., is a symbol taken from set <b>D</b>, or
+<!--                    (a) returns obtained from the function <b>f</b> result if the result is-->
+<!--                    symbol representing dependent variable suggested state, or-->
+                </p>
 
-                (b) returns, provided as the call first argument, dependent variable current value if obtained
-                from the function <b>f</b> result appeared to be not defined. This makes the dependent variable
-                to be assigned its current state - state it is  already in. The subsequent assignment to the
-                dependent variable its current state, in fact, means no change of the variable state.
+                <p>
+                    (b) yields as the result the current value of the variable being computed, if the result
+                    obtained from the function <b>f</b> appears not defined. Providing as the next value of
+                    the dependent variable of the equation value, that it is already in, leaves the current
+                    value of this variable effectively unchanged.
+                    <!--                    (b) returns, provided as the call first argument, dependent variable current value if obtained-->
+<!--                    from the function <b>f</b> result appeared to be not defined. This makes the dependent variable-->
+<!--                    to be assigned its current state - state it is  already in. The subsequent assignment to the-->
+<!--                    dependent variable its current state, in fact, means no change of the variable state.-->
+                </p>
 
-                <br/><br/>
-                The execution of the Application operation completes the expression calculation and
-                the return of Application operation is considered to be the value of the assignment
-                expression's right side.
+                <div class="single-line-frame">
+                    Execution of the Application operation completes computation of the expression
+                    and its return is considered  the value that is assigned to the variable located on the
+                    equation's left side.
+                </div>
 
-                <br/><br/>
-                <b>Step 3</b>.
-                This last calculation step is the Assignment operation. The operation modifies dependent variable <b>y</b>
-                initial value by replacing it with just calculated AoS expression result and thus
-                completes the Calculator run.
-                <br/>
-                <br/>
+                <p>
+                    <em>A note</em>. The last (third) example, selectable from the dropdown of the Equation
+                    Selector, represents a case where the left-hand-side variable <b>y</b> of the equation is
+                    also the right-hand-side XDNF expression's argument. This makes the just computed variable
+                    <b>y</b> becomes the Expression's updated argument, on its next computation, letting you
+                    click on the "Compute" button again to run the computation of this expression again; but
+                    this time with the new argument. The example, thus, can be run repeatedly, allowing it,
+                    thus, to iterate the variable <b>y</b> through its several values.
 
-                <em>A note</em>.
-                The last (third) selectable from the Expression Selector example, represents a case where
-                the left-hand-side variable <b>y</b> is also the right-hand-side AoS expression's argument.
-                Thus, ones calculated variable <b>y</b> becomes the Expression's updated argument, letting you
-                click on the "Calculate" button again to run the expression again. The example can be calculated
-                repeatedly, allowing  to iterate the  variable through several  values, in loop.
+                    <!--                    The last (third) selectable from the Expression Selector example, represents a case where-->
+<!--                    the left-hand-side variable <b>y</b> is also the right-hand-side AoS expression's argument.-->
+<!--                    Thus, ones calculated variable <b>y</b> becomes the Expression's updated argument, letting you-->
+<!--                    click on the "Calculate" button again to run the expression again. The example can be calculated-->
+<!--                    repeatedly, allowing  to iterate the  variable through several  values, in loop.-->
+                </p>
 
             </div>
 

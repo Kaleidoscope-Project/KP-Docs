@@ -181,14 +181,13 @@ Application
                     at the next moment in time, that can be denoted as t&nbsp;=&nbsp;1. Then the state at the time
                     t&nbsp;=&nbsp;1 should be transformed into the next state observed at the next moment
                     t&nbsp;=&nbsp;2. And then the process should continue as a systematic repetition of steps of
-                    transformations at the moments t&nbsp;=&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5,&nbsp;etc., as
-                    ong as this makes practical sense.
+                    transformations at the moments t&nbsp;=&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5,&nbsp;etc., as long as this makes practical sense.
                 </p>
 
                 <p>
                     Suggested description creates understanding of role of models in the technique of
                     simulation modeling of behavior of qualitative systems. But it says nothing about
-                    how the models of the systems of these kind should be defined and how they should
+                    how the models of the systems of this kind should be defined and how they should
                     perform transformations of current states of the models into their next states.
                     Meanwhile, qualitative dynamical systems are the instances of the class of dynamical
                     systems whose changes of states are determined by the dependence relations of states
@@ -218,8 +217,8 @@ Application
                 </p>
 
                 <p>
-                    Presented, on this pge, modeling technique has been developed as a complex of modeling
-                    solutions enabling creation qualitative system models in the form of system of
+                    Presented on this page, modeling technique has been developed as a complex of modeling
+                    solutions enabling creation of qualitative system models in the form of a system of
                     algebraic equations. Those solutions are based on the general principles of mathematical
                     modeling of dynamical systems, mentioned above, on the one hand; but also reflect
                     discrete nature of qualitative properties and the character of behavior of qualitative
@@ -235,7 +234,7 @@ Application
                 <p>
                     Following sections describe all modeling solutions, constituting the Modeling Technique, as
                     well as examples illustrating application of the solutions for writing
-                    state equations of the variables in the form of algebraic equation.
+                    state equations of the variables in the form of algebraic equations.
                 </p>
 
 <!--                Begin. Following paragraphs are commented out as they were rewritten on 2025.06.06
@@ -332,7 +331,7 @@ Application
                     elements of which are used to denote magnitude of modeled properties.
                     On the other hand, technique of modeling either logical or discrete systems,
                     propositions of which may take only two states, use sets consisting of only
-                    two elements, such as "yes" and "no", or "1" and "0", depending on
+                    two elements, such as "yes" and "no", or "1" and "0", depending on the
                     adopted interpretation.
                 </p>
 
@@ -343,15 +342,15 @@ Application
                     qualitative states at different times. And, thus, the elements
                     of the set which should be used as values of variables, representing qualitative states of
                     properties, will serve as unique markers of different qualities of the properties.
-                    Respectively, the markers are not supposed to have any associated with
-                    them connotations and interpretations. And, hence, the only relation that can be defined on
+                    Respectively, the markers are not supposed to have any associated connotations and
+                    interpretations. And, hence, the only relation that can be defined on
                     such a set should be the equivalence relation of each element of the set to itself, and its
                     non-equivalence relation with all other elements of the set.
                 </p>
 
                 <p>
                     Such a set can certainly be a set of signs. These signs can be
-                    either the letters of alphabet of a language, used for description of the model in the
+                    either the letters of the alphabet of a language, used for description of the model in the
                     form of text, or the codes of different colors, used
                     when the model and the states of its variables are depicted graphically.
                 </p>
@@ -363,9 +362,9 @@ Application
                 <div class="definition-border">
                     <div class="definition-inner-border" style="padding: 0px 15px 0px 15px;">
                         <p>
-                            Mathematical Set of the models of qualitative systems is the collection
+                            The Mathematical Set of the models of qualitative systems is the collection
                             of uninterpreted uppercase letters of Latin alphabet, and, thus, is defined as:
-                            <b>D</b> = {A, B, C, ..., Z}. Being a collection elements which are used
+                            <b>D</b> = {A, B, C, ..., Z}. Being a collection of elements which are used
                             for representing values of arguments of function and values of variables computed
                             by the functions, set <b>D</b> serves in the models as the domain and
                             the range of the state functions of variables of the models.
@@ -422,11 +421,11 @@ Application
 
                 <p>
                     Described in this section Qualitative Model Behavior Specification (QMBSpec)
-                    follows structure of the QSBSpec, in the sense that it is also defined as a list of the
+                    follows the structure of the QSBSpec, in the sense that it is also defined as a list of the
                     sub-specifications. However, in this case, those
                     sub-specifications are not specs of dependence of individual
                     properties, but the ones of dependence of individual variables. Meanwhile, unlike the QSBSpec (each element of which
-                    describes single Correspondence of proposed state of property to expected
+                    describes a single Correspondence of proposed state of property to expected
                     situation) -  each element of the QMBSpec is defined as the pair: [name of the
                     variable / list of all Correspondences]. In this structure the Correspondences determine
                     dependence of all states of the variable of the pair on all expected situations.
@@ -656,7 +655,7 @@ Application
 <!--            // Added on 2025.05.26-->
                 <p>
                     However, when creating mathematical models of qualitative systems, whose functions should be
-                    defined as algebraic expressions, we have to deal with such kind of computation, dataflow
+                    defined as algebraic expressions, we have to deal with such a kind of computation, dataflow
                     in which, so to speak, is laminar. And, thus, it can develop only in one direction - from
                     the values of independent elements of the dependence relation of the variable, i.e.,
                     from the arguments of the function (leaves of the computation tree) to the dependent
@@ -950,8 +949,8 @@ Application
                     computation of the expression are listed in Table 1.
                 </p>
 
-                <DIV style="align: center; width: 380pt; text-align: right;">Table 1</DIV>
-                <DIV><table style="width:360pt">
+                <DIV style="align: center; width: 390pt; text-align: right;">Table 1</DIV>
+                <DIV><table style="width:380pt">
                     <tr>
                         <th style="width:25%">Name</th>
                         <th style="width:10%">Sign</th>
@@ -961,13 +960,13 @@ Application
                         <td>Equivalence</td>
                         <td>?</td>
                         <td style="text-align: center; font-size:10pt;">
-                            Compares operands; yields "!" when operands are equal, or "~" when they are not.</td>
+                            Compares operands; yields "!" when operands are equal, or "$" when they are not.</td>
                     </tr>
                     <tr >
                         <td>Conjunction</td>
                         <td>&</td>
                         <td style="text-align: center; font-size:10pt;">
-                            Works as a boolean AND operation for symbols "!" and "~". It is used to compute n-ary Conjunction.</td>
+                            Works as a boolean AND operation for symbols "!" and "$". It is used to compute n-ary Conjunction.</td>
                     </tr>
                     <tr >
                         <td>Production</td>
@@ -985,7 +984,8 @@ Application
                         <td>Application</td>
                         <td><</td>
                         <td style="text-align: center; font-size:10pt;">
-                            Checks if final value is element of set <b>D</b>, and returns it; otherwise returns current value of the variable.</td>
+                            Checks if the final value is an element of set <b>D</b>, and returns it; otherwise
+                            returns the current value of the variable.</td>
                     </tr>
                 </table></DIV>
 
@@ -1130,7 +1130,7 @@ Application
                 </p>
 
                 <p>
-                    The arguments of this expression are variables representing current state of
+                    The arguments of this expression are variables representing the current state of
                     a model and constants taken from the model variable dependency specification.
                     They are passed to the function as: 1) a list <b>gv</b>, elements of which are groups of
                     variable some concrete combinations of values of which can characterize situations
@@ -1159,7 +1159,7 @@ Application
                     performs by-element comparison of the variables of the group of array <b>gv</b>
                     with their expected values represented by the constants in the groups of array <b>ev</b>.
                     And the Conjunction operation is used to confirm that all results of comparison of
-                    all elements of both groups of both array are compared and, thus, the situation can
+                    all elements of both groups of both arrays are compared and, thus, the situation can
                     be deemed recognized.
                 </p>
 
@@ -1171,7 +1171,7 @@ Application
                     undefined, uses the value of the last spare argument of the function - <b>sv</b>, containing
                      current value of the computed variable, instead of the undefined result of
                     computation. And, as a consequence of this replacement, the computed variable of the
-                    equation receives the same value that it is alredy holds again and, thus, effectively
+                    equation receives the same value that is already holds again and, thus, effectively
                     remains unchanged.
                 </p>
 
@@ -1242,11 +1242,11 @@ Application
                 </p>
 
                 <p>
-                    This section presents process of creating model of a qualitative dynamical system
-                    as a sequence of steps: creating description of behavior of a modeled
-                    system in the form of QMBSpec, creating model of qualitative system based on
-                    QMBSpec. Then it demonstrates, process of using created state function of the
-                    variable on the example of four experiments of computation of value of the state
+                    This section presents the process of creating a model of a qualitative dynamical system
+                    as a sequence of steps: creating a description of behavior of a modeled
+                    system in the form of QMBSpec, creating a model of a qualitative system based on
+                    QMBSpec. Then it demonstrates, process of using the created state function of the
+                    variable on the example of four experiments of computation of the value of the state
                     variable of the model for different initial states of the variable and arguments
                     of the function computing different states of the variable for different arguments.
                 </p>
@@ -1333,7 +1333,7 @@ Application
                     but variables: x1, x2 and x3 with different values in each example.Second line is the
                     initial state of the equation. Lines three through six present results of execution of
                     operations: Equivalence, Conjunction, Production and Disjunction. And finally, the
-                    seventh, and the last,  line presents result of execution of Application operation, which
+                    seventh, and the last,  line presents the result of execution of Application operation, which
                     is the final proposed value of the variable x0 computed by the expression.
                 </p>
 
@@ -1402,11 +1402,11 @@ Application
                 </p>
 
                 <p>
-                    This figure provides detailed description of the steps of computation of the expression.
+                    This figure provides a detailed description of the steps of computation of the expression.
                     It illustrates case when the arguments of the expression are initialized as: x0 = G;
                     x1 = L; x2 = M; x3 = Q. And, thus, the situation (x1) is appeared not present and not
                     recognized, whereas the situation (x2, x3) is present and recognized. Therefore, the
-                    only proposed value "H" produced by Production operation, as the correspondence
+                    only proposed value "H" produced by the Production operation, as the correspondence
                     to the situation (x2, x3) is the one that can be chosen by the Disjunction operations
                     as the final proposed value and then accepted by the Application operation. So, that
                     value "H" becomes the value of the variable x0.
@@ -1621,7 +1621,7 @@ Application
                     as the consequence of that, the produced proposed values "P" and "H" create uncertainty in
                     choosing the final proposed value of variable x0. Therefore, Disjunction operation marks the final
                     proposed values by symbol "#", indicating, thus, that it is not determined. And. in the end,
-                    Application operation leave the current value "G" of the variable
+                    Application operation leaves the current value "G" of the variable
                     x0 unchanged.
                 </p>
 
@@ -1631,7 +1631,7 @@ Application
                 </p>
 
                 <p>
-                    This figure illustrates case opposite to the case 2a. Here, the arguments of the expression
+                    This figure illustrates the case opposite to the case 2a. Here, the arguments of the expression
                     are initialized as  x0 = G; x1 = E; x2 = U; x3 = Q; and this leads to the fact that the situation
                     (x1) is recognized, but the situation (x2, x3) is not. Hence, the only proposed values "P",
                     produced by the Production operation, can be chosen by the Disjunction operation as the
@@ -1644,10 +1644,10 @@ Application
                 </p>
 
                 <p>
-                    This figure illustrates case similar to the case 2b. Here the arguments are initialized as
+                    This figure illustrates a case similar to the case 2b. Here the arguments are initialized as
                     x0 = G; x1 = R; x2 = M; x3 = Z. And this makes that none of the expected situations are
                     present in the arguments and, hence, none of them are recognized. So, both proposed values
-                    of the variable, produced by the Production operation, are represented by auxiliary symbol
+                    of the variable, produced by the Production operation, are represented by the auxiliary symbol
                     "$". And therefore, similar to the case 2b, the Application operation leaves the value of
                     the value of the variable x0 in its current state "G".
                 </p>
