@@ -188,7 +188,7 @@
     //  ======================================================================
 
     function optionSelectionHandler(sel) {
-        console.log("argument \""+argument+"\"");
+//        console.log("argument \""+argument+"\"");
 //        if (sel.value === "exp00") {
 //            return;
 //        }

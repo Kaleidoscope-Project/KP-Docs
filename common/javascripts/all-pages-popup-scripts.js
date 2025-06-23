@@ -18,6 +18,10 @@
     const gmf01 = "elementGMF01ToPopup";
     const gmf02 = "elementGMF02ToPopup";
 
+    // Downloads
+    const dwl01 = "elementDWL01ToPopup";
+    const dwl02 = "elementDWL02ToPopup";
+
     // MSE
     const mse01 = "elementMSE01ToPopup";
 

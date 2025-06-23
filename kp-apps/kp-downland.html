@@ -26,10 +26,12 @@
 
     <!-- style sheets   -->
     <link rel="stylesheet" href="../common/stylesheets/common.css">
+    <link rel="stylesheet" href="../common/stylesheets/all-pages-popups.css">
 
     <!--/*   S c r i p t s   */-->
     <script type="text/javascript" src="../common/javascripts/common-javascripts.js"></script>
     <script type="text/javascript" src="../common/javascripts/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../common/javascripts/all-pages-popup-scripts.js"></script>
 
     <!--/*   S t y l e    S h e e t s   */-->
     <style >
@@ -83,7 +85,7 @@
 
     <!--    H e a d e r  font: 14px Ariel, Helvetica; -->
 
-    <div class="text-container">
+        <div class="text-container">
 
         <div class="page-header">
             Download Kaleidoscope Project Applications
@@ -93,9 +95,19 @@
 
             <p>
                 As it was mentioned in other documents, Kaleidoscope project has two
-                Java desktop applications: "The Qualitative Dynamical Systems Modeling & Simulation Environment",
-                or QDS MSE, and "The Space Exploration Mission // Agent-Robot Behavior Simulator", or SEM ABS.
-                These applications were created for supporting development of the McLN models.
+                Java desktop applications:
+                <span class="popup-link" onmouseenter="openPopup(event, dwl01)" onmouseleave= "closePopup(dwl01)">
+                        <a class="popup-link" href = "../kp-mse/mse-screenshots.html" target="_blank">
+                            <em>"The Qualitative Dynamical Systems Modeling & Simulation Environment"</em>,
+                        </a>
+                </span>
+                or QDS MSE, and
+                <span class="popup-link" onmouseenter="openPopup(event, dwl02)" onmouseleave= "closePopup(dwl02)">
+                        <a class="popup-link" href = "../kp-sem-views/sem-screenshots.html" target="_blank">
+                            <em>"The Space Exploration Mission // Agent-Robot Behavior Simulator"</em>,
+                        </a>
+                </span>
+                or SEM ABS.
             </p>
 
             <p>
@@ -175,28 +187,67 @@
 
         <!-- =================================================================================================== -->
 
-        </div> <!-- end of content holder  -->
-    </div> <!-- end of text-container -->
+            </div> <!-- end of content holder  -->
+        </div> <!-- end of text-container -->
 
-    <br/>
+        <br/>
+
+        <!-- =================================================================================== -->
+
+        <a href="../kp-sem-views/sem-screenshots.html">
+            <img src="../common/images/prev.png" alt="Previous Page"></a>
+
+        <a style="margin-left: 7pt;margin-right: 7pt;"  href="../index.html#sec.8.0">
+            <img src="../common/images/up.png" alt="Main Page"></a>
+
+        <a href="../kp-qds/kp-qds.html">
+            <img src="../common/images/next.png" alt="Next Page"></a>
+
+        <p>
+            <div class="end-of-page-red-line-1"></div>
+            <div class="end-of-page-red-line-2"></div>
+            <div class="space-below-footer"></div>
+        </p>
+
+    </div> <!-- End of Main Container -->
 
     <!-- =================================================================================== -->
+    <!--  P O P   U P S -->
+    <!-- =================================================================================== -->
 
-    <a href="../kp-sem-views/sem-screenshots.html">
-        <img src="../common/images/prev.png" alt="Previous Page"></a>
+    <!--             -->
+    <!-- p o p u p s -->
+    <!--             -->
+    <div class="popup-style" id="elementDWL01ToPopup">
+        <div style="text-align: center;">
+            <b>Page: Qualitative Dynamical Systems Modeling & Simulating Environment</b></div>
+        <p>
+            This page is a brief description of the Qualitative Dynamical Systems Modeling
+            & Simulation Environment, or QDS MSE. It is arranged as a number of screenshots of
+            the application that demonstrate its major features, backed by short explanations.
+        </p>
+        <p class="clickable-link">
+            Clicking the link opens named page in a new tab.
+        </p>
+    </div>
 
-    <a style="margin-left: 7pt;margin-right: 7pt;"  href="../index.html#sec.8.0">
-        <img src="../common/images/up.png" alt="Main Page"></a>
-
-    <a href="../kp-qds/kp-qds.html">
-        <img src="../common/images/next.png" alt="Next Page"></a>
-
-    <p>
-        <div class="end-of-page-red-line-1"></div>
-        <div class="end-of-page-red-line-2"></div>
-        <div class="space-below-footer"></div>
-    </p>
-
-</div> <!-- end of container -->
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <div class="popup-style" id="elementDWL02ToPopup">
+        <div style="text-align: center;">
+            <b>Page: Space Exploration Mission // Agent-Robot Behavior Simulator</b>
+        </div>
+        <p>
+            This page presents "Space Exploration Mission // Agent-Robot Behavior Simulator" application.
+            The purpose of this application is to imitate activities of the Orbital Space Research Facility that is
+            monitoring state and performance of the remote Agent-Robot, whose controlling unit
+            is implemented as Multicolored Logical Net (McLN). The page is created for testing if the
+            expressive power of the McLN sufficient for it to be used as a behavior controller.
+        </p>
+        <p class="clickable-link">
+            Clicking the link opens named section in a new tab.
+        </p>
+    </div>
 </body>
 </html>

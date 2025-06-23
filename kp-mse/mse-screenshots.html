@@ -16,6 +16,12 @@
 
     <!-- style sheets   -->
     <link rel="stylesheet" href="../common/stylesheets/common.css">
+    <link rel="stylesheet" href="../common/stylesheets/all-pages-popups.css">
+
+    <!-- java scripts   -->
+    <script type="text/javascript" src="../common/javascripts/common-javascripts.js"></script>
+    <script type="text/javascript" src="../common/javascripts/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../common/javascripts/all-pages-popup-scripts.js"></script>
 
     <style>
         body {
@@ -59,7 +65,12 @@
 
             <p>
                 The Environment is a full-fledged Java desktop application that utilizes McLN graphical
-                modeling formalism, described on the page: "" for design, development and
+                modeling formalism, described on the page:
+                <span class="popup-link" onmouseenter="openPopup(event, mse01)" onmouseleave= "closePopup(mse01)">
+                    <a class="popup-link" href = "../kp-mcln/kp-mcln.html" target="_blank">
+                    <em>"Multicolored Logical Net Graphical Modeling Formalism"</em>.</a>
+                </span>
+                for design, development and
                 simulation of qualitative dynamical system models. Respectively, the application can be
                 set to operate in either the Development or the Simulation mode. In both modes menu item
                 <span style="color:#780000; font-weight:bold">View&nbsp;=>&nbsp;Graph</span> or <span style="color:#780000; font-weight:bold">View&nbsp;=>&nbsp;Matrix</span> can be
@@ -287,6 +298,29 @@
 
     <div class="space-below-footer"></div>
 
-</div> <!-- End of Main Container -->
+    </div> <!-- End of Main Container -->
+
+    <!-- =================================================================================== -->
+    <!--  P O P   U P S -->
+    <!-- =================================================================================== -->
+
+    <!--             -->
+    <!-- p o p u p s -->
+    <!--             -->
+    <div class="popup-style" id="elementMSE01ToPopup">
+        <div style="text-align: center;">
+            <b>Page: Multicolored Logical Net Graphical Modeling Formalism</b></div>
+        <p>
+            The Page, titled: "Multicolored Logical Net Graphical Modeling Formalism", or McLN MF,
+            is the means enabling development of the qualitative systems simulation models in
+            the form of graphically depicted net. Elements of this net represent properties of
+            the modeled system, whereas the simulation process reproduces changes of the states
+            of the properties as changes of the colors of the depicted elements.
+        </p>
+        <p class="clickable-link">
+            Clicking the link opens named page in a new tab.
+        </p>
+    </div>
+
 </body>
 </html>
