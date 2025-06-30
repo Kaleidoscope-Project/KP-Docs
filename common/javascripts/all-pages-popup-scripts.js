@@ -28,6 +28,10 @@
     // SEM
     const sem01 = "elementSEM01ToPopup";
 
+    // VSP
+    const vsp01 = "elementVSP01ToPopup";
+    const vsp02 = "elementVSP02ToPopup";
+
     var currentPopupID = 0;
     var currentPopup = 0;
     var closingPopupID = 0;

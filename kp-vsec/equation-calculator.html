@@ -17,7 +17,12 @@
 
     <!-- style sheets   -->
     <link rel="stylesheet" href="../common/stylesheets/common.css">
+    <link rel="stylesheet" href="../common/stylesheets/all-pages-popups.css">
 
+    <!-- java scripts   -->
+    <script type="text/javascript" src="../common/javascripts/common-javascripts.js"></script>
+    <script type="text/javascript" src="../common/javascripts/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../common/javascripts/all-pages-popup-scripts.js"></script>
 
     <style>
         body {
@@ -293,6 +298,7 @@
         }
 
         /*   F o o t e r   */
+
         .end-of-page-red-line-1{
             position: relative;
             background: #FF0000;
@@ -320,10 +326,45 @@
             width: %100;
         }
 
+        /*   P o p u p s   */
+
+        .operation-name{
+            font-size:10pt;
+            font-weight: bold;
+            color:#333333;
+            text-align:left;
+            margin-bottom: 7pt;"
+        }
+
+       .row-container {
+            display: flex;
+            align-items: center;
+            font-family:family:verdana; font-size:10px;
+        }
+       .fixed-width-left-paragraph {
+            margin-top: 0px;
+            display: inline-block;
+            width: 155px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 1px 6px 0px 6px;
+            vertical-align: middle;
+        }
+
+       .fixed-width-right-paragraph {
+            margin-top: 0px;
+            display: inline-block;
+            width: 155px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 1px 0px 0px 6px;
+            vertical-align: middle;
+        }
+
     </style>
 
 </head>
-<body onload="init()" onresize="onResize()">
+<body onload="init(), removeHashTag()" onresize="onResize()">
 <div class="container">
     <img  style="height: 6px; width: 100%;" src="../common/images/two-red-lines.png"/>
 
@@ -649,7 +690,7 @@
 
                 <p>
                     The purpose of this page is not to show how big a qualitative dynamical model can be,
-                    but to demonstrate principle of transformation of the current state of the models into
+                    but to demonstrate the principle of transformation of the current state of the models into
                     their next state. Therefore, all the models in this presentation are made
                     intentionally of limited size. These models are organized in three groups.
                 </p>
@@ -661,39 +702,36 @@
 <!--                    These models are organized in three groups.-->
 <!--                </p>-->
 
-                !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 <p>
-                    <b>First group of models:</b> <em>"Full State Situations and Self Driven Models"</em> consists of
-                    two
-                    model. Each possible combination of all states of the state variables of the models of this group
+                    <b>First group of models.</b> Group <em>"Full State Situations and Self Driven Models"</em> consists of
+                    two models. Each possible combination of all states of the state variables of the models of this group
                     (presented as the State Vector of the equation) characterises a particular situation that may occur
-                    in the modeled system.
+                    in the modeled systems.
                     <br/><br/>
 
-                    <em>Model 1.1:</em> demonstrates case when each state of the model is recognized as the situation
+                    <em>Model-1.1</em> demonstrates a case when each state of the model is recognized as the situation
                     to which the model responds by transitioning to the next state, corresponding to the situation.
                     <br/><br/>
 
-                    <em>Model 1.2:</em> is a variation of Model 1.1 in which only some states of the model are
+                    <em>Model-1.2</em> is a variation of Model-1.1 in which only some states of the model are
                     recognised as situations to which the model should respond, but the others are not.
                     <br/>
                 </p>
 
                 <p>
-                    <b>Second group:</b> <em>"Partial Situations and Input Driven Models"</em> consists of one
-                    model:<br/><br/>
+                    <b>Second group.</b><em> Group "Partial Situations and Input Driven Models"</em> currently
+                    consists of only one model.<br/><br/>
 
-                    <em>Model 2.1:</em> demonstrates case where all state variables of the model are splitted into two
-                    groups
-                    that may change independently. The model behavior, thus, is constituted of two independent
+                    <em>Model-2.1</em> demonstrates a case where all state variables of the model are split into two
+                    groups that may change independently. The model behavior, thus, is constituted of two independent
                     processes. In order to present this clearly, one process is finite while the other is endless.
                 </p>
 
                 <p>
-                    <b>Third group:</b> <em>"Partial Situations and Mixed Input Driven Models"</em> consists of one
+                    <b>Third group.</b><em> Group "Partial Situations and Mixed Input Driven Models"</em> consists of one
                     model:<br/><br/>
 
-                    <em>Model 3.1:</em> demonstrates case where there are no explicitly separated processes. Instead,
+                    <em>Model-3.1</em> demonstrates a case where there are no explicitly separated processes. Instead,
                     there is only one process in which unpredictably occurring partial situations are the causes of
                     fragmentary, e.g. partial, changes in the full state of the model.
                 </p>
@@ -703,22 +741,22 @@
                 </p>
 
                 <p>
-                    Observed behavior of qualitative systems is perceived as a process of occurrence of situations
+                    Observed behavior of a qualitative system is perceived as a process of occurrence of situations
                     in the system and its reactions to these situations, expressed in the execution of actions
-                    that change state of some properties of the system. Therefore, the task of the model,
-                    reproducing the behavior of a qualitative system, is to systematically recognize the
-                    situations represented by combinations of the states of groups of properties that have
-                    arisen as a result of the previous behavior of the system and to make changes in the
-                    current state of the system corresponding to the recognized situations.
+                    that change the state of some properties of the system. Therefore, the task of the model,
+                    reproducing the behavior of a qualitative system, is to systematically recognize
+                    situations represented by combinations of states of groups of variables that have
+                    arisen as a result of the previous behavior of the model and to make changes in the
+                    current state of the model corresponding to the recognized situations.
                 </p>
 
                 <p>
                     Presented on this page, solution to modeling the behavior of qualitative systems is given
                     in the form of a vector state equation describing  the process of computation of the
                     correspondences "Situation -> Change of the State of Properties" as a composition of vector
-                    operations and matrix transformations of the current state of the system into its next state.
-                    The structure of the state equation and description of the process of its computation are in
-                    the sections to follow.
+                    operations and matrix transformations of the current state of the model into its next state.
+                    The structure of the state equation and description of the process of its computation are
+                    described in the sections to follow.
                 </p>
 
                 <p style="margin-top: 20pt; margin-bottom: 10pt; font-size: 16pt; text-align: center;">
@@ -730,7 +768,7 @@
                     invocation in the computation, i.e. from right to left.
                 </p>
 
-                <ol style="padding: 0px 0px 0px 15pt; text-align: justify;">
+                <ol style="padding: 0px 4px 0px 4pt; text-align: justify;">
                     <li>
                         <b>External Input Vector</b> has
                         <span class=vc style="background: #ECF8FF; color: #ECF8FF;">___</span> background and
@@ -741,22 +779,22 @@
                     <li style="margin-top: 9pt;">
                         <b>Current State Vector</b> has
                         <span class=vc style="background: #E8FFE8; color: #E8FFE8;">___</span> background and
-                        is the representation of the state of the modeled system at
+                        is the representation of the state of the model at
                         the moment <b>t</b>, i.e. at the time when the iteration of simulation is going to begin.
                     </li>
                     <li style="margin-top: 9pt;">
                         <b>Recognition Matrix</b> has
                         <span class=vc style="background: #FFFFE8; color: #FFFFE8;">___</span> background and
-                        is the Current State Vector transformation operator. The number of columns of
-                        this matrix corresponds to the number of elements of the Current State Vector of the system,
+                        is the Current State Vector transformation operator. The number of columns in
+                        this matrix corresponds to the number of elements of the Current State Vector of the model,
                         whereas the number of rows is determined by the number of situations that are supposed
-                        to be recognized and which, for that purpose, have to be included in the matrix.
+                        to be recognized and which, for that purpose, have to be described as the columns of the matrix.
                     </li>
                     <li style="margin-top: 9pt;">
                         <b>Recognized Situations Vector</b> has
                         <span class=vc style="background: #FFFFE8; color: #FFFFE8;">___</span> background and
                         is the result of transformation of the Current State Vector
-                        of the System. It holds symbols indicating facts of recognition of presence of expected
+                        of the model. It holds symbols indicating facts of recognition of presence of expected
                         situations in the Current State Vector of the system.
                     </li>
                     <li style="margin-top: 9pt;">
@@ -770,35 +808,35 @@
                     <li style="margin-top: 9pt;">
                         <b>Proposed State Vector</b> has
                         <span class=vc style="background: #FFFFE8; color: #FFFFE8;">___</span> background and
-                        is the result os Generation transformation. it is a
+                        is the result of Generation transformation. it is a
                         collection of changes that should be infused in the Current State Vector. As at the moment
-                        of computation of iteration some of expected situations may exist while some others might
+                        of computation of iteration some of the expected situations may exist while some others might
                         not, the Proposed State Vector may be partially defined. Some of its elements may hold
-                        symbols denoting the valid state of the properties of the system, whereas others may appear
+                        symbols denoting the valid state of the variables of the model, whereas others may appear
                         to be just the auxiliary symbols used in the process of computation indicating that expected
-                        situation was not recognised.
+                        situation was not recognised and, therefore, computed value is not defined.
                     </li>
                     <li style="margin-top: 9pt;">
                         <b>Dobbed State Vector</b> has
                         <span class=vc style="background: #E8FFE8; color: #E8FFE8;">___</span> background and is a
                         clone of the Current State Vector. It is presented here for just convenience to have
-                        one more view of Current State Vector right in the place where it and the
+                        one more view of the Current State Vector right in the place where it and the
                         Proposed State Vector are used as the arguments of the vector operation computing
-                        content of the Next State Vector of the System.
+                        content of the Next State Vector of the model.
                     </li>
                     <li style="margin-top: 9pt;">
                         <b>Next State Vector</b> has
                         <span class=vc style="background: #FFFFE8; color: #FFFFE8;">___</span> background and
-                        is the result of infusion of the Proposed State Vector into the Dobbed State Vector.
-                        This is temporary vector that is needed to present the computed result of an iteration - values
-                        of the Current State Vector at the time <b>t+i</b>, where <b>i</b> is the index of the completed iteration.
-                        Values of the elements of this vector are copied to the corresponding elements of the Current
-                        State Vector as soon as a step button is clicked and the simulation process proceeds to
-                        the initial state of the next iteration.
+                        is the result of infusion of the Proposed State Vector with the Dobbed State Vector.
+                        This is a temporary vector that is needed to present the computed result of an iteration - values
+                        of the Current State Vector at the time <b>t+i</b>, where <b>i</b> is the number of the
+                        completed iteration. Values of the elements of this vector are copied to the corresponding
+                        elements of the Current State Vector as soon as a step button is clicked and the simulation
+                        process proceeds to the initial state of the next iteration.
                     </li>
                 </ol>
 
-                <p style="margin-top: 20pt; margin-bottom: 10pt; font-size: 16pt; text-align: center;">
+                <p style="margin-top: 15pt; margin-bottom: 10pt; font-size: 16pt; text-align: center;">
                     Representation of Values of the Elements of the Parts of the Equation
                 </p>
 
@@ -806,11 +844,11 @@
                     It is assumed that all values of state variables, which in the state-space representation
                     of the model are defined in the form of the elements of the Current State Vector, are
                     qualitative and therefore, can be denoted by symbols taken from a certain set of symbols.
-                    On this page the alphabet of the Latin characters is used.
+                    On this page this set of symbols is defined as the set of uppercase characters of the Latin alphabet.
                 </p>
 
                 <p>
-                    There are two sets of symbols that are used to represent state of the model under simulation:
+                    There are two sets of symbols that are used to represent the state of the model under simulation:
                     a set of <em>domain</em> symbols, and a set of <em>auxiliary</em> symbols. The set of domain
                     symbols <b>D</b> is defined as:
                 </p>
@@ -831,228 +869,364 @@
                     Symbols of set <b>D</b> are used to denote values of elements of the model representing states of
                     the properties of the modeled system. And the symbols of set <b>X</b> are used to denote values of
                     those elements of state of the model which represent the state of the process of computation
-                    of the equation. Meaning of the symbols of the set <b>X</b> is the following:
+                    of the equation. Meaning of the symbols of the set <b>X</b> are the following:
                 </p>
 
                 <p>
-                    Symbol <b>“-”</b> is a kind of “zero” of a model and is used to represent the values of those elements
-                    of the vectors and the matrices of the equation which should be excluded from the process
-                    of computation.
+                    Symbol <b>“-”</b> is a kind of “zero” of the algebra used for computing the models and is
+                    used to represent the values of those elements of the vectors and the matrices of the
+                    equation which should be excluded from the process of computation.
                 </p>
 
                 <p>
-                    Symbol <b>“!”</b>  is used to denote one of two possible results of the procedure of recognition of
-                    a situation (see the definition of the Equivalence and Conjunction operations in the Appendix
-                    "Algebra of Symbol"). It is yielded to present a fact asserting that a particular expected
-                    value presented in a particular element of a particular row of the Recognition matrix has
-                    compared to the corresponding element of the Current State Vector, and thus the compared element
-                    of the Current State Vector is considered as the recognized element of the expected situation.
+                    Symbol <b>“!”</b>  is used to denote one of two possible results of the procedure of
+                    recognition of a situation (see a description of application of the Equivalence and the
+                    Conjunction operations described below in the section: "Computation of Matrix Equation
+                    of Model of Qualitative Dynamical Systems"). It is yielded to present
+                    the fact asserting that a particular value presented in a particular element
+                    of the Current State Vector of the model <em>has compared</em> to its expected value
+                    presented in a particular element of a particular row of the Recognition matrix
+                    and thus the compared element of the Current State Vector
+                    is considered as the recognized element of the expected situation.
                 </p>
 
                 <p>
                     Symbol <b>“$”</b> is used to denote second possible results of the recognition of a situation.
                     It is an alternative to the symbol <b>“!”</b> and serves for presenting the fact asserting that
-                    a particular expected value presented in a particular element of a particular row of the
-                    Recognition matrix was not compared to the corresponding element of the Current State
-                    Vector, and thus the entire expected situation presented in the processed row of the
-                    matrix cannot be considered as recognized.
+
+                    a particular value presented in a particular element
+                    of the Current State Vector of the model <em>was not compared</em> to its expected value
+                    presented in a particular element of a particular row of the Recognition matrix
+                    and thus the compared element of the Current State Vector
+                    cannot be considered as recognized.
                 </p>
 
                 <p>
-                    Symbol <b>“#”</b> is to denote a particular result of the Generation transformation (see the definition
-                    of the Production and Disjunction operations in the Appendix “Algebra of Symbol").
-                    It is yielded by the Disjunction operation to eliminate a conflict that occurs when two,
-                    or more, situations  are simultaneously recognized by the Recognition matrix and then
-                    transformed by the Generation matrix to different proposed values.
+                    Symbol <b>“#”</b> is to denote a particular result of the Generation transformation
+                    (see a description of application of the Production and the Disjunction operations
+                    described below in the section: "Computation of Matrix Equation of Model of Qualitative
+                    Dynamical Systems"). It is yielded by the Disjunction operation to eliminate the
+                    conflict which may occur when two, or more, situations are simultaneously recognized
+                    by the Recognition matrix and then transformed by the Generation matrix to different
+                    proposed values.
                 </p>
 
                 <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 16pt; text-align: center;">
                     Initialization of the Vectors and the Matrices
                 </p>
-
+<!--<p>-->
+<!--    !!!!!!!∈!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ∈-->
+<!--</p>-->
                 <p>
-                    In order for the equation to be computed its elements should be initialized. The initialization
-                    is conducted automatically right after the model is picked up from the Model Chooser dropdown list.
+                    In order for the equation to be computed its elements should be initialized. This
+                    initialization is conducted automatically right after the model is picked up from
+                    the Model Chooser dropdown list.
                 </p>
 
                 <p>
-                    <em>Initialization of vectors</em>. The Current State Vector is initialized with the model
-                    initial state provided by specification of the model. All other vectors are populated with
-                    the symbol <b>“-”</b> indicating that their values are not yet computed.
+                    <em>Initialization of vectors</em>. The Current State Vector is initialized with the
+                    model initial state provided by specification of the chosen model. All other vectors
+                    are populated with symbol <b>“-”</b> indicating that their elements are empty as not
+                    yet computed.
                 </p>
 
                 <p>
-                    <em>Initialization of matrices</em>. Based on the mechanism of transformation of matrix operator
-                    input vector into its output vector implemented as the procedure of systematic multiplication
-                    of input vector by each row of the matrix, principle of initialization of matrices is
-                    determined by the role of the matrix and is applied to all rows of the initialized matrix.
-                    Accordingly:
+                    <em>Initialization of matrices</em>. Following the general mechanism of application
+                    of the matrix operators carrying out transformation of their input vectors into the
+                    output ones, by means of multiplication of the input vector by each row of the matrix,
+                    initialization of both matrices is determined by their roles in the equation.
                 </p>
 
                 <p>
-                    (1) <em>Initialization of the Recognition Matrix</em>. The matrix is initialized in such a
-                    way that its every row is filled with the expected combination of states of the
-                    group of properties of the modeled system that characterizes the situation to which
-                    the system (and the model) should respond by changing state of one or more of the
-                    properties of the system.
+                    (1) Initialization of the Recognition Matrix. The task of this matrix is to transform
+                    the Current State Vector of the model into the Recognized Situations Vector. Therefore,
+                    this matrix is initialized in such a way that its every row is filled with one of the
+                    expected combinations of values (elements of set <b>D</b>), which the Current State Vector may
+                    have, The rows, thus, characterize situations facts of occurrence or absence of which
+                    should be computed as the values of the Recognized Situations Vector, and to which the
+                    model should respond by changing value of one or more of its variables.
+                </p>
+
+<!--                <p>-->
+<!--                    (1) <em>Initialization of the Recognition Matrix</em>. The matrix is initialized in such-->
+<!--                    a way that its every row is filled with one of the expected combination of states of the group of-->
+<!--                    variables of the model that characterizes the situation to which the model should respond by-->
+<!--                    changing state of one or more of its variables.-->
+<!--                </p>-->
+
+<!--                <p>-->
+<!--                    (1) <em>Initialization of the Recognition Matrix</em>. This matrix is initialized in such-->
+<!--                    a way that its every row is filled with the expected combination of states of the-->
+<!--                    group of properties of the modeled system that characterizes the situation to which-->
+<!--                    the system (and the model) should respond by changing state of one or more of the-->
+<!--                    properties of the system.-->
+<!--                </p>-->
+
+                <p>
+                    (2) Initialization of the Generation Matrix. The task of this matrix is to transform
+                    the Recognized Situations Vector into the Proposed States Vector. Accordingly, each
+                    row of the matrix is filled with the symbols (elements of set <b>D</b>) denoting proposed
+                    values of the variable, associated with that row. All these symbols are placed at the
+                    intersections of the row with the columns that are associated with the elements of the
+                    Recognized Situations Vector indicating those situations on occurrence of which values
+                    of the  Proposed States Vector depend.
                 </p>
 
                 <p>
-                    (2) <em>Initialization of the Generation Matrix</em>. The matrix is filled with the to be
-                    generated symbols so that each of the symbols to be placed at the intersection of the
-                    row corresponding to the element of the Proposed State Vector and of the column corresponding
-                    to the situation, in case of arising of which this symbol is assigned to the element of the
-                    Proposed State Vector as the value proposed as the state of the element of the Next State
-                    Vector of the System.
+                    All elements of both matrices that are not initialized with any valid values taken from
+                    the set <b>D</b>, are filled with the symbol “-” of the set <b>X</b>, denoting that at a
+                    time of computation of the equation these elements do not represent any meaningful, for
+                    the model, value and should be ignored.
                 </p>
+
+                <p>
+                    Detailed technique of application of the matrices to the process of computation of the
+                    model state equations is described in the section: Computation of Matrix Equation of
+                    Model of Qualitative Dynamical System, located below.
+                </p>
+
+<!--                <p>-->
+<!--                    (2) <em>Initialization of the Generation Matrix</em>. This matrix is filled with the to be-->
+<!--                    generated symbols so that each of the symbols to be placed at the intersection of the-->
+<!--                    row corresponding to the element of the Proposed State Vector and of the column corresponding-->
+<!--                    to the situation, in case of arising of which this symbol is assigned to the element of the-->
+<!--                    Proposed State Vector as the value proposed as the state of the element of the Next State-->
+<!--                    Vector of the System.-->
+<!--                </p>-->
 
                 <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 16pt; text-align: center;">
-                    Highlighting the Active Vector Background and the Changes in <br/>the Status of Their Elements
+                    Highlighting Active Vector Background and<br/>Changes in Status of Their Elements
                 </p>
 
                 <p>
-                    As the simulation process is a sequence of computational steps of execution of vector or matrix
-                    transformations, there is always a vector toward which a currently executed operation is targeted.
-                    This vector is considered by the simulation process as an active one. In order to emphasize the
-                    active status of a vector,  the background of the currently active vector is highlighted by the
-                    simulation process in the pink color.
+                    As the simulation process is a sequence of computational steps of execution of vector
+                    or matrix transformations, there is always a vector toward which the currently executed
+                    operation is targeted. This vector is considered as an active one. In order to emphasize
+                    the active status of such a vector, the background of the currently active vector is
+                    highlighted in the pink color.
                 </p>
 
                 <p>
-                    When carrying out a simulation process, the Simulation Engine  presents changes in the state of
-                    the elements of the resulting vector of every executed operation in the view of the model on
-                    the page. For this purpose each element of the vector which changed its state as a result of
-                    an operation is highlighted with the color corresponding to the color of the current (i.e.
-                    the usual or the active) background of the vector.
+                    When carrying out a simulation process, the Simulation Engine  presents changes in the
+                    state of the elements of the active vector after every executed operation. For this
+                    purpose each changed state element of the vector is highlighted with the
+                    color corresponding to the color of the current, i.e., the usual or the active background
+                    of the vector.
                 </p>
 
 <!--                font-weight: bold;-->
-                <p style="margin-top: 20pt; margin-bottom: 10pt; font-size: 17pt; font-weight: plain; text-align: center;">
-                    Qualitative Systems, Their Behavior, Modeling Technique and <br>the Behavior Simulation Process
-                </p>
+<!--                <p style="margin-top: 20pt; margin-bottom: 10pt; font-size: 17pt; font-weight: plain; text-align: center;">-->
+<!--                    Qualitative Systems, Their Behavior, Modeling<br>Technique and Behavior Simulation Process-->
+<!--                </p>-->
 
-                <p>
-                    Imagine a discrete action device, the state of which is characterized by a certain collection
-                    of changing over time, discrete properties. When talking about the state or behavior of these
-                    devices, we often merely list these properties in the form of affirmative statements giving
-                    them, as they say, qualitative evaluations. So, for example, we may say: “My car is red”,
-                    “The Earth is orbiting the Sun” or "The weather today is pretty nice". Therefore, following
-                    the adopted terminology  the collections of properties depending one on another, and the
-                    devices themselves, may be naturally classified and referred to as the Qualitative Systems
-                    or the Qualitative Dynamical Systems. Characteristics of the qualitative systems behavior,
-                    their modeling technique and the behavior simulation procedure are:
-                </p>
+<!--                <p>-->
+<!--                    Imagine a discrete action device, the state of which is characterized by a certain collection-->
+<!--                    of changing over time, discrete properties. When talking about the state or behavior of these-->
+<!--                    devices, we often merely list these properties in the form of affirmative statements giving-->
+<!--                    them, as they say, qualitative evaluations. So, for example, we may say: “My car is red”,-->
+<!--                    “The Earth is orbiting the Sun” or "The weather today is pretty nice". Therefore, following-->
+<!--                    the adopted terminology  the collections of properties depending one on another, and the-->
+<!--                    devices themselves, may be naturally classified and referred to as the Qualitative Systems-->
+<!--                    or the Qualitative Dynamical Systems. Characteristics of the qualitative systems behavior,-->
+<!--                    their modeling technique and the behavior simulation procedure are:-->
+<!--                </p>-->
 
-                <p>
-                    (a) <em>The behavior of a qualitative system</em> - is a process of discrete changes in its state over time;
-                    (b) <em>The qualitative system modeling technique</em> - is the representation of these systems in the
-                    form of space-state equation and the description of a way of computing a particular change
-                    in the system by describing the procedure for computing the next state of the system as a
-                    function of its current state; and (c) <em>The behavior simulation procedure</em> - is an iterative process
-                    of reproducing the sequences of discrete changes in the state of the system, which begins from
-                    the first iteration of computation of the state equation, based on the initial state of the model,
-                    and then is being carried out through the repeated computations of the equation, in which the
-                    next state of the system, obtained at the just performed iteration, is used as its current state
-                    at the next iteration.
-                </p>
+<!--                <p>-->
+<!--                    (a) <em>The behavior of a qualitative system</em> - is a process of discrete changes in its state over time;-->
+<!--                    (b) <em>The qualitative system modeling technique</em> - is the representation of these systems in the-->
+<!--                    form of space-state equation and the description of a way of computing a particular change-->
+<!--                    in the system by describing the procedure for computing the next state of the system as a-->
+<!--                    function of its current state; and (c) <em>The behavior simulation procedure</em> - is an iterative process-->
+<!--                    of reproducing the sequences of discrete changes in the state of the system, which begins from-->
+<!--                    the first iteration of computation of the state equation, based on the initial state of the model,-->
+<!--                    and then is being carried out through the repeated computations of the equation, in which the-->
+<!--                    next state of the system, obtained at the just performed iteration, is used as its current state-->
+<!--                    at the next iteration.-->
+<!--                </p>-->
 
-                <p>
-                    Since the process of computation of the space-State equations requires different manipulations
-                    with the vectors in the symbolic space states, a number of algebraical operations with the
-                    symbols are needed for accomplishing the transformations needed. These operations defined on
-                    the set of symbols were discovered and are described in the next section below.
-                </p>
+<!--                <p>-->
+<!--                    Since the process of computation of the space-State equations requires different manipulations-->
+<!--                    with the vectors in the symbolic space states, a number of algebraical operations with the-->
+<!--                    symbols are needed for accomplishing the transformations needed. These operations defined on-->
+<!--                    the set of symbols were discovered and are described in the next section below.-->
+<!--                </p>-->
+
+<!--                <p style="margin-top: 15pt; margin-bottom: 10pt; font-size: 16pt; text-align: center;">-->
+<!--                    The Algebra of Symbols-->
+<!--                </p>-->
+
+<!--                <p>-->
+<!--                    Described in the previous sections, vector equations are the mathematical models of the-->
+<!--                    behavior of qualitative dynamical systems, and the vector operations providing the computation-->
+<!--                    of these equations are the mathematical operations on the qualitative vectors i.e. vectors that-->
+<!--                    are the elements of the space of qualitative states of qualitative dynamical systems. Therefore,-->
+<!--                    just as the operations with vectors of a numerical space that are implemented as a-->
+<!--                    composition of operations defined on a set whose elements are used to represent numerical-->
+<!--                    characteristics of the system and, thus, are the numbers, the operations on vectors of-->
+<!--                    qualitative space have to be implemented as a composition of operations defined on a set-->
+<!--                    whose elements are used for representation of qualitative states of properties;  that is,-->
+<!--                    in the given case, on the set the elements of which are the symbols.-->
+<!--                </p>-->
+
+<!--                <p>-->
+<!--                    To satisfy the requirements of the vector operations described earlier, the Algebra of Symbols-->
+<!--                    is defined on a combined set of symbols, defined as the union of a set of domain symbols <b>D</b>-->
+<!--                    and a set of auxiliary symbols <b>X</b>. This allows to implement the computation of vector-->
+<!--                    equations as homogeneous (with no branches) process in which the conditional choices affecting-->
+<!--                    the result of the computation are made inside the operations as the static part of the definition-->
+<!--                    of the operations, i.e. at the level of mapping the arguments of the operation to its result.-->
+<!--                </p>-->
+
+<!--                <p>-->
+<!--                    The feasibility of constructing such a system of operations was explored in the framework of-->
+<!--                    the project described on this page and an algebraic system providing operations necessary-->
+<!--                    for implementation of operations on vectors in the qualitative space, called Algebra of Symbols,-->
+<!--                    was defined. The Algebra defines five operations necessary for computation of the qualitative-->
+<!--                    vector state equation. They are: <em>Application</em>, <em>Equivalence</em>, <em>Conjunction</em>,-->
+<!--                    <em>Production</em> and <em>Disjunction</em>.-->
+<!--                </p>-->
+
+<!--                <p>-->
+<!--                    More details about the Algebra of Symbol can be found on the page "Algebra of Symbol:-->
+<!--                    Definition, Explanation and Application".-->
+<!--                </p>-->
 
                 <p style="margin-top: 15pt; margin-bottom: 10pt; font-size: 16pt; text-align: center;">
-                    The Algebra of Symbols
+<!--                    Computation of Matrix Equation of Model of Qualitative Dynamical System-->
+                    Computation of Matrix Equation of Model of<br>Qualitative Dynamical System
                 </p>
 
                 <p>
-                    Described in the previous sections, vector equations are the mathematical models of the
-                    behavior of qualitative dynamical systems, and the vector operations providing the computation
-                    of these equations are the mathematical operations on the qualitative vectors i.e. vectors that
-                    are the elements of the space of qualitative states of qualitative dynamical systems. Therefore,
-                    just as the operations with vectors of a numerical space that are implemented as a
-                    composition of operations defined on a set whose elements are used to represent numerical
-                    characteristics of the system and, thus, are the numbers, the operations on vectors of
-                    qualitative space have to be implemented as a composition of operations defined on a set
-                    whose elements are used for representation of qualitative states of properties;  that is,
-                    in the given case, on the set the elements of which are the symbols.
+                    The process of computation of the equation consists in performing a sequence of four
+                    vector and matrix operations that transforms the content of the Current State Vector of
+                    the model into its next state. Respectively, these operations are executed as four
+                    successive steps which are carried out from right to left. They are.
                 </p>
 
                 <p>
-                    To satisfy the requirements of the vector operations described earlier, the Algebra of Symbols
-                    is defined on a combined set of symbols, defined as the union of a set of domain symbols <b>D</b>
-                    and a set of auxiliary symbols <b>X</b>. This allows to implement the computation of vector
-                    equations as homogeneous (with no branches) process in which the conditional choices affecting
-                    the result of the computation are made inside the operations as the static part of the definition
-                    of the operations, i.e. at the level of mapping the arguments of the operation to its result.
+                    <b>Input Application Step.</b> The input application, optional step of computation of
+                    the equation, is involved in the case when the state of some properties of the modeled system
+                    can be changed by external effects. It is implemented in the model as executing the
+                    "Application" (<) operation, which "injects" the values of the External Input Vector into
+                    the Current State Vector of the model. This operation is expressed in replacing values
+                    of the elements of the Current State Vector with the values of non-empty elements of the
+                    External Input Vector. Result of this operation is  modified Current State Vector.
                 </p>
 
                 <p>
-                    The feasibility of constructing such a system of operations was explored in the framework of
-                    the project described on this page and an algebraic system providing operations necessary
-                    for implementation of operations on vectors in the qualitative space, called Algebra of Symbols,
-                    was defined. The Algebra defines five operations necessary for computation of the qualitative
-                    vector state equation. They are: <em>Application</em>, <em>Equivalence</em>, <em>Conjunction</em>,
-                    <em>Production</em> and <em>Disjunction</em>.
+                    <b>First Computation Step.</b> The task of the first computation step is the transformation
+                    of the Current State Vector of the model into the Recognized Situations Vector. It is
+                    carried out as multiplication of the Current State Vector by the Recognition Matrix, and
+                    is implemented as computation of each element of the Recognized Situations Vector by
+                    applying two
+                    <span class="popup-link" onmouseenter="openPopup(event, vsp01)"
+                          onmouseleave= "closePopup(vsp01)">
+                        <a class="popup-link" href = "../kp-aos/kp-aos.html#VSP.SEC.1.0" target="_blank">
+                    <em>"AoS operations: the Equivalence and the Conjunction"</em></a></span>.
+
+                    <br><br>
+                    First, the Equivalence operation is used to systematically perform the pairwise comparison
+                    of the elements of the row of the Recognition Matrix (corresponding to the being computed
+                    element of the Recognized Situations Vector) with the elements of the Current State Vector.
+                    The results of these comparisons can be either the symbol "!" meaning that the operands of the
+                    Equivalence operation have been compared, or the symbol "$" meaning that they have not been
+                    compared.
+                    <br><br>
+                    Second operation - Conjunction is applied to all results of the Equivalence
+                    operation. Its result can be represented by “!” symbol, indicating that all results of the
+                    Equivalence operation are represented as “!” symbol and, thus, that the situation described
+                    in the Current State Vector has been recognized, or, alternatively, as the "$" symbol which
+                    means that at least one of the results of comparison of values of the Current State Vector
+                    with its expected value described in the row of the matrix has not been compared and,
+                    therefore, the situation is deemed unrecognized.
                 </p>
 
                 <p>
-                    More details about the Algebra of Symbol can be found on the page "Algebra of Symbol:
-                    Definition, Explanation and Application".
-                </p>
+                    <b>Second Computation Step.</b> The task of the second computation step is the transformation
+                    of the Recognized Situations Vector into the Proposed State Vector. It is carried out as the
+                    multiplication of the Recognized Situations Vector by the Generation Matrix. The technique of
+                    this multiplication is implemented as computation of each element of the Proposed State Vector
+                    by applying two
+                    <span class="popup-link" onmouseenter="openPopup(event, vsp02)"
+                          onmouseleave= "closePopup(vsp02)">
+                        <a class="popup-link" href = "../kp-aos/kp-aos.html#VSP.SEC.2.0" target="_blank">
+                    <em>"AoS operations: the Production and the Disjunction"</em></a></span>.
 
-                <p style="margin-top: 15pt; margin-bottom: 10pt; font-size: 16pt; text-align: center;">
-                    Qualitative Dynamical System Equation Computation
+                    <br><br>
+                    First, the Production operation is used to systematically take pairs consisting of the
+                    element of the row of the Generation Matrix (corresponding to the being computed element
+                    of the Proposed State Vector) and the element of the Recognized Situations Vector. The
+                    result of processing each such a pair depends on the values of the elements of the pair
+                    and may be computed as one of the symbols: “-” or “$”; or as the element of the row of
+                    the matrix if it is a symbol of set <b>D</b>.
+                    <br><br>
+                    Then, the Disjunction operation is applied to all the results of the Production operation
+                    with the intention to choose out of all of them the single final proposed value that
+                    might be used as the next state of the element of the Proposed Values Vector. So, to
+                    achieve that goal, the Disjunction operation starts with assigning to the final proposed
+                    value its initial value as the symbol “$”, ignores all results of the Production operation,
+                    represented by the symbols "-" or “$”, and identifies cases when two or more proposed
+                    values appear as different symbols of the set <b>D</b>. In accordance with definition
+                    of the model occurrence of different proposed values is considered contradicting and
+                    to prevent this contradiction the Disjunction operation marks final proposed value with the
+                    symbol “#”.
+                    <br><br>
+                    Thus, in the result, it may always happen that the final proposed value holds
+                    either: a) the “$” symbol, when none of the expected situations are present in the state
+                    of the model and recognized; b) the "#" symbol, when the conflict of the proposed values
+                    is detected; and c) a symbol belonging to set <b>D</b>, when one, two or even more situations
+                    are recognized and all produced the same valid proposed value, which can be used as the
+                    value of the element of the Proposed Values Vector. Processing all these three cases is
+                    accomplished by the last third step.
                 </p>
 
                 <p>
-                    The process of computation of the equation consists in performing a sequence of five operations
-                    that transform the content of the current state vector of the  system into its next state.
-                    These operations are executed as five successive steps which are carried out from right to left.
+                    <b>Third Computation Step.</b> This computation step is the last in the process of
+                    computation of the equation. It is accomplished by the Application operation. And its
+                    task is to check if the final proposed value is undefined and replace it with the
+                    value of the corresponding element of the Current State Vector.
                 </p>
 
-                <p>
-                    The first, optional, step of computation of the equation is involved in the case when
-                    the behavior of the system is determined by external influences on it. It consists in
-                    performing the "Application" (<) operation, which "injects" the values of the vector of
-                    external influences into the vector of the current state of the system. This procedure is
-                    expressed in replacing the values of the elements of the current state vector with the
-                    values of non-empty elements of the vector of external influences. The result of the
-                    operation is the modified current state vector.
-                </p>
 
-                <p>
-                    The role of the second step is to multiply the current state vector by the Recognition matrix.
-                    This step is performed as a procedure of 1) row-by-row comparison of the values of the elements
-                    of the rows of the Recognition matrix with the values of the corresponding elements of the
-                    current state vector and 2) further, following the comparisons, the computation of the n-ary
-                    conjunction of the result of the comparisons, where "n" represents the size of the current
-                    state vector and also the number of columns of recognition matrix. The result of this
-                    transformation is the Recognized Situations Vector whose elements contain either the symbol
-                    "!" meaning that all elements of the row of the matrix associated with the element of the
-                    vector of recognized situations have been compared and thus the expected situation described
-                    in the row of the matrix is considered recognized, or, alternatively, the symbol "$" which
-                    means that at least one of the values of the current state vector has not compared with its
-                    expected value and therefore the situation is deemed unrecognized.
-                </p>
+<!--                <p>-->
+<!--                    The first, optional, step of computation of the equation is involved in the case when-->
+<!--                    the behavior of the system is determined by external influences on it. It consists in-->
+<!--                    performing the "Application" (<) operation, which "injects" the values of the vector of-->
+<!--                    external influences into the vector of the current state of the system. This procedure is-->
+<!--                    expressed in replacing the values of the elements of the current state vector with the-->
+<!--                    values of non-empty elements of the vector of external influences. The result of the-->
+<!--                    operation is the modified current state vector.-->
+<!--                </p>-->
 
-                <p>
-                    The third step of the computation, is, like the second one, the multiplication of a vector by
-                    a matrix. But now the transformation consists in multiplication of the just calculated vector
-                    of recognized situations by the Generation matrix. The purpose of this transformation is to
-                    map the facts of recognition of the situations, presented as symbols "!" in the elements of
-                    recognized situations vector into the values of the vector of the proposed next state of the
-                    system. Procedure of such state-generating transformation consists in the element-by-element
-                    computation of the values of the vector of proposed next state of the system and, correspondingly,
-                    is implemented as 1) production for each element of the recognized situations vector, values
-                    located in the row of the generation matrix corresponding to that computed element and thus
-                    finding all the values corresponding to all recognized situations, and 2) the choosing out
-                    of all the produced values the only one which is going to be used as the value of the element
-                    of the vector of proposed next state of the system.
+<!--                <p>-->
+<!--                    The role of the second step is to multiply the current state vector by the Recognition matrix.-->
+<!--                    This step is performed as a procedure of 1) row-by-row comparison of the values of the elements-->
+<!--                    of the rows of the Recognition matrix with the values of the corresponding elements of the-->
+<!--                    current state vector and 2) further, following the comparisons, the computation of the n-ary-->
+<!--                    conjunction of the result of the comparisons, where "n" represents the size of the current-->
+<!--                    state vector and also the number of columns of recognition matrix. The result of this-->
+<!--                    transformation is the Recognized Situations Vector whose elements contain either the symbol-->
+<!--                    "!" meaning that all elements of the row of the matrix associated with the element of the-->
+<!--                    vector of recognized situations have been compared and thus the expected situation described-->
+<!--                    in the row of the matrix is considered recognized, or, alternatively, the symbol "$" which-->
+<!--                    means that at least one of the values of the current state vector has not compared with its-->
+<!--                    expected value and therefore the situation is deemed unrecognized.-->
+<!--                </p>-->
 
-                </p>
+<!--                <p>-->
+<!--                    The third step of the computation, is, like the second one, the multiplication of a vector by-->
+<!--                    a matrix. But now the transformation consists in multiplication of the just calculated vector-->
+<!--                    of recognized situations by the Generation matrix. The purpose of this transformation is to-->
+<!--                    map the facts of recognition of the situations, presented as symbols "!" in the elements of-->
+<!--                    recognized situations vector into the values of the vector of the proposed next state of the-->
+<!--                    system. Procedure of such state-generating transformation consists in the element-by-element-->
+<!--                    computation of the values of the vector of proposed next state of the system and, correspondingly,-->
+<!--                    is implemented as 1) production for each element of the recognized situations vector, values-->
+<!--                    located in the row of the generation matrix corresponding to that computed element and thus-->
+<!--                    finding all the values corresponding to all recognized situations, and 2) the choosing out-->
+<!--                    of all the produced values the only one which is going to be used as the value of the element-->
+<!--                    of the vector of proposed next state of the system.-->
+<!--                </p>-->
 
 <!--                <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 16pt; text-align: center;">-->
 <!--                    Running Simulation-->
@@ -1110,11 +1284,11 @@
 <!--                </p>-->
             </div>
 
-            <div style="margin-top: 15pt; margin-bottom: 0pt; text-align: center;">
-                ---------- !! ----------
-            </div>
+<!--            <div style="margin-top: 15pt; margin-bottom: 0pt; text-align: center;">-->
+<!--                &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; !! &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+<!--            </div>-->
 
-            <div style="margin-top: 15pt; margin-bottom: 0pt; text-align: justify;">
+<!--            <div style="margin-top: 15pt; margin-bottom: 0pt; text-align: justify;">-->
 
 <!--                <p>-->
 <!--                    Proposed representation of the modeled system is based on the concept of "qualitative-->
@@ -1126,16 +1300,16 @@
 <!--                    set of symbols.-->
 <!--                </p>-->
 
-                <p>
-                    Presented on this page Qualitative Dynamical Systems Mathematical Modeling Technique is
-                    being developed as part of the Kaleidoscope project - a Research and Development initiative
-                    intended to explore the nature of the behavior of Qualitative Dynamical Systems and
-                    opportunities of studying the behavior of these systems by means of creation of
-                    mathematical models of their behavior. The project also includes creation of software,
-                    supporting proposed modeling techniques.
-                </p>
+<!--                <p>-->
+<!--                    Presented on this page Qualitative Dynamical Systems Mathematical Modeling Technique is-->
+<!--                    being developed as part of the Kaleidoscope project - a Research and Development initiative-->
+<!--                    intended to explore the nature of the behavior of Qualitative Dynamical Systems and-->
+<!--                    opportunities of studying the behavior of these systems by means of creation of-->
+<!--                    mathematical models of their behavior. The project also includes creation of software,-->
+<!--                    supporting proposed modeling techniques.-->
+<!--                </p>-->
 
-            </div>
+<!--            </div>-->
 
         </div>  <!-- End of Page Text Container -->
 
@@ -1144,19 +1318,110 @@
 
     <!-- =================================================================================== -->
 
-    <a href="../kp-xdnf/xdnf-expression-calculator.html">
-        <img src="../common/images/prev.png" alt="Previous Page"></a>
+        <a href="../kp-xdnf/xdnf-expression-calculator.html">
+            <img src="../common/images/prev.png" alt="Previous Page"></a>
 
-    <a style="margin-left: 7pt;margin-right: 7pt;"  href="../index.html#sec.5.0">
-        <img src="../common/images/up.png" alt="Main Page"></a>
+        <a style="margin-left: 7pt;margin-right: 7pt;"  href="../index.html#sec.5.0">
+            <img src="../common/images/up.png" alt="Main Page"></a>
 
-    <a href="../kp-mcln/kp-mcln.html">
-        <img src="../common/images/next.png" alt="Next Page"></a>
+        <a href="../kp-mcln/kp-mcln.html">
+            <img src="../common/images/next.png" alt="Next Page"></a>
 
+    <p>
         <div class="end-of-page-red-line-1"></div>
         <div class="end-of-page-red-line-2"></div>
         <div class="space-below-footer"></div>
+    </p>
 
-</div> <!-- End of container -->
-</body>
+    </div> <!-- End of Main Container -->
+
+    <!-- =================================================================================== -->
+    <!--  P O P   U P S  -->
+    <!-- =================================================================================== -->
+
+        <!--             -->
+        <!-- p o p u p s -->
+        <!--             -->
+        <div class="popup-style" id="elementVSP01ToPopup">
+            <div style="text-align: center;">
+                <b>Page AoS / Section: Definition and Explanation of<br>
+                    the Equivalence and the Conjunction Operations</b>
+            </div>
+
+            <div class="row-container" style="margin-top: 6px;">
+                <span class="operation-name">
+                    The Equivalence operation:
+                </span>
+                <span stype = " width: auto; height: auto;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+
+                <span class="operation-name">
+                    The Conjunction operation:
+                </span>
+            </div>
+
+            <div class="row-container">
+                <img src="images/Equivalence-9x9-Alg-1.png" stype = "display: inline-block;" width="50px" height="50px" alt="">
+                <span class = "fixed-width-left-paragraph" >
+                    The Equivalence operation is used to compare current and expected
+                    values of the elements of the vectors and matrices of the model.
+                </span>
+
+                <img src="images/Conjunction-9x9-Alg-1.png" stype = "display: inline-block;" width="50px" height="50px" alt="">
+                <span class = "fixed-width-right-paragraph"  >
+                    The Conjunction operation is used after the Equivalence
+                    operation to confirm that the expected situation is recognized.
+                </span>
+            </div>
+
+            <p class="clickable-link">
+                Clicking the link opens named page in a new tab.
+            </p>
+        </div>
+
+        <!--             -->
+        <!-- p o p u p s -->
+        <!--             -->
+        <div class="popup-style" id="elementVSP02ToPopup">
+            <div style="text-align: center;">
+                <b>Page AoS / Section: Definition and Explanation of<br>
+                    the Production and the Disjunction Operations</b>
+            </div>
+
+            <div class="row-container" style="margin-top: 6px;">
+                <span class="operation-name">
+                    The Production operation:
+                </span>
+                <span stype = " width: auto; height: auto;">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+
+                <span class="operation-name">
+                    The Disjunction operation:
+                </span>
+            </div>
+
+            <div class="row-container">
+                <img src="images/Production-9x9-Alg-1.png" stype = "display: inline-block;" width="50px" height="50px" alt="">
+                <span class = "fixed-width-left-paragraph" >
+                    The Production operation is used to produce the proposed states corresponding
+                    to the expected arisen situations in the model.
+                </span>
+
+                <img src="images/Disjunction-9x9-Alg-1.png" stype = "display: inline-block;" width="50px" height="50px" alt="">
+                <span class = "fixed-width-right-paragraph"  >
+                    The Disjunction operation is used to analyse all the produced proposed states and choose from them
+                    a single final proposed state.
+                </span>
+            </div>
+
+            <p class="clickable-link">
+                Clicking the link opens named page in a new tab.
+            </p>
+        </div>
+
+    </body>
 </html>
