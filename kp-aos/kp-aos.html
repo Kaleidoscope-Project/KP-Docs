@@ -24,11 +24,12 @@
     </style>
 
 </head>
+<!--DIFFERENCE-->
 <!--EQUIVALENCE-->
 <!--CONJUNCTION-->
 <!--PRODUCTION -->
 <!--DISJUNCTION-->
-<!--REPLACEMRNT-->
+<!--REPLACEMENT-->
 <!--APPLICATION -->
 <body onload="removeHashTag()">
 <div class="container">
@@ -56,26 +57,44 @@
         <div style="margin-top: 33px; margin-bottom: 0px; "> <!-- Content holder -->
 
             <p>
-                The Algebra of Symbols (AoS) is a common name for an algebraic structure, whose
-                operations are defined on the set of symbols. It has been constructed as part of
-                the Kaleidoscope project, and is thought up for mathematical modeling of the
-                behavior of the Qualitative Dynamical Systems (QDS)s. The algebra, thus, is a source of
-                symbols used for denoting the values of the qualitative variables representing states of
-                modeled properties of the QDSs, from the one hand, and the operations needed for computation of
-                qualitative multivalued dependence relations of the variables, on the other hand. It is, therefore,
-                used within the project for creating experimental mathematical models of QDSs of varying
-                degrees of complexity. So, the meaning of operations of the Algebra is determined by the
-                nature of the qualitative dynamical systems for modeling of which it is used.
+                The Algebra of Symbols (AoS) is a common name for a particular algebraic structure, consisting
+                of the set of symbols and a family of five operations defined on this set. It has been
+                constructed as part of the Kaleidoscope project, and is thought up for mathematical modeling of
+                behavior of the Qualitative Dynamical Systems (QDS)s. The algebra, thus, is a source of symbols
+                used for denoting the values of the variables of the models  of the QDSs, representing states
+                of properties of the modeled systems, on the one hand, and of the operations needed for computation
+                of the multivalued qualitative dependence relations of the states of certain variables on the
+                states of some other variables, that determine evolution of the state of the models over time,
+                on the other hand.
             </p>
 
             <p>
-                The Algebra of Symbols (AoS) is built on a set of symbols and is a collection of operations,
-                defined on that set. The algebra serves as instrument for developing mathematical models of
-                qualitative dynamical systems that represents qualitative properties of the modeled systems
-                as qualitative variables taking their values from the set of symbols of the algebra, on the
-                one hand, and describes behavior of the systems in the form of algebraic expressions written
-                as composition of operations of the algebra, on the other hand.
+                Within the project, the AoS is used for creating experimental mathematical models of the QDSs
+                of varying degree of complexity. So, the meaning of the operations of the algebra is determined
+                by the nature of the qualitative dynamical systems for modeling behavior of which the AoS is created.
             </p>
+
+<!--            <p>-->
+<!--                The Algebra of Symbols (AoS) is a common name for a particular algebraic structure, defined-->
+<!--                as a set of symbols and a family of five operations defined on this set. It has been constructed-->
+<!--                as part of the Kaleidoscope project, and is thought up for mathematical modeling of-->
+<!--                behavior of the Qualitative Dynamical Systems (QDS)s. The algebra, thus, is a source of-->
+<!--                symbols used for denoting the values of the qualitative variables representing states of-->
+<!--                modeled properties of the QDSs, on the one hand, and the operations needed for computation-->
+<!--                of the qualitative (multivalued) dependence relations of the variables, on the other hand. It-->
+<!--                is, therefore, used within the project for creating experimental mathematical models of QDSs-->
+<!--                of varying degree of complexity. So, the meaning of operations of the Algebra is determined-->
+<!--                by the nature of the qualitative dynamical systems for modeling of which it is created.-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                The Algebra of Symbols (AoS) is built on a set of symbols and is a collection of operations,-->
+<!--                defined on that set. The algebra serves as instrument for a) developing mathematical models of-->
+<!--                qualitative dynamical systems that represent qualitative properties of the modeled systems-->
+<!--                as qualitative variables taking their values from the set of symbols of the algebra, and b)-->
+<!--                describing behavior of the systems in the form of algebraic expressions written as composition-->
+<!--                of operations of the algebra.-->
+<!--            </p>-->
 
             <p style="margin-top: 10pt; margin-bottom: 15pt; font-size: 18pt; text-align: center;">
                 Definition of the Algebra of Symbols
@@ -91,36 +110,35 @@
                     <ol>
                         <li style="margin-top:7px;">
                             Domain set of symbols: <b>D</b> = { A, B, C, ..., Z, ... }, whose elements are used
-                            to represent states of the modeled qualitative system properties.
+                            for representing states of the modeled qualitative system properties.
                         </li>
                         <li style="margin-top:5px;">
                             Auxiliary set of symbols: <b>X</b> = { -, #, $, ! }, elements of which are intended
-                            to represent intermediate values that can be produced in the process of computation
+                            for representing intermediate values that can be produced in the process of computation
                             of algebraic expressions.
                         </li>
                         <li style="margin-top:5px;">
-                            Carrier set of the algebra: <b>S</b> = <b>X</b> U <b>D</b> defined as a union of
-                            auxiliary set <b>X</b> and domain set <b>D</b>.
+                            Carrier set of the algebra: <b>S</b> = <b>D</b> U <b>X</b> defined as a union of
+                            the domain set <b>D</b> and auxiliary set <b>X</b>.
                         </li>
                         <li style="margin-top:5px;">
-                            Collection of five binary operations <b>O</b> = { ?, &, *, |, < }, named: Equivalence,
+                            Family of five binary operations <b>O</b> = { ?, &, *, |, < }, named: Equivalence,
                             Conjunction, Production, Disjunction, and Application respectfully, defined on the set
-                            A.
+                            <b>S</b>.
                         </li>
                     </ol>
 
                 </div> <!-- End of definition inner border -->
             </div> <!-- End of definition outer border -->
 
-            <p>
-                <b>Comment.</b> While symbols <b>"!"</b>, <b>"$"</b> and <b>"#"</b> are used for representing certain
-                states of the process of computation of the dependence relations and therfor their meaning will be
-                described later, as a part of explanation of operations of the algebra, the symbol <b>"-"</b> plays
-                in the definition of an algebra more general role - it is the zero element of the algebra.
-                It is the absorption element of operations Equivalence and Production and the identity element
-                of operations Conjunction and Disjunction of the algebra.
-
-            </p>
+<!--            <p>-->
+<!--                <b>A note.</b> While the symbols <b>"!"</b>, <b>"$"</b> and <b>"#"</b> are used for representing -->
+<!--                certain states of the process of computation of the dependence relations, and, therefore, their-->
+<!--                meaning will be described later, as a part of the explanation of operations of the algebra, the -->
+<!--                symbol <b>"-"</b> plays in the definition of the algebra more general role. It is a kind of the -->
+<!--                "zero" element of the algebra. It is the absorption element of operations Equivalence and -->
+<!--                Production and the identity element of operations Conjunction and Disjunction of the algebra.-->
+<!--            </p>-->
 
             <p style="margin-top: 10pt; margin-bottom: 15pt; font-size: 18pt; text-align: center;">
                 Definition and Explanation of the Operations
@@ -129,7 +147,7 @@
             <style>
 
                 .operation-name{
-                    sfont-size:14pt;
+                    font-size:14pt;
                     font-weight: bold;
                     color:#333333;
                     text-align:left;
@@ -168,32 +186,34 @@
             </style>
 
             <p>
-                Provided below definitions of operations of the Algebra, for visualization and convenience
-                of description of the rules of work of the operations, are presented in the form of small
-                square 9 x 9 tables, framed by the headings located on the left and the top sides of the
-                tables, which contain the symbol of the operation and the symbols of the operation’s operands.
-                Table cells present symbols that the operations return for the operands indicated in the
-                headers of their rows and columns. The tables defining operations Equivalence, Conjunction,
-                Production and Disjunction are symmetrical about their main diagonal; that is, of the
-                line connecting their upper left and lower right corners. The order of values passed to
-                these operations as their operands is, therefore, irrelevant. Unlike these four operations,
-                the table defining the Application operation is not symmetrical. The behavior of this
-                operation is explained by its role in the process of computation, which is described below.
+                Provided below definitions of the operations of the Algebra, for visualization and convenience
+                of description of the rules of their work, are presented in the form of small 9 x 9 square
+                tables, framed by the headings of the rows and the columns located on the left and the top
+                sides of the tables, respectively. These headings specify symbols that can be used as the
+                operands of the operations. The symbol located in the upper left corner of the table is the
+                symbol of the operation. Table cells present symbols that the operations return for the
+                operands listed in the headers of their rows and columns. The tables defining the Equivalence,
+                the Conjunction, the Production and the Disjunction operations are symmetrical about their
+                main diagonal; that is, of the line connecting their upper left and lower right corners.
+                The order of values passed to these operations as their operands is, therefore, irrelevant.
+                Unlike these four operations, the table defining the Application operation is not symmetrical.
+                Such definition of this operation is justified by its role in the process of computation of the
+                algebraic expressions, which is described below.
             </p>
 
             <p>
-                Highlighted with greenish color headers of the tables indicate values of the operands
+                Headers of the tables highlighted with greenish color indicate values of the operands
                 used when the operations are applied for computation of qualitative functional dependencies
-                of some variables of qualitative mathematical expressions on the values of other variables;
-                whereas groups of cells highlighted in the orange color indicate output of the operations
-                being yielded during the process of computation of the expressions.
+                of some variables of qualitative mathematical expressions on the values of other variables.
+                On the other hand, groups of cells highlighted in the orange color indicate output of the
+                operations being yielded when they are used for computing these mathematical expressions.
             </p>
 
-            <p>
-                The accompanying definition of the operations, their short annotations are expanded later,
-                when the roles of the operations in the process of computation of qualitative mathematical
-                models of behavior of the qualitative dynamical systems is considered.
-            </p>
+<!--            <p>-->
+<!--                The accompanying definition of the operations, their short annotations are expanded later,-->
+<!--                when the roles of the operations in the process of computation of qualitative mathematical-->
+<!--                models of behavior of the qualitative dynamical systems is considered.-->
+<!--            </p>-->
 
             <span id="VSP.SEC.1.0"></span>
             <div class="gap-between-operation-definition"></div>
@@ -202,27 +222,41 @@
                 <div class="definition-inner-border">
 
                     <p class="operation-name">
-                        The Equivalence operation:
+                        The Equivalence operation
                     </p>
 
                     <p>
-                        The Equivalence operation is denoted by the symbol <b>"?"</b>. It is used in the process of
-                        recognition of situations and is used to compare the current values of a group of
-                        variables of a model, a particular combination of which characterizes a certain situation
-                        possible in the system with values describing the expected situation.
+                        The Equivalence operation is denoted by the symbol <b>"?"</b>. It is used in the
+                        process of recognition of situations by comparing the current values
+                        of a group of variables of a model with the group of constants specifying the expected
+                        situation.
                     </p>
+
+<!--                    <p>-->
+<!--                        The Equivalence operation is denoted by the symbol <b>"?"</b>. It is used in the process of-->
+<!--                        recognition of situations and is used for comparing the current values of a group of-->
+<!--                        variables of a model, a particular combination of which characterizes a certain situation-->
+<!--                        possible in the system with the values specifying the expected situation.-->
+<!--                    </p>-->
 
                     <div>
                         <p>
                             <img class="operation-image" src="operation-images/Equivalence-9x9-Alg-1.png">
                         </p>
                         <p>
-                            This operation takes two arguments, both of which are symbols belonging to the set
-                            <b>D</b>, and returns either the character "!" or the character "$" both belonging to
-                            the set <b>X</b>; where the character "!" denotes the fact that the characters
-                            representing the values of the arguments turned out to be the same, and the symbol
-                            "$" denotes that they are not.
+                            This operation takes two operands, both of which can only be symbols belonging to the set
+                            <b>D</b>. It returns the symbol "!", belonging to the set <b>X</b>, when both symbols
+                            representing values of the operands turns out to be the same, or, alternatively, the
+                            symbol "$", also belonging to the set <b>X</b>, when both symbols representing values
+                            of the operands are different.
                         </p>
+<!--                        <p>-->
+<!--                            This operation takes two operands, both of which are symbols belonging to the set-->
+<!--                            <b>D</b>, and returns either the symbol "!" or the symbol "$", both belonging to-->
+<!--                            the set <b>X</b>; where the symbol "!" denotes the fact that the both symbols-->
+<!--                            representing values of the operands turned out to be the same, and the symbol-->
+<!--                            "$" denotes that they are different.-->
+<!--                        </p>-->
                     </div>
 
                 </div> <!-- End of Equivalence operation definition inner border  -->
@@ -233,28 +267,37 @@
             <div class="definition-border">
                 <div class="definition-inner-border">
                     <p class="operation-name">
-                        The Conjunction operation:
+                        The Conjunction operation
                     </p>
 
                     <p>
-                        The Conjunction operation is denoted by the symbol <b>"&"</b>. Like the Equivalence
-                        operation, this operation is used in the process of recognition of the situations. The
-                        operation is applied to the results of the Equivalence operation to confirm that all
-                        the results of its comparison of the current state of the variables of the model and
-                        their expected values matched, and thus the situation is considered as recognized.
+                        The Conjunction operation is denoted by the symbol <b>"&"</b>. Similar to the Equivalence
+                        operation, this operation is used in the process of recognition of the situations. It
+                        is applied to the results of the Equivalence operation to confirm that all
+                        the results of the comparison of the current state of the variables of the model and
+                        their expected values matched, and, thus, that the situation is considered as recognized.
                     </p>
 
                     <div>
                         <p style="font-size: 0;">
                             <img class="operation-image" src="operation-images/Conjunction-9x9-Alg-1.png">
                         </p>
+
                         <p>
-                            This operation takes two arguments, both of which are symbols of the set <b>X</b>, which,
-                            following the purpose of the operation, can be either the symbol"!" or the symbol
-                            "$". Acting like the classical conjunction operator, it returns the symbol "!" only
-                            in case when its arguments turn out to be the symbol "!". For all other combinations
-                            of argument, it returns the "$" symbol.
+                            This operation takes two operands, both of which are symbols of the set <b>X</b>.
+                            Following the purpose of the operation, its operands can be either the symbol
+                            "!" or the symbol "$". Acting like the Boolean conjunction, this operation returns
+                            the "!" symbol, only in case when both of its operands hold the symbol "!". However,
+                            for all other combinations of values of the operands, it returns the symbol "$".
                         </p>
+
+<!--                        <p>-->
+<!--                            This operation takes two operands, both of which are symbols of the set <b>X</b>, which,-->
+<!--                            following the purpose of the operation, can be either the symbol"!" or the symbol-->
+<!--                            "$". Acting like the classical conjunction operator, it returns the symbol "!" only-->
+<!--                            in case when its arguments turn out to be the symbol "!". For all other combinations-->
+<!--                            of argument, it returns the "$" symbol.-->
+<!--                        </p>-->
                     </div>
 
                 </div> <!-- End of Equivalence operation definition inner border -->
@@ -266,29 +309,47 @@
             <div class="definition-border">
                 <div class="definition-inner-border">
                     <p class="operation-name">
-                        The Production operation:
+                        The Production operation
                     </p>
 
                     <p>
-                        The Production operation is denoted by the symbol <b>"*"</b>. The role of this operation in the
-                        process of computation of the state equation of the system is to produce the value of the
-                        proposed next state of the system corresponding to the recognized situation. Therefore,
-                        it is applied to the result of the recognition of a situation obtained after the
-                        multivalued conjunction has been assessed.
+                        The Production operation is denoted by the symbol <b>"*"</b>. Its role in the
+                        process of computation of a state equation of the system is to produce the proposed
+                        value of the variable of the model, corresponding to the recognized situation.
+                        Therefore, it is applied to the result of the recognition of a situation obtained after
+                        the utilization of the Equivalence and the Conjunction operations is completed.
                     </p>
+
+<!--                    <p>-->
+<!--                        The Production operation is denoted by the symbol <b>"*"</b>. The role of this operation in the-->
+<!--                        process of computation of the state equation of the system is to produce the value of the-->
+<!--                        proposed next state of the system corresponding to the recognized situation. Therefore,-->
+<!--                        it is applied to the result of the recognition of a situation obtained after the-->
+<!--                        multivalued conjunction has been assessed.-->
+<!--                    </p>-->
 
                     <div>
                         <p>
                             <img class="operation-image" src="operation-images/Production-9x9-Alg-1.png">
                         </p>
+
                         <p>
-                            This operation takes two arguments, one of which (let's say is the first one) is the
-                            symbol the operation is to produce, i.e. the symbol of the set <b>D</b>, and the second is a
-                            symbol denoting the fact of recognition or not recognition of the situation, i.e.
-                            symbol "!" or "$" of <b>X</b> set. The operation returns value of the first argument when
-                            its second argument confirms the fact that the situation was recognised, or the symbol
-                            "$", i.e. the value of the second argument, when the situation was unrecognized.
+                            This operation takes two operands, one of which (let's say is the first one) is the
+                            symbol of the set <b>D</b>, and the second is either the symbol "!" or "$", belonging
+                            to the set <b>X</b>, and denoting the facts that the situation either recognized or not
+                            recognized. The operation returns value of the first operand, when
+                            its second operand states that the situation was recognized, or the symbol
+                            "$", i.e. the value of the second operand, when the situation was not recognized.
                         </p>
+
+<!--                        <p>-->
+<!--                            This operation takes two arguments, one of which (let's say is the first one) is the-->
+<!--                            symbol the operation is to produce, i.e. the symbol of the set <b>D</b>, and the second is a-->
+<!--                            symbol denoting the fact of recognition or not recognition of the situation, i.e.-->
+<!--                            symbol "!" or "$" of <b>X</b> set. The operation returns value of the first argument when-->
+<!--                            its second argument confirms the fact that the situation was recognised, or the symbol-->
+<!--                            "$", i.e. the value of the second argument, when the situation was unrecognized.-->
+<!--                        </p>-->
                     </div>
 
                 </div> <!-- End of Equivalence operation definition inner border -->
@@ -299,40 +360,59 @@
             <div class="definition-border">
                 <div class="definition-inner-border">
                     <p class="operation-name">
-                        The Disjunction operation:
+                        The Disjunction operation
                     </p>
 
                     <p>
-                        The Disjunction operation is denoted by the symbol <b>"|"</b>. Like the Conjunction operation,
-                        it
-                        is performed after the preceding element-by-element operation applied to a group of the
-                        pairs of symbols. And in this case, it is used to combine the results of the Production
-                        operation.
+                        The Disjunction operation is denoted by the symbol <b>"|"</b>. Like the Conjunction
+                        operation, it is used after the preceding element-by-element execution of the Production
+                        operation. Following its role in the computation of the AoS expressions, its task is to
+                        combine all the results of the Production operation.
                     </p>
+
+<!--                    <p>-->
+<!--                        The Disjunction operation is denoted by the symbol <b>"|"</b>. Like the Conjunction operation,-->
+<!--                        it-->
+<!--                        is performed after the preceding element-by-element operation applied to a group of the-->
+<!--                        pairs of symbols. And in this case, it is used to combine the results of the Production-->
+<!--                        operation.-->
+<!--                    </p>-->
+
                     <p>
-                        Each variable of the model can, in the process of modeling the behavior of the system, take
-                        on different states, denoted by symbols from the set <b>D</b>, corresponding to different and
-                        possibly simultaneously occurring situations. At the same time, situations occurring
-                        simultaneously may suggest changes in the state of the variable, transferring it to the
-                        same or different states. Therefore, the role of the Disjunction operation in the process
-                        of generating the next state of the system is to process all the results proposed by the
-                        Production operation and obtain the only final value proposed as the next state of the
-                        model variable.
+                        Each variable of the model can, in the process of modeling the behavior of the system,
+                        take different states, denoted by symbols of the set <b>D</b>, corresponding to different
+                        situations. Meanwhile, the situations occurring simultaneously may suggest changes of
+                        the state of a variable, into either the same or the different values. Therefore, the
+                        task of the Disjunction operation, in the process of computing the next state of the
+                        variables of a model, is to process all the results proposed by the Production operation
+                        and to find the only final proposed value that should become the next state of the
+                        variable of a model.
                     </p>
+
+<!--                    <p>-->
+<!--                        Each variable of the model can, in the process of modeling the behavior of the system, take-->
+<!--                        on different states, denoted by symbols from the set <b>D</b>, corresponding to different and-->
+<!--                        possibly simultaneously occurring situations. At the same time, situations occurring-->
+<!--                        simultaneously may suggest changes in the state of the variable, transferring it to the-->
+<!--                        same or different states. Therefore, the role of the Disjunction operation in the process-->
+<!--                        of generating the next state of the system is to process all the results proposed by the-->
+<!--                        Production operation and obtain the only final value proposed as the next state of the-->
+<!--                        model variable.-->
+<!--                    </p>-->
 
                     <div>
                         <p>
                             <img class="operation-image" src="operation-images/Disjunction-9x9-Alg-1.png">
                         </p>
                         <p>
-                            This operation takes two arguments, each of which can be either a symbol of the set symbol
-                            <b>D</b> or a symbol of the set <b>X</b>, and produces a result that may also be either a
-                            symbol
-                            of the set symbol <b>D</b> or a symbol of the set <b>X</b>. It returns the $ symbol when
-                            none of the
-                            expected situations is recognized; a symbol of either argument when both of its arguments
-                            are the same symbol from <b>D</b>; or the symbol "#" when either its arguments are different
-                            symbols of set <b>D</b>, or when any (or both) of its arguments are the symbol "#".
+                            This operation takes two operands, each of which can be either a symbol of the set
+                            <b>D</b> or a symbol of the set <b>X</b>, and produces a result that may also be
+                            either a symbol of the set <b>D</b> or a symbol of the set <b>X</b>. It returns
+                            the symbol "$", when none of the expected situations is recognized; a symbol of
+                            either operand, when both operands hold the same symbol of the set <b>D</b>,
+                            produced as response to different situations; or the symbol "#" when, either the
+                            operands hold different symbols of the set <b>D</b>, or when, any one of the operands
+                            holds the symbol "#", yielded by this operation during its previous execution.
                         </p>
                     </div>
 
@@ -344,36 +424,61 @@
             <div class="definition-border">
                 <div class="definition-inner-border">
                     <p class="operation-name">
-                        The Application operation:
+                        The Application operation
                     </p>
 
                     <p>
-                        The Application operation is denoted by the symbol <b>"<?>"</b>. This operation is the final one
-                        in
-                        the XDNF calculation scheme and is used to inject into the current state of the system the
-                        result of calculating the next state of the level of the proposed value obtained at the
-                        previous steps of the calculation. This proposed value can be represented by the symbol
-                        of the set <b>D</b>. But it may also turn out that in the process of calculating the next state
-                        of the system, none of the expected situations occurred and therefore the proposed value
-                        of the next state is not calculated. As described above, in this case, the model can be
-                        represented by one of the characters: "-", "$" or "#". Therefore, the task of the Apply
-                        operation is to replace the current value of the state of the variable in the case when
-                        the proposed next state of the system is defined, i.e. represented by any character from
-                        the set D, or do not change the current value of the variable otherwise.
+                        The Application operation is denoted by the symbol <b>"<"</b>, and is the last one
+                        in the process of computation of the next value of the variable. Its task is to
+                        refine final proposed value computed by the Disjunction operation, in case if it is
+                        not represented by a symbol of the set <b>D</b>, but is one of the symbols: "$"
+                        or "#" of the set <b>X</b>. The task, therefore, is kind of to test if the final
+                        proposed value belong to the set <b>D</b> (that is defined) and return it as it is;
+                        or, otherwise, when it is a symbol of the set <b>X</b> (that is undefined), to return
+                        instead of undefined value the current value of the variable. That will leave the
+                        value of the variable being computed effectively unchanged.
 
+
+<!--                        into the current state of the system result of computing its next state, proposed as-->
+<!--                        the value obtained at the previous steps of the computation. This proposed value is-->
+<!--                        computed by the Disjunction operation and therefore can be represented by either the-->
+<!--                        symbol of the set <b>D</b>. But it may also turn out that the final proposed value-->
+<!--                        of the next state of variable is undefined, and for that purposes is represented by-->
+<!--                        one of the symbols: "-", "$" or "#" of the set <b>X</b>. Therefore, the task of the-->
+<!--                        Application operation is to test if the provided by the Disjunction operation final-->
+<!--                        prpoposed value belongs to the set <b>D</b> and return it as it is; or otherwise,when-->
+<!--                        it is a symbol of the set <b>X</b> (that is undefined), to replace it with the current-->
+<!--                        value of the variable, what will leave the values of the computed variable effectively-->
+<!--                        unchanged.-->
                     </p>
+
+<!--                    <p>-->
+<!--                        The Application operation is denoted by the symbol <b>"<?>"</b>. This operation is-->
+<!--                        the final one in the computation scheme of the XDNF expression and is used to inject -->
+<!--                        into the current state of the system result of computing its next state, proposed as -->
+<!--                        the value obtained at the previous steps of the computation. This proposed value can -->
+<!--                        be represented by the symbol of the set <b>D</b>. But it may also turn out that in the -->
+<!--                        process of calculating the next state-->
+<!--                        of the system, none of the expected situations occurred and therefore the proposed value-->
+<!--                        of the next state is not calculated. As described above, in this case, the model can be-->
+<!--                        represented by one of the characters: "-", "$" or "#". Therefore, the task of the Apply-->
+<!--                        operation is to replace the current value of the state of the variable in the case when-->
+<!--                        the proposed next state of the system is defined, i.e. represented by any character from-->
+<!--                        the set D, or do not change the current value of the variable otherwise.-->
+<!--                    </p>-->
 
                     <div>
                         <p>
                             <img class="operation-image" src="operation-images/Application-9x9-Alg-1.png">
                         </p>
                         <p>
-                            Unlike all other algebra operations, this operation is non-commutative, so the order
-                            of the arguments passed to it is important. Its first argument is the current value and
-                            the second argument is the proposed value of the variable being evaluated. The operation
-                            returns the value of the second argument (i.e., the proposed value) when the symbol
-                            representing it belongs to the set <b>D</b>, or the value of the first argument (i.e., the
-                            current state of the variable) when the proposed value is undefined, i.e. is any
+                            Unlike all other AoS operations, the order of the operands passed to Application
+                            operation is important and that requires this operation be non-commutative. Its one
+                            operand is the final proposed value of the variable being evaluated, while the other
+                            is the current value of this variable. Accordingly, the table defining the operation
+                            is organized in such a way that makes the operation to return the final proposed value,
+                            when the symbol representing it belongs to the set <b>D</b>, or the current value of
+                            the variable, when the final proposed value is undefined, i.e. is represented by any
                             of the symbols belonging to the set <b>X</b>.
                         </p>
                     </div>
@@ -384,11 +489,12 @@
         </div>
 
         <p>
-            All the described operations of the algebra are closed under the set S, and therefore can be used in the
-            mathematical expressions written as a composition of the operations. Also, as it can be seen
-            from the definitions of the operations, the auxiliary symbol “-” is zero of the multiplications
-            and additions operations, and thus is the absorption element of both multiplication operations
-            and is the identity element of both addition operations.
+            All the described operations of the algebra are closed under the set <b>S</b>, and, therefore,
+            can be used in the mathematical expressions written as a composition of the operations. Also,
+            as it can be seen from the definitions of the operations, the auxiliary symbol “-” is the kind
+            of "zero" of the "multiplication" and the "addition" operations of the algebra, and, thus, is
+            the absorption element of both: the Equivalence and the Production operations, while the identity
+            element of both: the Conjunction and the Disjunction operations.
         </p>
 
         <p style="margin-top: 10pt; margin-bottom: 15pt; font-size: 18pt; text-align: center;">
@@ -396,8 +502,8 @@
         </p>
 
         <p>
-            Results of testing the operations for their ability to satisfy the laws of commutativity, associativity
-            and distributivity is presented in the Table 1.
+            Results of testing the operations for their ability to satisfy the laws of associativity, commutativity,
+            and distributivity is presented in Table 1.
         </p>
 <!--  F5FAFF   ecf8ff   -->
         <div style=" width: %100; text-align: right;">Table 1&nbsp;</div>
@@ -459,7 +565,7 @@
 <!--            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
         </div>
         <p style="text-align: center;">
-            Table 1. Result of commutativity, associativity and distributivity test
+            Table 1. Result of associativity, commutativity and distributivity test
             conducted for all operations.
         </p>
 
@@ -467,21 +573,22 @@
 <!--            Result of the analysing ability of the operations to satisfy the laws of commutativity,-->
 <!--            associativity and distributivity is presented in Table 1. -->
             This table contains five columns
-            representing result of testing of all five operations: Equivalence Conjunction, Production.
-            Disjunction and Application. The result of testing each operation is provided in the form of
-            a row of seven space-separated elements located below the separation line.
+            representing the results of testing of all five operations: Equivalence Conjunction, Production.
+            Disjunction and Application. The result of the testing of each operation is provided in the form of
+            a row of seven space-separated elements located below the line of separation symbols "~".
         </p>
 
         <p>
-            The first two elements of the row represent testing result whether the operation is commutative
-            and associative, while the remaining five elements represent test results whether the operation
-            is distributive with each of the five operations. These operations are designated by the first
-            letter, taken from their names, and are located above each of the five elements. Adherence of
-            the operations to the commutativity law is designated by the letter C, to the associativity
-            law by the letter A, and to the distributivity law by the letter D. Case when result of the
-            test is not confirmed is designated by the letter N. So, while interpreting the letters: C,
-            A, D, and N one would say that:
-<!--            For example: the Equivalence operation is commutative and associative, as well as distributive-->
+            The first two elements of the row represent testing results of whether the operation is associative
+            and commutative, while the remaining five elements represent test results of whether the operation
+            is distributive with each of the five operations. These operations are denoted by the first
+            letter of their names, which are located just below the full name of each of the five operations.
+            The adherence of the operations to the associativity law is denoted by the letter A, to the
+            commutativity law by the letter C, and to the distributivity law by the letter D. Case when result
+            of the test is not confirmed is denoted by the letter N. So, while interpreting the letters: A,
+            C, D, and N one would say that:
+
+            <!--            For example: the Equivalence operation is commutative and associative, as well as distributive-->
 <!--            with itself and with the Conjunction operation. The Production operation is also commutative-->
 <!--            and associative, but is distributive only with the Disjunction operation. However, the Application-->
 <!--            operation is not commutative (by its definition), yet associative, but not distributive at all.-->
@@ -490,50 +597,48 @@
         <p>
         <ol>
             <li style="margin-top:7px;">
-                The Equivalence operation is commutative (by definition), associative, and distributive
+                The Equivalence operation is associative, commutative (by definition), and distributive
                 with itself and with the Conjunction operation.
             </li>
             <li style="margin-top:5px;">
-                The Conjunction operation is commutative (by definition), associative, and distributive
+                The Conjunction operation is associative, commutative (by definition), and distributive
                 with itself only.
             </li>
             <li style="margin-top:5px;">
-                The Production operation is commutative (by definition), associative, and distributive
+                The Production operation is associative, commutative (by definition), and distributive
                 with the Disjunction operation only.
             </li>
             <li style="margin-top:5px;">
-                The Disjunction operation is commutative (by definition), associative, and distributive
+                The Disjunction operation is associative, commutative (by definition), and distributive
                 with itself only.
             </li>
             <li style="margin-top:5px;">
-                The Application operation is <em>not commutative</em> (by definition), associative, and
+                The Application operation is associative, <em>not commutative</em> (by definition), and
                 <em>not distributive</em> with any of the other operations.
             </li>
         </ol>
         </p>
 
-        <p style="margin-top: 10pt; margin-bottom: 15pt; font-size: 18pt; text-align: center;">
-            Application of the Algebra of Symbols
-        </p>
+<!--        <p style="margin-top: 10pt; margin-bottom: 15pt; font-size: 18pt; text-align: center;">-->
+<!--            Application of the Algebra of Symbols-->
+<!--        </p>-->
 
-        <p>
-            Application of the algebra to creation of qualitative system models includes creation of a
-            collection of qualitative variables, called variable assertions, names and values of which
-            represent names and states of modeled properties, as well as description of dependence
-            relations of the state of some variables of model on the state of others, in the form of
-            a functional equation. The left side in this equation is an independent variable of the
-            equation, the state of which is calculated on the right side of the equation, and the
-            right side contains description of the procedure of computation of the value of the
-            variable located on the left side. This part is written in the form of expression of the
-            algebra of symbols. Its structure is an extension of the principle of representation of
-            binary functions, known as disjunctive normal form - DNF, to the description of expressions
-            whose variables are multivalued variables of the algebra of symbols. To emphasize the
-            fact that this notation is a generalization of DNF, it is called XDNF. The letter <b>X</b> in
-            the name of the generalized DNF is a reminder that in the process of its computation, a
-            subset of auxiliary symbols of the set S, denoted by the letter <b>X</b> in the definition of
-            the algebra of symbols, is used.
-
-        </p>
+<!--        <p>-->
+<!--            Application of the algebra for creation of models of the qualitative dynamical systems includes-->
+<!--            assumes defining a collection of qualitative variables, names and values of which represent-->
+<!--            names and states of modeled properties, as well as description of dependence relations of the-->
+<!--            state of some variables of model on the state of others, in the form of a functional equations.-->
+<!--            The left side in these equations is an independent variable of the equation, the state of which-->
+<!--            is computed by the right side of the equation, and the right side is the description of the-->
+<!--            procedure of computation of the value of the variable located on the left side. This procedure is-->
+<!--            written in the form of expression of the algebra of symbols. Its structure is an extension of-->
+<!--            the principle of representation of binary functions, known as disjunctive normal form - DNF,-->
+<!--            that consists of the multivalued variables and the operations of the algebra of symbols. To-->
+<!--            emphasize the fact that, this notation is a generalization of DNF, it is referred to as the XDNF,-->
+<!--            where the letter "X" in the name in the form XDNF is the remainder of the fact that the process of-->
+<!--            computation of the expression, relays on the subset <b>X</b> of auxiliary symbols of the set-->
+<!--            <b>S</b>.-->
+<!--        </p>-->
 
 <!--        </div> &lt;!&ndash; end of content holder &ndash;&gt;-->
 
