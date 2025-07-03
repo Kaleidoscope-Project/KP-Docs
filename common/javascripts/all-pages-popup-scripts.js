@@ -40,26 +40,26 @@
     //
     //   Initializer for MMT page
     //
-    function initQDSPage(){
+//    function initQDSPage(){
 //        console.log("initMMTPage: INITIALIZING");
-        document.addEventListener('keyup', keyboardEventListener);
-
-        currentPopup = document.getElementById(popup01);
-        currentPopup.style.display = 'none';
-        currentPopup = document.getElementById(popup02);
-        currentPopup.style.display = 'none';
-        currentPopup = document.getElementById(popup03);
-        currentPopup.style.display = 'none';
-        currentPopup = document.getElementById(popup04);
-        currentPopup.style.display = 'none';
-        currentPopup = document.getElementById(popup05);
-        currentPopup.style.display = 'none';
-        currentPopup = document.getElementById(popup06);
-        currentPopup.style.display = 'none';
-
-        allPopupsInitialized = true;
+//        document.addEventListener('keyup', keyboardEventListener);
+//
+//        currentPopup = document.getElementById(popup01);
+//        currentPopup.style.display = 'none';
+//        currentPopup = document.getElementById(popup02);
+//        currentPopup.style.display = 'none';
+//        currentPopup = document.getElementById(popup03);
+//        currentPopup.style.display = 'none';
+//        currentPopup = document.getElementById(popup04);
+//        currentPopup.style.display = 'none';
+//        currentPopup = document.getElementById(popup05);
+//        currentPopup.style.display = 'none';
+//        currentPopup = document.getElementById(popup06);
+//        currentPopup.style.display = 'none';
+//
+//        allPopupsInitialized = true;
 //        console.log("ALL POPUP HOVER LISTENERS ARE SET");
-    }
+//    }
 
     /*
         ESC click listener
