@@ -22,7 +22,6 @@
         <!--/*   S c r i p t s   */-->
         <script type="text/javascript" src="../common/javascripts/common-javascripts.js"></script>
         <script type="text/javascript" src="../common/javascripts/jquery-3.7.1.min.js"></script>
-        <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
         <script type="text/javascript" src="../common/javascripts/all-pages-popup-scripts.js"></script>
 
         <!--/*   S t y l e    S h e e t s   */-->
@@ -83,7 +82,8 @@ Application
 <!--            color: #35664D;  #695EA6 7064B1;-->
 <!--    3366CC - Blue        color: #551ABB; purple - #205081; color: #888888;  -->
 
-    <body onload="initMMTPage(), removeHashTag()">
+    <body onload="removeHashTag()">
+<!--    <body onload="initMMTPage(); removeHashTag()">-->
     <div class="container"> <!-- Main Container -->
         <img  style="height: 6px; width: 100%;" src="../common/images/two-red-lines.png" alt=""/>
 
@@ -222,8 +222,8 @@ Application
                     modeling of dynamical systems, mentioned above, on the one hand; but also reflect
                     discrete nature of qualitative properties and the character of behavior of qualitative
                     systems, described on the page:
-                    <span class="popup-link" onmouseenter="openPopup(event, popup03)"
-                          onmouseleave= "closePopup(popup03)">
+                    <span class="popup-link" onmouseenter="openPopup(event, popup01)"
+                          onmouseleave= "closePopup(popup01)">
                         <a class="popup-link" href = "../kp-qds/kp-qds.html" target="_blank">
                             <em>"Qualitative Dynamical Systems, Their Behavior, and Mathematical Modeling",</em>
                         </a>
@@ -375,8 +375,8 @@ Application
                     <em>Remark 1</em>. Definition of set of models in the form of the set of colors,
                     which in the context of creating qualitative systems graphical models is called a
                     Palette, is given on the page
-                    <span class="popup-link" onmouseenter="openPopup(event, popup01)"
-                                             onmouseleave= "closePopup(popup01)">
+                    <span class="popup-link" onmouseenter="openPopup(event, popup02)"
+                                             onmouseleave= "closePopup(popup02)">
                         <a class="popup-link" href = "../kp-mcln/kp-mcln.html" target="_blank">
                     <em>"Multicolored Logical Net Graphical Modeling Formalism"</em>.</a></span>
                 </p>
@@ -410,8 +410,8 @@ Application
                     on the occurrence of situations in the system. This dependence is described on the
                     previous page "Qualitative Dynamical Systems, Their Behavior and Mathematical Modeling",
                     in the section:
-                    <span class="popup-link" onmouseenter="openPopup(event, popup02)"
-                                             onmouseleave="closePopup(popup02)">
+                    <span class="popup-link" onmouseenter="openPopup(event, popup03)"
+                                             onmouseleave="closePopup(popup03)">
                         <a class="popup-link" href = "../kp-qds/kp-qds.html#QDS.SEC.1.0" target="_blank">
                             <em>Qualitative System Behavior Specification</em>
                         </a>
@@ -1737,10 +1737,30 @@ Application
     <!--  P O P   U P S -->
     <!-- =================================================================================== -->
 
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <div class="popup-style" id="element01ToPopup" >
+            <div style="text-align: center;">
+                <b>Page: Qualitative Dynamical Systems, Their Behavior<br> and Mathematical Modeling</b>
+            </div>
+            <p >
+                Objective of this page is to introduce notion of class of Qualitative Dynamical Systems
+                and to describe characteristics of the nature and behavior of Qualitative Dynamical Systems,
+                constituting foundation for creating mathematical models of these systems. The page
+                identifies atomic element of behavior of these systems and describes basic ways of composition
+                of the elements letting the models of the systems to be capable of reproducing various
+                forms of behavior, observed in the qualitative dynamical systems.
+            </p>
+            <p class="clickable-link">
+                Clicking the link opens named page in a new tab.
+            </p>
+        </div>
+
         <!--             -->
         <!-- p o p u p s -->
         <!--             -->
-        <div class="popup-style" id="element01ToPopup">
+        <div class="popup-style" id="element02ToPopup">
             <div style="text-align: center;">
                 <b>Page: Multicolored Logical Net Graphical Modeling Formalism</b></div>
             <p>
@@ -1758,7 +1778,7 @@ Application
         <!--  -->
         <!--  -->
         <!--  -->
-        <div class="popup-style" id="element02ToPopup">
+        <div class="popup-style" id="element03ToPopup">
             <div style="text-align: center;">
                 <b>Section: Qualitative System Behavior Specification</b>
             </div>
@@ -1772,26 +1792,6 @@ Application
             </p>
             <p class="clickable-link">
                 Clicking the link opens named section in a new tab.
-            </p>
-        </div>
-
-        <!--  -->
-        <!--  -->
-        <!--  -->
-        <div class="popup-style" id="element03ToPopup" >
-            <div style="text-align: center;">
-                <b>Page: Qualitative Dynamical Systems, Their Behavior<br> and Mathematical Modeling</b>
-            </div>
-            <p >
-                Objective of this page is to introduce notion of class of Qualitative Dynamical Systems
-                and to describe characteristics of the nature and behavior of Qualitative Dynamical Systems,
-                constituting foundation for creating mathematical models of these systems. The page
-                identifies atomic element of behavior of these systems and describes basic ways of composition
-                of the elements letting the models of the systems to be capable of reproducing various
-                forms of behavior, observed in the qualitative dynamical systems.
-            </p>
-            <p class="clickable-link">
-                Clicking the link opens named page in a new tab.
             </p>
         </div>
 
