@@ -74,7 +74,7 @@
     <div class="text-container">
 
         <div class="page-header">
-            Multicolored Logical Net Graphical<br>Modeling Formalism
+            Multicolored Logical Net Modeling<br>Formalism
         </div>
 
         <div style="margin-top: 33px; margin-bottom: 0px; "> <!-- Content holder -->
@@ -122,21 +122,57 @@
 <!--            </p>-->
 
             <p>
-                This page introduces Multicolor Logical Net Modeling Formalism, or McLN MF, which
-                is intended for creating models of the behavior of qualitative dynamical systems in the form
-                of their graphical models.
-            </p>
+<!--                This page introduces the Multicolored Logical Net Modeling Formalism, or the McLN MF,-->
+<!--                which is intended for creating models of behavior of qualitative dynamical systems. These-->
+<!--                models are based on the notion of the bipartite directed graph, and, therefore, can-->
+<!--                be assembled on a computer screen.-->
 
-            <p>
-                McLN models can be assembled, on a computer screen, using four graphical
-                elements - properties, facts, dependence of facts on properties
-                and the dependence of the properties on the facts. Accordingly,
-                the McLN MF can be considered as the graphical construction set consisting of four
-                elements. Therefore, the McLN model is, indeed, created as the graphical net, the structure of
-                which is based on the notion of bipartite directed graph, while the mechanism of reproducing behavior of
-                the modeled system is provided by associating with the elements of the graph operations of the
-                Algebra of Symbols, or AoS.
+                This page introduces the qualitative dynamical systems' graphical modeling formalism, referred
+                to as "the Multicolored Logical Net", or the McLN. Created in the form of McLN, models are based
+                on the notion of the bipartite directed graph, and, therefore, can be assembled on a computer
+                screen.
+
+                Elements of these   models are representations of such elements of
+                the modeled systems as the Properties, Conditions, triggering changes of state of the
+                Properties, Dependencies of the state of Conditions on the state of Properties and Dependencies
+                of the state of Properties on the state of Conditions. Therefore, the McLN models can
+                be, naturally, created as the graphical nets that are characterized by their structure, and
+                by the mechanism of reproducing behavior of the modeled systems that is enabled by endowing
+                the elements of the structure with the ability to perform operations of the Algebra of
+                Symbols.
+
+<!--                implemented by associating-->
+<!--                with the elements of the structure operations of the Algebra of Symbols, or the AoS.-->
             </p>
+<!--            <p>-->
+<!--                This page introduces Multicolor Logical Net Modeling Formalism, or McLN MF, which-->
+<!--                is intended for creating models of behavior of qualitative dynamical systems in the form-->
+<!--                of their graphical models.-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                The McLN models are based on the notion of bipartite directed graph, and, therefore, can-->
+<!--                be assembled, on a computer screen. That makes the McLN MF a graphical construction set consisting-->
+<!--                of four elements: Properties, Conditions, Dependencies of state of Conditions on state of-->
+<!--                Properties and the Dependencies of the state of Properties on the state of Conditions.-->
+<!--                Accordingly, the McLN model is, indeed, created as the graphical net which is characterized-->
+<!--                by its structure and the mechanism of reproducing behavior of the modeled system implemented-->
+<!--                by associating with the elements of the structure operations of the Algebra of Symbols, or-->
+<!--                the AoS.-->
+<!--            </p>-->
+<!--                while the mechanism of -->
+<!--                reproducing behavior of the modeled system is provided by associating with the elements -->
+<!--                of the graph operations of the Algebra of Symbols, or The AoS.-->
+<!--                -->
+<!--                can be assembled, on a computer screen, using four graphical-->
+<!--                elements - Properties, Conditions, Dependencies of Conditions on Properties-->
+<!--                and the Dependencies of the Properties on the Conditions. Accordingly,-->
+<!--                the McLN MF can be considered as the graphical construction set consisting of four-->
+<!--                elements. Therefore, the McLN model is, indeed, created as the graphical net, the structure of-->
+<!--                which is based on the notion of bipartite directed graph, while the mechanism of reproducing behavior of-->
+<!--                the modeled system is provided by associating with the elements of the graph operations of the-->
+<!--                Algebra of Symbols, or AoS.-->
+
 
 <!--            <p>-->
 <!--                McLN models can be assembled, on a computer screen, using four graphical-->
@@ -175,9 +211,10 @@
             </p>
 
             <p>
-                Being based on the notion of bipartite directed graph, the McLN model is constructed of two types
-                of nodes: Property nodes, depicted as the big circles or big hexagons, Conditions depicted as
-                small circles, and two types of arcs directed form the Property nodes to the Conditions nodes, and
+<!--                Being based on the notion of bipartite directed graph, -->
+                The McLN model is constructed of two types
+                of nodes: Property nodes, depicted as the big circles or big hexagons, Conditions, depicted as
+                small circles, and two types of Arcs directed form the Property nodes to the Conditions nodes, and
                 from the Conditions nodes to the Property nodes. Simple example of the McLN model is presented
                 in Figure 1.
             </p>
@@ -222,18 +259,18 @@
 <!--            </p>-->
 
             <p>
-                Arcs directed from Property nodes to a Condition node represent dependence of the fact
-                of recognition of situation on a certain combination of states of Property nodes. These
+                Arcs directed from a group of the Property nodes to a Condition node represent dependence of the fact
+                of recognition of an expected situation on a certain combination of states of Property nodes. These
                 arcs are marked with the colored dots, particular colors of which are those expected states
                 that the arcs’ input Properties should have in order for the situation to be deemed as
-                existing and to be recognized.
+                existing and recognized.
             </p>
 
             <p>
                 Arcs directed from a Condition node to some Property nodes represent dependence
                 of the state of the Property nodes on the fact of the existence of the expected situation. These
-                arcs have a small arrow head marked with the color of that proposed state which
-                the arcs' output Property nodes should take when the state of Condition node indicates the fact
+                arcs have a small arrow heads marked with that colors of the proposed states which
+                the arcs' output Property nodes should take when the state of the Condition node indicates the fact
                 that the expected situation exists.
 <!--                is generated as the proposed state of-->
 <!--                the Property nodes depending on the state of the Fact.-->
@@ -243,12 +280,21 @@
             <p>
                 So, the structure of the McLN literally means that the state of each Condition node depends on
                 the state of one or more of its input Property nodes, characterizing a particular expected situation
-                determined by the colors of the dots marking the Properties' output arcs. And, at the same
+                determined by the colors of the dots marking the Properties' output arcs.
+            </p>
+
+            <p>
+                At the same
                 time, the state of each Property node depends on the state of
-                one or more of its input Condition nodes, and should take state denoted by the color marking the arrowhead
-                of the arc directed form the Condition node to the dependent Property node in case when the
-                Condition indicates that all its input Properties represent expected situation denoted by
+                one or more of its input Condition nodes, and takes state represented by the color of the arrowhead
+                of the arc directed form the Condition node to the dependent Property node in case when the state of
+                the Condition indicates that all its input Properties represent expected situation denoted by
                 the marks of their output arcs.
+                <br><br>
+                <em>Exclusion</em>>: Case when the state of Condition indicates that the expected situation is
+                not recognized, or case when two or more Conditions suggest that dependent on different recognized
+                situations Property should take different states are ignored and current state of the dependent
+                property stays unchanged.
             </p>
 
             <p class="section-header">
@@ -605,9 +651,9 @@
 
             <p>
                 The Kaleidoscope project's website titled: “Discrete Symbolic Dynamical Systems
-                & Models” introduces Multicolored Logical Net (MclN) Graphical Modeling
-                Formalism (GMF) and describes qualitative dynamical systems models development technique
-                based on McLN GMF.<br>
+                & Models” introduces Multicolored Logical Net (MclN) Modeling
+                Formalism (MF) and describes qualitative dynamical systems models development technique
+                based on McLN MF.<br>
                 <a style="text-align: center" href="https://www.dsdsam.com/" target="_blank"
                    class="open-the-site">Go to the "Home View" of the Site.</a>
             </p>
