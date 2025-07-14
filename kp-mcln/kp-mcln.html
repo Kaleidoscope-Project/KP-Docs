@@ -80,110 +80,129 @@
         <div style="margin-top: 33px; margin-bottom: 0px; "> <!-- Content holder -->
 
             <p>
-                This page introduces the Multicolored Logical Net Modeling Formalism, or McLN MF,
+                This page introduces the Multicolored Logical Net Modeling Formalism, or McLN MF. It is
                 intended for creating graphical models of qualitative dynamical systems and reproducing
                 their behavior on a computer screen.
 
-                Respectively, in order to enable, not only representation of the properties of the modeled
-                systems and their states, in the models, but also reproducing changes in the state of
-                the properties, depending on changes of the state of other properties, McLN models are
-                created based on the notion of a bipartite directed graph, the elements of which are
-                considered to be the simple discrete devices that are endowed with the ability to take
-                different qualitative states, on the one hand, and have a certain number of inputs and
-                outputs necessary for the interaction of elements with each other, on the other hand.
+                Respectively, in order to enable, not only representing properties of the modeled
+                systems and their states, in the models, but also reproducing changes of the state of
+                the properties, depending on changes of the state of other properties, the McLN models are
+                created based on the notion of the bipartite directed graph, the elements of which are
+                considered to be the simple discrete devices that are endowed with the capability of taking
+                different qualitative states, on the one hand, and having a certain number of inputs and
+                outputs necessary for interaction of the elements with each other, on the other hand.
             </p>
 
             <p>
-                The elements of these models, thus, are the representations of such elements of
-                the modeled systems as the Properties, Conditions triggering changes of state of the
-                Properties, Dependencies of the state of Conditions on the state of Properties and Dependencies
-                of the state of Properties on the state of Conditions. Therefore, the McLN models can
-                be, naturally, created as the graphical nets that are characterized by their structure, and
-                by the mechanism of reproducing behavior of the modeled systems that is enabled by endowing
-                the elements of the structure with the ability to perform operations of the Algebra of
-                Symbols.
+                These models, thus, are defined as the collections of elements representing Properties of
+                the modeled systems, and such elements as the Conditions triggering changes of state of the
+                Properties, Dependencies of the state of the Conditions on the state of the Properties and
+                the Dependencies of the state of the Properties on the state of the Conditions. Therefore,
+                McLN models are, naturally, created in the form of the graphical nets that are characterized
+                by their structure, and by the mechanism of behavior based on the ability of the elements of
+                the models to perform associated operations of the Algebra of Symbols.
+
+<!--                of the modeled systems that is enabled by endowing-->
+<!--                the elements of the structure with the ability to perform operations of the Algebra of-->
+<!--                Symbols.-->
+            </p>
+
+            <p class="section-header">
+                McLN Model Structure and Behavior
             </p>
 
             <p>
-                So, the McLN model is constructed of two types
-                of nodes. The Property nodes, depicted as the big circles or big hexagons states of which are
-                denoted by solid color that fills their surfaces. The Condition nodes, serving as the conditions
-                of changes of states of Property nodes, depicted as the small circles, that are filled with the
-                solid white color and the sign "+" drawn on it, when the condition is satisfied, or by just
-                the solid gray color, when it is not satisfied. And the two types of Arcs directed form the
-                Property nodes to the Conditions nodes, and from the Conditions nodes to the Property nodes.
-                Simple example of the McLN model is presented in Figure 1.
+                Being based on the structure of the bipartite directed graph, the McLN model is constructed of
+                two types of nodes. The Property nodes are depicted as the big circles or big hexagons,
+                states of which are denoted by solid color that fills their surfaces. The Condition nodes
+                are the conditions of changes of states of Property nodes. They are depicted as the small
+                circles that are filled with the solid white color and the sign "+" drawn on it, when the
+                condition is satisfied, or by the plain solid gray color, when it is not satisfied. Two
+                types of Arcs directed form the Property nodes to the Conditions nodes, and from the Conditions
+                nodes to the Property nodes represent the dependence of these nodes on one another. A simple
+                example of the McLN model is presented in Figure 1.
             </p>
-
+<!--            represent the dependence of these nodes on one another-->
+<!--            respectively-->
             <img class="center" src="Illustrations/Three-Rules.png" />
 
             <p style = "text-align: center;">
                 <b>Figure 1.</b> One Property depending on three situations.
             </p>
 
-            <p>
-                Property nodes represent properties and states of the properties of the modeled systems, where
-                the states are denoted as solid color that fills the circles or the hexagons. Conditions nodes
-                are the conditions of changes of states of Property nodes. They represent facts of existence of
-                expected situations that cause Property nodes, dependent on occurrence of situations, to change
-                their states. Hence, states of Conditions nodes may either represent the fact that the expected
-                situation is recognized or the fact that it is not recognized. These states are represented as
-                the solid white color with symbol "+" drawn on it, or as just the solid gray color, respectively.
-            </p>
+<!--            <p>-->
+<!--                Property nodes represent properties and states of the properties of the modeled systems, where-->
+<!--                the states are denoted as solid color that fills the circles or the hexagons. Conditions nodes-->
+<!--                are the conditions of changes of states of Property nodes. They represent facts of existence of-->
+<!--                expected situations that cause Property nodes, dependent on occurrence of situations, to change-->
+<!--                their states. Hence, states of Conditions nodes may either represent the fact that the expected-->
+<!--                situation is recognized or the fact that it is not recognized. These states are represented as-->
+<!--                the solid white color with symbol "+" drawn on it, or as just the solid gray color, respectively.-->
+<!--            </p>-->
 
             <p>
                 Arcs directed from a group of the Property nodes to a Condition node represent dependence of the fact
-                of recognition of an expected situation on a certain combination of states of Property nodes. These
-                arcs are marked with the colored dots, particular colors of which are those expected states
-                that the arcs’ input Properties should have in order for the situation to be deemed as
-                existing and recognized.
+                of recognition of the expected situation on a certain combination of states of Property nodes. These
+                arcs are marked with the colored dots, particular colors of which stand for those expected states
+                that the arcs’ input Properties should have in order for their combination to represent the situation
+                that is deemed as the existing and could be recognized.
             </p>
 
+<!--            <p>-->
+<!--                Arcs directed from a group of the Property nodes to a Condition node represent dependence of the fact-->
+<!--                of recognition of an expected situation on a certain combination of states of Property nodes. These-->
+<!--                arcs are marked with the colored dots, particular colors of which stand for those expected states-->
+<!--                that the arcs’ input Properties should have in order for the situation to be deemed as-->
+<!--                existing and recognized.-->
+<!--            </p>-->
+
             <p>
-                Arcs directed from a Condition node to some Property nodes represent dependence
-                of the state of the Property nodes on the fact of the existence of the expected situation. These
-                arcs have a small arrow heads marked with that colors of the proposed states which
+                Arcs directed from a Condition node to a group of Property nodes represent dependence
+                of state of the Property nodes on the fact of the existence of the expected situation. These
+                arcs have small arrow heads marked with the colors of the proposed states which
                 the arcs' output Property nodes should take when the state of the Condition node indicates the fact
-                that the expected situation exists.
+                of recognition of the existing expected situation.
             </p>
 
             <p>
                 So, the structure of the McLN literally means that the state of each Condition node depends on
                 the state of one or more of its input Property nodes, characterizing a particular expected situation
                 determined by the colors of the dots marking the Properties' output arcs.
-            </p>
+<!--            </p>-->
 
-            <p>
-                At the same
-                time, the state of each Property node depends on the state of
+<!--            <p>-->
+                Whereas, the state of each Property node depends on the state of
                 one or more of its input Condition nodes, and takes state represented by the color of the arrowhead
                 of the arc directed form the Condition node to the dependent Property node in case when the state of
                 the Condition indicates that all its input Properties represent expected situation denoted by
-                the marks of their output arcs.
-                <br><br>
-                <em>Exclusion</em>>: Case when the state of Condition indicates that the expected situation is
-                not recognized, or case when two or more Conditions suggest that dependent on different recognized
-                situations Property should take different states are ignored and current state of the dependent
-                property stays unchanged.
+                the color of the dots of the Condition's input (and the Properties' output) arcs.
             </p>
 
             <p>
-                Both examples, presented in Figure 1 and Figure 2 are developed in the
+                <em>Exclusion</em>>: Case when the state of a Condition indicates that the expected situation
+                is not recognized, or the case when two or more Conditions suggest that the Property, dependent
+                on different recognized situations, should take different states are ignored as contradicting
+                and the current state of the dependent property stays unchanged.
+            </p>
+
+            <p>
+                Example, presented in Figure 1, is created in the
                 <span class="popup-link" onmouseenter="openPopup(event, gmf02)"
                       onmouseleave= "closePopup(gmf02)">
                         <a class="popup-link" href = "../kp-mse/mse-screenshots.html" target="_blank">
                     <em>"Qualitative Dynamical System Modeling & Simulation Environment"</em></a></span>
-                - the software application developed for creating McLN models and simulation of their behavior.
+                - the software application supporting development of the McLN models and simulation of
+                their behavior.
             </p>
 
 
 <!--            !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
             <p class="sub-section-centered-header">
-                More on Multicolored Logical Net Structure and Simulation Examples
+                More on the Multicolored Logical Nets Structure,<br> Simulation and the Examples
             </p>
 
             <p>
-                <b>Front Page</b> is the home page of the stand-alone website, titled “Discrete
+                <b>The Front Page</b> is the home page of the stand-alone website, titled “Discrete
                 Symbolic Dynamical Systems & Models” or “DSDS&M”. It describes the structure and the behavior
                 of the McLN models of the qualitative dynamical systems.
                 <a style="text-align: center" href="https://www.dsdsam.com/" target="_blank"
@@ -191,16 +210,16 @@
             </p>
 
             <p>
-                <b>McLN MF</b> page describes qualitative dynamical systems models development
-                techniques based on McLN MF, the McLN models structure and their behavior. It also
+                <b>The McLN MF</b> page describes qualitative dynamical systems models development
+                techniques based on McLN MF, the McLN models structure and their behavior. It
                 illustrates the description using simple but straightforward examples.
                 <a style="text-align: center" href="https://www.dsdsam.com/mcln-mf" target="_blank"
                    class="open-the-site">Open McLN MF</a>
             </p>
 
             <p>
-                <b>McLN Viewer</b> page is the executor of several pre-created McLN models that can be chosen
-                from the menu and run by using the control buttons: Start, Stop, One Step and Reset.
+                <b>The McLN Viewer</b> page is the Executor of several pre-created McLN models that can be chosen
+                from the menu and run by using control buttons: Start, Stop, One Step and Reset.
                 <a style="text-align: center" href="https://www.dsdsam.com/mcln-viewer" target="_blank"
                    class="open-the-site">Open McLN Viewer</a>
             </p>
