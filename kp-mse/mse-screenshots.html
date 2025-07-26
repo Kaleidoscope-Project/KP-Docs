@@ -58,7 +58,7 @@
             <p>
                 This page is a brief description of the Qualitative Dynamical Systems Modeling
                 & Simulation Environment, or QDS MSE. It is arranged as a number of screenshots of
-                the application which demonstrate its major features, backed by short explanations.
+                the application, which demonstrate its major features, backed by short explanations.
             </p>
 
             <strong>Modes of the Application and Its Screen Layouts</strong>
@@ -68,16 +68,16 @@
                 described on the page:
                 <span class="popup-link" onmouseenter="openPopup(event, mse01)" onmouseleave= "closePopup(mse01)">
                     <a class="popup-link" href = "../kp-mcln/kp-mcln.html" target="_blank">
-                    <em>"Multicolored Logical Net Modeling Formalism"</em>.</a>
+                    <em>"Multicolored Logical Net Modeling Formalism"</em>,</a>
                 </span>
-                for design, development and
+                for design, development, and
                 simulation of qualitative dynamical system models. Respectively, the application can be
-                set to operate in either the Development or the Simulation mode. In both modes menu item
+                set to operate in either the Development or the Simulation mode. In both modes, the menu item
                 <span style="color:#780000; font-weight:bold">View&nbsp;=>&nbsp;Graph</span> or <span style="color:#780000; font-weight:bold">View&nbsp;=>&nbsp;Matrix</span> can be
-                selected to represent the McLN models as either the bipartite oriented graph, or as the vectors
-                and matrices, constituting models' vector state space equations.
-                By default, the application is started in the
-                Development mode and is set to represent a being developed model in the form of its Graph View.
+                selected to represent the McLN models as either the bipartite oriented graph or as the vectors
+                and matrices, constituting the models' vector state space equations.
+                By default, the application is started in
+                Development mode and is set to represent a model being developed in the form of its Graph View.
                 <b>Figure 1</b> represents the QDS MSE initial screen, presented at the start of the application.
             </p>
 
@@ -87,13 +87,13 @@
             <p style = "text-align: center;"><b>Figure 1.</b> Started Application.</p>
 
             <a>
-                The basic application screen layout includes following sections (from top to bottom):
-                Menu, Toolbar, Status panel, the Design Space, that can be set in the Model Development or
+                The basic application screen layout includes the following sections (from top to bottom):
+                Menu, Toolbar, Status panel, the Design Space, which can be set in the Model Development or
                 Simulation View mode, the Assisting Tools Area, and the One Line Message panel. The Design
-                Space's Model Development View is the McLN Graph/Matrix View holder. In the usual case the McLN
+                Space's Model Development View is the McLN Graph/Matrix View holder. In the usual case, the McLN
                 Graph View occupies the entire Design Space area. However, a developer, in addition
-                to the McLN Graph/Matrix View, may open one of such three optional right side panels as:
-                The Initialization Assistant, The Help Topics or the Preferences Setup panels, as well as
+                to the McLN Graph/Matrix View, may open one of the three optional right side panels:
+                The Initialization Assistant, The Help Topics, or the Preferences Setup panels, as well as
                 one left side panel: Print Preview.
                 The Print Preview panel, when open, takes the left and central parts
                 of the Model Development View area to present its Print Control panel on the left and the Print Page
@@ -103,10 +103,10 @@
             <h4>The Development Mode</h4>
 
             <p>
-                While in the Development mode, the Environment allows McLN model developer to create McLN model
+                While in the Development mode, the Environment allows the McLN model developer to create the McLN model
                 Graph, set the model's Properties in their initial state, initialize Arcs with their Expected or
-                Proposed states, save the partially created or complete model on a hard drive, retrieve it, modify,
-                and save again. The application thus produces a McLN file that is intended to be retrieved by the Space
+                Proposed states, save the partially created or complete model on a hard drive, retrieve it, modify it,
+                and save again. The application thus produces an McLN file that is intended to be retrieved by the Space
                 Exploration Mission application into its Robot Behavior Controller (see page: "Space Exploration
                 Mission // An Agent-Robot Behavior Simulator"). <b>Figure 2</b> represents Design Space's Graph View
                 filled with the
@@ -122,7 +122,7 @@
                 the Initialization Assistant on its right side. </p>
 
             <p>
-                Developer switches Environment to the Development mode by selecting menu item
+                The developer switches the Environment to the Development mode by selecting the menu item
                 <span style="color:#780000; font-weight:plain">Development => Set Development Mode</span>.
                 Development mode enables:
                 <span style="color:#780000; font-weight:plain">Creation</span>
@@ -136,7 +136,7 @@
                 <span style="color:#780000; font-weight:plain">Spline Arcs</span>, and
                 <span style="color:#780000; font-weight:plain">Simple Fragment</span>.
 
-                Operations available under <span style="color:#780000; font-weight:plain">Modification</span>
+                Operations available under the <span style="color:#780000; font-weight:plain">Modification</span>
                 menu are to:
                 <span style="color:#780000; font-weight:plain">Move Model Elements</span>,
                 <span style="color:#780000; font-weight:plain">Move Model Fragments</span>,
@@ -145,35 +145,35 @@
             </p>
 
             <p>
-                When in the Development mode, the Assisting Tools Area contains a Summary panel that lists a summary of
-                the model elements by type, providing for each type the number of included in the model elements
-                and the range of their Unique Identifiers - UIDs used so far.
+                When in the Development mode, the Assisting Tools Area contains a Summary panel that lists a
+                summary of the model elements by type, providing for each type the number of elements included
+                in the model and the range of their Unique Identifiers - UIDs used so far.
             </p>
 
             <p style = "text-align: center;"><br>
                 <img style="width: 500px; height: 300px;" src="app-screenshots-small/Matrix-View-Small.png"/>
             </p>
-            <p style = "text-align: center;"><b>Figure 3.</b> The QDS MSE in the Development mode, presenting the same, as
-                in the Figure 2, Three Rules McLN model, in its Matrix View. </p>
+            <p style = "text-align: center;"><b>Figure 3.</b> The QDS MSE in the Development mode, presenting the same as
+                in Figure 2, the Three Rules McLN model, in its Matrix View. </p>
 
             <p>
-                Presented in the Matrix View McLN model is drawn as five elements - three vectors and two matrices,
+                Presented in the Matrix View, the McLN model is drawn as five elements - three vectors and two matrices,
                 described below in the order of the data flow in the model:
 
             <ol class="justified-text">
-                <li> State Vector is the representation of the McLN model Properties current state.
+                <li> The State Vector is the representation of the McLN model's current state.
                 </li>
-                <li> Situations Recognition Matrix is the representation of dependence relations of states of Conditions on
+                <li> The Situations Recognition Matrix is the representation of dependence relations of states of Conditions on
                     the state of Properties. It maps model State Vector to Conditions Vector.
                 </li>
-                <li> Conditions Vector is the representation of the facts of recognition of situations, present in the
+                <li> The Conditions Vector is the representation of the facts of recognition of situations, present in the
                     State Vector.
                 </li>
-                <li> Generation Matrix is the representation of dependence relations of states of Properties
+                <li> The Generation Matrix is the representation of dependence relations of states of Properties
                     on the states of Conditions. It maps Conditions Vector to Final Proposed States Vector.
                 </li>
-                <li> Final Proposed States Vector which is the representation of the computed next states of
-                    the Properties that are supposed to be merged into State Vector before it is used as the
+                <li> The Final Proposed States Vector, which is the representation of the computed next states of
+                    the Properties that are supposed to be merged into the State Vector before it is used as the
                     input of the model at the next simulation iteration.
                 </li>
             </ol>
@@ -189,12 +189,14 @@
             <h4>The Simulation Mode</h4>
 
             <p>
-                While in the Simulate mode, Environment allows the McLN model developer to test developed model behavior.
-                When switching to Simulation mode the Design Space is set to the Model Simulation View and the Assisting
-                Tools Area, located below the Model Simulation View is filled with the Property Selection, the Property
+                While in the Simulate mode, the Environment allows the McLN model developer to test the
+                developed model behavior.
+                When switching to Simulation mode, the Design Space is set to the Model Simulation View,
+                and the Assisting
+                Tools Area, located below the Model Simulation View, is filled with the Property Selection, the Property
                 Current State, and the Execution History Trace Log panels. These currently
-                available tools are assisting in the McLN model development, debugging and verification. <b>Figure 4</b>
-                represents a QDS MSE screen snapshot made at the time when the Environment is in the Simulation mode while
+                available tools are assisting in the McLN model development, debugging, and verification. <b>Figure 4</b>
+                represents a QDS MSE screen snapshot made at the time when the Environment is in the Simulation mode, while
                 the Help Topics panel's Running Model Examples topic is optionally open on the right side of the
                 Model Simulation View.
             </p>
@@ -202,10 +204,10 @@
             <p style = "text-align: center;"><br>
                 <img style="width: 500px; height: 300px;" src="app-screenshots-small/Simulation-Mode-Small.png"/>
             </p>
-            <p style = "text-align: center;"><b>Figure 4.</b> The QDS MSE in The Simulation mode. </p>
+            <p style = "text-align: center;"><b>Figure 4.</b> The QDS MSE in the Simulation mode. </p>
 
             <p>
-                Developer sets the Environment to the Simulation mode by selecting menu item
+                The developer sets the Environment to the Simulation mode by selecting the menu item
                 <span style="color:#780000; font-weight:plain">Simulation => Set Simulation Mode</span>.
                 Accordingly, the toolbar buttons enabled in the Simulation mode are:
                 <span style="color:#780000; font-weight:plain">Start</span>,
@@ -215,51 +217,51 @@
                 They allow the developer to control the simulation process.
 
                 Clicking on the
-                <span style="color:#780000; font-weight:plain">Start</span> button, activates the auto simulation process.
-                This click disables
+                <span style="color:#780000; font-weight:plain">Start</span> button activates the auto simulation process.
+                This click disables the
                 <span style="color:#780000; font-weight:plain">Start</span> and
                 <span style="color:#780000; font-weight:plain">Step</span>
                 buttons while enabling the <span style="color:#780000; font-weight:plain">Stop</span> button.
 
                 Clicking on the
                 <span style="color:#780000; font-weight:plain">Stop</span>
-                button, stops the auto simulation process and returns
+                button stops the auto simulation process and returns the
                 <span style="color:#780000; font-weight:plain">Start</span> and
                 <span style="color:#780000; font-weight:plain">Step</span>
                 buttons back to their enabled state.
 
                 Clicking on the
                 <span style="color:#780000; font-weight:plain">Step</span>
-                button, executes only one simulation step at a time.
+                button executes only one simulation step at a time.
 
                 Clicking on the
                 <span style="color:#780000; font-weight:plain">Reset</span>
-                button, resets the model to its initial state.
+                button resets the model to its initial state.
             </p>
 
             <p>
-                The Simulation Analysis Tools, located below the Model Simulation View allow a developer to
+                The Simulation Analysis Tools, located below the Model Simulation View, allow a developer to
                 select all, or just a
-                subset, of model Properties and analyse behavior of the model over time of its simulation.
+                subset, of model Properties and analyze the behavior of the model over time in its simulation.
                 The Model Current State Panel presents each selected
-                Property current state by providing its interpretation in the form of a statement. This interpretation
-                includes Property name as the statement's subject and the current state of the Property's in
+                Property's current state by providing its interpretation in the form of a statement. This interpretation
+                includes the Property name as the statement's subject and the current state of the Property in
                 the form of the statement's predicate. The Execution History Trace Log panel presents selected
-                Properties states history over simulation time. Both panels are updated after each simulation tick
+                Properties' state history over simulation time. Both panels are updated after each simulation tick
                 in real time.
             </p>
 
             <h4>Printing Developed Model</h4>
 
             <p>
-                QDS MSE allows the developer to be able to print the developed model. To activate the printing
-                facility the developer opens the
+                The QDS MSE allows the developer to print the developed model. To activate the printing
+                facility, the developer opens the
                 <span style="color:#780000; font-weight:bold">Project</span>
                 menu and selects the
-                <span style="color:#780000; font-weight:bold">Print Preview Panel</span> item or alternatively
+                <span style="color:#780000; font-weight:bold">Print Preview Panel</span> item, or alternatively
                 clicks the corresponding toolbar button.
                 <b>Figure 5</b> represents the QDS MSE Design Space at a time when the Environment is set
-                to print a developed McLN model. For the purpose of illustration this snapshot also presents
+                to print a developed McLN model. For the purpose of illustration, this snapshot also presents
                 the Property Setup panel open on the right side of the Design Space panel.
             </p>
 
@@ -270,7 +272,7 @@
 
             <p>
                 As it is presented on the snapshot, the printing facility allows the developer to print in
-                either Portrait or Landscape format. Printed image is scaled to fit the standard A4 page.
+                either Portrait or Landscape format. The printed image is scaled to fit the standard A4 page.
             </p>
 
         </div> <!-- Content holder -->
