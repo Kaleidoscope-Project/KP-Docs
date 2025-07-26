@@ -390,15 +390,15 @@
             <p>
                 This page is an introduction to the Qualitative Dynamical Systems Modeling Technique that provides
                 a way of defining  models of those systems in the form of a vector state equation. It lets you
-                simulate behavior of the systems by running interactive computation of the equations and visualizes
-                the process of the simulation. To begin, please, follow the explanation written beneath the
+                simulate the behavior of the systems by running interactive computations of the equations and visualizes
+                the process of the simulation. To begin, please follow the explanation written beneath the
                 cluster of the Simulation Control Buttons.
             </p>
         </div>
 
         <!--  //////////////////////////   M o d e l   S e l e c t i o n   D r o p d o w n   //////////////////////  -->
 
-        <div style="text-align: center;"><b>Model Chooser. Select predefined model to be simulated</b>
+        <div style="text-align: center;"><b>Model Chooser. Select a predefined model to be simulated</b>
                 <p>
                     Models Are Grouped, and Are Selected by Clicking on the Items Under the Group Headers
                 </p>
@@ -647,7 +647,7 @@
                     mode, when none of the single-step buttons have been used yet.
                     Use the
                     <span style="color: #222;"><em>"Reset Simulation"</em></span> button to reset the simulation
-                    process into its initial state letting it be run again from the beginning.
+                    process to its initial state, letting it be executed again from the beginning.
                 </p>
 
 <!--                <p>-->
@@ -670,10 +670,10 @@
                 </p>
 
                 <p>
-                    Prepared for the simulation, models may exhibit both: either self-driven or mixed -
-                    self-driven and input driven behavior. This  behavior also may be often viewed as
-                    the process consisting of a number of independent sub-processes, which may demonstrate
-                    chaotic, but yet deterministic nature of behavior, observed in the systems. Identifying
+                    Prepared for the simulation, models may exhibit either self-driven or mixed
+                    self-driven and input-driven behavior. This  behavior may also often be viewed as
+                    the process consisting of several independent sub-processes, which may demonstrate
+                    a chaotic, yet deterministic nature of behavior, observed in the systems. Identifying
                     in such processes independent sub-processes may be quite difficult.
                 </p>
 
@@ -688,8 +688,8 @@
                 <p>
                     The purpose of this page is not to show how big a qualitative dynamical model can be,
                     but to demonstrate the principle of transformation of the current state of the models into
-                    their next state. Therefore, all the models in this presentation are made
-                    intentionally of limited size. These models are organized in three groups.
+                    their next state. Therefore, all the models in this presentation are
+                    intentionally made of a limited size. These models are organized into three groups.
                 </p>
 
 <!--                <p>-->
@@ -700,7 +700,7 @@
 <!--                </p>-->
 
                 <p>
-                    <b>First group of models.</b> Group <em>"Full State Situations and Self Driven Models"</em> consists of
+                    <b>First group of models.</b> Group <em>"Full State Situations and Self-Driven Models"</em> consists of
                     two models. Each possible combination of all states of the state variables of the models of this group
                     (presented as the State Vector of the equation) characterises a particular situation that may occur
                     in the modeled systems.
@@ -711,7 +711,7 @@
                     <br/><br/>
 
                     <em>Model-1.2</em> is a variation of Model-1.1 in which only some states of the model are
-                    recognised as situations to which the model should respond, but the others are not.
+                    recognized as situations to which the model should respond, but the others are not.
                     <br/>
                 </p>
 
@@ -730,7 +730,7 @@
 
                     <em>Model-3.1</em> demonstrates a case where there are no explicitly separated processes. Instead,
                     there is only one process in which unpredictably occurring partial situations are the causes of
-                    fragmentary, e.g. partial, changes in the full state of the model.
+                    fragmentary, e.g., partial, changes in the full state of the model.
                 </p>
 
                 <p style="margin-top: 20pt; margin-bottom: 10pt; font-size: 17pt; font-weight: bold; text-align: center;">
@@ -748,7 +748,7 @@
                 </p>
 
                 <p>
-                    Presented on this page, solution to modeling the behavior of qualitative systems is given
+                    The solution to modeling the behavior of qualitative systems, presented on this page, is given
                     in the form of a vector state equation describing  the process of computation of the
                     correspondences "Situation -> Change of the State of Properties" as a composition of vector
                     operations and matrix transformations of the current state of the model into its next state.
@@ -762,7 +762,7 @@
 
                 <p>
                     The equation consists of eight elements listed in the order of their
-                    invocation in the computation, i.e. from right to left.
+                    invocation in the computation, i.e., from right to left.
                 </p>
 
                 <ol style="padding: 0px 4px 0px 4pt; text-align: justify;">
@@ -770,8 +770,8 @@
                         <b>External Input Vector</b> has
                         <span class=vc style="background: #ECF8FF; color: #ECF8FF;">___</span> background and
                         is an optional element of the model. It is included in the
-                        model in case when modeling technique requires the model simulation process to be driven by
-                        external input and is omitted otherwise.
+                        model in the case when the modeling technique requires the model simulation process
+                        to be driven by external input, and is omitted otherwise.
                     </li>
                     <li style="margin-top: 9pt;">
                         <b>Current State Vector</b> has
@@ -791,7 +791,7 @@
                         <b>Recognized Situations Vector</b> has
                         <span class=vc style="background: #FFFFE8; color: #FFFFE8;">___</span> background and
                         is the result of transformation of the Current State Vector
-                        of the model. It holds symbols indicating facts of recognition of presence of expected
+                        of the model. It holds symbols indicating facts of recognition of the presence of expected
                         situations in the Current State Vector of the system.
                     </li>
                     <li style="margin-top: 9pt;">
@@ -805,13 +805,13 @@
                     <li style="margin-top: 9pt;">
                         <b>Proposed State Vector</b> has
                         <span class=vc style="background: #FFFFE8; color: #FFFFE8;">___</span> background and
-                        is the result of Generation transformation. it is a
-                        collection of changes that should be infused in the Current State Vector. As at the moment
-                        of computation of iteration some of the expected situations may exist while some others might
-                        not, the Proposed State Vector may be partially defined. Some of its elements may hold
+                        is the result of Generation transformation. It is a
+                        collection of changes that should be infused into the Current State Vector. At the moment
+                        of computation of iteration, some of the expected situations may exist while some others might
+                        not; the Proposed State Vector may be partially defined. Some of its elements may hold
                         symbols denoting the valid state of the variables of the model, whereas others may appear
-                        to be just the auxiliary symbols used in the process of computation indicating that expected
-                        situation was not recognised and, therefore, computed value is not defined.
+                        to be just the auxiliary symbols used in the process of computation, indicating that the expected
+                        situation was not recognised and, therefore, the computed value is not defined.
                     </li>
                     <li style="margin-top: 9pt;">
                         <b>Dobbed State Vector</b> has
@@ -819,7 +819,7 @@
                         clone of the Current State Vector. It is presented here for just convenience to have
                         one more view of the Current State Vector right in the place where it and the
                         Proposed State Vector are used as the arguments of the vector operation computing
-                        content of the Next State Vector of the model.
+                        the content of the Next State Vector of the model.
                     </li>
                     <li style="margin-top: 9pt;">
                         <b>Next State Vector</b> has
@@ -828,7 +828,7 @@
                         This is a temporary vector that is needed to present the computed result of an iteration - values
                         of the Current State Vector at the time <b>t+i</b>, where <b>i</b> is the number of the
                         completed iteration. Values of the elements of this vector are copied to the corresponding
-                        elements of the Current State Vector as soon as a step button is clicked and the simulation
+                        elements of the Current State Vector as soon as a step button is clicked, and the simulation
                         process proceeds to the initial state of the next iteration.
                     </li>
                 </ol>
@@ -840,13 +840,13 @@
                 <p>
                     It is assumed that all values of state variables, which in the state-space representation
                     of the model are defined in the form of the elements of the Current State Vector, are
-                    qualitative and therefore, can be denoted by symbols taken from a certain set of symbols.
-                    On this page this set of symbols is defined as the set of uppercase characters of the Latin alphabet.
+                    qualitative and therefore can be denoted by symbols taken from a certain set of symbols.
+                    On this page, this set of symbols is defined as the set of uppercase characters of the Latin alphabet.
                 </p>
 
                 <p>
                     There are two sets of symbols that are used to represent the state of the model under simulation:
-                    a set of <em>domain</em> symbols, and a set of <em>auxiliary</em> symbols. The set of domain
+                    a set of <em>domain</em> symbols and a set of <em>auxiliary</em> symbols. The set of domain
                     symbols <b>D</b> is defined as:
                 </p>
 
@@ -865,14 +865,14 @@
                 <p>
                     Symbols of set <b>D</b> are used to denote values of elements of the model representing states of
                     the properties of the modeled system. And the symbols of set <b>X</b> are used to denote values of
-                    those elements of state of the model which represent the state of the process of computation
-                    of the equation. Meaning of the symbols of the set <b>X</b> are the following:
+                    those elements of the state of the model, which represent the state of the process of computation
+                    of the equation. The meaning of the symbols of the set <b>X</b> is the following:
                 </p>
 
                 <p>
                     Symbol <b>“-”</b> is a kind of “zero” of the algebra used for computing the models and is
                     used to represent the values of those elements of the vectors and the matrices of the
-                    equation which should be excluded from the process of computation.
+                    equation, which should be excluded from the process of computation.
                 </p>
 
                 <p>
@@ -888,11 +888,11 @@
                 </p>
 
                 <p>
-                    Symbol <b>“$”</b> is used to denote second possible results of the recognition of a situation.
-                    It is an alternative to the symbol <b>“!”</b> and serves for presenting the fact asserting that
+                    Symbol <b>“$”</b> is used to denote the second possible result  of the recognition of a situation.
+                    It is an alternative to the symbol <b>“!”</b> and serves for presenting the fact of asserting that
 
                     a particular value presented in a particular element
-                    of the Current State Vector of the model <em>was not compared</em> to its expected value
+                    of the Current State Vector of the model <em>was not compared</em> as the expected value
                     presented in a particular element of a particular row of the Recognition matrix
                     and thus the compared element of the Current State Vector
                     cannot be considered as recognized.
@@ -903,7 +903,7 @@
                     (see a description of application of the Production and the Disjunction operations
                     described below in the section: "Computation of Matrix Equation of Model of Qualitative
                     Dynamical System"). It is yielded by the Disjunction operation to eliminate the
-                    conflict which may occur when two, or more, situations are simultaneously recognized
+                    conflict that may occur when two or more situations are simultaneously recognized
                     by the Recognition matrix and then transformed by the Generation matrix to different
                     proposed values.
                 </p>
@@ -915,21 +915,21 @@
 <!--    !!!!!!!∈!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ∈-->
 <!--</p>-->
                 <p>
-                    In order for the equation to be computed its elements should be initialized. This
+                    In order for the equation to be computed, its elements should be initialized. This
                     initialization is conducted automatically right after the model is picked up from
                     the Model Chooser dropdown list.
                 </p>
 
                 <p>
                     <em>Initialization of vectors</em>. The Current State Vector is initialized with the
-                    model initial state provided by specification of the chosen model. All other vectors
-                    are populated with symbol <b>“-”</b> indicating that their elements are empty as not
+                    model's initial state provided by the specification of the chosen model. All other vectors
+                    are populated with the symbol <b>“-”</b> indicating that their elements are empty, as not
                     yet computed.
                 </p>
 
                 <p>
                     <em>Initialization of matrices</em>. Following the general mechanism of application
-                    of the matrix operators carrying out transformation of their input vectors into the
+                    of the matrix operators, carrying out transformation of their input vectors into the
                     output ones, by means of multiplication of the input vector by each row of the matrix,
                     initialization of both matrices is determined by their roles in the equation.
                 </p>
@@ -965,15 +965,15 @@
                     row of the matrix is filled with the symbols (elements of set <b>D</b>) denoting proposed
                     values of the variable, associated with that row. All these symbols are placed at the
                     intersections of the row with the columns that are associated with the elements of the
-                    Recognized Situations Vector indicating those situations on occurrence of which values
+                    Recognized Situations Vector, indicating those situations on the occurrence of which values
                     of the  Proposed States Vector depend.
                 </p>
 
                 <p>
                     All elements of both matrices that are not initialized with any valid values taken from
-                    the set <b>D</b>, are filled with the symbol “-” of the set <b>X</b>, denoting that at a
-                    time of computation of the equation these elements do not represent any meaningful, for
-                    the model, value and should be ignored.
+                    the set <b>D</b> are filled with the symbol “-” of the set <b>X</b>, denoting that at
+                    the time of computation of the equation, these elements do not represent any meaningful value for
+                    the model, and should be ignored.
                 </p>
 
                 <p>
@@ -992,21 +992,21 @@
 <!--                </p>-->
 
                 <p style="margin-top: 10pt; margin-bottom: 10pt; font-size: 16pt; text-align: center;">
-                    Highlighting Active Vector Background and<br/>Changes in Status of Their Elements
+                    Highlighting Active Vector Background and<br/>Changes in the Status of Their Elements
                 </p>
 
                 <p>
                     As the simulation process is a sequence of computational steps of execution of vector
                     or matrix transformations, there is always a vector toward which the currently executed
-                    operation is targeted. This vector is considered as an active one. In order to emphasize
+                    operation is targeted. This vector is considered an active one. To emphasize
                     the active status of such a vector, the background of the currently active vector is
-                    highlighted in the pink color.
+                    highlighted in pink.
                 </p>
 
                 <p>
                     When carrying out a simulation process, the Simulation Engine  presents changes in the
                     state of the elements of the active vector after every executed operation. For this
-                    purpose each changed state element of the vector is highlighted with the
+                    purpose, each changed state element of the vector is highlighted with the
                     color corresponding to the color of the current, i.e., the usual or the active background
                     of the vector.
                 </p>
@@ -1090,24 +1090,24 @@
 
                 <p style="margin-top: 15pt; margin-bottom: 10pt; font-size: 16pt; text-align: center;">
 <!--                    Computation of Matrix Equation of Model of Qualitative Dynamical System-->
-                    Computation of Matrix Equation of Model of<br>Qualitative Dynamical System
+                    Computation of the Matrix Equation of the Model of<br>Qualitative Dynamical System
                 </p>
 
                 <p>
-                    The process of computation of the equation consists in performing a sequence of four
-                    vector and matrix operations that transforms the content of the Current State Vector of
+                    The process of computation of the equation consists of performing a sequence of four
+                    vector and matrix operations that transform the content of the Current State Vector of
                     the model into its next state. Respectively, these operations are executed as four
-                    successive steps which are carried out from right to left. They are.
+                    successive steps, which are carried out from right to left. They are.
                 </p>
 
                 <p>
-                    <b>Input Application Step.</b> The input application, optional step of computation of
+                    <b>Input Application Step.</b> The input application, an optional step of computation of
                     the equation, is involved in the case when the state of some properties of the modeled system
                     can be changed by external effects. It is implemented in the model as executing the
                     "Application" (<) operation, which "injects" the values of the External Input Vector into
-                    the Current State Vector of the model. This operation is expressed in replacing values
+                    the Current State Vector of the model. This operation is expressed in replacing the values
                     of the elements of the Current State Vector with the values of non-empty elements of the
-                    External Input Vector. Result of this operation is  modified Current State Vector.
+                    External Input Vector. The result of this operation is the modified Current State Vector.
                 </p>
 
                 <p>
@@ -1125,8 +1125,8 @@
                     First, the Equivalence operation is used to systematically perform the pairwise comparison
                     of the elements of the row of the Recognition Matrix (corresponding to the being computed
                     element of the Recognized Situations Vector) with the elements of the Current State Vector.
-                    The results of these comparisons can be either the symbol "!" meaning that the operands of the
-                    Equivalence operation have been compared, or the symbol "$" meaning that they have not been
+                    The results of these comparisons can be either the symbol "!", meaning that the operands of the
+                    Equivalence operation have been compared, or the symbol "$", meaning that they have not been
                     compared.
                     <br><br>
                     Second operation - Conjunction is applied to all results of the Equivalence
@@ -1153,8 +1153,8 @@
                     First, the Production operation is used to systematically take pairs consisting of the
                     element of the row of the Generation Matrix (corresponding to the being computed element
                     of the Proposed State Vector) and the element of the Recognized Situations Vector. The
-                    result of processing each such a pair depends on the values of the elements of the pair
-                    and may be computed as one of the symbols: “-” or “$”; or as the element of the row of
+                    result of processing each such pair depends on the values of the elements of the pair
+                    and may be computed as one of the symbols: “-” or “$”, or as the element of the row of
                     the matrix if it is a symbol of set <b>D</b>.
                     <br><br>
                     Then, the Disjunction operation is applied to all the results of the Production operation
@@ -1163,9 +1163,9 @@
                     achieve that goal, the Disjunction operation starts with assigning to the final proposed
                     value its initial value as the symbol “$”, ignores all results of the Production operation,
                     represented by the symbols "-" or “$”, and identifies cases when two or more proposed
-                    values appear as different symbols of the set <b>D</b>. In accordance with definition
-                    of the model occurrence of different proposed values is considered contradicting and
-                    to prevent this contradiction the Disjunction operation marks final proposed value with the
+                    values appear as different symbols of the set <b>D</b>. In accordance with the definition
+                    of the model, the occurrence of different proposed values is considered contradictory, and
+                    to prevent this contradiction, the Disjunction operation marks the final proposed value with the
                     symbol “#”.
                     <br><br>
                     Thus, in the result, it may always happen that the final proposed value holds
@@ -1173,14 +1173,14 @@
                     of the model and recognized; b) the "#" symbol, when the conflict of the proposed values
                     is detected; and c) a symbol belonging to set <b>D</b>, when one, two or even more situations
                     are recognized and all produced the same valid proposed value, which can be used as the
-                    value of the element of the Proposed Values Vector. Processing all these three cases is
+                    value of the element of the Proposed Values Vector. Processing all three cases is
                     accomplished by the last third step.
                 </p>
 
                 <p>
                     <b>Third Computation Step.</b> This computation step is the last in the process of
-                    computation of the equation. It is accomplished by the Application operation. And its
-                    task is to check if the final proposed value is undefined and replace it with the
+                    computing the equation. It is accomplished by the Application operation. Its task
+                    is to check if the final proposed value is undefined and replace it with the
                     value of the corresponding element of the Current State Vector.
                 </p>
 
