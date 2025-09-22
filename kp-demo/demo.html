@@ -5,13 +5,16 @@
     <title>CheerpJ test</title>
     <script src="https://cjrtnc.leaningtech.com/4.2/loader.js"></script>
   </head>
+  <!--        await cheerpjInit({ version: 17 });-->
   <body>
     <script>
-      (async function () {
+      async function runJavaApp () {
         await cheerpjInit({ version: 17 });
         cheerpjCreateDisplay(800, 600);
         await cheerpjRunJar("/app/DSDS.DSE.jar");
-      })();
+      };
+
+      runJavaApp();
     </script>
   </body>
 </html>
