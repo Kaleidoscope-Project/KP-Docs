@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>CheerpJ test</title>
+    <script src="https://cjrtnc.leaningtech.com/4.2/loader.js"></script>
+  </head>
+  <body>
+    <script>
+      async function runJavaApp () {
+        await cheerpjInit({ version: 17 });
+        cheerpjCreateDisplay(800, 600);
+        await cheerpjRunJar("/app/MCLN.SEM.jar");
+      };
+
+      runJavaApp();
+    </script>
+  </body>
+</html>
