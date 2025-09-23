@@ -8,7 +8,7 @@
   <body>
     <script>
       async function runJavaApp () {
-        await cheerpjInit({ version: 17 });
+        await cheerpjInit({ version: 17, enableDebug: true });
         cheerpjCreateDisplay(800, 600);
         await cheerpjRunJar("/app/kp-demo/DSDSDSE.jar");
       };
