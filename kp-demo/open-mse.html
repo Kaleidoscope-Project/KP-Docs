@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>QDS MSE APP</title>
-
+    <!-- Step 1: Add the CheerpJ runtime loader script -->
+    <script src="https://cjrtnc.leaningtech.com/4.2/loader.js"></script>
     <style>
         /* Add CSS to give your container a size and style */
         #swing-app-container {
@@ -12,11 +13,8 @@
           border: 2px solid black;
         }
     </style>
-
-    <!-- Step 1: Add the CheerpJ runtime loader script -->
-    <script src="https://cjrtnc.leaningtech.com/4.2/loader.js"></script>
-
 </head>
+
 <body>
 <!-- Step 2: Define the div for your Swing app -->
 <div id="swing-app-container"></div>
@@ -28,7 +26,7 @@
       const containerElement = document.getElementById("swing-app-container");
 
       // Initialize CheerpJ and pass the container element to create the display
-      await cheerpjInit();
+      await cheerpjInit({ version: 17 });
       cheerpjCreateDisplay(-1, -1, containerElement);
 
       // Run your JAR file
