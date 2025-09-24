@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SEM App</title>
+    <!-- Step 1: Add the CheerpJ runtime loader script -->
+    <script src="https://cjrtnc.leaningtech.com/4.2/loader.js"></script>
+    <style>
+        /* Add CSS to give your container a size and style */
+        #swing-app-container {
+          width: 1500px;
+          height: 830px;
+          border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Step 2: Define the div for your Swing app -->
+<div id="swing-app-container"></div>
+
+<!-- Step 3: Add the CheerpJ initialization script -->
+<script type="module">
+    (async function() {
+      // Get a reference to your div element
+      const containerElement = document.getElementById("swing-app-container");
+
+      // Initialize CheerpJ and pass the container element to create the display
+      await cheerpjInit({ version: 17 });
+      cheerpjCreateDisplay(-1, -1, containerElement);
+
+      // Run your JAR file
+      await cheerpjRunJar("/app/kp-demo/MCLN.SEM.jar");
+    })();
+</script>
+
+</body>
+</html>
+<!--https://kaleidoscope-project.dev/kp-demo/open-mse.html-->
