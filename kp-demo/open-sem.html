@@ -43,17 +43,25 @@
       await cheerpjInit({ version: 17 });
       cheerpjCreateDisplay(1200, 600, containerElement);
       await cheerpjRunJar("/app/kp-demo/MCLN.SEM.jar");
+      document.addEventListener('DOMContentLoaded', runCheerpJ);
     })();
-</script>
 
-<script>
+
+
     function runCheerpJ() {
       cheerpjCreateDisplay(800, 600, document.getElementById("swing-app-container"));
       cheerpjRunMain("dsdsse.app.DSDSSEApp");
     }
+    </script>
 
-    document.addEventListener('DOMContentLoaded', runCheerpJ);
-</script>
+<!--<script>-->
+<!--    function runCheerpJ() {-->
+<!--      cheerpjCreateDisplay(800, 600, document.getElementById("swing-app-container"));-->
+<!--      cheerpjRunMain("dsdsse.app.DSDSSEApp");-->
+<!--    }-->
+
+<!--    document.addEventListener('DOMContentLoaded', runCheerpJ);-->
+<!--</script>-->
 
 </body>
 </html>
