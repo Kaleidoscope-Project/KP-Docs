@@ -30,6 +30,18 @@
 
         }
     </style>
+
+    <script>
+        function runCheerpJ() {
+          // Pass the element reference to cheerpjCreateDisplay
+          cheerpjCreateDisplay(800, 600, document.getElementById("swing-app-container"));
+          // Start your Java application
+          cheerpjRunMain("dsdsse.app.DSDSSEApp");
+        }
+
+        // Call the function to run CheerpJ after the page loads
+        document.addEventListener('DOMContentLoaded', runCheerpJ);
+    </script>
 </head>
 
 <body>
@@ -49,18 +61,6 @@
       // Run your JAR file
       await cheerpjRunJar("/app/kp-demo/MCLN.SEM.jar");
     })();
-</script>
-
-    <script>
-      function runCheerpJ() {
-        // Pass the element reference to cheerpjCreateDisplay
-        cheerpjCreateDisplay(800, 600, document.getElementById("swing-app-container"));
-        // Start your Java application
-        cheerpjRunMain("dsdsse.app.DSDSSEApp");
-      }
-
-      // Call the function to run CheerpJ after the page loads
-      document.addEventListener('DOMContentLoaded', runCheerpJ);
 </script>
 
 </body>
