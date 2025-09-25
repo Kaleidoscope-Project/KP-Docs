@@ -49,6 +49,18 @@
       // Run your JAR file
       await cheerpjRunJar("/app/kp-demo/MCLN.SEM.jar");
     })();
+
+    <script>
+  function runCheerpJ() {
+    // Pass the element reference to cheerpjCreateDisplay
+    cheerpjCreateDisplay(800, 600, document.getElementById('app-container'));
+    // Start your Java application
+    cheerpjRunMain("com.yourcompany.YourMainClass");
+  }
+
+  // Call the function to run CheerpJ after the page loads
+  document.addEventListener('DOMContentLoaded', runCheerpJ);
+
 </script>
 
 </body>
