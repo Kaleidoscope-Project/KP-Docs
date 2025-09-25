@@ -1,6 +1,5 @@
 <html lang="en">
 <head>
-<!-- https://discord.com/invite/yzZJzpaxXT   -->
     <meta charset="UTF-8">
     <title>SEM App</title>
     <!-- Step 1: Add the CheerpJ runtime loader script -->
@@ -13,7 +12,7 @@
             justify-content: center; /* Horizontally centers the app */
             align-items: center; /* Vertically centers the app */
             min-height: 100vh; /* Ensures the body takes up the full viewport height */
-            background-image: url("common/images/line-bg.png"); /*  background-color: lightblue;*/
+<!--            background-image: url("common/images/line-bg.png"); /*  background-color: lightblue;*/-->
         }
 
         .centered-div {
@@ -32,37 +31,23 @@
 </head>
 
 <body>
-<!--https://kaleidoscope-project.dev/kp-demo/open-sem.html-->
 <!-- Step 2: Define the div for your Swing app class="centered-div"-->
 <div  id="swing-app-container"></div>
 
 <!-- Step 3: Add the CheerpJ initialization script -->
 <script type="module">
     (async function() {
+      // Get a reference to your div element
       const containerElement = document.getElementById("swing-app-container");
+
+      // Initialize CheerpJ and pass the container element to create the display
       await cheerpjInit({ version: 17 });
-      cheerpjCreateDisplay(1200, 600, containerElement);
+      cheerpjCreateDisplay(-1, -1, containerElement);
+
+      // Run your JAR file
       await cheerpjRunJar("/app/kp-demo/MCLN.SEM.jar");
-      console.log("document.addEventListener");
-      document.addEventListener('DOMContentLoaded', runCheerpJ);
     })();
-
-    function runCheerpJ() {
-      console.log("RUN CHEERPJ: started");
-      cheerpjCreateDisplay(800, 600, document.getElementById("swing-app-container"));
-      cheerpjRunMain("dsdsse.app.DSDSSEApp");
-      console.log("RUN CHEERPJ: started");
-    }
     </script>
-
-<!--<script>-->
-<!--    function runCheerpJ() {-->
-<!--      cheerpjCreateDisplay(800, 600, document.getElementById("swing-app-container"));-->
-<!--      cheerpjRunMain("dsdsse.app.DSDSSEApp");-->
-<!--    }-->
-
-<!--    document.addEventListener('DOMContentLoaded', runCheerpJ);-->
-<!--</script>-->
 
 </body>
 </html>
