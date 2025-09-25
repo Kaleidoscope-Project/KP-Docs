@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +13,6 @@
             justify-content: center; /* Horizontally centers the app */
             align-items: center; /* Vertically centers the app */
             min-height: 100vh; /* Ensures the body takes up the full viewport height */
-<!--            background-image: url("common/images/line-bg.png"); /*  background-color: lightblue;*/-->
         }
 
         .centered-div {
@@ -42,7 +42,7 @@
 
       // Initialize CheerpJ and pass the container element to create the display
       await cheerpjInit({ version: 17 });
-      cheerpjCreateDisplay(-1, -1, containerElement);
+      cheerpjCreateDisplay(1200, 600, containerElement);
 
       // Run your JAR file
       await cheerpjRunJar("/app/kp-demo/MCLN.SEM.jar");
