@@ -30,18 +30,6 @@
 
         }
     </style>
-
-    <script>
-        function runCheerpJ() {
-          // Pass the element reference to cheerpjCreateDisplay
-          cheerpjCreateDisplay(800, 600, document.getElementById("swing-app-container"));
-          // Start your Java application
-          cheerpjRunMain("dsdsse.app.DSDSSEApp");
-        }
-
-        // Call the function to run CheerpJ after the page loads
-        document.addEventListener('DOMContentLoaded', runCheerpJ);
-    </script>
 </head>
 
 <body>
@@ -51,16 +39,20 @@
 <!-- Step 3: Add the CheerpJ initialization script -->
 <script type="module">
     (async function() {
-      // Get a reference to your div element
       const containerElement = document.getElementById("swing-app-container");
-
-      // Initialize CheerpJ and pass the container element to create the display
       await cheerpjInit({ version: 17 });
       cheerpjCreateDisplay(1200, 600, containerElement);
-
-      // Run your JAR file
       await cheerpjRunJar("/app/kp-demo/MCLN.SEM.jar");
     })();
+</script>
+
+<script>
+    function runCheerpJ() {
+      cheerpjCreateDisplay(800, 600, document.getElementById("swing-app-container"));
+      cheerpjRunMain("dsdsse.app.DSDSSEApp");
+    }
+
+    document.addEventListener('DOMContentLoaded', runCheerpJ);
 </script>
 
 </body>
