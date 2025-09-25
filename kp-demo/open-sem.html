@@ -33,6 +33,7 @@
 </head>
 
 <body>
+<!--https://kaleidoscope-project.dev/kp-demo/open-sem.html-->
 <!-- Step 2: Define the div for your Swing app class="centered-div"-->
 <div  id="swing-app-container"></div>
 
@@ -43,14 +44,15 @@
       await cheerpjInit({ version: 17 });
       cheerpjCreateDisplay(1200, 600, containerElement);
       await cheerpjRunJar("/app/kp-demo/MCLN.SEM.jar");
+      console.log("document.addEventListener");
       document.addEventListener('DOMContentLoaded', runCheerpJ);
     })();
 
-
-
     function runCheerpJ() {
+      console.log("RUN CHEERPJ: started");
       cheerpjCreateDisplay(800, 600, document.getElementById("swing-app-container"));
       cheerpjRunMain("dsdsse.app.DSDSSEApp");
+      console.log("RUN CHEERPJ: started");
     }
     </script>
 
@@ -65,4 +67,3 @@
 
 </body>
 </html>
-<!--https://kaleidoscope-project.dev/kp-demo/open-sem.html-->
