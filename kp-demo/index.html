@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--    https://kaleidoscope-project.github.io/KP-Docs/index.html-->
+<!--    https://www.kaleidoscope-project.dev/KP-Docs/index.html-->
+    <title>- Kaleidoscope Project</title>
+    <link rel="shortcut icon" type="image/png" href="common/images/mcln-logo.png">
+
+    <!-- style sheets   background-color: #f4f4f0;-->
+    <link rel="stylesheet" href="common/stylesheets/common.css">
+
+    <!-- java scripts   -->
+    <script type="text/javascript" src="common/javascripts/common-javascripts.js"></script>
+
+    <!-- bg color CCFF99 D4FF90 D7FF90 CBFF90 CFFFCF E5FFDA E6FFDE E5FFD8 E4FFD8 E4FFCF E6FFBA - 07.01.2023
+                  EBFFAA - before 07.01.2023
+                  EEFEAD E4FEA3  DAFE99 D0FE8F C6FE85 BCFE71 good:A8FE5D
+                   0xBFFF00-->
+    <!--#C3FF02 C5FF00 #CDFFA5-->
+    <style>
+        body {
+            background-image: url("common/images/line-bg.png");
+            min-width: 700px;
+        }
+
+        .open-the-page {
+            border: 1px solid #888888;
+            border-radius: 12px;
+            width: 80px;
+            background-color: #C3FE66;
+            color: #555555;
+            padding:  0px 6px 0.7px 5px;
+            box-shadow: 1px 1px 1px #777;
+            cursor: pointer;
+            text-decoration: none;
+            font: 12px Georgia, Helvetica;
+        }
+
+        .open-the-page:active {
+            box-shadow: 0px 0px 1px #666;
+            transform: translateY(1px);
+            transform: translateX(1px);
+        }
+
+        .open-the-site {
+            border: 1px solid #888888;
+            border-radius: 12px;
+            width: 80px;
+            background-color: #FFE8E8;
+            color: #555555;
+            padding:  0px 6px 1px 5px;
+            box-shadow: 1px 1px 1px #777;
+            cursor: pointer;
+            text-decoration: none;
+            font: 14px Georgia, Helvetica;
+        }
+
+        .open-the-site:active {
+            box-shadow: 0px 0px 1px #666;
+            transform: translateY(1px);
+            transform: translateX(1px);
+        }
+
+     span.column {
+      flex-direction: column;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+      vertical-align: text-top;
+    }
+
+    sup {
+        line-height: .8;
+        font-size: 0.8em;
+    }
+
+    vertical-align: super;
+            font-size: small;
+             text-align: left;
+
+
+    sub {
+        line-height: 1.7;
+        font-size: 0.0em;
+    }
+
+    </style>
+
+</head>
+
+<body onload="removeHashTag()">
+<div class="container">
+    <img style="height: 6px; width: 100%;" src="common/images/two-red-lines.png" alt="Header lines"/>
+
+    <!-- content holder -->
+    <div class="text-container">
+
+        <!--    H e a d e r  font: 14px Ariel, Helvetica; -->
+        <div class="project-header" style="margin-top: 8pt; margin-bottom: 3pt; font-weight: bold; text-align: center">
+            Kaleidoscope Project
+        </div>
+        <div style="margin-top: 0px; margin-bottom: 15pt; font-size:15pt; font-weight: plain; color: #333; text-align: center">
+            (Qualitative Systems, Modeling Technique and Solutions)
+        </div>
+
+<!--        <p class="justified-text" style="font-family:family:verdana; color:#222222; margin-top:25px;-->
+<!--		margin-left:20px; margin-right:20px; font-size:15px;">-->
+        <p class="justified-text" style="font-family:family:verdana; color:#222222; font-size:15px;">
+            "The origin of this book goes back to a talk - I remember it as if it were yesterday - that I
+            had in 1927 with a mathematics professor of mine, Dr. George D. Birkhoff, when I was a sophomore
+            at Harvard. I remarked to him that I wished there were an algebra of language - an algebra by
+            means of which one could calculate the answer to an argument instead of going to sea in an ocean
+            of words. He said to me that there was, and told me of a book called "The Laws of Thought" by
+            George Boole, published in 1854. I quickly sought the book in the library, and although it
+            confused me, since I did not then know about later improvements in Boolean algebra, nevertheless,
+            the fact that here was an algebra dealing with things like classes and statements, and operations
+            like AND, OR, NOT, opened wide for me a most exhilarating vista - the possibility that all the
+            language of thought could really become calculable like mathematics. This possibility has become
+            more real than ever before because of the calculating power of automatic computers. So, I hope
+            that the contents of this book may likewise stir the imagination and spirits of many readers".
+            (<em>This is an extraction from the preface to the book "Symbolic Logic and Intelligent Machines"
+            by Edmund C. Berkeley, written in Newtonville, Massachusetts, and published in 1959</em>)
+        </p>
+
+<!--        <p class="justified-text" style="font-family:family:verdana; color:#222222;-->
+<!--		 margin-left:100px;margin-right:20px; font-size:15px;">-->
+<!--        <p class="justified-text" style="font-family:family:verdana; color:#222222; font-size:15px;">-->
+<!--            (<em>This is an extraction from the preface to the book "Symbolic Logic and Intelligent Machines"-->
+<!--            by Edmund C. Berkeley, written in Newtonville, Massachusetts, and published in 1959</em>)-->
+<!--        </p>-->
+
+<!--        <p class="justified-text" style="font-family:family:verdana; color:#222222; margin-left:20px;-->
+<!--        margin-right:20px; font-size:15px;">-->
+        <p class="justified-text" style="font-family:family:verdana; color:#222222; font-size:15px;">
+            Decades later, another researcher, Gennady Melnikov, in his book "The ABC of Mathematical Logic",
+            published in 1967, in the section: "Why Mathematical Logic Gravitates to Proper Logic", in a
+            journalistic form expressed his observation that despite the fact that Boolean algebra, originally created
+            for calculating logical reasonings, due to development of many engineering branches of knowledge,
+            has expanded its application as a means of describing and modeling discrete systems whose
+            property states can, as in logic, take only two states. The author draws attention to the fact that
+            in 1938, Claude Shannon used Boolean algebra for analysing and calculating relay circuits. And
+            suggests that: "Since by the time of publication of the book, objects, whose elements are capable of
+            entering into discrete relations (for example, electrical or electronic circuits), became
+            widespread &mdash; the mathematical logic should be either considered as the mathematics of the
+            finite discrete qualitative relations, modeling structures, or as the science of discrete modeling
+            of systems whose properties have finite number of states". (<em>Unfortunately, this book, written
+            originally in Russian, has never been translated into other languages.</em>)
+        </p>
+
+        <div style="text-align: center; font-family:family:verdana; color:#222222; font-size:15px;">
+             ~ ~ ~ ~ ~ ~ ~ ~&nbsp;&nbsp;&nbsp;!!&nbsp;&nbsp;&nbsp;~ ~ ~ ~ ~ ~ ~ ~
+        </div>
+
+
+<!--        <p class="justified-text" style="font-family:family:verdana; color:#222222; font-size:15px;">-->
+<!--            (<em>Written originally in Russian, this book, unfortunately, has never been translated-->
+<!--            into other languages.</em>)-->
+<!--        </p>-->
+
+        <div style="margin-top: 0pt; margin-bottom: 0pt;"> <!-- Content holder -->
+
+            <p>
+                The  Kaleidoscope Project is a pilot research and development initiative intended to introduce the notion
+                of Qualitative Dynamical Systems and to explore the feasibility of mathematical modeling of
+                the behavior of these systems by representing their qualitative dependence
+                relations in the form of algebraic expressions. The Qualitative Dynamical Systems, the Qualitative
+                Dynamical Systems Mathematical Modeling Technique, and the Modeling Solutions proposed
+                by the Modeling Technique are referred to below, in the course of annotations of the content
+                of the cluster of webpages of the Project.
+            </p>
+
+            <p>
+                <em>A note</em>. The last section, named "Downloadables", located below all other sections, contains
+                a reference to the page: "Download Kaleidoscope Project Applications", which suggests downloading
+                two Java Desktop Applications developed in the Kaleidoscope project for macOS and Windows
+                operating systems.
+            </p>
+
+            <!-- =================================================================================================== -->
+
+            <span id="sec.1.0"></span>
+            <p class="section-header">
+                <b>Page:</b> Qualitative Dynamical Systems, Their<br>Behavior and Mathematical Modeling
+            </p>
+
+            <p>
+                The objective of this page is to introduce the concept of the class of Qualitative Dynamical Systems and to
+                describe the characteristics of their nature and behavior, which
+                constitute the foundation for creating mathematical models of these systems. This page
+                identifies the atomic elements of behavior of the systems and
+                describes basic ways of composing these elements.
+                <a style="text-align: center" href="kp-qds/kp-qds.html" class="open-the-page">Open the Page</a>
+            </p>
+
+            <!-- =================================================================================================== -->
+
+            <span id="sec.2.0"></span>
+            <p class="section-header">
+                <b>Page:</b> Qualitative Dynamical Systems Mathematical Modeling Technique
+            </p>
+
+            <p>
+                This page is to introduce Qualitative Dynamical Systems Mathematical Modeling
+                Technique, developed as part of the Kaleidoscope Project, and to describe modeling solutions
+                proposed by the Modeling Technique. The purpose of the technique and the solutions is to enable
+                the creation of qualitative systems simulation models, capable of reproducing the behavior of existing or
+                being designed systems.
+                <a style="text-align: center" href="kp-mmt/kp-mmt.html"
+                   class="open-the-page">Open the Page</a>
+            </p>
+
+            <!-- =================================================================================================== -->
+
+            <span id="sec.3.0"></span>
+            <p class="section-header">
+                <b>Page:</b> The Algebra of Symbols
+            </p>
+
+            <p>
+                This page is the description of the algebraic system,
+                called "The Algebra of Symbols" (AoS), which is used for the computation of the functions of models
+                of qualitative systems. The AoS is defined as part of the Qualitative Dynamical Systems
+                Mathematical Modeling Technique, described on the previous page. It is the base for qualitative
+                systems modeling formalisms, descriptions of which are presented right after this page.
+                <!--                <br>-->
+                <a style="text-align: center" href="kp-aos/kp-aos.html" class="open-the-page">Open the Page</a>
+            </p>
+
+
+            <p class="section-header">
+                Qualitative Dynamical Systems Modeling<br>Technique's Modeling Solutions
+            </p>
+
+            <p>
+                There are three major modeling solutions based on the Algebra of Symbols.
+            </p>
+
+            <!-- =================================================================================================== -->
+
+            <span id="sec.4.0"></span>
+            <p class="sub-section-centered-header">
+                <em>Solution 1:</em> Extended Disjunctive Normal Form<br>Expression Calculator
+            </p>
+
+            <p>
+                Page, titled: "Extended Disjunctive Normal Form Expression Calculator", illustrates
+                a way of describing the dependence of states of a single qualitative variable on the state of
+                several groups of qualitative variables. This dependence is computed by a qualitative function,
+                implemented in the form of an algebraic expression written as the composition of operations of
+                the Algebra of Symbols. The structure of the expression is called Extended Disjunctive Normal Form (XDNF).
+                <a href="kp-xdnf/xdnf-expression-calculator.html" class="open-the-page">Open&nbsp;the&nbsp;Page</a>
+            </p>
+
+            <!-- =================================================================================================== -->
+
+            <span id="sec.5.0"></span>
+            <p class="sub-section-centered-header">
+<!--                <b>Solution 2:</b> Qualitative System Models State Space Matrix<br>Equation and This Equation Calculator-->
+<!--                <b>Solution 2:</b> Vector State-Space Model Representation and Model Transitions Calculator-->
+                <em>Solution 2:</em>
+                Qualitative Dynamical Systems Vector<br>State-Space Matrix Equation Calculator
+<!--                Qualitative Systems Vector State-Space<br>and Matrix Model Equation Calculator-->
+            </p>
+
+            <p>
+                The page is titled: "Qualitative Systems Vector State-Space and Matrix Model Equation
+                Calculator". It describes the qualitative dynamical systems mathematical modeling technique
+                based on the representation of qualitative systems in the form of matrix state equations.
+                Using several simple models and the step-by-step computation style, this page illustrates the
+                mechanism of simulation of behavior of the modeled systems as the  sequence of
+                transformations of states of the models and visualization of the results of the computation
+                of each step.
+<!--                <br>-->
+                <!--                The page, titled: "Qualitative Dynamical Systems Vector State-Space Models-->
+                <!--                Simulation Calculator", illustrates mathematical modeling technique based on the representation-->
+                <!--                of qualitative dynamical systems in the form of vector state equation of the systems. In simple-->
+                <!--                models, the page demonstrates mechanism of transformation of state of the models in style:-->
+                <!--                step of the computation - visualization of the computation result.<br>-->
+                <a href="kp-vsec/equation-calculator.html"
+                   class="open-the-page">Open the Page</a>
+            </p>
+
+            <!-- =================================================================================================== -->
+
+            <span id="sec.6.0"></span>
+            <p class="sub-section-centered-header">
+                <em>Solution 3:</em> Multicolored Logical Net Modeling<br>Formalism
+            </p>
+
+            <p>
+                This page describes a way of modeling qualitative systems in the form of graphically
+                depicted properties of the systems, facts of occurrence of situations in them, dependencies
+                of facts on the current state of properties, and dependencies of the next state of properties
+                on the state of facts. This makes it possible to represent these models on such drawing
+                surfaces as a computer screen or a printed sheet of paper.
+<!--                Page, titled: "Multicolored Logical Net Graphical Modeling Formalism", describes a way of-->
+<!--                modeling qualitative systems in the form of graphically depicted properties-->
+<!--                of the system, facts of occurrence of situations, dependencies of facts on the current-->
+<!--                state of properties and dependencies of the next state of properties on the state of facts.-->
+<!--                This make it possible to represent these models on such drawing surfaces as: a computer screen-->
+<!--                or a sheet of paper.-->
+
+<!--                addresses the-->
+<!--                essence of the questions arising at the time of developing-->
+<!--                mathematical models of Qualitative Dynamical Systems. It sets up requirements for the-->
+<!--                algebraic operations and justifies the necessity of having the algebraic system, operations-->
+<!--                of which could be utilized for defining mathematical models of behavior of qualitative systems.-->
+<!--                <br>-->
+                <a style="text-align: center" href="kp-mcln/kp-mcln.html"
+                   class="open-the-page">Open the Page</a>
+            </p>
+
+<!--            <p class="sub-section-centered-header">-->
+<!--                Multi-colored Logical Net Structure and Simulation Examples-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                The Kaleidoscope project's website titled: “Discrete Symbolic Dynamical Systems-->
+<!--                & Models” introduces Multi-colored Logical Net (MclN) Graphical Modeling-->
+<!--                Formalism (GMF) and describes qualitative dynamical systems models development technique-->
+<!--                based on McLN GMF.<br>-->
+<!--                <a style="text-align: center" href="https://www.dsdsam.com/" target="_blank"-->
+<!--                   class="open-the-site">Go to the "Home View" of the Site.</a>-->
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                The site also illustrates behavior of the models of qualitative systems. Page "McLN Viewer" suggests to-->
+<!--                pick-->
+<!--                up a pre-developed model from menu, start simulation of the model, control the process-->
+<!--                of its simulation with buttons presented on the page and observe the simulated behavior-->
+<!--                of the model in the Model Presentation Space and the Behavior Log areas of the screen.<br>-->
+<!--                <a style="text-align: center" href="https://www.dsdsam.com/mcln-viewer" target="_blank"-->
+<!--                   class="open-the-site">Go to the&nbsp;"McLN Viewer"&nbsp;of&nbsp;the&nbsp;Site.</a>-->
+<!--            </p>-->
+
+            <!-- =================================================================================================== -->
+
+            <span id="sec.7.0"></span>
+            <p class="section-header">
+                Desktop Applications Developed by and Used<br>In the Kaleidoscope Project
+            </p>
+
+            <p>
+                In addition to the pages that introduced: "Qualitative Dynamical Systems", "Qualitative Dynamical
+                Systems Modeling Technique", and the pages that described modeling solutions, suggested by the Technique,
+                the following two pages provide several screenshots illustrating different views of the software
+                tools developed in the Kaleidoscope project for supporting creation and simulation of the
+                McLN models.
+            </p>
+
+            <p>
+                <em>The page titled:</em> "Qualitative Dynamical Systems Modeling & Simulation Environment" is
+                named after the application described on it. It presents several snapshots of the application
+                screens and provides explanations of the content of these screenshots.
+
+<!--                Page titled: "Qualitative Dynamical Systems Modeling & Simulation Environment", that is named after-->
+<!--                the application describes on it, presents several snapshots of the UI of the application.-->
+<!--                This application is a development tool consisting of: 1) Graphical Creator/Editor - place where a user-->
+<!--                can create the McLN model, and 2) the McLN Model Simulator - area that lets the user to: start, stop,-->
+<!--                or execute the model step-by-step, as well as to reset the model into its initial state.-->
+                <!--                <br>-->
+<!--                                Page, titled: "Qualitative Dynamical Systems Modeling & Simulation Environment",-->
+<!--                                presents several snapshots of the UI of the application, named in the title of the page.-->
+<!--                                This application is a development tool consisting of: 1) Graphical Creator/Editor - place where user-->
+<!--                                can create the McLN model, and 2) the McLN Model Simulator - area that lets the user to: start, stop,-->
+<!--                                or execute the model step-by-step, as well as to reset the model into its initial state.<br>-->
+                <a style="text-align: center" href="kp-mse/mse-screenshots.html" class="open-the-page">Open the Page</a>
+            </p>
+
+            <p>
+                <em>The page titled:</em> "Space Exploration Mission // An Agent-Robot Behavior Simulator", is also
+                named after the application described on it. This application imitates the Research
+                Facility that is monitoring the state and actions of the remote robot-rover, whose controlling unit
+                is implemented as Multicolored Logical Net (McLN). The page is created for testing if the
+                expressive power of the McLN is sufficient for it to be used as a behavior controller.
+<!--                presents snapshots of the UI of the application named as the title of the page.-->
+<!--                This application is developed to be the object, behavior of which is controlled by the McLN-->
+<!--                Controller.-->
+
+<!--                <em>Page:</em> "Space Exploration Mission // An Agent-Robot Behavior Simulator",-->
+<!--                presents snapshots of the UI of the application named as the title of the page.-->
+<!--                This application is developed to be the object, behavior of which is controlled by the McLN-->
+<!--                Controller.-->
+<!--                <br>-->
+                <a style="text-align: center" href="kp-sem-views/sem-screenshots.html" class="open-the-page">Open the Page</a>
+            </p>
+
+            <span id="sec.8.0"></span>
+            <p class="section-header">
+                Downloadables
+            </p>
+
+<!--            <p>-->
+<!--                <b>P.S.</b> Both referred above software applications support Qualitative Dynamical Systems-->
+<!--                Mathematical Modeling Technique. These applications are the open source-->
+<!--                desktop applications provided in the form of certified installers, available for Mac-OS and-->
+<!--                Windows computers. They can be downloaded from the website's "Download-->
+<!--                Kaleidoscope Project Desktop Applications" page.-->
+<!--&lt;!&ndash;                br>&ndash;&gt;-->
+<!--                <a style="text-align: center" href="https://www.dsdsam.com/applications" target="_blank"-->
+<!--                   class="open-the-site">Open&nbsp;"Download&nbsp;Apps"&nbsp;Page&nbsp;of&nbsp;the&nbsp;Site</a>-->
+<!--            </p>-->
+
+            <p>
+                Both presented software applications support Qualitative Dynamical Systems
+                Mathematical Modeling Technique, and are open-source Java desktop
+                applications, provided in the form of certified installers. They are available for macOS and
+                Windows computers, and can be downloaded from the page "Download
+                Kaleidoscope Project Applications".
+                <a style="text-align: center" href="kp-apps/kp-downland.html" class="open-the-page">Open the Page</a>
+            </p>
+
+        </div> <!-- end of content holder -->
+
+    </div> <!-- end of text-container -->
+
+    <!-- =================================================================================== -->
+
+    <br/>
+    <div class="end-of-page-red-line-1"></div>
+<!--    <br/>-->
+    <div class="end-of-page-red-line-2"></div>
+    <div class="space-below-footer"></div>
+    <br/>
+
+</div> <!-- end of container -->
+</body>
+</html>
