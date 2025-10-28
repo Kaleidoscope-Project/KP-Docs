@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!--    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112105848-1"></script>-->
+    <!--    <script>-->
+    <!--        window.dataLayer = window.dataLayer || [];-->
+    <!--        function gtag(){dataLayer.push(arguments);}-->
+    <!--        gtag('js', new Date());-->
+    <!--        gtag('config', 'UA-112105848-1');-->
+    <!--    </script>-->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <title>- Kaleidoscope Tools</title>
+    <link rel="shortcut icon" type="image/png" href="../common/images/mcln-logo.png">
+
+    <meta name="author" content="Vlad Lakin"/>
+    <meta name="version" content="last updated 08/17/2018"/>
+    <meta name="keywords" content="dining philosophers, discrete, event, dynamical, system, simulation, simulating,
+    logic, behavior, based, robotics, control, software, asynchronous, concurrent, architecture, modeling, automaton,
+    Petri, Net"/>
+    <meta name="news_keywords" content="Discrete Symbolic Dynamical Systems & Models,
+                dining philosophers, dynamical system, behaviour based robotics"/>
+    <meta name="description" content="Discrete Symbolic Dynamical Systems & Models"/>
+
+    <!-- style sheets   -->
+    <link rel="stylesheet" href="../common/stylesheets/common.css">
+    <link rel="stylesheet" href="../common/stylesheets/all-pages-popups.css">
+
+    <!--/*   S c r i p t s   */-->
+    <script type="text/javascript" src="../common/javascripts/common-javascripts.js"></script>
+    <script type="text/javascript" src="../common/javascripts/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../common/javascripts/all-pages-popup-scripts.js"></script>
+
+    <!--/*   S t y l e    S h e e t s   */-->
+    <style>
+        body {
+            background-image: url("../common/images/line-bg-3.png");
+<!--            font-family: Arial, sans-serif;-->
+        }
+
+        .open-the-site {
+            border: 1px solid #888888;
+            border-radius: 12px;
+            width: 80px;
+            background-color: #FFE8E8;
+            color: #555555;
+            padding:  0px 5px 1px 5px;
+            box-shadow: 1px 1px 1px #777;
+            cursor: pointer;
+            text-decoration: none;
+            font: 12px Georgia, Helvetica;
+        }
+
+        .open-the-site:active {
+            box-shadow: 0px 0px 1px #666;
+            transform: translateY(1px);
+            transform: translateX(1px);
+        }
+
+        .header-background {
+            background-color: #FFE4D1;
+            margin-top: 10px;
+            margin-left: 0px;
+            margin-right: 0px;
+            color: #586399;
+            border: 2px solid #FF8000;
+            border-radius: 5px;
+            padding: 4px 6px 4px 6px;
+        }
+
+        .download-button{
+            background-color: #16A127;
+            text-color: #ffffff;
+            color: #FFFFFF;
+            margin-top: 13px;
+            margin-left: 0px;
+            margin-right: 0px;
+            border: 1px solid #6A6FAF;
+            border-radius: 5px;
+            padding: 4px 0px 4px 0px;
+            list-style-type: none;
+            text-transform: none;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body onload="removeHashTag()">
+<div class="container">
+    <img style="height: 6px; width: 100%;" src="../common/images/two-red-lines.png" alt=""/>
+
+    <a href="../kp-sem-views/sem-screenshots.html">
+        <img src="../common/images/prev.png" alt="Previous Page" title="To prev page"></a>
+
+    <a style="margin-left: 7pt;margin-right: 7pt;" href="../index.html#sec.8.0">
+        <img src="../common/images/up.png" alt="Main Page" title="To main page"></a>
+
+    <a href="../kp-qds/kp-qds.html">
+        <img src="../common/images/next.png" alt="Next Page" title="To next page"></a>
+
+    <!-- =================================================================================== -->
+
+    <!--    H e a d e r  font: 14px Ariel, Helvetica; -->
+
+    <div class="text-container">
+
+        <div class="page-header">
+            Kaleidoscope Project Applications Demo<br>Presentation and Downloadables
+        </div>
+
+        <div style="margin-top: 33px; margin-bottom: 0px; ">
+
+            <p style="font-weight: bold; color: #880000;">
+                PRESENTATIONS
+            </p>
+
+            <p>
+                The two presentations are made possible thanks to amazing technique -
+                <a class="open-the-site" href="https://cheerpj.com/" target="_blank">
+                    "CheerpJ"</a>,
+                developed by the compony
+                <a class="open-the-site" href="https://leaningtech.com/" target="_blank">
+                    "Leaning Technologies"</a>.
+                It is the open source that is granted to free-software developments at no cost.
+            </p>
+
+            <p>
+                CheerpJ is a solution designed to run Java applications and applets in modern web browsers
+                by compiling Java bytecode into WebAssembly and JavaScript. Leaning Technologies is a
+                British-Dutch company that specializes in compile-to-JavaScript and compile-to-WebAssembly
+                solutions, and CheerpJ is one of its most successful products.
+            </p>
+
+            <p>
+                As mentioned in other documents, the Kaleidoscope project has two
+                Java desktop applications:
+                <span class="popup-link" onmouseenter="openPopup(event, dwl01)" onmouseleave="closePopup(dwl01)">
+                        <a class="popup-link" href="../kp-mse/mse-screenshots.html" target="_blank">
+                            <em>"The Qualitative Dynamical Systems Modeling & Simulation Environment"</em>,
+                        </a>
+                </span>
+                or QDS MSE, and
+                <span class="popup-link" onmouseenter="openPopup(event, dwl02)" onmouseleave="closePopup(dwl02)">
+                        <a class="popup-link" href="../kp-sem-views/sem-screenshots.html" target="_blank">
+                            <em>"The Space Exploration Mission // Agent-Robot Behavior Simulator"</em>,
+                        </a>
+                </span>
+                or SEM ABS.
+            </p>
+
+            <p>
+                Accordingly, the presentation of both Apps is organized in the way
+                where each model developed in the QDS MSE Applicatio or
+                each Exploration Task executed by the SEM ABS Application is exposed on the screen just for
+                a few seconds, and then
+                is replaced by the next, the next, and so on. All steps of the domo, thus, are cycling, as the Carousel,
+                until the
+                presentation is interrupted by you.
+                <!--                Detailed Instructions about how to communicate with each Presentation are provided on the App's page. -->
+                Please, choose the Presentation you would like to see by clicking one of the two links below.
+            </p>
+
+            <p>
+                <span style="font-weight: bold; color: #CC0000;">Attention! </span>
+                <em>Presentation of the Java Desktop Applications in a browser requires transforming Java Apps to the
+                    form that can be drawn and animated by the modern browsers. Therefore, it may take several seconds
+                    to bring the App into the browser and complete forming its image before the App can be shown on the
+                    screen. Please be patient.</em>
+            </p>
+
+            <p style="text-align: center;">
+                <a class="open-the-site" style="text-align: center"
+                   href="https://kaleidoscope-project.github.io/KP-DEMO-ON-GITHUB/kp-demo/open-mse" target="_blank">
+                    Open Presentation: "Qualitative Dynamical Systems Modeling & Simulation Environment"</a>
+            </p>
+
+            <p style="text-align: center">
+                <a class="open-the-site" style="text-align: center"
+                   href="https://kaleidoscope-project.github.io/KP-DEMO-ON-GITHUB/kp-demo/open-sem" target="_blank">
+                    Open Presentation: "Space Exploration Mission - Standalone Agent Behavior Simulator"</a>
+            </p>
+
+            <p>
+                Being preprogrammed for Presentation both these Apps demonstrates only the main operations of
+                creating Properties, Conditions and Ars.
+                Then it presents different models developed in the QDS MSE. Second App Presents how the models
+                developed in the QDS MSE are used for controlling Agent Exploration Tasks.
+                Alternatively, in order to utilize all the Apps features, you can download them both and
+                have on your persona computer. Next section "Downloadables" helps you to do this.
+            </p>
+        </div>
+
+        <div style="margin-top: 33px; margin-bottom: 0px; "> <!-- content holder -->
+
+            <p style="font-weight: bold; color: #880000;">
+                DOWNLOADABLES
+            </p>
+
+            <!--            <p>-->
+            <!--                As mentioned in other documents, the Kaleidoscope project has two-->
+            <!--                Java desktop applications:-->
+            <!--                <span class="popup-link" onmouseenter="openPopup(event, dwl01)" onmouseleave="closePopup(dwl01)">-->
+            <!--                        <a class="popup-link" href="../kp-mse/mse-screenshots.html" target="_blank">-->
+            <!--                            <em>"The Qualitative Dynamical Systems Modeling & Simulation Environment"</em>,-->
+            <!--                        </a>-->
+            <!--                </span>-->
+            <!--                or QDS MSE, and-->
+            <!--                <span class="popup-link" onmouseenter="openPopup(event, dwl02)" onmouseleave="closePopup(dwl02)">-->
+            <!--                        <a class="popup-link" href="../kp-sem-views/sem-screenshots.html" target="_blank">-->
+            <!--                            <em>"The Space Exploration Mission // Agent-Robot Behavior Simulator"</em>,-->
+            <!--                        </a>-->
+            <!--                </span>-->
+            <!--                or SEM ABS.-->
+            <!--            </p>-->
+
+            <p>
+                Both applications are distributed in the form of their installers assembled for macOS,
+                Windows, and Linux computers. They can be downloaded from this page and placed on the
+                hard disk following the standards of the named OSs. Installers with the extension ".pkg"
+                are intended for installing and executing applications on computers equipped with macOS.
+                Installers having extension ".msi" are intended for installing and running applications on
+                Windows computers. And installers having extension ".exe" are intended for installing and
+                running applications on Linux computers.
+            </p>
+
+            <p>
+                All these installers, during the installation of their applications, ask:
+                <!--                three questions that are the same for all operating systems:-->
+            </p>
+
+            <p>
+                1) Accept the End-User Licence Agreement.
+            </p>
+
+            <p>
+                2) Choose Application Destination Folder instead of the pre-populated default location that is:
+                a) xxx for MacOS, b) Program Files for Windows, and c) yyy for Linux.
+            </p>
+
+            <p>
+                The three groups of Downloads listed below (each having two buttons) suggest
+                downloading Apps installers for Windows OS, Mac OS and Linux OS.
+            </p>
+
+            <!-- ====================  D o w n l o a d i n g   f o r   W i n d o w s  ========================== -->
+
+            <!--            <center>-->
+            <div style="text-align: left; font-size:20px; font-weight: bold; margin-top: 22pt;">
+                Windows OS downloads
+            </div>
+            <!--            </center>-->
+            <div style="text-align: center;">
+                <a href="downloadables/Kaleidoscope-QDS-MS-Env.msi" style="text-decoration:none; color:#FFFFFF;">
+                    <div class="download-button" style="font-family:family:verdana; font-size:12px;">
+                        Windows Application: Kaleidoscope-QDS-MS-Env.msi, size: 38,9 MB / App size: 94.3 MB
+                    </div>
+                </a>
+                <a href="downloadables/Kaleidoscope-SEM-AB-Sim.msi" style="text-decoration:none; color:#FFFFFF;">
+                    <div class="download-button" style="font-family:family:verdana; font-size:12px;">
+                        Windows Application: Kaleidoscope-SEM-AB-Sim.msi, size: 34,3 MB / App size: 99,9 MB
+                    </div>
+                </a>
+            </div>
+            <!-- ====================    D o w n l o a d i n g   f o r   M a c O S    ========================== -->
+            <div style="text-align: left; font-size:20px; font-weight: bold; margin-top: 22pt;">
+                Mac OS downloads
+            </div>
+
+            <div style="text-align: center;">
+                <a href="downloadables/Kaleidoscope-QDS-MS-Env.pkg" style="text-decoration:none; color:#FFFFFF;">
+                    <div class="download-button" style="font-family:family:verdana; font-size:12px;">
+                        Mac OS Application: Kaleidoscope-QDS-MS-Env.pkg, size: 44,3 MB / App size: 94.3 MB
+                    </div>
+                </a>
+                <a href="downloadables/Kaleidoscope-SEM-AB-Sim.pkg" style="text-decoration:none; color:#FFFFFF;">
+                    <div class="download-button" style="font-family:family:verdana; font-size:12px;">
+                        Mac OS Application: Kaleidoscope-SEM-AB-Sim.pkg, size: 39,7 MB / App size: 99,9 MB
+                    </div>
+                </a>
+            </div>
+
+
+            <!-- ====================    D o w n l o a d i n g   f o r   L i n u x    ========================== -->
+
+            <div style="text-align: left; font-size:20px; font-weight: bold; margin-top: 22pt;">
+                Linux OS downloads
+            </div>
+
+            <div style="text-align: center;">
+                <a href="downloadables/Kaleidoscope-QDS-MS-Env.pkg" style="text-decoration:none; color:#FFFFFF;">
+                    <div class="download-button" style="font-family:family:verdana; font-size:12px;">
+                        Linux OS Application: Kaleidoscope-QDS-MS-Env.pkg, size: 44,3 MB / App size: 94.3 MB
+                    </div>
+                </a>
+                <a href="downloadables/Kaleidoscope-SEM-AB-Sim.pkg" style="text-decoration:none; color:#FFFFFF;">
+                    <div class="download-button" style="font-family:family:verdana; font-size:12px;">
+                        Linux OS Application: Kaleidoscope-SEM-AB-Sim.pkg, size: 39,7 MB / App size: 99,9 MB
+                    </div>
+                </a>
+            </div>
+
+            <!--            <p>-->
+            <!--                The three groups listed below (each having two buttons) suggest-->
+            <!--                downloading installers for two applications named at the beginning of the page.-->
+            <!--            </p>-->
+
+            <!--            &lt;!&ndash; ====================  D o w n l o a d   QDS MSE  ========================== &ndash;&gt;-->
+
+            <!--            <center>-->
+            <!--                <div style="font-size:20px; font-weight: bold; margin-top: 22pt;">-->
+            <!--                    Download: Qualitative Dynamical Systems - QDS<br>Modeling & Simulation Environment - MSE-->
+            <!--                </div>-->
+            <!--            </center>-->
+
+            <!--            &lt;!&ndash; =================================================================================== &ndash;&gt;-->
+
+            <!--            <div align="center">-->
+            <!--                <a href="downloadables/Kaleidoscope-QDS-MS-Env.pkg" style="text-decoration:none; color:#FFFFFF;">-->
+            <!--                    <div class="download-button" style="font-family:family:verdana; font-size:12px;">-->
+            <!--                        Mac OS Application: Kaleidoscope-QDS-MS-Env.pkg, size: 44,3 MB / App size: 94.3 MB-->
+            <!--                    </div>-->
+            <!--                </a>-->
+            <!--                <a href="downloadables/Kaleidoscope-QDS-MS-Env.msi" style="text-decoration:none; color:#FFFFFF;">-->
+            <!--                    <div class="download-button" style="font-family:family:verdana; font-size:12px;">-->
+            <!--                        Windows Application: Kaleidoscope-QDS-MS-Env.msi, size: 38,9 MB / App size: 94.3 MB-->
+            <!--                    </div>-->
+            <!--                </a>-->
+            <!--            </div>-->
+
+            <!--            &lt;!&ndash; ====================  D o w n l o a d   Space Exploration Mission  ========================== &ndash;&gt;-->
+
+            <!--            <center>-->
+            <!--                <div style="font-size:20px; font-weight: bold; margin-top: 20pt;">-->
+            <!--                    Download: Space Exploration Mission - SEM<br>Agent Behavior Simulator - ABS-->
+            <!--                </div>-->
+            <!--            </center>-->
+
+            <!--            <div align="center">-->
+            <!--                <a href="downloadables/Kaleidoscope-SEM-AB-Sim.pkg" style="text-decoration:none; color:#FFFFFF;">-->
+            <!--                    <div class="download-button" style="font-family:family:verdana; font-size:12px;">-->
+            <!--                        Mac OS Application: Kaleidoscope-SEM-AB-Sim.pkg, size: 39,7 MB / App size: 99,9 MB-->
+            <!--                    </div>-->
+            <!--                </a>-->
+            <!--                <a href="downloadables/Kaleidoscope-SEM-AB-Sim.msi" style="text-decoration:none; color:#FFFFFF;">-->
+            <!--                    <div class="download-button" style="font-family:family:verdana; font-size:12px;">-->
+            <!--                        Windows Application: Kaleidoscope-SEM-AB-Sim.msi, size: 34,3 MB / App size: 99,9 MB-->
+            <!--                    </div>-->
+            <!--                </a>-->
+            <!--            </div>-->
+
+            <br>
+
+            <!-- =================================================================================================== -->
+
+        </div> <!-- end of content holder  -->
+    </div> <!-- end of text-container -->
+
+    <br/>
+
+    <!-- =================================================================================== -->
+
+    <a href="../kp-sem-views/sem-screenshots.html">
+        <img src="../common/images/prev.png" alt="Previous Page" title="To prev page"></a>
+
+    <a style="margin-left: 7pt;margin-right: 7pt;" href="../index.html#sec.8.0">
+        <img src="../common/images/up.png" alt="Main Page" title="To main page"></a>
+
+    <a href="../kp-qds/kp-qds.html">
+        <img src="../common/images/next.png" alt="Next Page" title="To next page"></a>
+
+    <p>
+    <div class="end-of-page-red-line-1"></div>
+    <div class="end-of-page-red-line-2"></div>
+    <div class="space-below-footer"></div>
+    </p>
+
+</div> <!-- End of Main Container -->
+
+<!-- =================================================================================== -->
+<!--  P O P   U P S -->
+<!-- =================================================================================== -->
+
+<!--             -->
+<!-- p o p u p s -->
+<!--             -->
+<div class="popup-style" id="elementDWL01ToPopup">
+    <div style="text-align: center;">
+        <b>Page: Qualitative Dynamical Systems Modeling & Simulating Environment</b></div>
+    <p>
+        This page is a brief description of the Qualitative Dynamical Systems Modeling
+        & Simulation Environment, or QDS MSE. It is arranged as a number of screenshots of
+        the application that demonstrate its major features, backed by short explanations.
+    </p>
+    <p class="clickable-link">
+        Clicking the link opens named page in a new tab.
+    </p>
+</div>
+
+<!--  -->
+<!--  -->
+<!--  -->
+<div class="popup-style" id="elementDWL02ToPopup">
+    <div style="text-align: center;">
+        <b>Page: Space Exploration Mission // Agent-Robot Behavior Simulator</b>
+    </div>
+    <p>
+        This page presents "Space Exploration Mission // Agent-Robot Behavior Simulator" application.
+        The purpose of this application is to imitate activities of the Orbital Space Research Facility that is
+        monitoring state and performance of the remote Agent-Robot, whose controlling unit
+        is implemented as Multicolored Logical Net (McLN). The page is created for testing if the
+        expressive power of the McLN sufficient for it to be used as a behavior controller.
+    </p>
+    <p class="clickable-link">
+        Clicking the link opens named section in a new tab.
+    </p>
+</div>
+</body>
+</html>
