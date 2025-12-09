@@ -182,6 +182,38 @@
                     screen. Please be patient.</em>
             </p>
 
+            <p style="font-weight: bold; color: #CC0000;">
+                More on Opening Swing Apps in a Browser!
+            </p>
+            
+            <p>
+                
+                Despite the great deal of making it possible to present Java Swing Applications on the web page, 
+                intrinsic communications between applications located on a page and the browser is currently 
+                quite limited. Browsers operate the apps as a html element which is considered as a whole, 
+                while the swing apps have their own inner layout and scaling mechanisms.  Therefore, when the 
+                browsers perform zooming in or out they make apps appear effectively larger or either smaller. 
+                But they do not have means to inform the apps that they are undergoing zooming. Because of that, 
+                the app's inner layout may get broken.
+            </p>
+
+            <p>
+                The current solution is the following. First open the app presentation page,and preview the app.
+                Depending on the browser's current zoom level the app may look either too large or too small.
+                Please, change the browser's zoom to make the size of the app appropriate for your purpose.
+                But, in the result, the view of the zoomed app will be corrupted. In order to fix that corruption,
+                reload the entire page. This time the app layout will be regenerated taking into account the
+                browser's current zoom level and you will see the app layout that fits nicely in the center of
+                the page. You can change the size of the browser. It is OK. The app will stay in the page center
+                always. Just do not change the page zoom again.
+            </p>
+
+            <p style="text-align: center;">
+                <a class="open-presentation-page" style="text-align: center"
+                   href="https://kaleidoscope-project.github.io/KP-DEMO-ON-GITHUB/kp-demo-reloadable/index" target="_blank">
+                    Open TEST: "Qualitative Dynamical Systems Modeling & Simulation Environment"</a>
+            </p>
+            
             <p style="text-align: center;">
                 <a class="open-presentation-page" style="text-align: center"
                    href="https://kaleidoscope-project.github.io/KP-DEMO-ON-GITHUB/kp-demo/open-mse" target="_blank">
